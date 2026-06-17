@@ -9,7 +9,7 @@ import { Eye, EyeOff } from "lucide-react";
 
 export default function AuthModal({
   open,
-  initialTab = "login",
+  initialTab = "login", 
   onClose,
   onSuccess,
 }) {
