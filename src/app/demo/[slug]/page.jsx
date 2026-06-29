@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, useContext  } from "react";
+import { useEffect, useMemo, useState, useContext } from "react";
 import { useParams } from "next/navigation";
 import axios from "axios";
 import config from "../../../config/config";
@@ -10,7 +10,7 @@ import {
   templateMetadata,
 } from "../../templates/templateLoader";
 export default function TemplateDemoPage() {
-   const { user, token, openAuthModal } = useContext(AuthContext);
+  const { user, token, openAuthModal } = useContext(AuthContext);
   const [view, setView] = useState("desktop");
   const params = useParams();
   const slug = params.slug;
@@ -33,22 +33,21 @@ export default function TemplateDemoPage() {
   }, []);
 
   useEffect(() => {
-  const fetchCountry = async () => {
-    try {
-      const res = await fetch("/api/country");
-      const data = await res.json();
-      setCountry(data.country || "IN");
-    } catch {
-      setCountry("IN");
-    }
-  };
+    const fetchCountry = async () => {
+      try {
+        const res = await fetch("/api/country");
+        const data = await res.json();
+        setCountry(data.country || "IN");
+      } catch {
+        setCountry("IN");
+      }
+    };
 
-  fetchCountry();
-}, []);
+    fetchCountry();
+  }, []);
 
   useEffect(() => {
     if (!slug) return;
- 
 
     const fetchTemplate = async () => {
       setLoadingTemplate(true);
@@ -97,7 +96,7 @@ export default function TemplateDemoPage() {
     // if (meta) return meta;
     if (remoteTemplate) {
       return {
-         _id: remoteTemplate._id,
+        _id: remoteTemplate._id,
         title: remoteTemplate.title,
         description:
           remoteTemplate.defaultData?.description ||
@@ -117,12 +116,12 @@ export default function TemplateDemoPage() {
 
   const hasTemplate = Boolean(slug && template);
 
-const priceLabel =
-  country === "IN"
-    ? `₹ ${template?.indprice || 0}`
-    : `$${template?.usaprice || 0}`;
+  const priceLabel =
+    country === "IN"
+      ? `₹ ${template?.indprice || 0}`
+      : `$${template?.usaprice || 0}`;
 
-     useEffect(() => {
+  useEffect(() => {
     const pendingTemplate = localStorage.getItem("pendingTemplate");
 
     if (user && pendingTemplate) {
@@ -134,8 +133,7 @@ const priceLabel =
     }
   }, [user]);
 
- 
-const handlePayment = async (template) => {
+  const handlePayment = async (template) => {
     if (!user) {
       localStorage.setItem("pendingTemplate", JSON.stringify(template));
 
@@ -175,7 +173,7 @@ const handlePayment = async (template) => {
         name: "InviteArc",
         description: `${template.title} Template`,
 
-         image: `${window.location.origin}/logo.png`,
+        image: `${window.location.origin}/logo.png`,
 
         handler: async function (paymentResponse) {
           try {
@@ -225,7 +223,6 @@ const handlePayment = async (template) => {
     }
   };
 
-
   const previewWidth =
     view === "mobile" ? 375 : view === "tablet" ? 900 : "100%";
   const previewLabel =
@@ -235,7 +232,8 @@ const handlePayment = async (template) => {
       {hasTemplate && (
         <button
           onClick={() => handlePayment(remoteTemplate)}
-          className="fixed z-50 bottom-4 left-1/2 -translate-x-1/2 text-sm font-semibold transition flex items-center gap-3 border-white border-2 bg-white/0 backdrop-blur text-white px-6 py-3 rounded-full shadow-lg cursor-pointer" >
+          className="fixed z-50 bottom-4 left-1/2 -translate-x-1/2 text-sm font-semibold transition flex items-center gap-3 border-white border-2 bg-white/0 backdrop-blur text-white px-6 py-3 rounded-full shadow-lg cursor-pointer"
+        >
           Buy Now {priceLabel}
         </button>
       )}
@@ -268,7 +266,121 @@ const handlePayment = async (template) => {
             >
               <div className="overflow-y-auto overflow-x-hidden bg-slate-100">
                 {TemplateComponent ? (
-                  <TemplateComponent />
+                  <div className="relative">
+                    <TemplateComponent isDemo={true} />
+                    <div className="pointer-events-none absolute inset-0 overflow-hidden">
+                      <p className="absolute top-[1%] left-[5%] text-4xl font-medium text-white/25 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                      <p className="md:block hidden absolute top-[1%] right-[15%] text-4xl font-medium text-white/25 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                      <p className="absolute top-[5%] left-[5%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                       <p className="absolute top-[5%] right-[15%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                      <p className="absolute top-[8%] left-[35%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                      <p className="absolute top-[10%] left-[5%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+
+                        
+
+                      <p className="absolute top-[15%] left-[5%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+
+                      <p className="md:block hidden absolute top-[15%] left-[77%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                        <p className="absolute top-[12%] left-[35%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                      <p className="absolute top-[20%] left-[5%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                       <p className="absolute top-[20%] right-[15%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+
+                        <p className="absolute top-[25%] left-[5%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                        <p className="absolute top-[30%] left-[5%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+
+                      <p className="absolute top-[30%] right-[15%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+
+                       <p className="absolute top-[40%] left-[5%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                       <p className="absolute top-[50%] left-[5%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                      <p className="absolute top-[49%] right-[15%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                       <p className="absolute top-[60%] left-[5%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                      <p className="absolute top-[55%] right-[15%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                      <p className="absolute top-[60%] right-[15%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                      <p className="absolute top-[64%] right-[15%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                       <p className="absolute top-[70%] left-[5%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                       <p className="absolute top-[75%] left-[5%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                      <p className="absolute top-[75%] right-[15%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                       <p className="absolute top-[80%] left-[5%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                      <p className="md:block hidden  absolute top-[80%] right-[15%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                      <p className="md:block hidden  absolute top-[80%] right-[15%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                      <p className="absolute top-[85%] left-[5%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                      <p className="absolute top-[90%] left-[5%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                      <p className="absolute top-[95%] left-[5%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                      <p className="md:block hidden  absolute top-[91%] right-[15%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                      <p className="md:block hidden  absolute top-[94%] right-[15%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                      <p className="md:block hidden absolute top-[98%] right-[15%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                      <p className="absolute top-[99%] left-[5%] text-4xl font-medium text-white/35 whitespace-nowrap font-georgia">
+                        InviteArc
+                      </p>
+                    
+                    </div>
+                  </div>
                 ) : (
                   <div className="p-10 text-center text-slate-600">
                     Template preview not available.
