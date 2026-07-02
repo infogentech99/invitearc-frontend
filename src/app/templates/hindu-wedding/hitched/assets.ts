@@ -22,7 +22,6 @@ import location from "./assets/location.png";
 import weather from "./assets/weather_h.png";
 import car from "./assets/car_h.png";
 import whatsapp from "./assets/whatsapp.png";
-
 export const assets = {
   lamp: lamp.src,
   Rohit_mobilebgn: Rohit_mobilebgn.src,
@@ -32,22 +31,22 @@ export const assets = {
   cocktail: cocktail.src,
   engagement: engagement.src,
   couple1: couple1.src,
-   couple2: couple2.src,
-    couple3: couple3.src,
-     couple4: couple4.src,
-      couple5: couple5.src,
-       couple6: couple6.src,
-        couple7: couple7.src,
-        moon_mobile2:moon_mobile2.src,
-        moon:moon.src,
-        couple_bgt:couple_bgt.src,
-        countdown_bg: countdown_bg.src,
-        couplemobile_bg: couplemobile_bg.src,
-        instagram: instagram.src,
-        location: location.src,
-        weather:weather.src,
-        car:car.src,
-        whatsapp:whatsapp.src,
-
+  couple2: couple2.src,
+  couple3: couple3.src,
+  couple4: couple4.src,
+  couple5: couple5.src,
+  couple6: couple6.src,
+  couple7: couple7.src,
+  moon_mobile2: moon_mobile2.src,
+  moon: moon.src,
+  couple_bgt: couple_bgt.src,
+  countdown_bg: countdown_bg.src,
+  couplemobile_bg: couplemobile_bg.src,
+  instagram: instagram.src,
+  location: location.src,
+  weather: weather.src,
+  car: car.src,
+  whatsapp: whatsapp.src,
+  background_song: "/template-audio/hitched.mp3",
 
 };

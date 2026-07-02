@@ -49,7 +49,7 @@ const initialData = {
   groomDetails: "(Grandson of Mrs. Kanta & Mr. Kamal Bhawnani)\n(Son of Mrs. Kanchan & Mr. Sanjay Bhawnani)",
   brideName: "Ritika",
   brideDetails: "(Daughter of Mrs. Sarita & Mr. Pradeep Jain)",
-  brideGrandParentsName:"(Granddaughter of Shri J.S. Kapoor)",
+  brideGrandParentsName: "(Granddaughter of Shri J.S. Kapoor)",
   eventIntro: "On the following events",
   coupleMessageTitle: "A message from the couple",
   coupleMessageDescription: "From different traditions to one beautiful journey, join us as we celebrate love, laughter, and forever. This moment wouldn’t be the same without the people we love most. Thank you for your love, blessings, and for making our journey even more special, we’re so excited to celebrate together!",
@@ -115,6 +115,14 @@ export default function Home({
       initialTemplateData?.events ||
       initialData.events,
   });
+
+  useEffect(() => {
+    setData((prev) => ({
+      ...prev,
+      ...initialTemplateData,
+      events: initialTemplateData?.events || prev.events || initialData.events,
+    }));
+  }, [initialTemplateData]);
   const [editMode, setEditMode] = useState(false);
   const [bgImage, setBgImage] = useState(assets.Rohit_mobilebgn);
 
@@ -174,6 +182,8 @@ export default function Home({
     setData(initialTemplateData || initialData);
     setEditMode(false);
   };
+
+  const backgroundMusicUrl = data?.backgroundMusicUrl || assets.background_song;
 
   const startMusic = async () => {
     const audio = audioRef.current;
@@ -247,7 +257,7 @@ export default function Home({
         {playing ? "⏸" : "▶"}
       </button>
 
-      <audio ref={audioRef} src="/assets/background_song_Rohit.mp3" loop preload="auto" playsInline />
+      <audio key={backgroundMusicUrl} ref={audioRef} src={backgroundMusicUrl} loop preload="auto" playsInline />
       <div
         className="bg-cover bg-no-repeat bg-top md:bg-center w-full px-4 sm:px-8  relative"
         style={{
@@ -337,7 +347,7 @@ export default function Home({
                     />
                   </label>
                   <label className="space-y-2 text-sm text-slate-700">
-                    Bride details<br/>
+                    Bride details<br />
                     Bride Parents Name
                     <textarea
                       rows={3}
@@ -616,19 +626,27 @@ export default function Home({
             <p className="text-white font-Cormorant-upright lg:text-3xl md:text-2xl text-[24px] mt-8">
               {data.eventIntro}
             </p>
-         
+
           </div>
 
-          <div className="flex justify-center mt-20">
-            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 lg:gap-32 gap-16 ">
+          <div className="flex justify-center mt-20 flex-wrap">
+            {/* <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 lg:gap-32 gap-16 border"> */}
+            <div
+              className={`grid gap-16 lg:gap-32 ${data?.events?.length === 1
+                  ? "grid-cols-1 justify-items-center"
+                  : data?.events?.length === 2
+                    ? "grid-cols-2 justify-items-center"
+                    : "grid-cols-1 sm:grid-cols-3"
+                }`}
+            >
               {(data?.events || []).map((event, i) => (
                 <div key={i} className="flex flex-col items-center text-center">
                   {event.image && (
-                    <div className="mb-4 w-full overflow-hidden rounded-3xl border border-white/20 bg-white/10 shadow-sm">
+                    <div className="mb-4 w-full rounded-3xl ">
                       <img
                         src={event.image}
                         alt={event.title_ceremony ? `${event.title_ceremony} image` : `Event ${i + 1} image`}
-                        className="h-48 w-full object-cover"
+                        className="h-full w-full object-cover"
                       />
                     </div>
                   )}

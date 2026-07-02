@@ -194,7 +194,7 @@ export default function EventsEditor({
                     return (
                       <div key={fieldDef.name} className="space-y-2">
                         <label className="block text-sm font-semibold text-slate-800">
-                          {formatFieldLabel(fieldDef.label, value)}
+                          {formatFieldLabel(fieldDef.label)}
                         </label>
                         {isLargeInput ? (
                           <textarea

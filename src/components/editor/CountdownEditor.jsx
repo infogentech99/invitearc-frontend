@@ -7,7 +7,7 @@ export default function CountdownEditor({
   return (
     <div className="space-y-6">
       <div className="space-y-2">
-        <label className="block text-sm font-semibold text-slate-800">
+        <label className="block text-sm font-semibold text-slate-800 font-georgia">
           Marriage Countdown title
         </label>
         <input
@@ -23,7 +23,7 @@ export default function CountdownEditor({
       </div>
 
       <div className="space-y-2">
-        <label className="block text-sm font-semibold text-slate-800">
+        <label className="block text-sm font-semibold text-slate-800 font-georgia">
           Marriage Countdown target date
         </label>
         <input
@@ -40,7 +40,7 @@ export default function CountdownEditor({
       </div>
 
       <div className="space-y-2">
-        <label className="block text-sm font-semibold text-slate-800">
+        <label className="block text-sm font-semibold text-slate-800 font-georgia">
           Marriage Countdown description
         </label>
         <textarea

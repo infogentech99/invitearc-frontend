@@ -7,7 +7,7 @@ export default function CoupleMessageEditor({
   return (
     <div className="space-y-4">
       <div className="space-y-2">
-        <label className="block text-sm font-semibold text-slate-800">
+        <label className="block text-sm font-semibold text-slate-800 font-georgia">
           Couple message title
         </label>
         <input
@@ -20,7 +20,7 @@ export default function CoupleMessageEditor({
       </div>
 
       <div className="space-y-2">
-        <label className="block text-sm font-semibold text-slate-800">
+        <label className="block text-sm font-semibold text-slate-800 font-georgia">
           Couple message description
         </label>
         <textarea
@@ -37,15 +37,19 @@ export default function CoupleMessageEditor({
       </div>
 
       <div className="space-y-2">
-        <label className="block text-sm font-semibold text-slate-800">
+        <label className="block text-sm font-semibold text-slate-800 font-georgia">
           Carousel images
         </label>
         <input
           type="file"
           accept="image/*"
+          multiple
           onChange={handleCoupleMessageImageUpload}
-          className="w-full rounded-2xl border border-slate-200 bg-slate-50 p-2 text-sm text-slate-900"
+          className="w-full rounded-2xl border border-slate-200 bg-slate-50 p-2 text-sm text-slate-900 cursor-pointer"
         />
+         <label className="block text-[11px] font-normal text-slate-600 font-georgia">
+          Please upload minimum 6 couple images
+        </label>
         {(Array.isArray(editorData.coupleMessageCarouselImages)
           ? editorData.coupleMessageCarouselImages
           : []
@@ -78,7 +82,7 @@ export default function CoupleMessageEditor({
                   <button
                     type="button"
                     onClick={() => removeCoupleMessageImage(index)}
-                    className="mt-2 text-xs font-semibold text-rose-600"
+                    className="mt-2 text-xs font-semibold text-rose-600 cursor-pointer"
                   >
                     Remove
                   </button>
@@ -90,7 +94,7 @@ export default function CoupleMessageEditor({
       </div>
 
       <div className="space-y-2">
-        <label className="block text-sm font-semibold text-slate-800">
+        <label className="block text-sm font-semibold text-slate-800 font-georgia">
           Things to know title
         </label>
         <input
@@ -106,7 +110,7 @@ export default function CoupleMessageEditor({
       </div>
 
       <div className="space-y-2">
-        <label className="block text-sm font-semibold text-slate-800">
+        <label className="block text-sm font-semibold text-slate-800 font-georgia">
           Things to know description
         </label>
         <textarea
@@ -124,7 +128,7 @@ export default function CoupleMessageEditor({
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <label className="block text-sm font-semibold text-slate-800">
+          <label className="block text-sm font-semibold text-slate-800 font-georgia">
             Location title
           </label>
           <input
@@ -139,7 +143,7 @@ export default function CoupleMessageEditor({
           />
         </div>
         <div className="space-y-2">
-          <label className="block text-sm font-semibold text-slate-800">
+          <label className="block text-sm font-semibold text-slate-800 font-georgia">
             Location details
           </label>
           <textarea
@@ -155,7 +159,7 @@ export default function CoupleMessageEditor({
           />
         </div>
         <div className="space-y-2">
-          <label className="block text-sm font-semibold text-slate-800">
+          <label className="block text-sm font-semibold text-slate-800 font-georgia">
             Weather title
           </label>
           <input
@@ -170,7 +174,7 @@ export default function CoupleMessageEditor({
           />
         </div>
         <div className="space-y-2">
-          <label className="block text-sm font-semibold text-slate-800">
+          <label className="block text-sm font-semibold text-slate-800 font-georgia">
             Weather details
           </label>
           <textarea
@@ -186,7 +190,7 @@ export default function CoupleMessageEditor({
           />
         </div>
         <div className="space-y-2">
-          <label className="block text-sm font-semibold text-slate-800">
+          <label className="block text-sm font-semibold text-slate-800 font-georgia">
             Parking title
           </label>
           <input
@@ -201,7 +205,7 @@ export default function CoupleMessageEditor({
           />
         </div>
         <div className="space-y-2">
-          <label className="block text-sm font-semibold text-slate-800">
+          <label className="block text-sm font-semibold text-slate-800 font-georgia">
             Parking details
           </label>
           <textarea

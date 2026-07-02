@@ -13,6 +13,8 @@ import { HiDevicePhoneMobile } from "react-icons/hi2";
 import { MdTabletMac } from "react-icons/md";
 import { BsCalendar2Event } from "react-icons/bs";
 import { IoDesktopOutline } from "react-icons/io5";
+import { uploadImage } from "../../../utils/uploadImage";
+import { uploadFile } from "../../../utils/uploadFile";
 import {
   getTemplateFieldConfig,
   templateComponents,
@@ -248,26 +250,44 @@ export default function EditTemplatePage() {
       reader.readAsDataURL(file);
     });
 
+  // const handleEventImageUpload = async (index, event) => {
+  //   const file = event.target.files?.[0];
+  //   if (!file) return;
+
+  //   try {
+  //     const imageDataUrl = await readFileAsDataUrl(file);
+  //     setEditorData((prev) => {
+  //       const events = Array.isArray(prev.events) ? [...prev.events] : [];
+  //       events[index] = {
+  //         ...events[index],
+  //         image: imageDataUrl,
+  //         imageFileName: file.name,
+  //       };
+  //       return {
+ 
   const handleEventImageUpload = async (index, event) => {
     const file = event.target.files?.[0];
     if (!file) return;
 
     try {
-      const imageDataUrl = await readFileAsDataUrl(file);
+      const imageUrl = await uploadImage(file, "invitearc/events");
+
       setEditorData((prev) => {
-        const events = Array.isArray(prev.events) ? [...prev.events] : [];
+        const events = [...(prev.events || [])];
+
         events[index] = {
           ...events[index],
-          image: imageDataUrl,
+          image: imageUrl,
           imageFileName: file.name,
         };
+
         return {
           ...prev,
           events,
         };
       });
     } catch (error) {
-      console.error("Failed to read event image file:", error);
+      console.error("Failed to upload event image:", error);
     }
   };
 
@@ -333,17 +353,61 @@ export default function EditTemplatePage() {
     });
   };
 
-  const handleMusicUpload = (event) => {
-    const file = event.target.files?.[0];
-    if (!file) return;
+  // const handleMusicUpload = (event) => {
+  //   const file = event.target.files?.[0];
+  //   if (!file) return;
 
-    const fileUrl = URL.createObjectURL(file);
+  //   const fileUrl = URL.createObjectURL(file);
+  //   setEditorData((prev) => ({
+  //     ...prev,
+  //     backgroundMusicUrl: fileUrl,
+  //     backgroundMusicFileName: file.name,
+  //   }));
+  // };
+
+  // const handleMusicUpload = async (event) => {
+  //   const file = event.target.files?.[0];
+  //   if (!file) return;
+
+  //   try {
+  //     const musicUrl = await uploadFile(file, "invitearc/music", "music");
+
+  //     setEditorData((prev) => ({
+  //       ...prev,
+  //       backgroundMusicUrl: musicUrl,
+  //       backgroundMusicFileName: file.name,
+  //     }));
+
+  //     event.target.value = "";
+  //   } catch (error) {
+  //     console.error("Failed to upload music:", error);
+  //   }
+  // };
+
+
+const handleMusicUpload = async (event) => {
+  const file = event.target.files?.[0];
+  if (!file) return;
+
+  try {
+    const musicUrl = await uploadFile(
+      file,
+      "invitearc/music",
+      "video" // Cloudinary me audio = video resource type
+    );
+
     setEditorData((prev) => ({
       ...prev,
-      backgroundMusicUrl: fileUrl,
+      backgroundMusicUrl: musicUrl,
       backgroundMusicFileName: file.name,
     }));
-  };
+
+    event.target.value = "";
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 
   const updateCoupleMessageField = (field, value) => {
     setEditorData((prev) => ({
@@ -353,22 +417,43 @@ export default function EditTemplatePage() {
   };
 
   const handleCoupleMessageImageUpload = async (event) => {
-    const file = event.target.files?.[0];
-    if (!file) return;
+    const files = Array.from(event.target.files || []);
+    if (!files.length) return;
+    const existingImages = Array.isArray(editorData.coupleMessageCarouselImages)
+      ? editorData.coupleMessageCarouselImages
+      : [];
 
+    if (existingImages.length + files.length > 10) {
+      alert("You can upload a maximum of 10 carousel images.");
+      event.target.value = "";
+      return;
+    }
     try {
-      const imageDataUrl = await readFileAsDataUrl(file);
+      const uploadedImages = await Promise.all(
+        files.map(async (file) => {
+          const imageUrl = await uploadImage(file, "invitearc/couple-carousel");
+
+          return {
+            image: imageUrl,
+            imageFileName: file.name,
+          };
+        }),
+      );
+
       setEditorData((prev) => ({
         ...prev,
         coupleMessageCarouselImages: [
           ...(Array.isArray(prev.coupleMessageCarouselImages)
             ? prev.coupleMessageCarouselImages
             : []),
-          { image: imageDataUrl, imageFileName: file.name },
+          ...uploadedImages,
         ],
       }));
+
+      // Same files dubara select karne ke liye
+      event.target.value = "";
     } catch (error) {
-      console.error("Failed to read couple message image file:", error);
+      console.error("Failed to upload couple message image files:", error);
     }
   };
 
@@ -386,6 +471,22 @@ export default function EditTemplatePage() {
 
   const saveEditorChanges = async () => {
     if (!templateId) return;
+
+    const totalCarouselImages = Array.isArray(
+    editorData.coupleMessageCarouselImages
+  )
+    ? editorData.coupleMessageCarouselImages.length
+    : 0;
+
+  if (totalCarouselImages < 6) {
+    setMessage("Please upload at least 6 couple images.");
+    return;
+  }
+
+  if (totalCarouselImages > 10) {
+    setMessage("Maximum 10 couple images are allowed.");
+    return;
+  }
     setSaving(true);
     setMessage("");
 
@@ -545,14 +646,14 @@ export default function EditTemplatePage() {
                         formatFieldLabel={formatFieldLabel}
                       />
                     )}
-               
+
                     {activeTab === "countdown" && (
                       <CountdownEditor
                         editorData={editorData}
                         updateCoupleMessageField={updateCoupleMessageField}
                       />
                     )}
-                   
+
                     {activeTab === "music" && (
                       <MusicEditor
                         editorData={editorData}
