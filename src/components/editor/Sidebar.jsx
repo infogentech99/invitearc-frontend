@@ -9,7 +9,7 @@ export default function Sidebar({
         {tabs?.map((tab) => {
           const Icon = tab.icon;
 
-          return (
+          return ( 
             <div key={tab.id} className="flex flex-col items-center">
               <button
                 type="button"
@@ -23,7 +23,7 @@ export default function Sidebar({
                 <Icon className="text-[24px]" />
               </button>
 
-              <span className="mt-2 text-[10px] uppercase tracking-[0.28em] text-white font-georgia">
+              <span className="mt-2 text-[10px] uppercase tracking-[0.28em] text-white font-georgia ">
                 {tab.label}
               </span>
             </div>

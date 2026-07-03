@@ -11,19 +11,20 @@ export default function RsvpEditor({
   updateRsvpField,
   formatFieldLabel,
 }) {
-
   const selectedMode = editorData.rsvpMode || "whatsapp";
 
   return (
     <div className="space-y-6">
       <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-        <p className="text-sm font-semibold text-slate-800 font-georgia">RSVP option</p>
+        <p className="text-sm font-semibold text-slate-800 font-georgia">
+          RSVP option
+        </p>
 
         <div className="mt-3 grid grid-cols-2 gap-3">
           <button
             type="button"
             onClick={() => updateField("rsvpMode", "whatsapp")}
-            className={`flex flex-col items-start gap-2 rounded-2xl p-4 transition border cursor-pointer ${
+            className={`flex flex-col items-start gap-2 rounded-2xl px-4 py-3 transition border cursor-pointer ${
               selectedMode === "whatsapp"
                 ? "border-[#861E1D] bg-[#fff5f5]"
                 : "border-slate-200 bg-white hover:bg-slate-50"
@@ -32,15 +33,16 @@ export default function RsvpEditor({
             <div className="flex items-center gap-3">
               <FaWhatsapp />
 
-                <div className="text-sm font-semibold text-slate-900">WhatsApp</div>
-             
+              <div className="text-sm font-semibold text-slate-900">
+                WhatsApp
+              </div>
             </div>
           </button>
 
           <button
             type="button"
             onClick={() => updateField("rsvpMode", "form")}
-            className={`flex flex-col items-start gap-2 rounded-2xl p-4 transition border cursor-pointer ${
+            className={`flex flex-col items-center gap-2 rounded-2xl px-4 py-3 transition border cursor-pointer ${
               selectedMode === "form"
                 ? "border-[#861E1D] bg-[#fff5f5]"
                 : "border-slate-200 bg-white hover:bg-slate-50"
@@ -63,7 +65,9 @@ export default function RsvpEditor({
       </div>
 
       <div>
-        <label className="block text-sm font-semibold text-slate-800 font-georgia">Section heading</label>
+        <label className="block text-sm font-semibold text-slate-800 font-georgia">
+          Section heading
+        </label>
         <input
           value={editorData.rsvpSectionHeading || ""}
           onChange={(e) => updateField("rsvpSectionHeading", e.target.value)}
@@ -85,10 +89,14 @@ export default function RsvpEditor({
 
       {selectedMode === "whatsapp" && (
         <div>
-          <label className="block text-sm font-semibold text-slate-800 font-georgia">{formatFieldLabel("WhatsApp RSVP number")}</label>
+          <label className="block text-sm font-semibold text-slate-800 font-georgia">
+            {formatFieldLabel("WhatsApp RSVP number")}
+          </label>
           <input
             value={editorData.whatsappNumber || ""}
-            onChange={(event) => updateField("whatsappNumber", event.target.value)}
+            onChange={(event) =>
+              updateField("whatsappNumber", event.target.value)
+            }
             placeholder="+911234567890"
             className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 p-3 text-sm text-slate-900"
           />
@@ -97,10 +105,14 @@ export default function RsvpEditor({
 
       {selectedMode === "form" && (
         <div>
-          <label className="block text-sm font-semibold text-slate-800 font-georgia">Google form link</label>
+          <label className="block text-sm font-semibold text-slate-800 font-georgia">
+            Google form link
+          </label>
           <input
             value={editorData.rsvpGoogleFormLink || ""}
-            onChange={(event) => updateField("rsvpGoogleFormLink", event.target.value)}
+            onChange={(event) =>
+              updateField("rsvpGoogleFormLink", event.target.value)
+            }
             placeholder="Paste your Google Form link here"
             className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 p-3 text-sm text-slate-900"
           />
@@ -108,11 +120,13 @@ export default function RsvpEditor({
       )}
 
       <div>
-        <label className="block text-sm font-semibold text-slate-800 font-georgia">Button text</label>
+        <label className="block text-sm font-semibold text-slate-800 font-georgia">
+          Button text
+        </label>
         <input
           value={editorData.rsvpButtonText || ""}
           onChange={(e) => updateField("rsvpButtonText", e.target.value)}
-          placeholder="Yes, I'll be there"
+          placeholder="Fill RSVP Form"
           className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 p-3 text-sm text-slate-900"
         />
       </div>

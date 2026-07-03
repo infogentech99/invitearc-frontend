@@ -82,21 +82,6 @@ export default function TemplateDemoPage() {
               </Link>
             </div>
           </div>
-
-          {/* <div className="mt-8 rounded-3xl border border-slate-200 overflow-hidden bg-slate-50">
-            <div className="relative">
-              <TemplateComponent isDemo={true} />
-              <div className="pointer-events-none absolute inset-0 overflow-hidden">
-                 <p className="absolute top-[1%] left-[5%] text-4xl font-semibold text-[#A40606] rotate-[-25deg] whitespace-nowrap">InviteArc</p>
-                <p className="absolute top-[10%] left-[5%] text-4xl font-semibold text-[#A40606] rotate-[-25deg] whitespace-nowrap">InviteArc</p>
-                <p className="absolute top-[35%] right-[8%] text-4xl font-semibold text-white/15 rotate-[30deg] whitespace-nowrap">InviteArc</p>
-                <p className="absolute top-[60%] left-[12%] text-4xl font-semibold text-white/15 rotate-[-20deg] whitespace-nowrap">InviteArc</p>
-                <p className="absolute bottom-[15%] right-[6%] text-4xl font-semibold text-white/15 rotate-[25deg] whitespace-nowrap">InviteArc</p>
-                <p className="absolute bottom-[35%] left-[8%] text-4xl font-semibold text-white/15 rotate-[-30deg] whitespace-nowrap">InviteArc</p>
-                <p className="absolute top-[50%] left-1/2 text-4xl font-semibold text-white/15 rotate-[-45deg] whitespace-nowrap">InviteArc</p>
-              </div>
-            </div>
-          </div> */}
         </div>
       </section>
     </main>

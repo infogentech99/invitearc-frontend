@@ -170,14 +170,14 @@ export default function EditTemplatePage() {
     groomDetails: <LuUserRound />,
     brideDetails: <LuUserRound />,
     brideGrandParents: <LuUserRound />,
-    whatsappNumber: "📱",
-    title_ceremony: "🎊",
-    date: "📅",
-    venue: "📍",
-    venue_address: "📌",
-    time: "⏰",
-    theme: "✨",
-    link: "🔗",
+    // whatsappNumber: "📱",
+    // title_ceremony: "🎊",
+    // date: "📅",
+    // venue: "📍",
+    // venue_address: "📌",
+    // time: "⏰",
+    // theme: "✨",
+    // link: "🔗",
   };
 
   const getFieldIcon = (name) => fieldIcons[name] || "✎";
@@ -250,21 +250,6 @@ export default function EditTemplatePage() {
       reader.readAsDataURL(file);
     });
 
-  // const handleEventImageUpload = async (index, event) => {
-  //   const file = event.target.files?.[0];
-  //   if (!file) return;
-
-  //   try {
-  //     const imageDataUrl = await readFileAsDataUrl(file);
-  //     setEditorData((prev) => {
-  //       const events = Array.isArray(prev.events) ? [...prev.events] : [];
-  //       events[index] = {
-  //         ...events[index],
-  //         image: imageDataUrl,
-  //         imageFileName: file.name,
-  //       };
-  //       return {
- 
   const handleEventImageUpload = async (index, event) => {
     const file = event.target.files?.[0];
     if (!file) return;
@@ -353,61 +338,28 @@ export default function EditTemplatePage() {
     });
   };
 
-  // const handleMusicUpload = (event) => {
-  //   const file = event.target.files?.[0];
-  //   if (!file) return;
+  const handleMusicUpload = async (event) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
 
-  //   const fileUrl = URL.createObjectURL(file);
-  //   setEditorData((prev) => ({
-  //     ...prev,
-  //     backgroundMusicUrl: fileUrl,
-  //     backgroundMusicFileName: file.name,
-  //   }));
-  // };
+    try {
+      const musicUrl = await uploadFile(
+        file,
+        "invitearc/music",
+        "video", // Cloudinary me audio = video resource type
+      );
 
-  // const handleMusicUpload = async (event) => {
-  //   const file = event.target.files?.[0];
-  //   if (!file) return;
+      setEditorData((prev) => ({
+        ...prev,
+        backgroundMusicUrl: musicUrl,
+        backgroundMusicFileName: file.name,
+      }));
 
-  //   try {
-  //     const musicUrl = await uploadFile(file, "invitearc/music", "music");
-
-  //     setEditorData((prev) => ({
-  //       ...prev,
-  //       backgroundMusicUrl: musicUrl,
-  //       backgroundMusicFileName: file.name,
-  //     }));
-
-  //     event.target.value = "";
-  //   } catch (error) {
-  //     console.error("Failed to upload music:", error);
-  //   }
-  // };
-
-
-const handleMusicUpload = async (event) => {
-  const file = event.target.files?.[0];
-  if (!file) return;
-
-  try {
-    const musicUrl = await uploadFile(
-      file,
-      "invitearc/music",
-      "video" // Cloudinary me audio = video resource type
-    );
-
-    setEditorData((prev) => ({
-      ...prev,
-      backgroundMusicUrl: musicUrl,
-      backgroundMusicFileName: file.name,
-    }));
-
-    event.target.value = "";
-  } catch (error) {
-    console.error(error);
-  }
-};
-
+      event.target.value = "";
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const updateCoupleMessageField = (field, value) => {
     setEditorData((prev) => ({
@@ -473,20 +425,20 @@ const handleMusicUpload = async (event) => {
     if (!templateId) return;
 
     const totalCarouselImages = Array.isArray(
-    editorData.coupleMessageCarouselImages
-  )
-    ? editorData.coupleMessageCarouselImages.length
-    : 0;
+      editorData.coupleMessageCarouselImages,
+    )
+      ? editorData.coupleMessageCarouselImages.length
+      : 0;
 
-  if (totalCarouselImages < 6) {
-    setMessage("Please upload at least 6 couple images.");
-    return;
-  }
+    if (totalCarouselImages < 6) {
+      setMessage("Please upload at least 6 couple images.");
+      return;
+    }
 
-  if (totalCarouselImages > 10) {
-    setMessage("Maximum 10 couple images are allowed.");
-    return;
-  }
+    if (totalCarouselImages > 10) {
+      setMessage("Maximum 10 couple images are allowed.");
+      return;
+    }
     setSaving(true);
     setMessage("");
 

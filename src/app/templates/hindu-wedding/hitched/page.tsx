@@ -42,7 +42,7 @@ const FloatingLamp = ({ className, style, reverse = false }: { className: string
 };
 
 const initialData = {
-  familyName: "The Bhawnani Family",
+  familyName: "The Kapoor Family",
   headline: "INVITES",
   inviteLine: "you to join us in the wedding celebrations of",
   groomName: "Dheeraj",
@@ -698,7 +698,7 @@ export default function Home({
           <div className="lg:h-350 md:h-180 h-86 md:pt-0 pt-30 lg:pr-180 pr-40 md:pr-50  flex flex-col justify-end items-center text-center lg:pb-80 md:pb-40 pb-10">
 
             <h1 className="lg:text-3xl md:text-2xl text-xl text-[#E1EF1E] font-cormorant md:pb-12">
-              MEET THE
+              With Love From Us
             </h1>
 
             <h2 className="lg:text-[130px] text-6xl text-[#00EAFF] md:pt-0 pt-6 font-Cormorant-upright lg:leading-18 leading-8 md:leading-10">
