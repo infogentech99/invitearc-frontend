@@ -788,7 +788,13 @@ export default function EditTemplatePage() {
                   </div>
                 </div>
 
-                
+                {/* <div
+                  className="mx-auto overflow-hidden rounded-4xl bg-white shadow-xl border-[6px] transition-all mt-6"
+                  style={{
+                    width: previewWidth[view],
+                    maxWidth: "100%",
+                  }}
+                > */}
                 <div
                   className="mx-auto overflow-hidden rounded-4xl bg-white shadow-xl border-[6px] transition-all mt-6"
                   style={{
