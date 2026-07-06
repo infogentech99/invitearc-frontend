@@ -40,7 +40,12 @@ export default function EditTemplatePage() {
   const [previewUploading, setPreviewUploading] = useState(false);
   const [sharePrefix, setSharePrefix] = useState("");
   const [baseUrl, setBaseUrl] = useState("");
-  const [view, setView] = useState("desktop");
+  const [view, setView] = useState(() => {
+    if (typeof window === "undefined") return "mobile";
+    if (window.innerWidth < 768) return "mobile";
+    if (window.innerWidth < 1024) return "tablet";
+    return "desktop";
+  });
 
   useEffect(() => {
     if (!loading && !user) {
@@ -570,6 +575,21 @@ export default function EditTemplatePage() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       setBaseUrl(window.location.origin);
+
+      const updateViewForViewport = () => {
+        if (window.innerWidth < 768) {
+          setView("mobile");
+        } else if (window.innerWidth < 1024) {
+          setView("tablet");
+        } else {
+          setView("desktop");
+        }
+      };
+
+      updateViewForViewport();
+      window.addEventListener("resize", updateViewForViewport);
+
+      return () => window.removeEventListener("resize", updateViewForViewport);
     }
   }, []);
 
@@ -581,7 +601,7 @@ export default function EditTemplatePage() {
   return (
     <main className="bg-slate-50 min-h-screen text-slate-900">
       <section className="mx-auto w-full  px-4 py-10 sm:px-8 lg:px-12">
-        <div className="flex min-h-screen flex-col gap-6 rounded-3xl bg-white p-5 shadow-sm lg:p-8">
+        <div className="flex min-h-screen flex-col gap-6 rounded-3xl lg:bg-white  lg:shadow-sm lg:p-8">
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <p className="text-sm font-semibold uppercase tracking-widest text-[#861E1D] font-georgia">
@@ -743,7 +763,7 @@ export default function EditTemplatePage() {
             </aside>
 
             <section className="space-y-4">
-              <div className="rounded-3xl bg-white p-6 shadow-sm flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+              <div className="rounded-3xl bg-white lg:p-6 p-4 shadow-sm flex flex-col gap-4 lg:flex-row items-center lg:justify-between">
                 <div>
                   <p className="text-sm uppercase tracking-[0.14em] text-[#861E1D] font-semibold">
                     Preview mode
@@ -793,17 +813,17 @@ export default function EditTemplatePage() {
               </div>
 
               <div
-                className="mx-auto overflow-hidden rounded-4xl bg-white shadow-xl border-[6px] transition-all mt-6 "
+                className="mx-auto mt-6 w-full overflow-hidden rounded-4xl border-[6px] bg-white shadow-xl transition-all"
                 style={{
                   width: "100%",
                   maxWidth:
                     view === "mobile"
-                      ? "390px"
+                      ? "360px"
                       : view === "tablet"
                         ? "768px"
-                        : window.innerWidth >= 1600
-                          ? "1200px" // Large desktop
-                          : "950px", // Laptop
+                        : typeof window !== "undefined" && window.innerWidth >= 1600
+                          ? "1200px"
+                          : "950px",
                 }}
               >
                 <div className="h-200 overflow-y-auto overflow-x-hidden bg-slate-100">
