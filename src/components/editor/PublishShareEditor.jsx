@@ -17,8 +17,8 @@ export default function PublishShareEditor({
 }) {
   return (
     <div className="space-y-6">
-      <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-        <h2 className="text-lg font-semibold text-slate-900">
+      <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4">
+        <h2 className="text-lg font-semibold text-slate-900 font-georgia">
           Share link settings
         </h2>
         <p className="mt-2 text-sm text-slate-600">
@@ -36,26 +36,26 @@ export default function PublishShareEditor({
             type="button"
             onClick={saveSharePrefix}
             disabled={shareSaving}
-            className="inline-flex items-center justify-center rounded-2xl bg-[#861E1D] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#6f191c] disabled:opacity-50"
+            className="inline-flex items-center justify-center rounded-2xl bg-[#861E1D] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#6f191c] disabled:opacity-50 cursor-pointer"
           >
             {shareSaving ? "Saving..." : "Save link"}
           </button>
         </div>
 
         <div className="mt-4 rounded-3xl border border-slate-200 bg-white p-4">
-          <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+          <p className="text-xs uppercase tracking-[0.2em] text-slate-500 font-georgia">
             Share URL preview
           </p>
           <div className="mt-3 flex flex-col gap-3 text-sm text-slate-700">
             <div>
-              <p className="font-semibold text-slate-900">Full share link</p>
+              <p className="font-semibold text-slate-900 font-georgia">Full share link</p>
               <p className="break-all">{`${baseUrl}/share/${clientTemplate?.shareSlug || ""}`}</p>
             </div>
             <div className="flex gap-2">
               <button
                 type="button"
                 onClick={copyShareLink}
-                className="rounded-2xl border border-slate-200 bg-white px-4 py-2 text-sm text-slate-900 transition hover:bg-slate-100"
+                className="rounded-2xl border border-slate-200 bg-white px-4 py-2 text-sm text-slate-900 transition hover:bg-slate-100 cursor-pointer"
               >
                 Copy link
               </button>
@@ -72,7 +72,7 @@ export default function PublishShareEditor({
         </div>
       </div>
 
-      <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+      <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4">
         <div className="grid gap-6 sm:grid-row-[220px_1fr]">
           <div className="rounded-3xl overflow-hidden bg-white shadow-sm">
             <img
@@ -88,7 +88,7 @@ export default function PublishShareEditor({
 
           <div className="space-y-4">
             <div className="space-y-2">
-              <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+              <p className="text-xs uppercase tracking-widest text-slate-500 font-georgia">
                 Preview image
               </p>
               <label className="flex cursor-pointer items-center justify-between rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 transition hover:bg-slate-50">
@@ -114,7 +114,7 @@ export default function PublishShareEditor({
               )}
             </div>
             <div className="space-y-2">
-              <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+              <p className="text-xs uppercase tracking-widest text-slate-500 font-georgia">
                 Preview title
               </p>
               <input
@@ -132,7 +132,7 @@ export default function PublishShareEditor({
               />
             </div>
             <div className="space-y-2">
-              <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+              <p className="text-xs uppercase tracking-widest text-slate-500 font-georgiar̥r̥">
                 Preview description
               </p>
               <textarea

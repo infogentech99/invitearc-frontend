@@ -445,6 +445,7 @@ export default function EditTemplatePage() {
         ],
       }));
 
+      // Same files dubara select karne ke liye
       event.target.value = "";
     } catch (error) {
       console.error("Failed to upload couple message image files:", error);
@@ -741,88 +742,83 @@ export default function EditTemplatePage() {
               </div>
             </aside>
 
-            <section className="space-y-6">
-              <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-                <div className="rounded-3xl bg-white p-6 shadow-sm flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.14em] text-[#861E1D] font-semibold">
-                      Preview mode
-                    </p>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2">
-                    <button
-                      type="button"
-                      onClick={() => setView("mobile")}
-                      className={`cursor-pointer inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition ${
-                        view === "mobile"
-                          ? "bg-[#861E1D] text-white"
-                          : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                      }`}
-                    >
-                      <HiDevicePhoneMobile className="text-lg" />
-                      <span>Mobile</span>
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setView("tablet")}
-                      className={`cursor-pointer inline-flex gap-2  items-center rounded-full px-4 py-2 text-sm font-semibold transition ${
-                        view === "tablet"
-                          ? "bg-[#861E1D] text-white"
-                          : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                      }`}
-                    >
-                      <MdTabletMac /> <span>Tablet</span>
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setView("desktop")}
-                      className={`inline-flex gap-2 items-center cursor-pointer rounded-full px-4 py-2 text-sm font-semibold transition ${
-                        view === "desktop"
-                          ? "bg-[#861E1D] text-white"
-                          : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                      }`}
-                    >
-                      <IoDesktopOutline /> <span> Desktop</span>
-                    </button>
-                  </div>
+            <section className="space-y-4">
+              <div className="rounded-3xl bg-white p-6 shadow-sm flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                <div>
+                  <p className="text-sm uppercase tracking-[0.14em] text-[#861E1D] font-semibold">
+                    Preview mode
+                  </p>
                 </div>
 
-                {/* <div
-                  className="mx-auto overflow-hidden rounded-4xl bg-white shadow-xl border-[6px] transition-all mt-6"
-                  style={{
-                    width: previewWidth[view],
-                    maxWidth: "100%",
-                  }}
-                > */}
-                <div
-                  className="mx-auto overflow-hidden rounded-4xl bg-white shadow-xl border-[6px] transition-all mt-6"
-                  style={{
-                    width: "100%",
-                    maxWidth:
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setView("mobile")}
+                    className={`cursor-pointer inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition ${
                       view === "mobile"
-                        ? "390px"
-                        : view === "tablet"
-                          ? "768px"
-                          : window.innerWidth >= 1600
-                            ? "1100px" // Large desktop
-                            : "900px", // Laptop
-                  }}
-                >
-                  <div className="h-200 overflow-y-auto overflow-x-hidden bg-slate-100">
-                    {TemplateComponent ? (
-                      <TemplateComponent
-                        data={editorData}
-                        token={token}
-                        templateId={templateId}
-                        isOwner={true}
-                      />
-                    ) : (
-                      <div className="p-10 text-center text-slate-600">
-                        Template preview not available.
-                      </div>
-                    )}
-                  </div>
+                        ? "bg-[#861E1D] text-white"
+                        : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                    }`}
+                  >
+                    <HiDevicePhoneMobile className="text-lg" />
+                    <span>Mobile</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setView("tablet")}
+                    className={`hidden md:inline-flex cursor-pointer items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition ${
+                      view === "tablet"
+                        ? "bg-[#861E1D] text-white"
+                        : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                    }`}
+                  >
+                    <MdTabletMac />
+                    <span>Tablet</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setView("desktop")}
+                    className={`hidden lg:inline-flex cursor-pointer items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition ${
+                      view === "desktop"
+                        ? "bg-[#861E1D] text-white"
+                        : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                    }`}
+                  >
+                    <IoDesktopOutline />
+                    <span>Desktop</span>
+                  </button>
+                </div>
+              </div>
+
+              <div
+                className="mx-auto overflow-hidden rounded-4xl bg-white shadow-xl border-[6px] transition-all mt-6 "
+                style={{
+                  width: "100%",
+                  maxWidth:
+                    view === "mobile"
+                      ? "390px"
+                      : view === "tablet"
+                        ? "768px"
+                        : window.innerWidth >= 1600
+                          ? "1200px" // Large desktop
+                          : "950px", // Laptop
+                }}
+              >
+                <div className="h-200 overflow-y-auto overflow-x-hidden bg-slate-100">
+                  {TemplateComponent ? (
+                    <TemplateComponent
+                      data={editorData}
+                      token={token}
+                      templateId={templateId}
+                      isOwner={true}
+                    />
+                  ) : (
+                    <div className="p-10 text-center text-slate-600">
+                      Template preview not available.
+                    </div>
+                  )}
                 </div>
               </div>
             </section>
