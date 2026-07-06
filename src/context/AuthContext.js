@@ -37,6 +37,8 @@ export const AuthProvider = ({ children }) => {
       // Try to refresh the token using the refresh cookie stored in the browser
       const refreshRes = await axios.post(
         `${config.api.baseUrl}${config.api.endpoints.auth.refresh}`,
+        {},
+        { withCredentials: true },
       );
 
       if (refreshRes.data.success) {
