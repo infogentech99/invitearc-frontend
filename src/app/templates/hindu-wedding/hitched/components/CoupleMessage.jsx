@@ -7,7 +7,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { assets } from "../assets";
 export default function CoupleMessage({ data }) {
-  const [coupleBg, setCoupleBg] = useState(assets.couple_bgt);
+  const [coupleBg, setCoupleBg] = useState(assets.couple_bg);
   const extractImageSrc = (image) => {
     if (!image) return "";
     if (typeof image === "string") return image;
@@ -18,46 +18,43 @@ export default function CoupleMessage({ data }) {
     data.coupleMessageCarouselImages.length > 0
       ? data.coupleMessageCarouselImages
       : [
-          assets.couple1,
-          assets.couple2,
-          assets.couple3,
-          assets.couple4,
-          assets.couple5,
-          assets.couple6,
-          assets.couple7,
+          assets.image1,
+          assets.image2,
+          assets.image3,
+          assets.image4,
+          assets.image5,
+          // assets.image6,
         ];
 
-  const coupleTitle = data?.coupleMessageTitle || "A message from the couple";
-  const coupleDescription =
-    data?.coupleMessageDescription ||
-    "From different traditions to one beautiful journey, join us as we celebrate love, laughter, and forever. This moment wouldn’t be the same without the people we love most. Thank you for your love, blessings, and for making our journey even more special, we’re so excited to celebrate together!";
+  const coupleTitle = data?.coupleMessageTitle || "Introducing";
+  const coupleDescription = data?.coupleMessageDescription || "The Couple";
   const thingsToKnowTitle =
-    data?.coupleMessageThingsToKnowTitle || "Things to know";
+    data?.coupleMessageThingsToKnowTitle || "A Guide for Guests";
   const thingsToKnowDescription =
     data?.coupleMessageThingsToKnowDescription ||
     "To help you feel at ease and enjoy every moment of the celebrations, we’ve gathered a few thoughtful details we’d love for you to know before the big day.";
-  const rsvpText =
-    data?.coupleMessageRsvpText || "Click on the Whatsapp icon to RSVP";
-  const rsvpMode = data?.rsvpMode || data?.customData?.rsvpMode || "whatsapp";
-  const whatsappNumber =
-    data?.whatsappNumber || data?.customData?.whatsappNumber || "919876543210";
-  const rsvpFields = Array.isArray(data?.rsvpFields)
-    ? data.rsvpFields
-    : Array.isArray(data?.customData?.rsvpFields)
-      ? data.customData.rsvpFields
-      : [];
-  const whatsappHref = `https://wa.me/${String(whatsappNumber).replace(/\D/g, "")}`;
+  // const rsvpText =
+  //   data?.coupleMessageRsvpText || "Click on the Whatsapp icon to RSVP";
+  // const rsvpMode = data?.rsvpMode || data?.customData?.rsvpMode || "whatsapp";
+  // const whatsappNumber =
+  //   data?.whatsappNumber || data?.customData?.whatsappNumber || "919876543210";
+  // const rsvpFields = Array.isArray(data?.rsvpFields)
+  //   ? data.rsvpFields
+  //   : Array.isArray(data?.customData?.rsvpFields)
+  //     ? data.customData.rsvpFields
+  //     : [];
+  // const whatsappHref = `https://wa.me/${String(whatsappNumber).replace(/\D/g, "")}`;
   const locationTitle = data?.coupleMessageLocationTitle || "Location";
-  const rsvpSectionHeading =
-    data?.rsvpSectionHeading ||
-    data?.customData?.rsvpSectionHeading ||
-    "Looking Forward to Seeing You";
-  const rsvpButtonText =
-    data?.rsvpButtonText ||
-    data?.customData?.rsvpButtonText ||
-    (rsvpMode === "form" ? "Fill RSVP Form" : "Click the Link to RSVP");
-  const rsvpGoogleFormLink =
-    data?.rsvpGoogleFormLink || data?.customData?.rsvpGoogleFormLink || "";
+  // const rsvpSectionHeading =
+  //   data?.rsvpSectionHeading ||
+  //   data?.customData?.rsvpSectionHeading ||
+  //   "Awaiting the Pleasure of Your Company";
+  // const rsvpButtonText =
+  //   data?.rsvpButtonText ||
+  //   data?.customData?.rsvpButtonText ||
+  //   (rsvpMode === "form" ? "Fill RSVP Form" : "Share your RSVP");
+  // const rsvpGoogleFormLink =
+  //   data?.rsvpGoogleFormLink || data?.customData?.rsvpGoogleFormLink || "";
   const locationDetails =
     data?.coupleMessageLocationDetails ||
     "The Central Park Hotel\nBund Garden Road,\nAgarkar Nagar, Pune,\nMaharashtra, 411001";
@@ -77,13 +74,13 @@ export default function CoupleMessage({ data }) {
     const updateBg = () => {
       if (window.innerWidth >= 1536) {
         // Desktop Large
-        setCoupleBg(assets.couple_bgt);
+        setCoupleBg(assets.couple_bg);
       } else if (window.innerWidth >= 768) {
         // Tablet/Desktop
-        setCoupleBg(assets.couple_bgt);
+        setCoupleBg(assets.couple_bg);
       } else {
         // Mobile
-        setCoupleBg(assets.couplemobile_bg);
+        setCoupleBg(assets.couple_bg);
       }
     };
 
@@ -96,16 +93,16 @@ export default function CoupleMessage({ data }) {
   return (
     <>
       <div
-        className="md:bg-[url('/assets/couple_bgt.png')] bg-[url('/assets/couple_mobilebgn.webp')] bg-cover bg-no-repeat"
+        className="bg-cover bg-no-repeat"
         style={{
-          backgroundImage: `url(${coupleBg})`,
+          backgroundImage: `url(${assets.couple_bg})`,
         }}
       >
-        <div className="lg:h-850 md:h-550 h-610 pt-2 flex flex-col  items-center">
-          <h1 className="lg:text-[40px] md:text-3xl text-[32px] text-center text-[#FFF5B9] lg:pt-36 pt-12 font-Cormorant-upright px-6 leading-12">
+        <div className="lg:h-520 md:h-400 h-530 pt-2 flex flex-col  items-center">
+          <h1 className="lg:text-[60px] md:text-3xl text-[32px] text-center text-[#FFF5B9] lg:pt-36 pt-12 font-garamond px-6 leading-12">
             {coupleTitle}
           </h1>
-          <h2 className="lg:text-[30px] text-[18px]  text-center text-[#FFF5B9] lg:px-60 px-6 lg:mt-28 mt-12 font-Cormorant-upright lg:leading-8 md:leading-8 leading-6">
+          <h2 className="lg:text-[100px] text-[60px]  text-center text-[#FFF5B9] lg:px-60 font-parisienne px-6 lg:mt-28 mt-12 font-Cormorant-upright lg:leading-8 md:leading-8 leading-6">
             {coupleDescription}
           </h2>
           <div className="w-full md:w-3/4 md:mt-32 mt-12">
@@ -156,21 +153,19 @@ export default function CoupleMessage({ data }) {
             </Swiper>
           </div>
 
-          <h1 className=" lg:text-[100px] text-[60px] md:text-3xl text-center text-[#FFF5B9] lg:pt-32 pt-12 font-Cormorant-upright">
+          <h1 className=" lg:text-[100px] text-[60px] md:text-7xl text-center text-[#FFF5B9] lg:pt-32 pt-12 font-parisienne ">
             {thingsToKnowTitle}
           </h1>
-          <h2 className="lg:text-[30px] text-[18px] text-center text-[#FFF5B9] lg:pt-6 lg:px-60 px-6 lg:mt-4 mt-2 font-cormorant">
-            {thingsToKnowDescription}
-          </h2>
-          <div className="flex justify-center mt-10 md:pb-24 pb-16">
-            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 lg:gap-24 gap-10 sm:gap-16">
+
+          <div className="flex justify-center mt-10 md:pb-12 pb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 lg:gap-4 gap-10 sm:gap-16">
               <div className="flex flex-col items-center justify-center text-center md:mt-15">
                 <img
                   src={assets.location}
                   alt="car"
                   className="lg:h-20 lg:w-24 h-26 w-32 "
                 />
-                <h2 className="lg:text-[32px] text-[50px] text-[#FFF5B9] mt-2 font-Cormorant-upright">
+                <h2 className="lg:text-[32px] text-[50px] text-[#FFF5B9] mt-2 font-garamond">
                   {locationTitle}
                 </h2>
                 <span className="md:text-[20px] text-[16px] md:leading-5 text-[#FFF5B9] mt-1 font-cormorant">
@@ -192,7 +187,7 @@ export default function CoupleMessage({ data }) {
                   className="text-[#FFF5B9] underline md:text-sm md:text-[16px] text-[14px] mt-2 font-cormorant"
                   target="_blank"
                 >
-                  See the route
+                  View Directions
                 </a>
               </div>
 
@@ -202,7 +197,7 @@ export default function CoupleMessage({ data }) {
                   alt="weather"
                   className="lg:h-20 lg:w-24 h-26 w-32 "
                 />
-                <h2 className="lg:text-[32px] text-[50px] text-[#FFF5B9] mt-2 font-Cormorant-upright">
+                <h2 className="lg:text-[32px] text-[50px] text-[#FFF5B9] mt-2 font-garamond">
                   {weatherTitle}
                 </h2>
                 <p className="md:text-[18px] text-[14px] text-[#FFF5B9] mt-1 font-cormorant md:leading-5">
@@ -216,7 +211,7 @@ export default function CoupleMessage({ data }) {
                   alt="car"
                   className="lg:h-20 lg:w-24 h-26 w-32 "
                 />
-                <h2 className="lg:text-[32px] text-[50px] text-[#FFF5B9] mt-2 font-Cormorant-upright">
+                <h2 className="lg:text-[32px] text-[50px] text-[#FFF5B9] mt-2 font-garamond">
                   {parkingTitle}
                 </h2>
                 <p className="md:text-[18px] text-[14px] md:leading-5 text-[#FFF5B9] mt-1 font-cormorant">
@@ -225,11 +220,13 @@ export default function CoupleMessage({ data }) {
               </div>
             </div>
           </div>
-
-          <div className="flex flex-col justify-center items-center 3xl:mt-0 lg:mt-20 lg:ml-140 ml-34 md:ml-50">
+          <h2 className="lg:text-[30px] text-[18px] text-center text-[#FFF5B9] lg:px-60 px-6  mb-12 font-cormorant">
+            {thingsToKnowDescription}
+          </h2>
+          {/* <div className="flex flex-col justify-center items-center 3xl:mt-0 lg:ml-140 ml-34 md:ml-50 lg:mt-40 md:mt-0 mt-40">
             {rsvpMode === "form" ? (
               <div className="w-full max-w-xl rounded-3xl px-1 py-4 md:mt-4 flex flex-col items-center text-center">
-                <h3 className="lg:text-5xl text-[22px] md:text-[30px] text-[#FFF5B9] lg:pt-63 pt-1 font-Cormorant-upright md:leading-12 leading-6">
+                <h3 className="lg:text-6xl text-[32px] md:text-[30px] text-[#FFF5B9] lg:pt-63 pt-1 font-Cormorant-upright md:leading-12 leading-8">
                   {rsvpSectionHeading}
                 </h3>
                 <a
@@ -249,7 +246,7 @@ export default function CoupleMessage({ data }) {
             ) : (
               <div className="flex justify-center items-center mt-4">
                 <div className="flex flex-col items-center text-center">
-                  <h3 className="lg:text-5xl text-[22px] md:text-[30px] text-[#FFF5B9] lg:pt-63 pt-1 font-Cormorant-upright md:leading-12 leading-6">
+                  <h3 className="lg:text-6xl text-[32px] md:text-[40px] text-[#FFF5B9] lg:pt-63 pt-1 font-Cormorant-upright md:leading-12 leading-8">
                     {rsvpSectionHeading}
                   </h3>
 
@@ -262,17 +259,17 @@ export default function CoupleMessage({ data }) {
                     <img
                       src={assets.whatsapp}
                       alt="WhatsApp"
-                      className="lg:h-10 lg:w-10 h-4 w-4"
+                      className="lg:h-10 lg:w-10 h-6 w-6"
                     />
 
-                    <button className="rounded-full px-4 py-2 text-[30px] font-semibold text-[#FFF5B9] cursor-pointer font-Cormorant-upright">
+                    <button className="rounded-full md:px-4 py-2 px-1 text-[20px] md:text-[30px] font-semibold text-[#FFF5B9] cursor-pointer font-Cormorant-upright">
                       {rsvpButtonText}
                     </button>
                   </a>
                 </div>
               </div>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
     </>

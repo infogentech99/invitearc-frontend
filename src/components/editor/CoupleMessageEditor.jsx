@@ -95,7 +95,7 @@ export default function CoupleMessageEditor({
 
       <div className="space-y-2">
         <label className="block text-sm font-semibold text-slate-800 font-georgia">
-          Things to know title
+          Guests title
         </label>
         <input
           value={editorData.coupleMessageThingsToKnowTitle || ""}
@@ -111,7 +111,7 @@ export default function CoupleMessageEditor({
 
       <div className="space-y-2">
         <label className="block text-sm font-semibold text-slate-800 font-georgia">
-          Things to know description
+          Guest description
         </label>
         <textarea
           rows={5}
@@ -139,7 +139,7 @@ export default function CoupleMessageEditor({
                 event.target.value,
               )
             }
-            className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200"
+            className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200 "
           />
         </div>
         <div className="space-y-2">

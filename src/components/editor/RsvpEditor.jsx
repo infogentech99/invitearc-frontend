@@ -71,7 +71,7 @@ export default function RsvpEditor({
         <input
           value={editorData.rsvpSectionHeading || ""}
           onChange={(e) => updateField("rsvpSectionHeading", e.target.value)}
-          placeholder="Looking Forward to Seeing You"
+          placeholder="Awaiting the Pleasure of Your Company"
           className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 p-3 text-sm text-slate-900"
         />
       </div>
