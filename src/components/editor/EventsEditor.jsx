@@ -1,4 +1,5 @@
 "use client";
+
 export default function EventsEditor({
   editorData,
   eventItems,
@@ -188,13 +189,13 @@ export default function EventsEditor({
                     </p>
                   </div>
                   <div className="flex flex-col items-end gap-2 text-right">
-                    <button
+                    {/* <button
                       type="button"
                       onClick={() => handleEditFromThumbnail(index)}
                       className="inline-flex h-8 items-center justify-center rounded-full border border-slate-300 bg-white px-3 text-xs font-semibold text-slate-700 hover:bg-slate-100"
                     >
                       Edit
-                    </button>
+                    </button> */}
                     <button
                       type="button"
                       onClick={() => removeEventItem(index)}
@@ -203,6 +204,7 @@ export default function EventsEditor({
                     >
                       ✕
                     </button>
+
                     <label className="inline-flex cursor-pointer items-center rounded-full border border-slate-300 bg-white px-3 py-2 text-xs font-semibold text-slate-700 transition hover:bg-slate-100">
                       Upload image
                       <input

@@ -15,6 +15,8 @@ export default function PublishShareEditor({
   publishTemplate,
   publishing,
 }) {
+  const shareUrl = `${baseUrl}/share/${clientTemplate?.shareSlug || ""}`;
+
   return (
     <div className="space-y-6">
       <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4">
@@ -49,7 +51,7 @@ export default function PublishShareEditor({
           <div className="mt-3 flex flex-col gap-3 text-sm text-slate-700">
             <div>
               <p className="font-semibold text-slate-900 font-georgia">Full share link</p>
-              <p className="break-all">{`${baseUrl}/share/${clientTemplate?.shareSlug || ""}`}</p>
+              <p className="break-all">{shareUrl}</p>
             </div>
             <div className="flex gap-2">
               <button
@@ -60,7 +62,7 @@ export default function PublishShareEditor({
                 Copy link
               </button>
               <a
-                href={`${baseUrl}/share/${clientTemplate?.shareSlug || ""}`}
+                href={shareUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-2xl bg-[#861E1D] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#6f191c]"
@@ -74,7 +76,7 @@ export default function PublishShareEditor({
 
       <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4">
         <div className="grid gap-6 sm:grid-row-[220px_1fr]">
-          <div className="rounded-3xl overflow-hidden bg-white shadow-sm">
+          {/* <div className="rounded-3xl overflow-hidden bg-white shadow-sm">
             <img
               src={
                 editorData?.sharePreviewImage ||
@@ -84,10 +86,41 @@ export default function PublishShareEditor({
               alt="Preview image"
               className="h-full w-full object-cover"
             />
-          </div>
+          </div> */}
 
           <div className="space-y-4">
             <div className="space-y-2">
+              
+
+<div className="max-w-md overflow-hidden rounded-2xl border border-slate-200 bg-white shadow mb-6">
+  <img
+    src={
+      editorData?.sharePreviewImage ||
+      clientTemplate?.templateId?.previewImage ||
+      "/og.jpg"
+    }
+    className="aspect-[1.91/1] w-full object-cover"
+  />
+
+  <div className="p-4">
+    
+
+    <h3 className=" line-clamp-2 text-base font-bold">
+      {editorData?.sharePreviewTitle ||
+        clientTemplate?.templateId?.title}
+    </h3>
+
+    <p className="mt-2 line-clamp-2 text-sm text-slate-600">
+      {editorData?.sharePreviewDescription}
+    </p>
+
+    <p className="mt-1 text-xs  text-slate-400">
+     {shareUrl}
+    </p>
+  </div>
+</div>
+
+
               <p className="text-xs uppercase tracking-widest text-slate-500 font-georgia">
                 Preview image
               </p>
@@ -167,6 +200,12 @@ export default function PublishShareEditor({
               )}
             </div>
           </div>
+
+
+
+
+
+
         </div>
       </div>
     </div>

@@ -129,7 +129,7 @@ const rsvpText =
                 >
                   <button
                     type="button"
-                    className="rounded-xl bg-[#FFF5B9] px-8 py-1 text-[20px] font-bold text-[#861E1D] font-Cormorant-upright cursor-pointer"
+                    className="rounded-xl bg-[#FFF5B9] md:px-8 py-1 px-4 text-[16px] md:text-[20px] font-bold text-[#861E1D] font-Cormorant-upright cursor-pointer"
                   >
                     {rsvpButtonText}
                   </button>

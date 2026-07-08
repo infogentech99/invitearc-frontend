@@ -1,5 +1,4 @@
 "use client";
-
 import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -94,11 +93,7 @@ export default function DashboardPage() {
               >
                   <div className="overflow-hidden rounded-3xl bg-slate-100">
                   <img
-                    src={
-                      clientTemplate?.customData?.sharePreviewImage ||
-                      clientTemplate.templateId?.previewImage ||
-                      "/placeholder-template.jpg"
-                    }
+                     src="https://res.cloudinary.com/drl4fmhrq/image/upload/v1783502647/2_1_1_cgn4kz.png"
                     alt={
                       clientTemplate.templateId?.title ||
                       "Purchased template preview"

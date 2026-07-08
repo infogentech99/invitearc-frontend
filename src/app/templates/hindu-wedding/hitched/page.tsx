@@ -45,7 +45,7 @@ const initialData = {
   familyName: "The Kapoor Family",
   headline: "INVITES",
   inviteLine: "you to join us in the wedding celebrations of",
-  groomName: "Dheeraj",
+  groomName: "Dhiraj",
   groomDetails: "(Grandson of Mrs. Kanta & Mr. Kamal Bhawnani)\n(Son of Mrs. Kanchan & Mr. Sanjay Bhawnani)",
   brideName: "Ritika",
   brideDetails: "(Daughter of Mrs. Sarita & Mr. Pradeep Jain)",
@@ -99,38 +99,6 @@ const initialData = {
       theme: "Timeless Royalty: Elegant Ethnic & Royal Silhouettes",
       link: "https://maps.app.goo.gl/fKxi3eDGsTSd5Aaz6?g_st=ic",
     },
-
-
-    //   {
-    //   title_ceremony: "Haldi + Mehendi",
-    //   image: assets.mehandi,
-    //   date: "Saturday, 20th June 2026",
-    //   venue: "THE ASHOK HOTEL",
-    //   venue_address: "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
-    //   time: "4pm Onwards",
-    //   theme: "Pretty in Pink: Florals, Pastels & Pink Hues",
-    //   link: "https://maps.app.goo.gl/TVyrP9mLFCpr4VXA9",
-    // },
-    // {
-    //   title_ceremony: "Engagement + Sangeet",
-    //   image: assets.cocktail,
-    //   date: "Saturday, 20th June 2026",
-    //   venue: "The Central Park Hotel",
-    //   venue_address: "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
-    //   time: "8pm Onwards",
-    //   theme: "Glitz & Glam: Shimmer, sequins & Statement Fits",
-    //   link: "https://maps.app.goo.gl/fKxi3eDGsTSd5Aaz6?g_st=ic",
-    // },
-    // {
-    //   title_ceremony: "Wedding + Reception",
-    //   image: assets.engagement,
-    //   date: "Sunday, 21st June 2026",
-    //   venue: "The Central Park Hotel",
-    //   venue_address: "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
-    //   time: "5pm Onwards",
-    //   theme: "Timeless Royalty: Elegant Ethnic & Royal Silhouettes",
-    //   link: "https://maps.app.goo.gl/fKxi3eDGsTSd5Aaz6?g_st=ic",
-    // },
 
   ],
 };
@@ -292,16 +260,9 @@ export default function Home({
 
       <audio key={backgroundMusicUrl} ref={audioRef} src={backgroundMusicUrl} loop preload="auto" playsInline />
       <div
-        className="bg-cover
-    bg-top
-    bg-no-repeat
-    min-h-screen
-    w-full
-    relative
-    overflow-hidden"
+        className="bg-cover bg-top bg-no-repeat min-h-screen w-full relative overflow-hidden"
         style={{
           backgroundImage: `url(${bgImage})`,
-
         }}
       >
         {isOwner && (
@@ -477,7 +438,6 @@ export default function Home({
                   />
                 </label>
 
-
                 <div className="mt-6 flex justify-end gap-3 border-t pt-4">
                   <button
                     onClick={resetEdits}
@@ -498,7 +458,6 @@ export default function Home({
           </div>
         )}
 
-
         <FloatingLamp className="hidden lg:block absolute top-10 left-8 w-18 h-18 transform rotate-12 opacity-90" />
         <FloatingLamp className="hidden lg:block absolute top-30 left-20 w-16 h-16 transform rotate-45 opacity-80" />
         <FloatingLamp className="hidden lg:block absolute top-50 left-40 w-20 h-20 transform rotate-30 opacity-85" />
@@ -510,8 +469,6 @@ export default function Home({
         <FloatingLamp className="hidden lg:block absolute top-170 left-160 w-20 h-20 transform rotate-18 opacity-80" />
         <FloatingLamp className="hidden lg:block absolute top-190 left-180 w-18 h-18 transform rotate-28 opacity-85" />
 
-
-
         <FloatingLamp className="lg:hidden absolute top-10 left-8 w-12 h-12 transform rotate-12 opacity-90" />
         <FloatingLamp className="lg:hidden absolute top-30 left-20 w-12 h-12 transform rotate-45 opacity-80" />
         <FloatingLamp className="lg:hidden absolute top-50 left-40 w-10 h-10 transform rotate-30 opacity-85" />
@@ -522,8 +479,6 @@ export default function Home({
         <FloatingLamp className="lg:hidden absolute top-150 left-140 w-12 h-12 transform rotate-22 opacity-85" />
         <FloatingLamp className="lg:hidden absolute top-170 left-160 w-12 h-12 transform rotate-18 opacity-80" />
         <FloatingLamp className="lg:hidden absolute top-190 left-180 w-12 h-12 transform rotate-28 opacity-85" />
-
-
 
         <FloatingLamp className="hidden lg:block absolute top-50 left-40 w-20 h-20 transform rotate-30 opacity-85" />
         <FloatingLamp className="hidden lg:block absolute top-60 left-40 w-20 h-20 transform rotate-15 opacity-80" />
@@ -592,7 +547,7 @@ export default function Home({
           </h2>
 
           <div className="flex flex-col items-center text-center gap-6 mt-0  lg:pt-250 pt-150 md:pt-0">
-             <h2 className="text-white md:text-2xl text-[17px] text-center">
+            <h2 className="text-white md:text-2xl text-[17px] text-center">
               || श्री गणेशाय नमः ||
             </h2>
             <img
@@ -600,21 +555,11 @@ export default function Home({
               alt="ganesh"
               className="md:w-40 w-28 h-auto"
             />
-           
-            {/* <h2 className="text-white md:text-2xl text-[17px] text-center">
-              वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।
-              <br />
-              निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥
-            </h2> */}
-
 
             <h2 className="text-white lg:text-[30px] md:text-2xl text-[20px] font-Cormorant-upright">
               With the heavenly blessings of
               <br /> Late Smt. Kamla Kapoor
             </h2>
-
-
-
             <h2 className="text-white font-Cormorant-upright lg:text-[34px] md:text-2xl text-[26px]">
               {data.familyName}
             </h2>
@@ -630,20 +575,14 @@ export default function Home({
               {data.inviteLine}
             </p>
 
-
-
             <h2 className="text-white font-Cormorant-upright text-center mt-14
             md:text-5xl text-[64px] lg:text-[100px] leading-tight font-bold">
               {data.groomName}
             </h2>
 
-
             <p className="text-white font-Cormorant-upright lg:text-[30px] md:text-2xl mt-2 text-[16px] whitespace-pre-line">
               {data.groomDetails}
             </p>
-
-
-
 
             <h2 className="text-white font-Cormorant-upright text-center mt-4
             text-[64px] sm:text-7xl lg:text-[100px] leading-tight font-bold">
@@ -666,13 +605,13 @@ export default function Home({
           </div>
 
           <div className="flex justify-center mt-20 flex-wrap lg:px-0 md:px-10 px-12">
-            {/* <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 lg:gap-32 gap-16 border"> */}
+
             <div
-              className={`grid gap-16 lg:gap-32 ${data?.events?.length === 1
-                  ? "grid-cols-1 justify-items-center"
-                  : data?.events?.length === 2
-                    ? "grid-cols-2 justify-items-center"
-                    : "grid-cols-1 sm:grid-cols-3"
+              className={`grid gap-16 lg:gap-26 lg:px-18 3xl:px-0 ${data?.events?.length === 1
+                ? "grid-cols-1 justify-items-center"
+                : data?.events?.length === 2
+                  ? "grid-cols-2 justify-items-center"
+                  : "grid-cols-1 sm:grid-cols-3"
                 }`}
             >
               {(data?.events || []).map((event, i) => (
@@ -689,7 +628,6 @@ export default function Home({
                   <h2 className="text-white font-Cormorant-upright lg:text-[45px] md:text-2xl text-[37px] mt-4 font-bold">
                     {event.title_ceremony}
                   </h2>
-
 
 
                   <p className="text-white font-Cormorant-upright text-[14px] sm:text-base mt-2">
@@ -721,57 +659,49 @@ export default function Home({
               ))}
 
             </div>
-
           </div>
 
           <div className="flex justify-center md:mt-20 mt-10"><p className="text-white font-Cormorant-upright text-[14px] sm:text-base mt-2">
             <span className="text-[22px] md:text-[24px]">Note: Themes optional, vibes unmatched</span></p>
           </div>
 
-        
+          <div className="relative w-full mt-30 ">
+            <img
+              src={assets.back_bottom}
+              alt="ganesh"
+              className="w-full"
+            />
 
+            {/* Left Side Text */}
+            <div className="absolute inset-0 flex items-center text-left lg:ml-0 3xl:ml-50 ml-4 ">
+              <div className="lg:pl-24 md:pl-14 pl-0">
+                <h1 className="lg:text-7xl md:text-5xl text-[26px] text-[#E1EF1E] font-parisienne lg:pb-10 md:pb-8 pb-4">
+                  With Love From Us
+                </h1>
 
-
-
-<div className="relative w-full mt-30 ">
-  <img
-    src={assets.back_bottom}
-    alt="ganesh"
-    className="w-full"
-  />
-
-  {/* Left Side Text */}
-  <div className="absolute inset-0 flex items-center text-left lg:ml-0 3xl:ml-50 ml-4 ">
-    <div className="lg:pl-24 md:pl-14 pl-0">
-      <h1 className="lg:text-7xl md:text-5xl text-[26px] text-[#E1EF1E] font-parisienne lg:pb-10 md:pb-8 pb-4">
-        With Love From Us
-      </h1>
-
-      <h2 className="3xl:text-[40px] lg:text-[36px] md:text-2xl text-[14px] text-[#00EAFF] font-Cormorant-upright lg:leading-[50px] md:leading-[40px] leading-[20px] md:pr-90 pr-52 3xl:pr-220 lg:pr-150 text-center mb-20">
-       Thank you for being part of our journey. Your presence makes this celebration truly meaningful, and we look forward to sharing these cherished moments with you.
-      </h2>
-    </div>
-  </div>
-</div>
-
-
-
-
-
+                <h2 className="3xl:text-[40px] lg:text-[36px] md:text-2xl text-[14px] text-[#00EAFF] font-Cormorant-upright lg:leading-12.5 md:leading-10 leading-5 md:pr-90 pr-40 3xl:pr-220 lg:pr-150 text-center mb-20">
+                  Thank you for being part of our journey. Your presence makes this celebration truly meaningful, and we look forward to sharing these cherished moments with you.
+                </h2>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      {/* style={{
-    backgroundImage: `url(${assets.Rohit_mobilebgn})` */}
 
-      
+      <CoupleMessage data={data} />
 
- <CoupleMessage data={data} />
-
- <div className="hidden md:block bg-[url('/assets/moon.webp')] bg-cover bg-no-repeat" style={{ backgroundImage: `url(${assets.moon})` }}>
+      {/* <div className="hidden md:block bg-[url('/assets/moon.webp')] bg-cover bg-no-repeat" style={{ backgroundImage: `url(${assets.moon})` }}>
         <div className="lg:h-335 md:h-180 flex 3xl:pt-110 lg:pt-90 md:pt-50 3xl:h-410 justify-center">
 
         </div>
-      </div>
+      </div> */}
+
+      <div
+  className="hidden md:block bg-cover bg-center bg-no-repeat"
+  style={{ backgroundImage: `url(${assets.moon})` }}
+>
+  <div className="flex justify-center md:h-175 lg:h-237.5 xl:h-275 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96"/>
+</div>
 
       <div className="md:hidden relative flex items-start justify-center">
 
@@ -780,19 +710,11 @@ export default function Home({
           alt="background"
           className="w-full h-full object-contain"
         />
-
         <div className="absolute top-[25svh] left-0 right-0 flex justify-center">
-
         </div>
-
       </div>
 
-     
-
       <MarriageCountdown data={data} />
-
-
-
 
     </div>
   );

@@ -157,7 +157,7 @@ export default function CoupleMessage({ data }) {
             {thingsToKnowTitle}
           </h1>
 
-          <div className="flex justify-center mt-10 md:pb-12 pb-16">
+          <div className="flex justify-center mt-10 md:pb-12 pb-16 lg:px-50">
             <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 lg:gap-4 gap-10 sm:gap-16">
               <div className="flex flex-col items-center justify-center text-center md:mt-15">
                 <img

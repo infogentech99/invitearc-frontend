@@ -49,15 +49,11 @@ export default function RsvpEditor({
             }`}
           >
             <div className="flex items-center gap-3">
-              {/* <svg className="h-6 w-6 text-[#861E1D]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M12 20h9" />
-                <path strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M16 4H8a2 2 0 0 0-2 2v12" />
-              </svg> */}
               <SiGoogleforms />
 
               <div>
                 <div className="text-sm font-semibold text-slate-900">Form</div>
-                {/* <div className="text-xs text-slate-500">Redirect guests to a Google Form to RSVP</div> */}
+               
               </div>
             </div>
           </button>

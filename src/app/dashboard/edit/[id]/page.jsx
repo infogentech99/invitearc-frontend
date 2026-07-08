@@ -366,11 +366,7 @@ export default function EditTemplatePage() {
     if (!file) return;
 
     try {
-      const musicUrl = await uploadFile(
-        file,
-        "invitearc/music",
-        "video", 
-      );
+      const musicUrl = await uploadFile(file, "invitearc/music", "video");
 
       setEditorData((prev) => ({
         ...prev,
