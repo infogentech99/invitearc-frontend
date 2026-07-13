@@ -47,6 +47,7 @@ export const hitchedEditorFields = {
   ],
 detailFields: [
     { name: "familyName", label: "Family name", type: "text" },
+    { name: "blessingMessage", label: "Blessing message", type: "text" },
     { name: "headline", label: "Headline", type: "text" },
     { name: "inviteLine", label: "Invitation line", type: "text" },
     { name: "eventIntro", label: "Event intro", type: "text" },
@@ -65,6 +66,30 @@ detailFields: [
     { name: "venue_address", label: "Address", type: "textarea" },
     { name: "theme", label: "Theme", type: "textarea" },
     { name: "link", label: "Route link", type: "text" },
+  ],
+
+  coupleMessageFields: [
+    { name: "coupleMessageTitle", label: "Couple message title", type: "text" },
+    { name: "coupleMessageDescription", label: "Couple message description", type: "textarea" },
+    { name: "coupleMessageThingsToKnowTitle", label: "Guide title", type: "text" },
+    { name: "coupleMessageThingsToKnowDescription", label: "Guide description", type: "textarea" },
+    { name: "coupleMessageLocationTitle", label: "Location title", type: "text" },
+    { name: "coupleMessageLocationDetails", label: "Location details", type: "textarea" },
+    { name: "coupleMessageWeatherTitle", label: "Weather title", type: "text" },
+    { name: "coupleMessageWeatherDetails", label: "Weather details", type: "textarea" },
+    { name: "coupleMessageParkingTitle", label: "Parking title", type: "text" },
+    { name: "coupleMessageParkingDetails", label: "Parking details", type: "textarea" },
+    // { name: "coupleMessageClosingTitle", label: "Closing title (RSVP heading)", type: "text" },
+    // { name: "coupleMessageRsvpText", label: "RSVP button text", type: "text" },
+  ],
+
+  rsvpFields: [
+    { name: "rsvpSectionHeading", label: "RSVP Section Heading", type: "text" },
+    { name: "rsvpMode", label: "RSVP Mode (handled in editor)", type: "text" },
+    { name: "whatsappNumber", label: "WhatsApp Number", type: "text" },
+    { name: "rsvpWhatsappButtonText", label: "WhatsApp Button Text", type: "text" },
+    { name: "rsvpFormButtonText", label: "Form Button Text", type: "text" },
+    { name: "rsvpGoogleFormLink", label: "Google Form Link", type: "text" },
   ],
 
   publishFields: [

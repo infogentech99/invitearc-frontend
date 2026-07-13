@@ -1,226 +1,118 @@
 export default function CoupleMessageEditor({
+  coupleMessageFields = [],
   editorData = {},
   updateCoupleMessageField,
+  
   handleCoupleMessageImageUpload,
   removeCoupleMessageImage,
 }) {
-  return (
-    <div className="space-y-4">
-      <div className="space-y-2">
-        <label className="block text-sm font-semibold text-slate-800 font-georgia">
-          Couple message title
-        </label>
-        <input
-          value={editorData.coupleMessageTitle || ""}
-          onChange={(event) =>
-            updateCoupleMessageField("coupleMessageTitle", event.target.value)
-          }
-          className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200"
-        />
-      </div>
+  const renderField = (field) => {
+    const name = field.name || field;
+    const label = field.label || name
+      .replace(/([A-Z])/g, " $1")
+      .replace(/_/g, " ")
+      .replace(/^./, (str) => str.toUpperCase());
+    const type = field.type || "text";
+    const value = editorData[name] || "";
 
-      <div className="space-y-2">
-        <label className="block text-sm font-semibold text-slate-800 font-georgia">
-          Couple message description
-        </label>
-        <textarea
-          rows={5}
-          value={editorData.coupleMessageDescription || ""}
-          onChange={(event) =>
-            updateCoupleMessageField(
-              "coupleMessageDescription",
-              event.target.value,
-            )
-          }
-          className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200"
-        />
-      </div>
-
-      <div className="space-y-2">
-        <label className="block text-sm font-semibold text-slate-800 font-georgia">
-          Carousel images
-        </label>
-        <input
-          type="file"
-          accept="image/*"
-          multiple
-          onChange={handleCoupleMessageImageUpload}
-          className="w-full rounded-2xl border border-slate-200 bg-slate-50 p-2 text-sm text-slate-900 cursor-pointer"
-        />
-         <label className="block text-[11px] font-normal text-slate-600 font-georgia">
-          Please upload minimum 6 couple images
-        </label>
-        {(Array.isArray(editorData.coupleMessageCarouselImages)
-          ? editorData.coupleMessageCarouselImages
-          : []
-        ).length > 0 && (
-          <div className="flex flex-wrap gap-3">
-            {(Array.isArray(editorData.coupleMessageCarouselImages)
-              ? editorData.coupleMessageCarouselImages
-              : []
-            ).map((image, index) => {
-              const src =
-                typeof image === "string"
-                  ? image
-                  : image?.image || image?.src || "";
-              return (
-                <div
-                  key={index}
-                  className="w-24 rounded-2xl border border-slate-200 bg-white p-2"
-                >
-                  {src ? (
-                    <img
-                      src={src}
-                      alt={`Carousel ${index + 1}`}
-                      className="h-20 w-full rounded-xl object-cover"
-                    />
-                  ) : (
-                    <div className="flex h-20 w-full items-center justify-center rounded-xl bg-slate-100 text-xs text-slate-500">
-                      No image
-                    </div>
-                  )}
-                  <button
-                    type="button"
-                    onClick={() => removeCoupleMessageImage(index)}
-                    className="mt-2 text-xs font-semibold text-rose-600 cursor-pointer"
+    if (name === "coupleMessageCarouselImages") {
+      return (
+        <div key={name} className="space-y-2">
+          <label className="block text-sm font-semibold text-slate-800 font-georgia">
+            {label}
+          </label>
+          <input
+            type="file"
+            accept="image/*"
+            multiple
+            onChange={handleCoupleMessageImageUpload}
+            className="w-full rounded-2xl border border-slate-200 bg-slate-50 p-2 text-sm text-slate-900 cursor-pointer"
+          />
+          <label className="block text-[11px] font-normal text-slate-600 font-georgia">
+            Please upload minimum 6 couple images
+          </label>
+          {(Array.isArray(editorData.coupleMessageCarouselImages)
+            ? editorData.coupleMessageCarouselImages
+            : []
+          ).length > 0 && (
+            <div className="flex flex-wrap gap-3">
+              {(Array.isArray(editorData.coupleMessageCarouselImages)
+                ? editorData.coupleMessageCarouselImages
+                : []
+              ).map((image, index) => {
+                const src =
+                  typeof image === "string"
+                    ? image
+                    : image?.image || image?.src || "";
+                return (
+                  <div
+                    key={index}
+                    className="w-24 rounded-2xl border border-slate-200 bg-white p-2"
                   >
-                    Remove
-                  </button>
-                </div>
-              );
-            })}
-          </div>
+                    {src ? (
+                      <img
+                        src={src}
+                        alt={`Carousel ${index + 1}`}
+                        className="h-20 w-full rounded-xl object-cover"
+                      />
+                    ) : (
+                      <div className="flex h-20 w-full items-center justify-center rounded-xl bg-slate-100 text-xs text-slate-500">
+                        No image
+                      </div>
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => removeCoupleMessageImage(index)}
+                      className="mt-2 text-xs font-semibold text-rose-600 cursor-pointer"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    return (
+      <div key={name} className="space-y-2">
+        <label className="block text-sm font-semibold text-slate-800 font-georgia">
+          {label}
+        </label>
+        {type === "textarea" ? (
+          <textarea
+            rows={3}
+            value={value}
+            onChange={(event) =>
+              updateCoupleMessageField(name, event.target.value)
+            }
+            className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200"
+          />
+        ) : (
+          <input
+            type="text"
+            value={value}
+            onChange={(event) =>
+              updateCoupleMessageField(name, event.target.value)
+            }
+            className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200"
+          />
         )}
       </div>
+    );
+  };
 
-      <div className="space-y-2">
-        <label className="block text-sm font-semibold text-slate-800 font-georgia">
-          Guests title
-        </label>
-        <input
-          value={editorData.coupleMessageThingsToKnowTitle || ""}
-          onChange={(event) =>
-            updateCoupleMessageField(
-              "coupleMessageThingsToKnowTitle",
-              event.target.value,
-            )
-          }
-          className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200"
-        />
-      </div>
-
-      <div className="space-y-2">
-        <label className="block text-sm font-semibold text-slate-800 font-georgia">
-          Guest description
-        </label>
-        <textarea
-          rows={5}
-          value={editorData.coupleMessageThingsToKnowDescription || ""}
-          onChange={(event) =>
-            updateCoupleMessageField(
-              "coupleMessageThingsToKnowDescription",
-              event.target.value,
-            )
-          }
-          className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200"
-        />
-      </div>
-
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div className="space-y-2">
-          <label className="block text-sm font-semibold text-slate-800 font-georgia">
-            Location title
-          </label>
-          <input
-            value={editorData.coupleMessageLocationTitle || ""}
-            onChange={(event) =>
-              updateCoupleMessageField(
-                "coupleMessageLocationTitle",
-                event.target.value,
-              )
-            }
-            className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200 "
-          />
-        </div>
-        <div className="space-y-2">
-          <label className="block text-sm font-semibold text-slate-800 font-georgia">
-            Location details
-          </label>
-          <textarea
-            rows={3}
-            value={editorData.coupleMessageLocationDetails || ""}
-            onChange={(event) =>
-              updateCoupleMessageField(
-                "coupleMessageLocationDetails",
-                event.target.value,
-              )
-            }
-            className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200"
-          />
-        </div>
-        <div className="space-y-2">
-          <label className="block text-sm font-semibold text-slate-800 font-georgia">
-            Weather title
-          </label>
-          <input
-            value={editorData.coupleMessageWeatherTitle || ""}
-            onChange={(event) =>
-              updateCoupleMessageField(
-                "coupleMessageWeatherTitle",
-                event.target.value,
-              )
-            }
-            className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200"
-          />
-        </div>
-        <div className="space-y-2">
-          <label className="block text-sm font-semibold text-slate-800 font-georgia">
-            Weather details
-          </label>
-          <textarea
-            rows={3}
-            value={editorData.coupleMessageWeatherDetails || ""}
-            onChange={(event) =>
-              updateCoupleMessageField(
-                "coupleMessageWeatherDetails",
-                event.target.value,
-              )
-            }
-            className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200"
-          />
-        </div>
-        <div className="space-y-2">
-          <label className="block text-sm font-semibold text-slate-800 font-georgia">
-            Parking title
-          </label>
-          <input
-            value={editorData.coupleMessageParkingTitle || ""}
-            onChange={(event) =>
-              updateCoupleMessageField(
-                "coupleMessageParkingTitle",
-                event.target.value,
-              )
-            }
-            className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200"
-          />
-        </div>
-        <div className="space-y-2">
-          <label className="block text-sm font-semibold text-slate-800 font-georgia">
-            Parking details
-          </label>
-          <textarea
-            rows={3}
-            value={editorData.coupleMessageParkingDetails || ""}
-            onChange={(event) =>
-              updateCoupleMessageField(
-                "coupleMessageParkingDetails",
-                event.target.value,
-              )
-            }
-            className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200"
-          />
-        </div>
-      </div>
+  return (
+    <div className="space-y-4">
+      {coupleMessageFields.length > 0 ? (
+        coupleMessageFields.map((field) => renderField(field))
+      ) : (
+        <p className="text-sm text-slate-500">
+          No couple message fields are available yet.
+        </p>
+      )}
     </div>
   );
 }

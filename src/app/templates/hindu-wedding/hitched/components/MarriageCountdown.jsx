@@ -59,7 +59,7 @@ export default function MarriageCountdown({ data }) {
     return () => window.removeEventListener("resize", updateBg);
   }, []);
 
-    const title = data?.marriageCountdownTitle || "The Journey Begins";
+    const title = data?.marriageCountdownTitle || "The Journey Begins"; 
     const description =
       data?.marriageCountdownDescription ||
       "Surrounded by family and friends, we can't wait to celebrate this beautiful moment with you.";

@@ -49,7 +49,8 @@ const initialData = {
   groomDetails: "(Grandson of Mrs. Kanta & Mr. Kamal Bhawnani)\n(Son of Mrs. Kanchan & Mr. Sanjay Bhawnani)",
   brideName: "Ritika",
   brideDetails: "(Daughter of Mrs. Sarita & Mr. Pradeep Jain)",
-  brideGrandParentsName: "(Granddaughter of Shri J.S. Kapoor)",
+  brideGrandParentsName: "(Granddaughter of Shri J.S. Kapoor)", 
+  blessingMessage: "With the heavenly blessings of",
   eventIntro: "On the following events",
   coupleMessageTitle: "Introducing",
   coupleMessageDescription: "The Couple",
@@ -557,7 +558,7 @@ export default function Home({
             />
 
             <h2 className="text-white lg:text-[30px] md:text-2xl text-[20px] font-Cormorant-upright">
-              With the heavenly blessings of
+              {data.blessingMessage}
               <br /> Late Smt. Kamla Kapoor
             </h2>
             <h2 className="text-white font-Cormorant-upright lg:text-[34px] md:text-2xl text-[26px]">
@@ -619,7 +620,7 @@ export default function Home({
                   {event.image && (
                     <div className="mb-4 w-full rounded-3xl ">
                       <img
-                        src={event.image}
+                        src={event.image} 
                         alt={event.title_ceremony ? `${event.title_ceremony} image` : `Event ${i + 1} image`}
                         className="h-full w-full object-cover"
                       />

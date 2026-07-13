@@ -47,14 +47,14 @@ import { assets } from "./assets";
 const initialData = {
   groomName: "Harpreet",
   brideName: "Ritika",
-  blessingMessage: "With the heavenly blessings of Our late grandparents, ",
-  grandparents: "Sdn. Gurmeet Kapoor and Sd. Maninder Singh",
+  blessingMessage: "With the heavenly blessings of",
+  brideGrandParentsName: "Sdn. Gurmeet Kapoor and Sd. Maninder Singh",
   familyName: "The Kapoor Family",
   headline: "INVITES",
-  greetingText: "ਪ੍ਰੀਤ ਸਹਿਤ ਆਪ ਸਭਦਾ ਜੀ ਆਇਆਂ ਨੂੰ...",
+  religiousMantra: "ਪ੍ਰੀਤ ਸਹਿਤ ਆਪ ਸਭਦਾ ਜੀ ਆਇਆਂ ਨੂੰ...",
   inviteLine: "you to join us in the wedding celebrations of",
-  groomParents: "Dharmender Singh and Jaya Kaur",
-  brideParents: "Manak Kapoor and Rani Kapoor",
+  groomDetails: "(Son of Dharmender Singh and Jaya Kaur)",
+  brideDetails: "(Daughter of Manak Kapoor and Rani Kapoor)",
   eventIntro: "On the following events",
   thankyoutitle: "With Love From Us",
   thankyoumessage:
@@ -62,12 +62,12 @@ const initialData = {
   coupleMessageTitle: "Introducing",
   coupleMessageDescription: "The Couple",
   coupleMessageThingsToKnowTitle: "A Guide for Guests",
-  coupleMessageLocationTitle: "Location",
-  coupleMessageLocationDetails:
-    "The Central Park Hotel\nBund Garden Road,\nAgarkar Nagar, Pune,\nMaharashtra, 411001",
   coupleMessageWeatherTitle: "Weather",
   coupleMessageWeatherDetails:
     "Clouds may drop by uninvited, but so will great vibes and better dance moves. A little rain never stopped a good celebration anyway.",
+  coupleMessageStaffTitle: "Staff",
+  coupleMessageStaffDetails:
+    "The Central Park Hotel\nBund Garden Road,\nAgarkar Nagar, Pune,\nMaharashtra, 411001",
   coupleMessageParkingTitle: "Parking",
   coupleMessageParkingDetails:
     "Valet parking for all our guests will be available at the venue.",
@@ -76,6 +76,8 @@ const initialData = {
   coupleMessageClosingTitle: "Awaiting the Pleasure of Your Company",
   coupleMessageRsvpText: "Click on the Whatsapp icon to RSVP",
   rsvpMode: "whatsapp",
+  rsvpWhatsappButtonText: "Click on the Whatsapp icon to RSVP",
+  rsvpFormButtonText: "Fill RSVP Form",
   whatsappNumber: "919876543210",
   Logo: "",
 
@@ -127,8 +129,27 @@ export default function Home({
   const [data, setData] = useState({
     ...initialData,
     ...(initialTemplateData || {}),
-    events: initialTemplateData?.events || initialData.events,
+    events: (initialTemplateData?.events || []).map((event, index) => ({
+      ...initialData.events?.[index],
+      ...event,
+    })).length > 0 ? (initialTemplateData?.events || []).map((event, index) => ({
+      ...initialData.events?.[index],
+      ...event,
+    })) : initialData.events,
   });
+
+  useEffect(() => {
+    setData((prev) => ({
+      ...prev,
+      ...initialTemplateData,
+      events: (initialTemplateData?.events || []).length > 0 
+        ? (initialTemplateData?.events || []).map((event, index) => ({
+            ...initialData.events?.[index],
+            ...event,
+          }))
+        : prev.events || initialData.events,
+    }));
+  }, [initialTemplateData]);
 
   const [editMode, setEditMode] = useState(false);
   const updateField = (field, value) => {
@@ -276,7 +297,7 @@ export default function Home({
         }}
         className="fixed bottom-4 right-4 z-50 bg-[#FF35A1] text-white p-3 rounded-xl text-xl"
       >
-        {playing ? "⏸" : "▶"}
+        {playing ? "⏸" : "▶"} 
       </button>
 
       {/* <audio ref={audioRef} src="/assets/background_song.mp3" loop preload="auto" playsInline /> */}
@@ -297,7 +318,7 @@ export default function Home({
       >
         <RoseHeroTemp />
 
-        <div className="pt-40 md:pt-128 lg:pt-160 3xl:pt-200 relative z-10">
+        <div className="pt-36 md:pt-128 lg:pt-145 3xl:pt-200 relative z-10">
           <h2
             className="text-[#AE633A] text-center leading-tight text-2xl md:text-5xl lg:text-[80px] pb-120
                           md:pb-350 lg:pb-470 3xl:pb-550 flex flex-col items-center gap-y-0 lg:gap-y-5"
@@ -312,15 +333,9 @@ export default function Home({
           </h2>
 
           <div className="flex flex-col items-center text-center gap-6 mt-0 lg:pt-50 pt-0">
-            {/* <Image
-              src="/assets/shabd.webp"
-              alt="idol"
-              width={100}
-              height={100}
-              className="w-13 h-8 md:w-26 md:h-14 lg:w-38 lg:h-22 object-cover"
-            /> */}
-             <p className="text-[#15528A] eb-garamond font-medium text-sm md:text-xl lg:text-2xl mt-6 w-50">
-              {data.greetingText}
+           
+             <p className="text-[#15528A] eb-garamond font-medium text-sm md:text-xl lg:text-2xl mt-6 md:w-50 w-30">
+              {data.religiousMantra}
             </p>
 
             <Image
@@ -334,7 +349,7 @@ export default function Home({
             <p className="text-[#15528A] text-sm md:text-xl lg:text-3xl md:pt-8 eb-garamond font-medium">
               {data.blessingMessage}
               <br />
-              {data.grandparents}
+              {data.brideGrandParentsName}
             </p>
 
             <hr className="w-16 lg:w-24 border-[#15528A] my-2 md:my-4" />
@@ -357,7 +372,7 @@ export default function Home({
             </h2>
 
             <p className="text-[#15528A] eb-garamond font-medium text-sm md:text-xl lg:text-3xl mt-4">
-              {data.groomParents}
+              {data.groomDetails}
             </p>
 
             <h2 className="text-[#15528A] eb-garamond font-medium text-center mt-4 text-4xl md:text-6xl lg:text-[100px] leading-tight">
@@ -368,7 +383,7 @@ export default function Home({
             </h2>
 
             <p className="text-[#15528A] eb-garamond font-medium text-sm md:text-xl lg:text-3xl mt-4">
-              {data.brideParents}
+              {data.brideDetails}
             </p>
 
             <p className="text-[#15528A] eb-garamond font-medium text-sm md:text-xl lg:text-3xl mt-8">
@@ -377,13 +392,16 @@ export default function Home({
           </div>
 
           <div className="flex justify-center mt-20 lg:mt-40">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 lg:gap-32 3xl:gap-50">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 lg:gap-32 3xl:gap-50 px-15">
               {(data.events || []).map((event, i) => (
                 <div key={i} className="flex flex-col items-center text-center">
-                  <img
-                    src={event.image}
-                    className="w-75 md:w-76 lg:w-80 3xl:w-100 h-auto"
-                  />
+                  {event.image && (
+                    <img
+                      src={event.image}
+                      alt={event.title_ceremony ? `${event.title_ceremony} image` : `Event ${i + 1} image`}
+                      className="w-75 md:w-76 lg:w-80 3xl:w-100 h-auto"
+                    />
+                  )}
 
                   <h2 className="text-[#15528A] eb-garamond font-medium text-3xl md:text-2xl lg:text-[42px] mt-4">
                     {event.title_ceremony}

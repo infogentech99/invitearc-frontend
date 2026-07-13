@@ -50,7 +50,9 @@ export default function PublishShareEditor({
           </p>
           <div className="mt-3 flex flex-col gap-3 text-sm text-slate-700">
             <div>
-              <p className="font-semibold text-slate-900 font-georgia">Full share link</p>
+              <p className="font-semibold text-slate-900 font-georgia">
+                Full share link
+              </p>
               <p className="break-all">{shareUrl}</p>
             </div>
             <div className="flex flex-col  gap-4 md:gap-2">
@@ -90,36 +92,29 @@ export default function PublishShareEditor({
 
           <div className="space-y-4">
             <div className="space-y-2">
-              
+              <div className="max-w-md overflow-hidden rounded-2xl border border-slate-200 bg-white shadow mb-6">
+                <img
+                  src={
+                    editorData?.sharePreviewImage ||
+                    clientTemplate?.templateId?.previewImage ||
+                    "/og.jpg"
+                  }
+                  className="aspect-[1.91/1] w-full object-cover"
+                />
 
-<div className="max-w-md overflow-hidden rounded-2xl border border-slate-200 bg-white shadow mb-6">
-  <img
-    src={
-      editorData?.sharePreviewImage ||
-      clientTemplate?.templateId?.previewImage ||
-      "/og.jpg"
-    }
-    className="aspect-[1.91/1] w-full object-cover"
-  />
+                <div className="p-4">
+                  <h3 className=" line-clamp-2 text-base font-bold">
+                    {editorData?.sharePreviewTitle ||
+                      clientTemplate?.templateId?.title}
+                  </h3>
 
-  <div className="p-4">
-    
+                  <p className="mt-2 line-clamp-2 text-sm text-slate-600">
+                    {editorData?.sharePreviewDescription}
+                  </p>
 
-    <h3 className=" line-clamp-2 text-base font-bold">
-      {editorData?.sharePreviewTitle ||
-        clientTemplate?.templateId?.title}
-    </h3>
-
-    <p className="mt-2 line-clamp-2 text-sm text-slate-600">
-      {editorData?.sharePreviewDescription}
-    </p>
-
-    <p className="mt-1 text-xs  text-slate-400">
-     {shareUrl}
-    </p>
-  </div>
-</div>
-
+                  <p className="mt-1 text-xs  text-slate-400">{shareUrl}</p>
+                </div>
+              </div>
 
               <p className="text-xs uppercase tracking-widest text-slate-500 font-georgia">
                 Preview image
@@ -130,7 +125,7 @@ export default function PublishShareEditor({
                     ? "Change preview image"
                     : "Upload preview image"}
                 </span>
-                
+
                 <input
                   type="file"
                   accept="image/*"
@@ -139,8 +134,8 @@ export default function PublishShareEditor({
                 />
               </label>
               <span className="text-xs text-slate-500">
-                  1200x600px and below 200KB
-                </span>
+                1200x600px and below 200KB
+              </span>
               {previewUploading && (
                 <p className="text-sm text-slate-500">
                   Uploading preview image...
@@ -201,12 +196,6 @@ export default function PublishShareEditor({
               )}
             </div>
           </div>
-
-
-
-
-
-
         </div>
       </div>
     </div>

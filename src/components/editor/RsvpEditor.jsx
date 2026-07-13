@@ -82,50 +82,64 @@ export default function RsvpEditor({
       </div> */}
 
       {selectedMode === "whatsapp" && (
-        <div>
-          <label className="block text-sm font-semibold text-slate-800 font-georgia">
-            {formatFieldLabel("WhatsApp RSVP number")}
-          </label>
-          <input
-            value={editorData.whatsappNumber || ""}
-            onChange={(event) =>
-              updateField("whatsappNumber", event.target.value)
-            }
-            placeholder="+911234567890"
-            className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 p-3 text-sm text-slate-900"
-          />
-        </div>
+        <>
+          <div>
+            <label className="block text-sm font-semibold text-slate-800 font-georgia">
+              {formatFieldLabel("WhatsApp RSVP number")}
+            </label>
+            <input
+              value={editorData.whatsappNumber || ""}
+              onChange={(event) =>
+                updateField("whatsappNumber", event.target.value)
+              }
+              placeholder="+911234567890"
+              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 p-3 text-sm text-slate-900"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-semibold text-slate-800 font-georgia">
+              WhatsApp Button Text
+            </label>
+            <input
+              value={editorData.rsvpWhatsappButtonText || ""}
+              onChange={(e) => updateField("rsvpWhatsappButtonText", e.target.value)}
+              placeholder="RSVP via WhatsApp"
+              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 p-3 text-sm text-slate-900"
+            />
+          </div>
+        </>
       )}
 
       {selectedMode === "form" && (
-        <div>
-          <label className="block text-sm font-semibold text-slate-800 font-georgia">
-            Google form link
-          </label>
-          <input
-            value={editorData.rsvpGoogleFormLink || ""}
-            onChange={(event) =>
-              updateField(" ", event.target.value)
-            }
-            placeholder="Paste your Google Form link here"
-            className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 p-3 text-sm text-slate-900"
-          />
-        </div>
+        <>
+          <div>
+            <label className="block text-sm font-semibold text-slate-800 font-georgia">
+              Google form link
+            </label>
+            <input
+              value={editorData.rsvpGoogleFormLink || ""}
+              onChange={(event) =>
+                updateField("rsvpGoogleFormLink", event.target.value)
+              }
+              placeholder="Paste your Google Form link here"
+              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 p-3 text-sm text-slate-900"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-semibold text-slate-800 font-georgia">
+              Form Button Text
+            </label>
+            <input
+              value={editorData.rsvpFormButtonText || ""}
+              onChange={(e) => updateField("rsvpFormButtonText", e.target.value)}
+              placeholder="Fill RSVP Form"
+              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 p-3 text-sm text-slate-900"
+            />
+          </div>
+        </>
       )}
-
-      <div>
-        <label className="block text-sm font-semibold text-slate-800 font-georgia">
-          Button text
-        </label>
-        <input
-          value={editorData.rsvpButtonText || ""}
-          onChange={(e) => updateField("rsvpButtonText", e.target.value)}
-          placeholder="Fill RSVP Form"
-          className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 p-3 text-sm text-slate-900"
-        />
-      </div>
-
-      {/* No inline form fields editor — only Google Form link is supported */}
     </div>
   );
 }

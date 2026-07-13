@@ -171,6 +171,11 @@ export default function EditTemplatePage() {
     }));
   }, [editorData, fieldConfig]);
 
+  const coupleMessageFields = useMemo(() => {
+    if (fieldConfig?.coupleMessageFields?.length) return fieldConfig.coupleMessageFields;
+    return [];
+  }, [fieldConfig]);
+
   const rsvpFields = useMemo(() => {
     if (!Array.isArray(editorData?.rsvpFields)) return [];
     return editorData.rsvpFields;
@@ -493,6 +498,47 @@ const handlePreviewImageUpload = async (event) => {
 };
 
 
+
+const handleCoupleImageUpload = async (event, imageKey) => {
+  const file = event.target.files?.[0];
+  if (!file) return;
+
+  const error = await validatePreviewImageFile(file);
+
+  if (error) {
+    toast.error(error);
+    event.target.value = "";
+    return;
+  }
+
+  try {
+    setPreviewUploading(true);
+
+    const imageUrl = await uploadImage(
+      file,
+      "invitearc/couple-images"
+    );
+
+    setEditorData((prev) => ({
+      ...prev,
+      coupleMessageImages: {
+        ...(prev.coupleMessageImages || {}),
+        [imageKey]: imageUrl,
+      },
+    }));
+
+    toast.success("Image uploaded successfully.");
+  } catch (err) {
+    console.error(err);
+    toast.error("Unable to upload image.");
+  } finally {
+    setPreviewUploading(false);
+    event.target.value = "";
+  }
+};
+
+
+
   const handleCoupleMessageImageUpload = async (event) => {
     const files = Array.from(event.target.files || []);
     if (!files.length) return;
@@ -624,6 +670,8 @@ const handlePreviewImageUpload = async (event) => {
           templateId: templateIdToUse,
         };
       });
+      // Update sharePrefix with the new value from the server
+      setSharePrefix(updatedTemplate?.shareSlug?.split("-")?.[0] || "");
       toast.success("Share link updated successfully.");
     } catch (error) {
       toast.error(
@@ -825,6 +873,7 @@ const handlePreviewImageUpload = async (event) => {
 
                   {activeTab === "coupleMessage" && (
                     <CoupleMessageEditor
+                      coupleMessageFields={coupleMessageFields}
                       editorData={editorData}
                       updateCoupleMessageField={updateCoupleMessageField}
                       handleCoupleMessageImageUpload={
