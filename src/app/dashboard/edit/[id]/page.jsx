@@ -436,7 +436,6 @@ export default function EditTemplatePage() {
       img.src = url;
     });
 
-  
 
   const handlePreviewImageUpload = async (event) => {
     const file = event.target.files?.[0];
@@ -477,7 +476,6 @@ export default function EditTemplatePage() {
       return "Please upload a valid image.";
     }
 
-    // 5 MB limit
     if (file.size > 2 * 1024 * 1024) {
       return "Image must be below 2MB.";
     }

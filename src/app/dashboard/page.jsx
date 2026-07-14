@@ -6,7 +6,9 @@ import axios from "axios";
 import config from "../../config/config";
 import { AuthContext } from "../../context/AuthContext";
 import ShareLinkModal from "../../components/ShareLinkModal";
-import { assets } from "../templates/hindu-wedding/hitched/assets";
+// import { assets } from "../templates/hindu-wedding/hitched/assets";
+import hitchedPreview  from "../../../public/assets/preview-images/hitched.png";
+import laavanPreview from "../../../public/assets/preview-images/laavan.png";
 
 export default function DashboardPage() {
   const { user, token, loading } = useContext(AuthContext);
@@ -49,6 +51,12 @@ export default function DashboardPage() {
     fetchMyTemplates();
   }, [loading, user, token, router]);
   console.log("Calling API with token:", token);
+
+const previewImages = {
+  hitched: hitchedPreview.src,
+  laavan: laavanPreview.src,
+};
+
 
   return (
     <main className="bg-slate-50 min-h-screen text-slate-900">
@@ -93,14 +101,25 @@ export default function DashboardPage() {
                 className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
               >
                   <div className="overflow-hidden rounded-3xl bg-slate-100">
-                  <img
+                  {/* <img
                     src={assets.hitched_pre}
                     alt={
                       clientTemplate.templateId?.title ||
                       "Purchased template preview"
                     }
                     className="h-full w-full object-cover"
-                  />
+                  /> */}
+<img
+  src={
+    previewImages[clientTemplate.templateId?.componentKey] ||
+    hitchedAssets.hitched_pre
+  }
+  alt={clientTemplate.templateId?.title || "Template Preview"}
+  className="h-full w-full object-cover"
+/>
+
+
+
                 </div>
                 <div className="mt-5 space-y-4">
                   <div className="flex flex-row gap-6 justify-stretch">
