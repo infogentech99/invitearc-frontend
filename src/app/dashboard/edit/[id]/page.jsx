@@ -436,34 +436,7 @@ export default function EditTemplatePage() {
       img.src = url;
     });
 
-  // const handlePreviewImageUpload = async (event) => {
-  //   const file = event.target.files?.[0];
-  //   if (!file) return;
-
-  //   const error = validatePreviewImageFile(file);
-  //   if (error) {
-  //     toast.error(error);
-  //     return;
-  //   }
-
-  //   try {
-  //     setPreviewUploading(true);
-  //     const imageUrl = await uploadImage(file, "invitearc/preview-images");
-  //     setEditorData((prev) => ({
-  //       ...prev,
-  //       sharePreviewImage: imageUrl,
-  //     }));
-  //     toast.success(
-  //       "Preview image uploaded successfully. Save changes to persist.",
-  //     );
-  //   } catch (error) {
-  //     console.error(error);
-  //     toast.error("Unable to upload preview image. Please try again.");
-  //   } finally {
-  //     setPreviewUploading(false);
-  //     event.target.value = "";
-  //   }
-  // };
+  
 
   const handlePreviewImageUpload = async (event) => {
     const file = event.target.files?.[0];
