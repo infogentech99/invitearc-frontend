@@ -9,7 +9,7 @@ import { assets } from "../assets";
 export default function CoupleMessage({ data }) {
   const [coupleBg, setCoupleBg] = useState(assets.couple_bg);
   const extractImageSrc = (image) => {
-    if (!image) return "";
+    if (!image) return ""; 
     if (typeof image === "string") return image;
     return image?.image || image?.src || image?.url || "";
   };

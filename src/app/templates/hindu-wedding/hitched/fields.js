@@ -5,7 +5,7 @@ import {
   FaStopwatch,
 } from "react-icons/fa";
 import { GiLoveSong } from "react-icons/gi";
-import { AiOutlineShareAlt } from "react-icons/ai"; 
+import { AiOutlineShareAlt } from "react-icons/ai";
 
 export const hitchedEditorFields = {
   tabs: [
@@ -45,7 +45,7 @@ export const hitchedEditorFields = {
       icon: AiOutlineShareAlt,
     },
   ],
-detailFields: [
+  detailFields: [
     { name: "familyName", label: "Family name", type: "text" },
     { name: "blessingMessage", label: "Blessing message", type: "text" },
     { name: "headline", label: "Headline", type: "text" },
@@ -55,7 +55,11 @@ detailFields: [
     { name: "brideName", label: "Bride name", type: "text" },
     { name: "groomDetails", label: "Groom details", type: "textarea" },
     { name: "brideDetails", label: "Bride details", type: "textarea" },
-    { name: "brideGrandParentsName", label: "Bride GrandParents Name", type: "textarea" },
+    {
+      name: "brideGrandParentsName",
+      label: "Bride GrandParents Name",
+      type: "textarea",
+    },
     { name: "noteText", label: "Note text", type: "textarea" },
   ],
   eventFields: [
@@ -70,24 +74,59 @@ detailFields: [
 
   coupleMessageFields: [
     { name: "coupleMessageTitle", label: "Couple message title", type: "text" },
-    { name: "coupleMessageDescription", label: "Couple message description", type: "textarea" },
-    { name: "coupleMessageThingsToKnowTitle", label: "Guide title", type: "text" },
-    { name: "coupleMessageThingsToKnowDescription", label: "Guide description", type: "textarea" },
-    { name: "coupleMessageLocationTitle", label: "Location title", type: "text" },
-    { name: "coupleMessageLocationDetails", label: "Location details", type: "textarea" },
+    {
+      name: "coupleMessageDescription",
+      label: "Couple message description",
+      type: "textarea",
+    },
+    {
+      name: "coupleMessageCarouselImages",
+      label: "Upload Couple Images",
+    },
+    {
+      name: "coupleMessageThingsToKnowTitle",
+      label: "Guide title",
+      type: "text",
+    },
+    {
+      name: "coupleMessageThingsToKnowDescription",
+      label: "Guide description",
+      type: "textarea",
+    },
+    {
+      name: "coupleMessageLocationTitle",
+      label: "Location title",
+      type: "text",
+    },
+    {
+      name: "coupleMessageLocationDetails",
+      label: "Location details",
+      type: "textarea",
+    },
     { name: "coupleMessageWeatherTitle", label: "Weather title", type: "text" },
-    { name: "coupleMessageWeatherDetails", label: "Weather details", type: "textarea" },
+    {
+      name: "coupleMessageWeatherDetails",
+      label: "Weather details",
+      type: "textarea",
+    },
     { name: "coupleMessageParkingTitle", label: "Parking title", type: "text" },
-    { name: "coupleMessageParkingDetails", label: "Parking details", type: "textarea" },
-    // { name: "coupleMessageClosingTitle", label: "Closing title (RSVP heading)", type: "text" },
-    // { name: "coupleMessageRsvpText", label: "RSVP button text", type: "text" },
+    {
+      name: "coupleMessageParkingDetails",
+      label: "Parking details",
+      type: "textarea",
+    },
+    
   ],
 
   rsvpFields: [
     { name: "rsvpSectionHeading", label: "RSVP Section Heading", type: "text" },
     { name: "rsvpMode", label: "RSVP Mode (handled in editor)", type: "text" },
     { name: "whatsappNumber", label: "WhatsApp Number", type: "text" },
-    { name: "rsvpWhatsappButtonText", label: "WhatsApp Button Text", type: "text" },
+    {
+      name: "rsvpWhatsappButtonText",
+      label: "WhatsApp Button Text",
+      type: "text",
+    },
     { name: "rsvpFormButtonText", label: "Form Button Text", type: "text" },
     { name: "rsvpGoogleFormLink", label: "Google Form Link", type: "text" },
   ],
@@ -109,5 +148,4 @@ detailFields: [
       type: "textarea",
     },
   ],
-
 };

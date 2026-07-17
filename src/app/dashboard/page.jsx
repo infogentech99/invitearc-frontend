@@ -9,6 +9,7 @@ import ShareLinkModal from "../../components/ShareLinkModal";
 // import { assets } from "../templates/hindu-wedding/hitched/assets";
 import hitchedPreview from "../../../public/assets/preview-images/hitched.png";
 import laavanPreview from "../../../public/assets/preview-images/laavan.png";
+import mayraPreview from "../../../public/assets/preview-images/mayra.png";
 
 export default function DashboardPage() {
   const { user, token, loading } = useContext(AuthContext);
@@ -55,6 +56,7 @@ export default function DashboardPage() {
   const previewImages = {
     hitched: hitchedPreview.src,
     laavan: laavanPreview.src,
+    mayra:mayraPreview.src,
   };
 
   return (

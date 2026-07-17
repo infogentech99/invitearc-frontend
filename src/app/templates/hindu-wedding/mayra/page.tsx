@@ -7,20 +7,20 @@ import MarriageCountdown from "./components/MarriageCountdown";
 import "./mayra-globals.css";
 import { assets } from "./assets";
 const FloatingLamp = ({ className, style, reverse = false }: { className: string; style?: React.CSSProperties; reverse?: boolean }) => {
-  // Memoize random values to prevent recalculation on re-renders
+
   const lampValues = useMemo(() => {
 
     const duration = 60 + Math.random() * 10; // 60–70s
     const delay = Math.random() * 15;
 
-    // depth feel - dramatic size variety
+
     const scale = Math.random() < 0.5
       ? 0.3 + Math.random() * 0.4  // 0.3–0.7 (small lamps)
       : 1.2 + Math.random() * 0.8; // 1.2–2.0 (large lamps)
     const blur = scale < 0.7 ? "blur(1.5px)" : "blur(0px)";
 
     return { duration, delay, scale, blur };
-  }, []); // Empty dependency array means these values are calculated only once
+  }, []);
 
   return (
     <img
@@ -41,80 +41,134 @@ const FloatingLamp = ({ className, style, reverse = false }: { className: string
 };
 
 
-const intialData = {
+const initialData = {
+  groomName: "VEERENDRA",
+  brideName: "MEERA",
+  religiousMantra: "ॐ श्री गणेशाय नम",
+  groomDetails: "(Son of Mrs. Kanchan & Mr. Sanjay Bhawnani)",
+  blessingMessage: "With the heavenly blessings of",
+  brideGrandParentsName: "Shri Rajesh Gaur & Shrimati Sunita Gaur",
+  brideDetails: "(Daughter of Mrs. Sarita & Mr. Pradeep Jain)",
+  eventIntro: "On the following events",
+  headline: "INVITES",
+  inviteLine: "you to join us in the wedding celebrations of",
+  thankyoutitle: "With Love From Us",
+  thankyoumessage:
+    "Thank you for being part our journey. Your presence makes this celebration truly meaningful, and we look forward to sharing these cherished moments with you.",
+  coupleMessageClosingTitle: "Awaiting the Pleasure of Your Company",
+  coupleMessageRsvpText: "Click on the Whatsapp icon to RSVP",
+  rsvpMode: "whatsapp",
+  rsvpWhatsappButtonText: "Click on the Whatsapp icon to RSVP",
+  rsvpFormButtonText: "Fill RSVP Form",
+  whatsappNumber: "919876543210",
+  rsvpGoogleFormLink: "",
 
-}
-
-
-export default function Home() {
-  const [bgImage, setBgImage] = useState(assets.desktop_bg);
-  const [coupleImage, setCoupleImage] = useState(assets.desktop_bg);
-  const events = [
+  events: [
     {
       title_ceremony: "Mehendi",
       image: assets.mehandi,
-      venue_address: <>Saturday, April 18th 2026 <br /> Join Us at 11 am <br /> The Leela Palace, Udaipur</>,
-      link: "https://maps.app.goo.gl/53z68ksx4cYgoNm59",
+      date: "Saturday, 20th June 2026",
+      venue: "THE ASHOK HOTEL",
+      venue_address:
+        "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
+      time: "4pm Onwards",
+      theme: "Pretty in Pink: Florals, Pastels & Pink Hues",
+      link: "https://maps.app.goo.gl/TVyrP9mLFCpr4VXA9",
     },
 
-    // {
-    //   title_ceremony: "Haldi",
-    //   image: "/assets/haldi.webp",
-    //   venue_address: <>Saturday, April 18th 2026 <br /> Join Us at 11 am <br /> The Leela Palace, Udaipur</>,
-    //   link: "https://maps.app.goo.gl/ywMPWwHjbXvqwiWc8",
-    // },
 
-    // {
-    //   title_ceremony: "Cocktail",
-    //   image: "/assets/cocktail.webp",
-    //   venue_address: <>Saturday, April 18th 2026 <br /> Join Us at 11 am <br /> The Leela Palace, Udaipur</>,
-    //   link: "https://maps.app.goo.gl/f599YkTSEYKDEK5L7",
-    // },
-
-    // {
-    //   title_ceremony: "Engagement",
-    //   image: "/assets/engagement.webp",
-    //   venue_address: <>Saturday, April 18th 2026 <br /> Join Us at 11 am <br /> The Leela Palace, Udaipur</>,
-    //   link: "https://maps.app.goo.gl/53z68ksx4cYgoNm59",
-    // },
 
     {
       title_ceremony: "Shaadi",
       image: assets.shaadi,
-      venue_address: <>Saturday, April 18th 2026 <br /> Join Us at 11 am <br /> The Leela Palace, Udaipur</>,
-      link: "https://maps.app.goo.gl/mxcwCxWhH1TXBC8c9",
+      date: "Saturday, 20th June 2026",
+      venue: "The Central Park Hotel",
+      venue_address:
+        "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
+      time: "8pm Onwards",
+      theme: "Glitz & Glam: Shimmer, sequins & Statement Fits",
+      link: "https://maps.app.goo.gl/fKxi3eDGsTSd5Aaz6?g_st=ic",
     },
 
     {
       title_ceremony: "Reception",
       image: assets.reception,
-      venue_address: <>Saturday, April 18th 2026 <br /> Join Us at 11 am <br /> The Leela Palace, Udaipur</>,
-      link: "https://maps.app.goo.gl/f599YkTSEYKDEK5L7",
+      date: "Sunday, 21st June 2026",
+      venue: "The Central Park Hotel",
+      venue_address:
+        "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
+      time: "5pm Onwards",
+      theme: "Timeless Royalty: Elegant Ethnic & Royal Silhouettes",
+      link: "https://maps.app.goo.gl/fKxi3eDGsTSd5Aaz6?g_st=ic",
     },
 
 
-  ];
-  // const [data, setData] = useState({
-  //     ...initialData,
-  //     ...(initialTemplateData || {}),
-  //     events:
-  //       initialTemplateData?.events ||
-  //       initialData.events,
-  //   });
-  
-  //   useEffect(() => {
-  //     setData((prev) => ({
-  //       ...prev,
-  //       ...initialTemplateData,
-  //       events: initialTemplateData?.events || prev.events || initialData.events,
-  //     }));
-  //   }, [initialTemplateData]);
-  //   const [editMode, setEditMode] = useState(false);
+  ],
+}
+
+
+export default function Home({
+  data: initialTemplateData,
+  isOwner = false,
+}) {
+  const [bgImage, setBgImage] = useState(assets.desktop_bg);
+  const [coupleImage, setCoupleImage] = useState(assets.desktop_bg);
+  // const events = [
+  //   {
+  //     title_ceremony: "Mehendi",
+  //     image: assets.mehandi,
+  //     venue_address: <>Saturday, April 18th 2026 <br /> Join Us at 11 am <br /> The Leela Palace, Udaipur</>,
+  //     link: "https://maps.app.goo.gl/53z68ksx4cYgoNm59",
+  //   },
+
+
+
+  //   {
+  //     title_ceremony: "Shaadi",
+  //     image: assets.shaadi,
+  //     venue_address: <>Saturday, April 18th 2026 <br /> Join Us at 11 am <br /> The Leela Palace, Udaipur</>,
+  //     link: "https://maps.app.goo.gl/mxcwCxWhH1TXBC8c9",
+  //   },
+
+  //   {
+  //     title_ceremony: "Reception",
+  //     image: assets.reception,
+  //     venue_address: <>Saturday, April 18th 2026 <br /> Join Us at 11 am <br /> The Leela Palace, Udaipur</>,
+  //     link: "https://maps.app.goo.gl/f599YkTSEYKDEK5L7",
+  //   },
+
+
+  // ];
+  const [data, setData] = useState({
+    ...initialData,
+    ...(initialTemplateData || {}),
+    events:
+      initialTemplateData?.events ||
+      initialData.events,
+  });
+
+  useEffect(() => {
+    setData((prev) => ({
+      ...prev,
+      ...initialTemplateData,
+      events: initialTemplateData?.events || prev.events || initialData.events,
+    }));
+  }, [initialTemplateData]);
+  const [editMode, setEditMode] = useState(false);
+
+
+  const updateField = (field, value) => {
+    setData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [started, setStarted] = useState(false);
   const [playing, setPlaying] = useState(false);
 
-// const backgroundMusicUrl = data?.backgroundMusicUrl || assets.background_song;
+  const backgroundMusicUrl = data?.backgroundMusicUrl || assets.background_song;
 
 
   const startMusic = async () => {
@@ -216,11 +270,19 @@ export default function Home() {
         {playing ? "⏸" : "▶"}
       </button>
 
-      <audio ref={audioRef} src="/assets/background_song.mp3" loop preload="auto" playsInline />
+      {/* <audio ref={audioRef} src="/assets/background_song.mp3" loop preload="auto" playsInline /> */}
+      <audio
+        key={backgroundMusicUrl}
+        ref={audioRef}
+        src={backgroundMusicUrl}
+        loop
+        preload="auto"
+        playsInline
+      />
 
-      
+
       <div className=" bg-cover bg-top bg-no-repeat min-h-screen w-full relative overflow-hidden"
-        style={{  backgroundImage: `url(${bgImage})`, }} >
+        style={{ backgroundImage: `url(${bgImage})`, }} >
 
         {/* Decorative Lamps - Natural Flow Pattern */}
         {/* Left-to-Right Lamps - Less crowded */}
@@ -285,24 +347,24 @@ export default function Home() {
           <h2 className="text-[#AF630E] text-center leading-tight text-3xl md:text-5xl lg:text-[64px] pb-120
                           md:pb-400 lg:pb-470 3xl:pb-500 flex flex-col items-center gap-y-0 lg:gap-y-5">
 
-            <span className="eb-garamond font-medium">VEERENDRA</span>
+            <span className="eb-garamond font-medium">{data.groomName}</span>
 
             <span className="eb-garamond font-medium text-xl md:text-3xl lg:text-5xl tracking-widest">WEDS</span>
 
-            <span className="eb-garamond font-medium">MEERA</span>
+            <span className="eb-garamond font-medium">{data.brideName}</span>
 
           </h2>
 
           <div className="flex flex-col items-center text-center gap-6 mt-0  lg:pt-50 pt-0">
-            <p className="eb-garamond font-normal text-base md:text-2xl lg:text-3xl text-[#FFF097] text-center">ॐ श्री गणेशाय नम</p>
+            <p className="eb-garamond font-normal text-base md:text-2xl lg:text-3xl text-[#FFF097] text-center">{data.religiousMantra}</p>
             <Image
               src={assets.ganesha}
               alt="idol" width={100} height={100}
               className="w-23 h-30 md:w-35 md:h-46 lg:w-41 lg:h-53  object-cover" />
 
             <h2 className="eb-garamond font-medium text-[#FFF097] text-sm md:text-xl lg:text-[26px] md:pt-8">
-              With the heavenly blessings of <br />
-              Shri Rajesh Gaur & Shrimati Sunita Gaur
+              {data.blessingMessage} <br />
+              {data.brideGrandParentsName}
             </h2>
 
             <hr className="lg:w-24 w-16 border-[#FFF097] my-2 md:my-4" />
@@ -313,35 +375,44 @@ export default function Home() {
 
           <div className="mt-8 text-center">
             <h2 className="eb-garamond font-medium text-[#FFF097] text-3xl md:text-5xl lg:text-[64px] leading-tight lg:tracking-wide tracking-wider">
-              INVITE
+              {data.headline}
             </h2>
 
             <p className="eb-garamond font-medium text-[#FFF097] text-sm md:text-xl lg:text-[26px] mt-6">
-              You to join us in the wedding celebrations of
+              {data.inviteLine}
             </p>
 
             <h2 className="eb-garamond font-medium text-[#FFF097] text-center mt-14 text-3xl md:text-5xl lg:text-[64px] leading-tight">
-              VEERENDRA
+              {data.groomName}
             </h2>
-
+            <p className="eb-garamond font-medium text-[#FFF097] text-sm md:text-xl lg:text-3xl mt-2">
+              {data.groomDetails}
+            </p>
             <h2 className="eb-garamond font-medium text-[#FFF097] text-center mt-0 text-3xl md:text-5xl lg:text-[64px] leading-tight">
               <span className="eb-garamond font-medium text-[#FFF097] text-center lg:mt-10 mt-0 text-xl md:text-3xl lg:text-5xl leading-tight">&
               </span>   <br />
-              MEERA
+              {data.brideName}
             </h2>
 
-            <p className="eb-garamond font-medium text-[#FFF097] text-sm md:text-xl lg:text-3xl mt-8 md:mt-14">
-              Daughter of <br /> Shri Mahesh Rajput & Shrimati Asha Rajput
+            <p className="eb-garamond font-medium text-[#FFF097] text-sm md:text-xl lg:text-3xl mt-2">
+              {data.brideDetails}
             </p>
 
-            <p className="eb-garamond font-medium text-[#FFF097] text-sm md:text-xl lg:text-3xl mt-8">
-              On the following events
+            <p className="eb-garamond font-medium text-[#FFF097] text-sm md:text-xl lg:text-3xl mt-8 md:mt-24">
+              {data.eventIntro}
             </p>
           </div>
 
           <div className="flex justify-center mt-20 lg:mt-40">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 lg:gap-28 3xl:gap-50">
-              {events.map((event, i) => (
+            <div
+              className={`grid gap-16 lg:gap-26 lg:px-18 3xl:px-0 ${data?.events?.length === 1
+                ? "grid-cols-1 justify-items-center"
+                : data?.events?.length === 2
+                  ? "grid-cols-2 justify-items-center"
+                  : "grid-cols-1 sm:grid-cols-3"
+                }`}
+            >
+              {(data?.events || []).map((event, i) => (
                 <div key={i} className="flex flex-col items-center text-center">
                   <img
                     src={event.image}
@@ -350,8 +421,19 @@ export default function Home() {
                   <h2 className="eb-garamond font-medium text-[#FFF097] lg:text-[45px] md:text-2xl text-3xl mt-4">
                     {event.title_ceremony}
                   </h2>
+                  <p className="text-[#FFF097] eb-garamond text-[14px] sm:text-base mt-2">
+                    <span className="text-[22px]">{event.date}</span>  <br />
+                    <span className="text-[22px]">{event.time}</span>
+                  </p>
+                  <p className="text-[#FFF097] eb-garamond text-[14px] sm:text-base mt-2">
+                    <span className="text-[20px]">{event.theme}</span>
+                  </p>
+
+
+
 
                   <p className="eb-garamond font-medium text-[#FFF097] text-[14px] sm:text-base mt-2">
+                    <span className="text-[18px]">{event.venue}</span> <br />
                     <span className="text-sm md:text-base lg:text-[20px]">{event.venue_address}</span> <br />
                   </p>
 
@@ -377,15 +459,12 @@ export default function Home() {
             {/* Center Text */}
             <div className="flex flex-col justify-center items-center text-center md:mb-0 lg:mb-0">
               <p className="parisienne-regular text-2xl md:text-5xl lg:text-7xl lg:leading-22 text-[#FFF097]">
-                With <br /> Love From Us
+                {data.thankyoutitle}
               </p>
 
               <h2 className="eb-garamond font-normal text-[10px] md:text-[18px] lg:text-3xl text-center text-[#FF8170] pt-2 md:pt-6 lg:leading-10 md:leading-7 leading-4">
                 <span className="eb-garamond font-normal text-[#FFF097]">
-                  Thank you for being part our journey. <br />
-                  Your presence makes this celebration truly <br />
-                  meaningful, and we look forward to sharing <br />
-                  these cherished moments with you.
+                  {data.thankyoumessage}
                 </span>
               </h2>
             </div>
@@ -394,17 +473,19 @@ export default function Home() {
         </div>
       </div>
 
-      <CoupleMessage />
+      <CoupleMessage data={data} isOwner={isOwner} updateField={updateField} />
 
       <div className="bg-[url('/assets/respo_three.webp')] md:bg-[url('/assets/bg_three.webp')] bg-cover bg-no-repeat" style={{
-          backgroundImage: `url(${coupleImage})`,
-        }} >
+        backgroundImage: `url(${coupleImage})`,
+      }} >
         <div className="h-255 md:h-179 lg:h-440 3xl:h-419 flex flex-col items-center relative">
-          <img src="/assets/logo.webp" alt="logo" width={250} height={300} className="absolute top-28 w-42 h-48 md:top-41 md:w-28 md:h-35 lg:top-78 lg:w-48 lg:h-55 3xl:top-101" />
+          <img src={data?.Logo || assets.logo} alt="logo" width={250} height={300} className="absolute top-28 w-42 h-48 md:top-41 md:w-28 md:h-35 lg:top-78 lg:w-48 lg:h-55 3xl:top-101" />
         </div>
       </div>
 
-      <MarriageCountdown />
+      <MarriageCountdown data={data}
+        isOwner={isOwner}
+        updateField={updateField} />
 
     </>
   );

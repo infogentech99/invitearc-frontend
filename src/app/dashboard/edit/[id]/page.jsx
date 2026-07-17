@@ -17,6 +17,7 @@ import { uploadFile } from "../../../utils/uploadFile";
 import {
   getTemplateFieldConfig,
   templateComponents,
+  templateAssets,
 } from "../../../templates/templateLoader";
 import Sidebar from "../../../../components/editor/Sidebar";
 import DetailsEditor from "../../../../components/editor/DetailsEditor";
@@ -40,6 +41,7 @@ export default function EditTemplatePage() {
   const [previewUploading, setPreviewUploading] = useState(false);
   const [sharePrefix, setSharePrefix] = useState("");
   const [baseUrl, setBaseUrl] = useState("");
+ 
   const [view, setView] = useState(() => {
     if (typeof window === "undefined") return "mobile";
     if (window.innerWidth < 768) return "mobile";
@@ -105,10 +107,26 @@ export default function EditTemplatePage() {
         const defaultData = response.data.data?.templateId?.defaultData || {};
         const customData = response.data.data?.customData || {};
 
+
+        const slug = response.data.data?.templateId?.slug;
+const assets = templateAssets?.[slug];
+
+const defaultCarousel = (assets?.carouselImages || []).map((img) => ({
+  image: img,
+}));
+
+        // setEditorData({
+        //   ...defaultData,
+        //   ...customData,
+        // });
         setEditorData({
-          ...defaultData,
-          ...customData,
-        });
+  ...defaultData,
+  ...customData,
+  coupleMessageCarouselImages:
+    customData?.coupleMessageCarouselImages?.length
+      ? customData.coupleMessageCarouselImages
+      : defaultCarousel,
+});
       } catch (error) {
         console.log("Status:", error.response?.status);
         console.log("Data:", error.response?.data);
@@ -124,7 +142,7 @@ export default function EditTemplatePage() {
   const TemplateComponent = templateSlug
     ? templateComponents[templateSlug]
     : null;
-
+const defaultLogo = templateAssets?.[templateSlug]?.logo;
   const fieldConfig = useMemo(
     () => getTemplateFieldConfig(templateSlug),
     [templateSlug],
@@ -308,6 +326,7 @@ export default function EditTemplatePage() {
   };
 
   const updateField = (field, rawValue) => {
+    
     const trimmed = typeof rawValue === "string" ? rawValue.trim() : rawValue;
     let value = rawValue;
 
@@ -599,6 +618,33 @@ export default function EditTemplatePage() {
     }));
   };
 
+//   const handleReplaceCoupleMessageImage = async (event, index) => {
+//   const file = event.target.files?.[0];
+//   if (!file) return;
+
+//   try {
+//     const imageUrl = await uploadImage(file, "invitearc/couple-carousel");
+
+//     setEditorData((prev) => {
+//       const images = [...(prev.coupleMessageCarouselImages || [])];
+
+//       images[index] = {
+//         image: imageUrl,
+//         imageFileName: file.name,
+//       };
+
+//       return {
+//         ...prev,
+//         coupleMessageCarouselImages: images,
+//       };
+//     });
+
+//     event.target.value = "";
+//   } catch (error) {
+//     console.error("Failed to replace image:", error);
+//   }
+// };
+
   const saveEditorChanges = async () => {
     if (!templateId) return;
 
@@ -861,6 +907,8 @@ export default function EditTemplatePage() {
                       formatFieldLabel={formatFieldLabel}
                       getFieldIcon={getFieldIcon}
                        handleLogoUpload={handleLogoUpload}
+                       defaultLogo={defaultLogo}
+
                     />
                   )}
 
@@ -885,11 +933,10 @@ export default function EditTemplatePage() {
                       coupleMessageFields={coupleMessageFields}
                       editorData={editorData}
                       updateCoupleMessageField={updateCoupleMessageField}
-                      handleCoupleMessageImageUpload={
-                        handleCoupleMessageImageUpload
-                      }
-                      removeCoupleMessageImage={removeCoupleMessageImage}
-                      handleCoupleImageUpload={handleCoupleImageUpload}
+  handleCoupleImageUpload={handleCoupleImageUpload}
+  handleCoupleMessageImageUpload={handleCoupleMessageImageUpload}
+ 
+  removeCoupleMessageImage={removeCoupleMessageImage}
                     />
                   )}
                 </div>

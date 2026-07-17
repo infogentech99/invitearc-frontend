@@ -1,12 +1,14 @@
 import config from "../../../config/config";
 import HitchedTemplate from "../../templates/hindu-wedding/hitched/page";
 import LaavanTemplate from "../../templates/sikh-wedding/laavan/page";
+import MayraTemplate from "../../templates/hindu-wedding/mayra/page";
 
 export const dynamic = "force-dynamic";
 
 const templateComponents = {
   hitched: HitchedTemplate,
   laavan: LaavanTemplate,
+  mayra: MayraTemplate,
 };
 
 const getSiteUrl = () =>

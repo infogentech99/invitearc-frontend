@@ -4,6 +4,7 @@ export default function CoupleMessageEditor({
   updateCoupleMessageField,
   handleCoupleImageUpload,
   handleCoupleMessageImageUpload,
+  // handleReplaceCoupleMessageImage,
   removeCoupleMessageImage,
 }) {
   const renderField = (field) => {
@@ -23,55 +24,51 @@ export default function CoupleMessageEditor({
       const imageKey = name.split(".")[1];
 
       return (
-      
-<div key={name} className="space-y-3">
-  <label className="block text-sm font-semibold text-slate-800">
-    {label}
-  </label>
+        <div key={name} className="space-y-3">
+          <label className="block text-sm font-semibold text-slate-800">
+            {label}
+          </label>
 
-  <div className="flex items-center gap-4">
-    {/* Image Preview */}
-    <div className="w-32 h-24 rounded-lg border border-slate-200 overflow-hidden bg-slate-100 flex items-center justify-center">
-      {editorData?.coupleMessageImages?.[imageKey] ? (
-        <img
-          src={editorData.coupleMessageImages[imageKey]}
-          alt={label}
-          className="w-full h-full object-cover"
-        />
-      ) : (
-        <span className="text-[10px] text-slate-400 text-center">
-          No Image
-        </span>
-      )}
-    </div>
+          <div className="flex items-center gap-4">
+            {/* Image Preview */}
+            <div className="w-32 h-24 rounded-lg border border-slate-200 overflow-hidden bg-slate-100 flex items-center justify-center">
+              {editorData?.coupleMessageImages?.[imageKey] ? (
+                <img
+                  src={editorData.coupleMessageImages[imageKey]}
+                  alt={label}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <span className="text-[10px] text-slate-400 text-center">
+                  No Image
+                </span>
+              )}
+            </div>
 
-    {/* Upload */}
-    <div className="flex flex-col gap-1">
-      <label className="inline-flex cursor-pointer items-center rounded-xl bg-[#861E1D] px-4 py-2 text-sm font-normal text-white hover:bg-[#6f191c]">
-        {editorData?.coupleMessageImages?.[imageKey]
-          ? "Change Image"
-          : "Choose File"}
+            {/* Upload */}
+            <div className="flex flex-col gap-1">
+              <label className="inline-flex cursor-pointer items-center rounded-xl bg-[#861E1D] px-4 py-2 text-sm font-normal text-white hover:bg-[#6f191c]">
+                {editorData?.coupleMessageImages?.[imageKey]
+                  ? "Change Image"
+                  : "Choose File"}
 
-        <input
-          type="file"
-          accept="image/*"
-          onChange={(e) => handleCoupleImageUpload(e, imageKey)}
-          className="hidden"
-        />
-      </label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => handleCoupleImageUpload(e, imageKey)}
+                  className="hidden"
+                />
+              </label>
 
-      <p className="text-xs text-slate-500">
-        {editorData?.coupleMessageImages?.[imageKey]
-          ? "Image uploaded successfully ✓"
-          : "No file selected"}
-      </p>
-    </div>
-  </div>
-</div>
-
-
+              <p className="text-xs text-slate-500">
+                {editorData?.coupleMessageImages?.[imageKey]
+                  ? "Image uploaded successfully ✓"
+                  : "No file selected"}
+              </p>
+            </div>
+          </div>
+        </div>
       );
-
     }
 
     const value = editorData[name] || "";
@@ -108,7 +105,7 @@ export default function CoupleMessageEditor({
                 return (
                   <div
                     key={index}
-                    className="w-24 rounded-2xl border border-slate-200 bg-white p-2"
+                    className="w-30 rounded-2xl border border-slate-200 bg-white p-2"
                   >
                     {src ? (
                       <img
@@ -124,10 +121,11 @@ export default function CoupleMessageEditor({
                     <button
                       type="button"
                       onClick={() => removeCoupleMessageImage(index)}
-                      className="mt-2 text-xs font-semibold text-rose-600 cursor-pointer"
+                      className="mt-2 w-full text-xs font-semibold text-rose-600 cursor-pointer"
                     >
                       Remove
                     </button>
+                    {/* </div> */}
                   </div>
                 );
               })}

@@ -1,5 +1,5 @@
 import { IoCloudUploadOutline } from "react-icons/io5";
-import { assets } from "../../app/templates/sikh-wedding/laavan/assets";
+// import { assets } from "../../app/templates/sikh-wedding/laavan/assets";
 export default function DetailsEditor({
   detailFields,
   editorData,
@@ -7,6 +7,7 @@ export default function DetailsEditor({
   formatFieldLabel,
   getFieldIcon,
   handleLogoUpload,
+  defaultLogo,
 }) {
   return (
     <div className="space-y-1">
@@ -51,7 +52,7 @@ export default function DetailsEditor({
                   <div className=" items-center mt-3">
                     <div className="w-48 h-32 rounded-xl overflow-hidden border border-slate-200 bg-white">
                       <img
-                        src={editorData?.Logo || assets.logo}
+                        src={editorData?.Logo || defaultLogo}
                         alt="Logo"
                         className="w-full h-full object-contain"
                       />
