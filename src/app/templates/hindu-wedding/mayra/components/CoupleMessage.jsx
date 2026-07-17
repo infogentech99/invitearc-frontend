@@ -199,22 +199,6 @@ export default function CoupleMessage({ data }) {
 
         <div className="flex flex-col items-center md:mt-2 lg:mt-0 gap-10 3xl:gap-12">
           <div className="">
-            {/* <h2 className="eb-garamond font-normal text-center text-2xl md:text-3xl lg:text-[54px] text-[#FFF097] pt-43 md:pt-71 lg:pt-72 3xl:pt-150 leading-normal md:leading-8 lg:leading-16">
-              {rsvpSectionHeading}
-            </h2> */}
-            {/* <div className="flex flex-col-1 md:gap-0 gap-0 lg:gap-0 justify-center items-center md:not-first:mt-4">
-              <a href="#" target="_blank">
-                <img
-                  src="/assets/whatsapp.webp"
-                  alt="icon"
-                  className="h-6 w-6 md:w-12 md:h-12 lg:w-10.5 lg:h-10.5 3xl:w-20 3xl:h-20"
-                />
-              </a>
-              <h2 className="eb-garamond font-normal text-center text-xs md:text-base lg:text-[22px] text-[#FFF097]">
-                Share Your RSVP 
-              </h2>
-            </div> */}
-
             <div className="flex flex-col-1 md:gap-0 gap-0 lg:gap-0 justify-center items-center md:not-first:mt-4">
               {rsvpMode === "form" ? (
                 <div className="flex flex-col items-center text-center">
