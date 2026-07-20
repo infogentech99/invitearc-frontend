@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { assets } from "../assets";
 export default function MarriageCountdown({ data }) {
   const targetDate = data?.marriageCountdownDate || "2026-09-21";
-const TARGET_DATE = new Date(targetDate).getTime();
+  const TARGET_DATE = new Date(targetDate).getTime();
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -54,7 +54,7 @@ const TARGET_DATE = new Date(targetDate).getTime();
             {description}
           </p>
           <h2 className="eb-garamond font-normal text-xl md:text-4xl lg:text-[52px] text-center text-[#15528A]">
-            {timeLeft.days}D {timeLeft.hours}H {timeLeft.minutes}M  
+            {timeLeft.days}D {timeLeft.hours}H {timeLeft.minutes}M
           </h2>
 
           <div className="flex flex-col-1 gap-4 justify-center items-center mt-2 md:mt-0">

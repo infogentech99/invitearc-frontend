@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import { hitchedEditorFields } from "./hindu-wedding/hitched/fields";
 import { laavanEditorFields } from "./sikh-wedding/laavan/fields";
 import {mayraEditorFields} from "./hindu-wedding/mayra/fields";
+import {kalyanamEditorFields} from "./south-indian-wedding/kalyanam/fields";
 
 import { assets as mayraAssets } from "./hindu-wedding/mayra/assets";
 import { assets as laavanAssets } from "./sikh-wedding/laavan/assets";
@@ -12,12 +13,14 @@ const templateMap = {
   hitched: dynamic(() => import("./hindu-wedding/hitched/page"), { loading: () => <div>Loading...</div> }),
   laavan: dynamic(() => import("./sikh-wedding/laavan/page"), { loading: () => <div>Loading...</div>  }),
   mayra: dynamic(() => import("./hindu-wedding/mayra/page"), { loading: () => <div>Loading...</div>  }),
+  kalyanam: dynamic(() => import("./south-indian-wedding/kalyanam/page"), { loading: () => <div>Loading...</div>  }),
 };
 
 const templateFieldConfigs = {
   hitched: hitchedEditorFields,
   laavan: laavanEditorFields,
   mayra: mayraEditorFields,
+  kalyanam:kalyanamEditorFields,
 };
 
 export function getAvailableTemplates() {

@@ -246,10 +246,10 @@ export default function TemplateGrid() {
               <div className="mt-6 space-y-3">
                 <div>
                   <div className="flex items-start justify-between gap-3">
-                    <h3 className="text-xl font-semibold text-slate-900">
+                    <h3 className="text-xl font-semibold text-slate-900 font-georgia">
                       {template.title || "Untitled Template"}
                     </h3>
-                    <span className="inline-flex rounded-full bg-[#861E1D]/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-slate-700 whitespace-nowrap">
+                    <span className="inline-flex rounded-full bg-[#861E1D]/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.06em] text-slate-700 whitespace-nowrap font-poppins">
                       {template.category || "Template"}
                     </span>
                   </div>

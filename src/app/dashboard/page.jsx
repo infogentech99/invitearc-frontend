@@ -9,6 +9,7 @@ import ShareLinkModal from "../../components/ShareLinkModal";
 import hitchedPreview from "../../../public/assets/preview-images/hitched.png";
 import laavanPreview from "../../../public/assets/preview-images/laavan.png";
 import mayraPreview from "../../../public/assets/preview-images/mayra.png";
+import kalyanamPreview from "../../../public/assets/preview-images/kalyanam.jpg";
 
 export default function DashboardPage() {
   const { user, token, loading } = useContext(AuthContext);
@@ -55,7 +56,8 @@ export default function DashboardPage() {
   const previewImages = {
     hitched: hitchedPreview.src,
     laavan: laavanPreview.src,
-    mayra:mayraPreview.src,
+    mayra: mayraPreview.src,
+    kalyanam: kalyanamPreview.src,
   };
 
   return (

@@ -94,7 +94,7 @@ export default function CoupleMessage({ data }) {
   }, []);
 
   return (
-    <div
+    <div 
       className="bg-[url('/assets/respo_two.webp')] md:bg-[url('/assets/bg_two.webp')] bg-cover bg-no-repeat"
       style={{ backgroundImage: `url(${bgImage})` }}
     >

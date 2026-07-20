@@ -9,41 +9,6 @@ import MarriageCountdown from "./components/MarriageCountdown";
 import "./laavan-globals.css";
 import { assets } from "./assets";
 
-// const FloatingLamp = ({ className, style, reverse = false }) => {
-//   // Memoize random values to prevent recalculation on re-renders
-//   const lampValues = useMemo(() => {
-//     // const duration = 60 + Math.random() * 40; // 60–100s (very slow flow)
-//     // const duration = 40 + Math.random() * 10; // 40–50s
-//     const duration = 60 + Math.random() * 10; // 60–70s
-//     const delay = Math.random() * 15;
-
-//     // depth feel - dramatic size variety
-//     const scale = Math.random() < 0.5
-//       ? 0.3 + Math.random() * 0.4  // 0.3–0.7 (small lamps)
-//       : 1.2 + Math.random() * 0.8; // 1.2–2.0 (large lamps)
-//     const blur = scale < 0.7 ? "blur(1.5px)" : "blur(0px)";
-
-//     return { duration, delay, scale, blur };
-//   }, []); // Empty dependency array means these values are calculated only once
-
-//   return (
-//     <img
-//       src={assets.petals}
-//       alt="petal"
-//       className={`floating-lamp ${className}`}
-//       style={{
-//         animationName: reverse ? 'lampFlowReverse' : 'lampFlow',
-//         animationDuration: `${lampValues.duration}s`,
-//         animationDelay: `${lampValues.delay}s`,
-//         transform: `scale(${lampValues.scale})`,
-//         filter: `drop-shadow(0 0 18px rgba(255,180,90,0.9)) ${lampValues.blur}`,
-//         '--scale': lampValues.scale,
-//         ...style,
-//       }}
-//     />
-//   );
-// };
-
 const initialData = {
   groomName: "Harpreet",
   brideName: "Ritika",
@@ -94,7 +59,7 @@ const initialData = {
       link: "https://maps.app.goo.gl/TVyrP9mLFCpr4VXA9",
     },
     {
-      title_ceremony: "Anand Karaj",
+      title_ceremony: "Anand Karaj", 
       image: assets.Anand_Karaj,
       date: "Saturday, 20th June 2026",
       venue: "The Central Park Hotel",
@@ -159,48 +124,48 @@ export default function Home({
     }));
   };
 
-  const updateEvent = (index, field, value) => {
-    setData((prev) => {
-      const events = [...(prev?.events || [])];
-      events[index] = {
-        ...events[index],
-        [field]: value,
-      };
-      return {
-        ...prev,
-        events,
-      };
-    });
-  };
+  // const updateEvent = (index, field, value) => {
+  //   setData((prev) => {
+  //     const events = [...(prev?.events || [])];
+  //     events[index] = {
+  //       ...events[index],
+  //       [field]: value,
+  //     };
+  //     return {
+  //       ...prev,
+  //       events,
+  //     };
+  //   });
+  // };
 
-  const saveEdits = async () => {
-    try {
-      const response = await axios.put(
-        `${config.api.baseUrl}/api/client-templates/${templateId}`,
-        {
-          customData: data,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          withCredentials: true,
-        },
-      );
+  // const saveEdits = async () => {
+  //   try {
+  //     const response = await axios.put(
+  //       `${config.api.baseUrl}/api/client-templates/${templateId}`,
+  //       {
+  //         customData: data,
+  //       },
+  //       {
+  //         headers: {
+  //           Authorization: `Bearer ${token}`,
+  //         },
+  //         withCredentials: true,
+  //       },
+  //     );
 
-      setData(response.data.data.customData);
-      setEditMode(false);
-      alert("Template saved successfully");
-    } catch (error) {
-      console.error(error);
-      alert("Failed to save template");
-    }
-  };
+  //     setData(response.data.data.customData);
+  //     setEditMode(false);
+  //     alert("Template saved successfully");
+  //   } catch (error) {
+  //     console.error(error);
+  //     alert("Failed to save template");
+  //   }
+  // };
 
-  const resetEdits = () => {
-    setData(initialTemplateData || initialData);
-    setEditMode(false);
-  };
+  // const resetEdits = () => {
+  //   setData(initialTemplateData || initialData);
+  //   setEditMode(false);
+  // };
 
   const backgroundMusicUrl = data?.backgroundMusicUrl || assets.background_song;
 
@@ -300,7 +265,6 @@ export default function Home({
         {playing ? "⏸" : "▶"} 
       </button>
 
-      {/* <audio ref={audioRef} src="/assets/background_song.mp3" loop preload="auto" playsInline /> */}
       <audio
         key={backgroundMusicUrl}
         ref={audioRef}
