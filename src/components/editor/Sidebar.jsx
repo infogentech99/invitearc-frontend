@@ -16,17 +16,18 @@ export default function Sidebar({
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex h-12 w-12 items-center justify-center rounded-xl transition cursor-pointer ${
                   activeTab === tab.id
-                    ? "bg-white text-[#861E1D] shadow-sm"
+                    ? "bg-white text-[#861E1D] shadow-sm  border-l-2 border-amber-300"
                     : "text-white hover:bg-white/10"
                 }`}
               >
                 <Icon className="text-[24px]" />
               </button>
 
-              <span className="mt-2 text-[10px] uppercase tracking-[0.28em] text-white font-georgia ">
+              <span className="mt-2 text-[10px] uppercase tracking-[0.15em] text-white font-georgia ">
                 {tab.label}
               </span>
             </div>
+      
           );
         })}
       </div>

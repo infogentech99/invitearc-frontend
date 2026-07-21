@@ -87,7 +87,7 @@ export default function CoupleMessage({data}) {
          {coupleDescription}
         </h2>
 
-        <div className="relative flex flex-col items-start mt-7 md:mt-12 lg:mt-20 ml-10 md:ml-60 3xl:ml-130">
+        <div className="relative flex flex-col items-start mt-7 md:mt-12 lg:mt-20 ml-10 md:ml-60 lg:ml-70 3xl:ml-130">
           <img
             src={data?.coupleMessageImages?.image1 || assets.couple1}
             alt="couple_one"
@@ -121,7 +121,7 @@ export default function CoupleMessage({data}) {
           {thingsToKnowTitle}
         </h1>
 
-        <div className="flex justify-center mt-15 3xl:mt-30 pb-15 md:pb-24">
+        <div className="flex justify-center mt-15 3xl:mt-30 pb-15 md:pb-24 lg:px-50 md:px-10 px-5">
           <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-14 lg:gap-0">
             <div className="flex flex-col items-center justify-center text-center">
               <img
@@ -139,7 +139,7 @@ export default function CoupleMessage({data}) {
             <hr className="hidden lg:block lg:rotate-90 lg:w-65 lg:border-2 border-[#FFF5B9] lg:my-28" />
             <div className="flex flex-col items-center justify-center text-center">
               <img
-                src={assets.parking}
+                src={assets.staff}
                 alt="drive"
                 className="h-34 w-29 md:w-13 md:h-20 lg:w-18 lg:h-25"
               />
@@ -171,33 +171,16 @@ export default function CoupleMessage({data}) {
           {coupleMessageThingsToKnowDescription}
         </h2>
 
-        <div className="flex items-center mt-29 md:mt-20 lg:mt-60 3xl:mt-90 gap-3 md:gap-10 lg:gap-0 3xl:gap-13">
+        <div className="flex items-center mt-15 md:mt-20 lg:mt-60 3xl:mt-90 gap-0 md:gap-10 lg:gap-0 3xl:gap-13 flex-col md:flex-row">
           <img
             src={assets.couplelast}
             alt="couple"
             className="w-60 h-55 md:w-105 md:h-85 lg:w-180 lg:h-160 3xl:w-275 3xl:h-235 object-cover pl-4 md:pl-10 lg:pl-12"
           />
-          {/* <div className="flex flex-col justify-center items-center">
-            <h2 className="eb-garamond font-normal text-center text-xl md:text-3xl lg:text-[64px] text-[#FFF5B9] 3xl:pt-150 leading-6 md:leading-8 lg:leading-16 md:pr-4 lg:pr-0">
-              Awaiting the Pleasure <br /> of Your Company
-            </h2>
-            <div className="flex flex-col-1 justify-center items-center md:not-first:mt-4">
-              <a href="#" target="_blank">
-                <img
-                  src="./assets/whatsapp.webp"
-                  alt="whatsapp"
-                  className="h-6 w-6 md:w-9 md:h-9 lg:w-10.5 lg:h-10.5"
-                />
-              </a>
-              <h2 className="font-cormorant-upright font-semibold text-[10px] md:text-base lg:text-[22px] text-[#FFF5B9] jacques-francois-upright pr-0 md:pr-6 lg:pr-4">
-                Share Your RSVP
-              </h2>
-            </div>
-          </div> */}
           <div className="flex flex-col-1 md:gap-0 gap-0 lg:gap-0 justify-center items-center md:not-first:mt-4">
                       {rsvpMode === "form" ? (
                         <div className="flex flex-col items-center text-center">
-                          <h2 className="eb-garamond font-normal text-center text-2xl md:text-3xl lg:text-[54px] text-[#FFF097]  pt-15 md:pt-80 lg:pt-50 3xl:pt-150 leading-normal md:leading-8 lg:leading-12 lg:w-140 w-70">
+                          <h2 className="eb-garamond font-normal text-center text-2xl md:text-3xl lg:text-[54px] text-[#FFF097]  pt-5 md:pt-80 lg:pt-50 3xl:pt-150 leading-normal md:leading-8 lg:leading-12 lg:w-140 w-70">
                             {rsvpSectionHeading}
                           </h2>
         
@@ -217,7 +200,7 @@ export default function CoupleMessage({data}) {
                         </div>
                       ) : (
                         <div className="flex flex-col items-center text-center">
-                          <h2 className="eb-garamond font-normal text-center text-2xl md:text-3xl lg:text-[54px] text-[#FFF097] pt-15 md:pt-80 lg:pt-50 3xl:pt-150 leading-normal md:leading-8 lg:leading-12 lg:w-140 w-70">
+                          <h2 className="eb-garamond font-normal text-center text-2xl md:text-3xl lg:text-[54px] text-[#FFF097] pt-5 md:pt-30 lg:pt-50 3xl:pt-150 leading-normal md:leading-8 lg:leading-12 lg:w-140 w-70">
                             {rsvpSectionHeading}
                           </h2>
         

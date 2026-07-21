@@ -14,6 +14,8 @@ import { BsCalendar2Event } from "react-icons/bs";
 import { IoDesktopOutline } from "react-icons/io5";
 import { uploadImage } from "../../../utils/uploadImage";
 import { uploadFile } from "../../../utils/uploadFile";
+import { IoMdArrowRoundBack } from "react-icons/io";
+
 import {
   getTemplateFieldConfig,
   templateComponents,
@@ -748,7 +750,17 @@ export default function EditTemplatePage() {
         <div className="flex min-h-screen flex-col gap-6 rounded-3xl lg:bg-white  lg:shadow-sm lg:p-8">
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-[#861E1D] font-georgia">
+              <button
+                type="button"
+                onClick={() => router.push("/dashboard")}
+                className="flex  gap-2 justify-center items-center rounded-full border-2 border-[#861E1D] bg-white px-4 py-2 text-sm font-semibold text-[#861E1D] transition hover:bg-slate-100 cursor-pointer"
+              >
+                <IoMdArrowRoundBack />
+                Back to dashboard
+              </button>
+            </div>
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-widest text-[#861E1D] font-georgia text-center">
                 Template editor
               </p>
               <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[#861E1D] sm:text-4xl font-georgia">
@@ -758,24 +770,17 @@ export default function EditTemplatePage() {
             <div className="flex flex-wrap items-center gap-3">
               <button
                 type="button"
-                onClick={() => router.push("/dashboard")}
-                className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-100 cursor-pointer"
-              >
-                Back to dashboard
-              </button>
-
-              <button
-                type="button"
                 onClick={saveEditorChanges}
                 disabled={saving}
-                className="inline-flex items-center justify-center rounded-full border border-slate-200 cursor-pointer bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100 disabled:opacity-50"
+                className="inline-flex items-center justify-center rounded-full border-2 border-[#861E1D] cursor-pointer bg-[#861E1D] px-5 py-3 text-sm font-semibold 
+                text-white transition hover:bg-slate-100 disabled:opacity-50 hover:border-2 hover:border-[#861E1D] hover:text-[#861E1D] "
               >
                 {saving ? "Saving..." : "Save changes"}
               </button>
             </div>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-[minmax(350px,400px)_1fr] 3xl:grid-cols-[minmax(450px,500px)_1fr]  ">
+          <div className="grid gap-6 lg:grid-cols-[minmax(350px,400px)_1fr] 3xl:grid-cols-[minmax(450px,500px)_1fr] md:mt-6">
             <aside className="rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden">
               <div className="flex min-h-full">
                 <Sidebar
