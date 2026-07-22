@@ -10,6 +10,8 @@ import hitchedPreview from "../../../public/assets/preview-images/hitched.png";
 import laavanPreview from "../../../public/assets/preview-images/laavan.png";
 import mayraPreview from "../../../public/assets/preview-images/mayra.png";
 import kalyanamPreview from "../../../public/assets/preview-images/kalyanam.jpg";
+import niqahPreview from "../../../public/assets/preview-images/niqah.jpg";
+import vowsPreview from "../../../public/assets/preview-images/vows.jpg";
 
 export default function DashboardPage() {
   const { user, token, loading } = useContext(AuthContext);
@@ -58,6 +60,8 @@ export default function DashboardPage() {
     laavan: laavanPreview.src,
     mayra: mayraPreview.src,
     kalyanam: kalyanamPreview.src,
+    niqah:niqahPreview.src,
+    vows:vowsPreview.src,
   };
 
   return (

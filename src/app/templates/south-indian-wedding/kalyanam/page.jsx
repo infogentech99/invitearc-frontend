@@ -286,12 +286,12 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
                   <p className="eb-garamond font-medium text-[#FFF5B9] mt-2">
                     <span className="text-base md:text-base lg:text-[15px]">
                       {event.date}
-                    </span>{" "}
+                    </span>
                     <br />
                     <span className="text-base md:text-base lg:text-[15px]">
-                      {" "}
-                      {event.time}{" "}
-                    </span>{" "}
+                     
+                      {event.time}
+                    </span>
                     <br />
                     <span className="text-base md:text-base lg:text-[15px] uppercase">
                       {event.venue}
