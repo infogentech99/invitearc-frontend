@@ -9,8 +9,7 @@ import { assets } from "./assets";
 const FloatingLamp = ({ className, style, reverse = false }) => {
   // Memoize random values to prevent recalculation on re-renders
   const lampValues = useMemo(() => {
-    // const duration = 60 + Math.random() * 40; // 60–100s (very slow flow)
-    // const duration = 40 + Math.random() * 10; // 40–50s
+  
     const duration = 60 + Math.random() * 10; // 60–70s
     const delay = Math.random() * 15;
 
