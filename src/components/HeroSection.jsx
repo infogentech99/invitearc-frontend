@@ -46,13 +46,7 @@ export default function HeroSection() {
               <div
                 key={index}
                 className="
-                  w-[43vw]
-                  sm:w-[44vw]
-                  md:w-[29.5vw]
-                  lg:w-75
-                  h-85
-                  md:h-107.5
-                  lg:h-120
+                  w-[43vw] sm:w-[44vw] md:w-[29.5vw] lg:w-75 h-85 md:h-107.5 lg:h-120
                   rounded-full
                   overflow-hidden
                   border-[5px]
