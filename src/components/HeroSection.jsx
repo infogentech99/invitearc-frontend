@@ -40,20 +40,19 @@ export default function HeroSection() {
         </div>
       </div>
       <div className="max-w-[1600px] mx-auto px-5 lg:px-8">
-        <div className="mt-20 overflow-x-auto scrollbar-hide">
+        <div className="mt-20 pt-20 overflow-x-auto scrollbar-hide">
           <div className="flex gap-4 md:gap-6 lg:gap-8 min-w-max lg:min-w-0 justify-center">
             {cards.map((images, index) => (
               <div
                 key={index}
-                className="
-                  w-[43vw] sm:w-[44vw] md:w-[29.5vw] lg:w-75 h-85 md:h-107.5 lg:h-120
-                  rounded-full
-                  overflow-hidden
-                  border-[5px]
-                  border-[#F8E8C8]
-                  bg-[#5a1717]
-                  shrink-0
-                "
+                className={`
+    w-[43vw] sm:w-[44vw] md:w-[29.5vw] lg:w-75
+    h-85 md:h-107.5 lg:h-120
+    rounded-full overflow-hidden
+    border-[5px] border-[#F8E8C8]
+    bg-[#5a1717] shrink-0
+    ${index % 2 !== 0 ? "-mt-10 md:-mt-14 lg:-mt-14" : ""}
+  `}
               >
                 <div
                   className={`flex flex-col ${
@@ -69,14 +68,7 @@ export default function HeroSection() {
                       alt=""
                       width={400}
                       height={300}
-                      className="
-                        w-full
-                        h-42.5
-                        md:h-53.75
-                        lg:h-62.5
-                        object-cover
-                        shrink-0
-                      "
+                      className=" w-full h-42.5 md:h-53.75 lg:h-62.5 object-cover shrink-0 "
                     />
                   ))}
                 </div>
