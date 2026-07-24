@@ -11,33 +11,33 @@ const testimonials = [
   {
     id: 1,
     name: "Jasmeet & Manvi",
-    image: "/images/couple1.jpg",
+    image: "/assets/testnew2.webp",
     text: "Creating our invite was quick, simple, and looked far better than printed cards.",
   },
   {
     id: 2,
     name: "Rahul & Preeti",
-    image: "/images/couple2.jpg",
+    image: "/assets/testnew3.webp",
     text: "One link, all details - Invite Arc made our celebration planning smooth and modern.",
   },
   {
     id: 3,
     name: "Ankur & Kajal",
-    image: "/images/couple3.jpg",
+    image: "/assets/testnew1.webp",
     text: "An invitation that few refuse and that very few forget. Just the type that people recall.",
   },
-  {
-    id: 4,
-    name: "Amit & Riya",
-    image: "/images/couple4.jpg",
-    text: "Beautiful design and very easy to share with all our guests.",
-  },
-  {
-    id: 5,
-    name: "Karan & Simran",
-    image: "/images/couple5.jpg",
-    text: "The RSVP feature saved us so much time and effort.",
-  },
+  // {
+  //   id: 4,
+  //   name: "Amit & Riya",
+  //   image: "/images/couple4.jpg",
+  //   text: "Beautiful design and very easy to share with all our guests.",
+  // },
+  // {
+  //   id: 5,
+  //   name: "Karan & Simran",
+  //   image: "/images/couple5.jpg",
+  //   text: "The RSVP feature saved us so much time and effort.",
+  // },
 ];
 
 export default function Testimonials() {

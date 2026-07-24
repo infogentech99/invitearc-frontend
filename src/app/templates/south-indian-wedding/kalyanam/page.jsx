@@ -99,7 +99,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
     }));
   };
  const backgroundMusicUrl = data?.backgroundMusicUrl || assets.background_song;
-  // const audioRef = (useRef < HTMLAudioElement) | (null > null);
+
   const audioRef = useRef(null);
   const [started, setStarted] = useState(false);
   const [playing, setPlaying] = useState(false);

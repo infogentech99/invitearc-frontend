@@ -13,29 +13,29 @@ export default function footer() {
     <>
       <footer className="bg-[#F8FAFC] ">
         <div className="max-w-7xl mx-auto py-16 lg:px-0 md:px-6 px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-8 gap-10 items-start">
             {/* Left */}
             <div className="lg:col-span-2">
               <h2 className="text-2xl font-serif font-bold leading-none text-black">
-                Website Templates for Wedding Invites
+               Ready-Made Wedding Invitation Websites
               </h2>
             </div>
 
             {/* Help */}
             <div className="lg:col-span-2">
-              <h3 className="md:text-xl text-[16px] font-serif font-bold text-black">
+              <h3 className="md:text-[16px] text-[14px] font-serif font-bold text-black">
                 Need any help ? We’ve got your back.
               </h3>
 
               <p className="mt-5 text-gray-600">invitearc@gmail.com</p>
 
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/theinvitearc/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex h-10 w-10 items-center justify-center rounded bg-[#9f1d1d] text-white"
+                className="mt-4 inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#9f1d1d] text-white"
               >
-                <FaInstagram className="h-5 w-5" />
+                <FaInstagram className="h-4 w-4" />
               </a>
             </div>
 
@@ -61,7 +61,7 @@ export default function footer() {
             </div>
 
             {/* CTA Card */}
-            <div className="relative overflow-hidden rounded-[30px] border border-gray-400  p-8 lg:col-span-6 md:h-full h-105">
+            {/* <div className="relative overflow-hidden rounded-[30px] border border-gray-400  p-8 lg:col-span-6 md:h-full h-105">
               <div className="max-w-full">
                 <h2 className="text-3xl font-serif font-bold leading-tight text-black md:mr-50">
                   Invite Your Guests in 10 Minutes!
@@ -81,6 +81,28 @@ export default function footer() {
                 alt="Wedding Couple"
                 className="absolute bottom-0 right-0 h-45 object-contain"
               />
+            </div> */}
+             <div className="lg:col-span-2">
+              <h3 className="text-xl font-serif font-bold text-black">
+                Our Templates
+              </h3>
+
+              <ul className="mt-5 space-y-1 text-gray-700 text-[14px]">
+                <li>
+                  <a href="/">Hitched</a>
+                </li>
+
+                <li>
+                  <a href="/">Laavan</a>
+                </li>
+
+                <li>
+                  <a href="/">Mayra</a>
+                </li>
+                 <li>
+                  <a href="/">Vows</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

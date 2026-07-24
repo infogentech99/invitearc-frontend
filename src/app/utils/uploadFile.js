@@ -8,7 +8,7 @@ export const uploadFile = async (
 ) => {
   const formData = new FormData();
 
-  // Backend image field expect karta hai
+
   formData.append("image", file);
 
   formData.append("folder", folder);

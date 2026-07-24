@@ -35,3 +35,36 @@ body {
 .font-georgia {
   font-family: Georgia, serif;
 }
+
+
+@keyframes marqueeUp {
+
+  from{
+    transform:translateY(0);
+  }
+
+  to{
+    transform:translateY(-50%);
+  }
+
+}
+
+@keyframes marqueeDown {
+
+  from{
+    transform:translateY(-50%);
+  }
+
+  to{
+    transform:translateY(0);
+  }
+
+}
+
+.animate-marquee-up{
+    animation:marqueeUp 18s linear infinite;
+}
+
+.animate-marquee-down{
+    animation:marqueeDown 18s linear infinite;
+}

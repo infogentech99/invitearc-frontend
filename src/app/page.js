@@ -7,10 +7,10 @@ import Link from "next/link";
 import AuthModal from "./../components/AuthModal";
 import TemplateGrid from "../components/TemplateGrid";
 import { AuthContext } from "./../context/AuthContext";
-import TraditionalInvites from "./../components/TraditionalInvites";
 import HowItWorks from "./../components/HowItWorks";
 import Testimonial from "./../components/Testimonial";
 import Faq from "./../components/Faq";
+import HeroSection from "./../components/HeroSection";
 
 const slides = [
   {
@@ -63,103 +63,13 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
       <main>
-        <section className="relative overflow-hidden bg-[#861E1D] text-white">
-          <div className="absolute inset-0 bg-linear-to-r from-slate-950 via-slate-900 to-slate-950/50" />
-          <div className="relative mx-auto flex min-h-128 max-w-7xl flex-col justify-center px-6 py-24 sm:px-10 lg:px-12">
-            <div className="overflow-hidden rounded-4xl border border-white/10 bg-slate-950 shadow-2xl">
-              <div
-                className="flex transition-transform duration-700 ease-out"
-                style={{ transform: `translateX(-${active * 100}%)` }}
-              >
-                {slides.map((slide) => (
-                  <div
-                    key={slide.title}
-                    className="min-w-full shrink-0 relative"
-                  >
-                    <img
-                      src={slide.image}
-                      alt={slide.title}
-                      className="h-128 w-full object-cover brightness-[0.55]"
-                    />
-                    <div className="absolute inset-0 bg-linear-to-r from-slate-950/90 via-slate-950/40 to-transparent" />
-                    <div className="absolute inset-y-0 left-0 flex w-full items-center px-8 md:px-16">
-                      <div className="max-w-2xl space-y-6 text-white">
-                        <p className="text-sm uppercase tracking-[0.32em] text-slate-300">
-                          Featured design experience
-                        </p>
-                        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-                          {slide.title}
-                        </h1>
-                        <p className="max-w-xl text-base leading-8 text-slate-200 sm:text-lg">
-                          {slide.description}
-                        </p>
-                        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-                          {slide.href === "/register" ? (
-                            <button
-                              type="button"
-                              onClick={() => openAuthModal("register")}
-                              className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-slate-950/20 transition hover:bg-slate-100"
-                            >
-                              {slide.button}
-                            </button>
-                          ) : (
-                            <Link
-                              href={slide.href}
-                              className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-slate-950/20 transition hover:bg-slate-100"
-                            >
-                              {slide.button}
-                            </Link>
-                          )}
-                          <Link
-                            href="#templates"
-                            className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-                          >
-                            Explore templates
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-8 flex items-center justify-center gap-3">
-              <button
-                onClick={() =>
-                  setActive(
-                    (prev) => (prev - 1 + slides.length) % slides.length,
-                  )
-                }
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-[#861E1D]/80 text-white transition hover:bg-slate-800"
-                aria-label="Previous slide"
-              >
-                ‹
-              </button>
-              {slides.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActive(index)}
-                  className={`h-2 w-10 rounded-full transition ${
-                    index === active ? "bg-white" : "bg-white/40"
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-              <button
-                onClick={() => setActive((prev) => (prev + 1) % slides.length)}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-[#861E1D]/80 text-white transition hover:bg-slate-800"
-                aria-label="Next slide"
-              >
-                ›
-              </button>
-            </div>
-          </div>
+        <section className="relative overflow-hidden bg-[#861E1D] text-white ">
+          <HeroSection/>       
         </section>
 
         <section
           id="templates"
-          className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12"
+          className="mx-auto max-w-375 px-6 py-20 sm:px-10 lg:px-12"
         >
           <div className="flex flex-col gap-4  md:items-center md:justify-between">
             <h2 className="mt-3 text-[28px] font-bold  md:text-[40px] font-georgia text-[#861E1D] text-center md:leading-none leading-9">
@@ -173,7 +83,7 @@ export default function Home() {
           </div>
 
           <TemplateGrid />
-          <TraditionalInvites />
+        
           <HowItWorks />
           <Testimonial/>
           <Faq id="faqs"/>

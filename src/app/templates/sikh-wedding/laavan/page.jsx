@@ -124,52 +124,8 @@ export default function Home({
     }));
   };
 
-  // const updateEvent = (index, field, value) => {
-  //   setData((prev) => {
-  //     const events = [...(prev?.events || [])];
-  //     events[index] = {
-  //       ...events[index],
-  //       [field]: value,
-  //     };
-  //     return {
-  //       ...prev,
-  //       events,
-  //     };
-  //   });
-  // };
-
-  // const saveEdits = async () => {
-  //   try {
-  //     const response = await axios.put(
-  //       `${config.api.baseUrl}/api/client-templates/${templateId}`,
-  //       {
-  //         customData: data,
-  //       },
-  //       {
-  //         headers: {
-  //           Authorization: `Bearer ${token}`,
-  //         },
-  //         withCredentials: true,
-  //       },
-  //     );
-
-  //     setData(response.data.data.customData);
-  //     setEditMode(false);
-  //     alert("Template saved successfully");
-  //   } catch (error) {
-  //     console.error(error);
-  //     alert("Failed to save template");
-  //   }
-  // };
-
-  // const resetEdits = () => {
-  //   setData(initialTemplateData || initialData);
-  //   setEditMode(false);
-  // };
-
   const backgroundMusicUrl = data?.backgroundMusicUrl || assets.background_song;
 
-  // const audioRef = useRef<HTMLAudioElement | null>(null);
   const audioRef = useRef(null);
   const [started, setStarted] = useState(false);
   const [playing, setPlaying] = useState(false);

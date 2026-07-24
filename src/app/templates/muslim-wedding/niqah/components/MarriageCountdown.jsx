@@ -12,31 +12,6 @@ export default function MarriageCountdown({data}) {
         minutes: 0,
     });
 
-    // useEffect(() => {
-    //     const updateCountdown = () => {
-    //         const now = new Date().getTime();
-    //         const diff = TARGET_DATE - now;
-    //         if (diff <= 0) {
-    //             setTimeLeft({ days: 30, hours: 6, minutes: 30 });
-    //             return;
-    //         }
-    //         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    //         const hours = Math.floor(
-    //             (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    //         );
-    //         const minutes = Math.floor(
-    //             (diff % (1000 * 60 * 60)) / (1000 * 60)
-    //         );
-
-    //         setTimeLeft({ days, hours, minutes });
-    //     };
-
-    //     updateCountdown(); // first run
-    //     const interval = setInterval(updateCountdown, 60000); // every minute
-
-    //     return () => clearInterval(interval);
-    // }, []);
-
  useEffect(() => {
         const updateCountdown = () => {
             const now = new Date().getTime();

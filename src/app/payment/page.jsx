@@ -36,12 +36,6 @@ function PaymentContent() {
   const [processing, setProcessing] = useState(false);
   const [success, setSuccess] = useState("");
 
-  // useEffect(() => {
-  //   if (!loading && !user) {
-  //     const redirectUrl = `/payment?templateId=${encodeURIComponent(templateId || "")}`;
-  //     router.push(`/login?redirect=${encodeURIComponent(redirectUrl)}`);
-  //   }
-  // }, [loading, user, router, templateId]);
   useEffect(() => {
     if (!loading && !user) {
       openAuthModal("login");
@@ -91,15 +85,6 @@ function PaymentContent() {
     try {
       await loadRazorpayScript();
 
-      // const orderResponse = await axios.post(
-      //   `${config.api.baseUrl}${config.api.endpoints.clientTemplates.createOrder}`,
-      //   { templateId },
-      //   {
-      //     headers: {
-      //       Authorization: `Bearer ${token}`,
-      //     },
-      //   },
-      // );
 
       const orderResponse = await axios.post(
         `${config.api.baseUrl}${config.api.endpoints.clientTemplates.createOrder}`,
