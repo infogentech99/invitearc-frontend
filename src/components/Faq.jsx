@@ -69,14 +69,22 @@ export default function Faq() {
                 Need help with your InviteArc invitation? Chat with our team for
                 quick assistance.
               </p>
-              <a href="https://api.whatsapp.com/send/?phone=919910130963&text&type=phone_number&app_absent=0"  target="_blank"
-                rel="noopener noreferrer">
+              <a
+                href="https://api.whatsapp.com/send/?phone=919910130963&text&type=phone_number&app_absent=0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <button className="mt-8 rounded-full bg-[#9f2222] px-8 py-2 text-[16px] font-semibold text-white transition  font-georgia cursor-pointer">
                   Chat With Us
                 </button>
               </a>
-
-              <p className="mt-8 text-[#b36a4a]">Or send us an email</p>
+              <a
+                href="mailto:invitearc@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p className="mt-8 text-[#b36a4a]">Or send us an email</p>
+              </a>
             </div>
           </div>
 

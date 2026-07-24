@@ -45,15 +45,8 @@ export default function HeroSection() {
             {cards.map((images, index) => (
               <div
                 key={index}
-                className={`
-    w-[43vw] sm:w-[44vw] md:w-[29.5vw] lg:w-75
-    h-85 md:h-107.5 lg:h-120
-    rounded-full overflow-hidden
-    border-[5px] border-[#F8E8C8]
-    bg-[#5a1717] shrink-0
-    ${index % 2 !== 0 ? "-mt-10 md:-mt-14 lg:-mt-14" : ""}
-  `}
-              >
+                className={` w-[43vw] sm:w-[44vw] md:w-[29.5vw] lg:w-75 h-85 md:h-107.5 lg:h-120 rounded-full overflow-hidden border-[5px] border-[#F8E8C8] bg-[#5a1717] shrink-0
+    ${index % 2 !== 0 ? "-mt-10 md:-mt-14 lg:-mt-14" : ""} `} >
                 <div
                   className={`flex flex-col ${
                     index % 2 === 0

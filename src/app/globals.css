@@ -62,9 +62,9 @@ body {
 }
 
 .animate-marquee-up{
-    animation:marqueeUp 18s linear infinite;
+    animation:marqueeUp 8s linear infinite;
 }
 
 .animate-marquee-down{
-    animation:marqueeDown 18s linear infinite;
+    animation:marqueeDown 8s linear infinite;
 }
