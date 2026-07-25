@@ -14,6 +14,8 @@ import parking from "./assets/parking.webp";
 import rsvp_symbol from "./assets/RSVP_Symbol.webp";
 import whatsapp from "./assets/whatsapp.webp";
 import logo from "./assets/Couple_Logo.webp";
+import respo_bg from "./assets/respo_bg.webp";
+import respo_three from "./assets/respo_three.webp";
 
 export const assets = {
     background: background.src,
@@ -32,4 +34,6 @@ export const assets = {
     rsvp_symbol: rsvp_symbol.src,
     whatsapp: whatsapp.src,
     logo: logo.src,
+    respo_bg:respo_bg.src,
+    respo_three:respo_three.src,
 }

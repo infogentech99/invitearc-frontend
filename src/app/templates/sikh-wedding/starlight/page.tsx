@@ -109,9 +109,9 @@ const FloatingLamp = ({ className, style, reverse = false }: { className: string
 
 
 
- 
 
- 
+
+
 
   return (
     <img
@@ -133,14 +133,16 @@ const FloatingLamp = ({ className, style, reverse = false }: { className: string
 
 export default function Home({
   data: initialTemplateData,
-  // token,
-  // templateId,
   isOwner = false,
-}) {
+})
+ 
+
+{
+const [bgImage, setBgImage] = useState(assets.background);
+ const [coupleImage, setCoupleImage] = useState(assets.bg_three);
 
 
-
-const [data, setData] = useState({
+  const [data, setData] = useState({
     ...initialData,
     ...(initialTemplateData || {}),
     events: (initialTemplateData?.events || []).map((event, index) => ({
@@ -156,22 +158,15 @@ const [data, setData] = useState({
     setData((prev) => ({
       ...prev,
       ...initialTemplateData,
-      events: (initialTemplateData?.events || []).length > 0 
+      events: (initialTemplateData?.events || []).length > 0
         ? (initialTemplateData?.events || []).map((event, index) => ({
-            ...initialData.events?.[index],
-            ...event,
-          }))
+          ...initialData.events?.[index],
+          ...event,
+        }))
         : prev.events || initialData.events,
     }));
   }, [initialTemplateData]);
 
-  const [editMode, setEditMode] = useState(false);
-  const updateField = (field, value) => {
-    setData((prev) => ({
-      ...prev,
-      [field]: value,
-    }));
-  };
 
 
 
@@ -221,6 +216,47 @@ const [data, setData] = useState({
 
 
 
+  useEffect(() => {
+    const updateBg = () => {
+      if (window.innerWidth >= 1536) {
+        // Desktop Large
+        setBgImage(assets.background);
+      } else if (window.innerWidth >= 768) {
+        // Tablet/Desktop
+        setBgImage(assets.background);
+      } else {
+        // Mobile
+        setBgImage(assets.respo_bg);
+      }
+    };
+
+    updateBg();
+    window.addEventListener("resize", updateBg);
+
+    return () => window.removeEventListener("resize", updateBg);
+  }, []);
+
+
+  useEffect(() => {
+    const coupleBg = () => {
+      if (window.innerWidth >= 1536) {
+        // Desktop Large
+        setCoupleImage(assets.bg_three);
+      } else if (window.innerWidth >= 768) {
+        // Tablet/Desktop
+        setCoupleImage(assets.bg_three);
+      } else {
+        // Mobile
+        setCoupleImage(assets.respo_three);
+      }
+    };
+
+    coupleBg();
+    window.addEventListener("resize", coupleBg);
+
+    return () => window.removeEventListener("resize", coupleBg);
+  }, []);
+
   return (
     <>
       <button
@@ -236,12 +272,12 @@ const [data, setData] = useState({
 
       {/* hero section */}
       <div className=" bg-[url('/assets/respo_bg.webp')] md:bg-[url('/assets/background.webp')] 3xl:bg-[url('/assets/background.webp')]
-                       bg-cover bg-top bg-no-repeat min-h-screen w-full relative overflow-hidden" style={{ backgroundImage: `url(${assets.background})` }}>
+                       bg-cover bg-top bg-no-repeat min-h-screen w-full relative overflow-hidden" style={{ backgroundImage: `url(${bgImage})` }}>
 
         <RoseHeroTemp />
 
         <div className="pt-15 md:pt-53 lg:pt-60 3xl:pt-80 relative z-10">
-          <h2 className="text-[#69301B] text-center leading-tight text-xl md:text-5xl lg:text-6xl pb-120
+          <h2 className="text-[#69301B] text-center leading-tight text-xl md:text-5xl lg:text-6xl pb-150
                           md:pb-350 lg:pb-470 3xl:pb-550 flex flex-col items-center gap-y-0 lg:gap-y-5">
 
             <span className="parisienne-regular">{data.groomName}</span>
@@ -330,20 +366,13 @@ const [data, setData] = useState({
                     <p className="text-sm md:text-base lg:text-xl">
                       {event.time}
                     </p>
-
-
-                  </h2>
-
-                  <h2 className="text-[#FFD74B] eb-garamond font-medium text-sm md:text-base">
                     <p className="text-sm md:text-base lg:text-xl">
                       {event.venue}
                     </p>
                     <p className="text-sm md:text-base lg:text-xl">
                       {event.venue_address}
                     </p>
-                    <br />
                   </h2>
-
                   <a
                     href={event.link}
                     className="text-[#FFD74B] underline md:text-sm text-lg mt-2 eb-garamond font-medium"
@@ -376,7 +405,7 @@ const [data, setData] = useState({
             <Image
               src={assets.couple}
               alt="couple" width={900} height={1200}
-              className="w-108 h-104 md:w-205 md:h-198 lg:w-381 lg:h-264 3xl:w-480 3xl:h-463 object-cover" />
+              className="w-full h-104 md:w-full md:h-198 lg:w-full lg:h-264 3xl:w-480 3xl:h-463 object-cover" />
           </div>
 
         </div>
@@ -384,7 +413,7 @@ const [data, setData] = useState({
 
       <CoupleMessage />
 
-      <div className="bg-[url('/assets/respo_three.webp')] md:bg-[url('/assets/bg_three.webp')] bg-cover bg-no-repeat" style={{ backgroundImage: `url(${assets.bg_three})` }}>
+      <div className="bg-[url('/assets/respo_three.webp')] md:bg-[url('/assets/bg_three.webp')] bg-cover bg-no-repeat" style={{ backgroundImage: `url(${coupleImage})`}} >
         <div className="h-253 md:h-179 lg:h-330 3xl:h-421 flex flex-col items-center relative">
           <img src={assets.logo} alt="logo" width={250} height={300} className="absolute top-50 w-30 h-30 md:top-41 md:w-41 md:h-40 lg:top-84 lg:w-72 lg:h-58 3xl:top-118" />
         </div>
