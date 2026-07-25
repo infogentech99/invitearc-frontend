@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import { hitchedEditorFields } from "./hindu-wedding/hitched/fields";
 import { laavanEditorFields } from "./sikh-wedding/laavan/fields";
+import { starlightEditorFields } from "./sikh-wedding/starlight/fields";
 import {mayraEditorFields} from "./hindu-wedding/mayra/fields";
 import {kalyanamEditorFields} from "./south-indian-wedding/kalyanam/fields";
 import {niqahEditorFields} from "./muslim-wedding/niqah/fields";
@@ -13,6 +14,7 @@ import { assets as hitchedAssets } from "./hindu-wedding/hitched/assets";
 const templateMap = {
   hitched: dynamic(() => import("./hindu-wedding/hitched/page"), { loading: () => <div>Loading...</div> }),
   laavan: dynamic(() => import("./sikh-wedding/laavan/page"), { loading: () => <div>Loading...</div>  }),
+  starlight: dynamic(() => import("./sikh-wedding/starlight/page"), { loading: () => <div>Loading...</div>  }),
   mayra: dynamic(() => import("./hindu-wedding/mayra/page"), { loading: () => <div>Loading...</div>  }),
   kalyanam: dynamic(() => import("./south-indian-wedding/kalyanam/page"), { loading: () => <div>Loading...</div>  }),
   niqah: dynamic(() => import("./muslim-wedding/niqah/page"), { loading: () => <div>Loading...</div>  }),
@@ -22,6 +24,7 @@ const templateMap = {
 const templateFieldConfigs = {
   hitched: hitchedEditorFields,
   laavan: laavanEditorFields,
+  starlight: starlightEditorFields,
   mayra: mayraEditorFields,
   kalyanam:kalyanamEditorFields,
   niqah:niqahEditorFields,

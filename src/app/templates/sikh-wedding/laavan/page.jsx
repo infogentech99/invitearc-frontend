@@ -91,7 +91,8 @@ export default function Home({
 }) {
   const [bgImage, setBgImage] = useState(assets.desktop_bg);
  const [coupleImage, setCoupleImage] = useState(assets.desktop_bg);
-  const [data, setData] = useState({
+ 
+ const [data, setData] = useState({
     ...initialData,
     ...(initialTemplateData || {}),
     events: (initialTemplateData?.events || []).map((event, index) => ({

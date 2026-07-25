@@ -8,10 +8,12 @@ import { AuthContext } from "../../context/AuthContext";
 import ShareLinkModal from "../../components/ShareLinkModal";
 import hitchedPreview from "../../../public/assets/preview-images/hitched.webp";
 import laavanPreview from "../../../public/assets/preview-images/laavan.webp";
+import starlightPreview from "../../../public/assets/preview-images/starlight.webp";
 import mayraPreview from "../../../public/assets/preview-images/mayra.webp";
 import kalyanamPreview from "../../../public/assets/preview-images/kalyanam.webp";
 import niqahPreview from "../../../public/assets/preview-images/niqah.webp";
 import vowsPreview from "../../../public/assets/preview-images/vows.webp";
+
 
 export default function DashboardPage() {
   const { user, token, loading } = useContext(AuthContext);
@@ -58,6 +60,7 @@ export default function DashboardPage() {
   const previewImages = {
     hitched: hitchedPreview.src,
     laavan: laavanPreview.src,
+    starlight: starlightPreview.src,
     mayra: mayraPreview.src,
     kalyanam: kalyanamPreview.src,
     niqah:niqahPreview.src,
