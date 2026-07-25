@@ -84,12 +84,7 @@ const initialData = {
 
   ],
 
-
-
 }
-
-
-
 
 const FloatingLamp = ({ className, style, reverse = false }: { className: string; style?: React.CSSProperties; reverse?: boolean }) => {
   // Memoize random values to prevent recalculation on re-renders
@@ -105,12 +100,6 @@ const FloatingLamp = ({ className, style, reverse = false }: { className: string
 
     return { duration, delay, scale, blur };
   }, []); // Empty dependency array means these values are calculated only once
-
-
-
-
-
-
 
 
   return (
@@ -133,13 +122,9 @@ const FloatingLamp = ({ className, style, reverse = false }: { className: string
 
 export default function Home({
   data: initialTemplateData,
-  isOwner = false,
-})
- 
-
-{
-const [bgImage, setBgImage] = useState(assets.background);
- const [coupleImage, setCoupleImage] = useState(assets.bg_three);
+}) {
+  const [bgImage, setBgImage] = useState(assets.background);
+  const [coupleImage, setCoupleImage] = useState(assets.bg_three);
 
 
   const [data, setData] = useState({
@@ -289,10 +274,7 @@ const [bgImage, setBgImage] = useState(assets.background);
           </h2>
 
           <div className="flex flex-col items-center text-center gap-6 mt-0 lg:pt-50 pt-0">
-            {/* <Image
-              src="/assets/shabd.webp"
-              alt="idol"  width={100} height={100}
-              className="w-18 h-10 md:w-26 md:h-14 lg:w-38 lg:h-22 object-cover"/> */}
+
             <h2 className="text-[#FFD74B] text-sm md:text-xl lg:text-2xl md:pt-8 eb-garamond font-medium w-70">
               {data.religiousMantra}
             </h2>
@@ -379,7 +361,6 @@ const [bgImage, setBgImage] = useState(assets.background);
                     target="_blank">
                     View Directions
                   </a>
-
                 </div>
               ))}
             </div>
@@ -390,15 +371,12 @@ const [bgImage, setBgImage] = useState(assets.background);
             {/* Center Text */}
             <div className="absolute flex flex-col justify-center items-center text-center md:mb-0 top-28 md:top-31 lg:top-60 3xl:top-152">
               <p className="parisienne-regular text-3xl md:text-5xl lg:text-7xl lg:leading-22 text-[#FFD74B]">
-                With <br /> Love From Us
+                {data.thankyoutitle}
               </p>
 
               <h2 className="text-xs md:text-xl lg:text-3xl text-center pt-2 md:pt-6 lg:leading-10 md:leading-7 leading-4">
                 <span className="eb-garamond font-medium text-[#FFD74B]">
-                  Thank you for being part our journey. <br />
-                  Your presence makes this celebration truly <br />
-                  meaningful, and we look forward to sharing <br />
-                  these cherished moments with you.
+                  {data.thankyoumessage}
                 </span>
               </h2>
             </div>
@@ -407,13 +385,12 @@ const [bgImage, setBgImage] = useState(assets.background);
               alt="couple" width={900} height={1200}
               className="w-full h-104 md:w-full md:h-198 lg:w-full lg:h-264 3xl:w-480 3xl:h-463 object-cover" />
           </div>
-
         </div>
       </div>
 
       <CoupleMessage />
 
-      <div className="bg-[url('/assets/respo_three.webp')] md:bg-[url('/assets/bg_three.webp')] bg-cover bg-no-repeat" style={{ backgroundImage: `url(${coupleImage})`}} >
+      <div className="bg-[url('/assets/respo_three.webp')] md:bg-[url('/assets/bg_three.webp')] bg-cover bg-no-repeat" style={{ backgroundImage: `url(${coupleImage})` }} >
         <div className="h-253 md:h-179 lg:h-330 3xl:h-421 flex flex-col items-center relative">
           <img src={assets.logo} alt="logo" width={250} height={300} className="absolute top-50 w-30 h-30 md:top-41 md:w-41 md:h-40 lg:top-84 lg:w-72 lg:h-58 3xl:top-118" />
         </div>
