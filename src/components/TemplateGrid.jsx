@@ -269,7 +269,7 @@ export default function TemplateGrid() {
                         src={
                           template.previewImage ||
                           template.defaultData?.sharePreviewImage ||
-                          "/placeholder-template.jpg"
+                          "/placeholder-template.webp"
                         }
                         alt={template.title || "Template preview"}
                         className="h-full w-full object-cover "

@@ -95,7 +95,7 @@ export default function Testimonials() {
                     alt={item.name}
                     width={70}
                     height={70}
-                    className="rounded-full object-cover"
+                    className="rounded-full object-cover h-18"
                   />
                 </div>
 

@@ -6,12 +6,12 @@ import axios from "axios";
 import config from "../../config/config";
 import { AuthContext } from "../../context/AuthContext";
 import ShareLinkModal from "../../components/ShareLinkModal";
-import hitchedPreview from "../../../public/assets/preview-images/hitched.png";
-import laavanPreview from "../../../public/assets/preview-images/laavan.png";
-import mayraPreview from "../../../public/assets/preview-images/mayra.png";
-import kalyanamPreview from "../../../public/assets/preview-images/kalyanam.jpg";
-import niqahPreview from "../../../public/assets/preview-images/niqah.jpg";
-import vowsPreview from "../../../public/assets/preview-images/vows.jpg";
+import hitchedPreview from "../../../public/assets/preview-images/hitched.webp";
+import laavanPreview from "../../../public/assets/preview-images/laavan.webp";
+import mayraPreview from "../../../public/assets/preview-images/mayra.webp";
+import kalyanamPreview from "../../../public/assets/preview-images/kalyanam.webp";
+import niqahPreview from "../../../public/assets/preview-images/niqah.webp";
+import vowsPreview from "../../../public/assets/preview-images/vows.webp";
 
 export default function DashboardPage() {
   const { user, token, loading } = useContext(AuthContext);
