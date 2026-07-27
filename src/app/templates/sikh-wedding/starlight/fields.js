@@ -80,6 +80,52 @@ export const starlightEditorFields = {
     { name: "link", label: "Route link", type: "text" },
   ],
 
+  coupleMessageFields: [
+    { name: "thankyoutitle", label: "Thank you title", type: "text" },
+    { name: "thankyoumessage", label: "Thank you Message", type: "textarea" },
+    { name: "coupleMessageTitle", label: "Couple message title", type: "text" },
+    {
+      name: "coupleMessageDescription",
+      label: "Couple message description",
+      type: "textarea",
+    },
+    {
+      name: "coupleMessageCarouselImages",
+      label: "Upload Couple Images",
+    },
+
+    {
+      name: "coupleMessageThingsToKnowTitle",
+      label: "Guide title",
+      type: "text",
+    },
+    {
+      name: "coupleMessageThingsToKnowDescription",
+      label: "Guide description",
+      type: "textarea",
+    },
+
+    { name: "coupleMessageWeatherTitle", label: "Weather title", type: "text" },
+    {
+      name: "coupleMessageWeatherDetails",
+      label: "Weather details",
+      type: "textarea",
+    },
+    { name: "coupleMessageStaffTitle", label: "Staff title", type: "text" },
+    {
+      name: "coupleMessageStaffDetails",
+      label: "Staff details",
+      type: "textarea",
+    },
+    { name: "coupleMessageParkingTitle", label: "Parking title", type: "text" },
+
+    {
+      name: "coupleMessageParkingDetails",
+      label: "Parking details",
+      type: "textarea",
+    },
+  ],
+
   rsvpFields: [
     { name: "rsvpSectionHeading", label: "RSVP Section Heading", type: "text" },
     { name: "rsvpMode", label: "RSVP Mode (handled in editor)", type: "text" },

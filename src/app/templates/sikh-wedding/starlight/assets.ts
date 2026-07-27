@@ -16,6 +16,11 @@ import whatsapp from "./assets/whatsapp.webp";
 import logo from "./assets/Couple_Logo.webp";
 import respo_bg from "./assets/respo_bg.webp";
 import respo_three from "./assets/respo_three.webp";
+import one from "./assets/one.webp";
+import two from "./assets/two.webp";
+import three from "./assets/three.webp";
+import four from "./assets/four.webp";
+import five from "./assets/five.webp";
 
 export const assets = {
     background: background.src,
@@ -36,4 +41,10 @@ export const assets = {
     logo: logo.src,
     respo_bg:respo_bg.src,
     respo_three:respo_three.src,
+    background_song: "/template-audio/starlight.mp3",
+    one:one.src,
+    two:two.src,
+    three:three.src,
+    four:four.src,
+    five:five.src,
 }

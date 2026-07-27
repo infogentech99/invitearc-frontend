@@ -122,7 +122,7 @@ export default function CoupleMessage({ data }) {
                 slidesPerView: 2.2,
                 spaceBetween: 30,
               },
-              1024: {
+              1024: { 
                 slidesPerView: 3,
                 spaceBetween: 40,
               },

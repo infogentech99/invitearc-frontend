@@ -5,7 +5,6 @@ import RoseHeroTemp from "./components/RoseHeroTemp";
 import CoupleMessage from "./components/CoupleMessage";
 import "./starlight-globals.css";
 import { assets } from "./assets";
-// import MarriageCountdown from "@/app/components/MarriageCountdown";
 
 
 const initialData = {
@@ -50,6 +49,7 @@ const initialData = {
     {
       title_ceremony: "Mehendi",
       image: assets.mehendi,
+       date: "Saturday, April 18th 2026",
       venue: "The Central Park Hotel",
       venue_address:
         "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
@@ -62,6 +62,7 @@ const initialData = {
     {
       title_ceremony: "Anand Karaj",
       image: assets.anand_karaj,
+       date: "Saturday, April 20th 2026",
       venue: "The Central Park Hotel",
       venue_address:
         "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
@@ -73,6 +74,7 @@ const initialData = {
     {
       title_ceremony: "Reception",
       image: assets.reception,
+       date: "Saturday, April 22nd 2026",
       venue: "The Central Park Hotel",
       venue_address:
         "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
@@ -242,6 +244,11 @@ export default function Home({
     return () => window.removeEventListener("resize", coupleBg);
   }, []);
 
+
+
+  const backgroundMusicUrl = data?.backgroundMusicUrl || assets.background_song;
+
+
   return (
     <>
       <button
@@ -253,7 +260,17 @@ export default function Home({
         {playing ? "⏸" : "▶"}
       </button>
 
-      <audio ref={audioRef} src="/assets/background_song.mp3" loop preload="auto" playsInline />
+      {/* <audio ref={audioRef} src="/assets/background_song.mp3" loop preload="auto" playsInline /> */}
+
+      
+      <audio
+        key={backgroundMusicUrl}
+        ref={audioRef}
+        src={backgroundMusicUrl}
+        loop
+        preload="auto"
+        playsInline
+      />
 
       {/* hero section */}
       <div className=" bg-[url('/assets/respo_bg.webp')] md:bg-[url('/assets/background.webp')] 3xl:bg-[url('/assets/background.webp')]
@@ -354,6 +371,9 @@ export default function Home({
                     <p className="text-sm md:text-base lg:text-xl">
                       {event.venue_address}
                     </p>
+                     <p className="text-sm md:text-base lg:text-xl">
+                      {event.theme}
+                    </p>
                   </h2>
                   <a
                     href={event.link}
@@ -369,7 +389,7 @@ export default function Home({
 
           <div className="relative flex flex-col items-center pt-40 lg:pt-80 3xl:pt-140 3xl:gap-60">
             {/* Center Text */}
-            <div className="absolute flex flex-col justify-center items-center text-center md:mb-0 top-28 md:top-31 lg:top-60 3xl:top-152">
+            <div className="absolute flex flex-col justify-center items-center text-center md:mb-0 top-28 md:top-31 lg:top-60 3xl:top-152 3xl:px-130 px-20 lg:px-80 md:px-50">
               <p className="parisienne-regular text-3xl md:text-5xl lg:text-7xl lg:leading-22 text-[#FFD74B]">
                 {data.thankyoutitle}
               </p>
@@ -388,15 +408,15 @@ export default function Home({
         </div>
       </div>
 
-      <CoupleMessage />
+      <CoupleMessage  data={data} />
 
       <div className="bg-[url('/assets/respo_three.webp')] md:bg-[url('/assets/bg_three.webp')] bg-cover bg-no-repeat" style={{ backgroundImage: `url(${coupleImage})` }} >
         <div className="h-253 md:h-179 lg:h-330 3xl:h-421 flex flex-col items-center relative">
-          <img src={assets.logo} alt="logo" width={250} height={300} className="absolute top-50 w-30 h-30 md:top-41 md:w-41 md:h-40 lg:top-84 lg:w-72 lg:h-58 3xl:top-118" />
+          <img src={data?.Logo || assets.logo} alt="logo" width={250} height={300} className="absolute top-50 w-30 h-25 md:top-41 md:w-41 md:h-40 lg:top-84 lg:w-72 lg:h-58 3xl:top-118" />
         </div>
       </div>
 
-      {/* <MarriageCountdown /> */}
+    
     </>
   );
 }
