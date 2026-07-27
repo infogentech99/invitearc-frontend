@@ -38,40 +38,6 @@ export default function CoupleMessage({ data }) {
     return () => clearInterval(interval);
   }, [targetDate]);
 
-  // const testimonial = [
-  //   {
-  //     img: "/assets/one.webp",
-  //   },
-
-  //   {
-  //     img: "/assets/two.webp",
-  //   },
-
-  //   {
-  //     img: "/assets/three.webp",
-  //   },
-
-  //   {
-  //     img: "/assets/four.webp",
-  //   },
-
-  //   {
-  //     img: "/assets/five.webp",
-  //   },
-
-  //   {
-  //     img: "/assets/one.webp",
-  //   },
-
-  //   {
-  //     img: "/assets/two.webp",
-  //   },
-
-  //   {
-  //     img: "/assets/three.webp",
-  //   },
-  // ];
-
   const extractImageSrc = (image) => {
     if (!image) return "";
     if (typeof image === "string") return image;
