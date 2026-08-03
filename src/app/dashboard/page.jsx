@@ -13,6 +13,7 @@ import mayraPreview from "../../../public/assets/preview-images/mayra.webp";
 import kalyanamPreview from "../../../public/assets/preview-images/kalyanam.webp";
 import niqahPreview from "../../../public/assets/preview-images/niqah.webp";
 import vowsPreview from "../../../public/assets/preview-images/vows.webp";
+import sohalaPreview from "../../../public/assets/preview-images/sohala.webp";
 
 
 export default function DashboardPage() {
@@ -65,6 +66,7 @@ export default function DashboardPage() {
     kalyanam: kalyanamPreview.src,
     niqah:niqahPreview.src,
     vows:vowsPreview.src,
+    sohala:sohalaPreview.src,
   };
 
   return (

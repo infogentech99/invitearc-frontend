@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import { hitchedEditorFields } from "./hindu-wedding/hitched/fields";
+import { sohalaEditorFields } from "./hindu-wedding/sohala/fields";
 import { laavanEditorFields } from "./sikh-wedding/laavan/fields";
 import { starlightEditorFields } from "./sikh-wedding/starlight/fields";
 import {mayraEditorFields} from "./hindu-wedding/mayra/fields";
@@ -19,6 +20,7 @@ const templateMap = {
   kalyanam: dynamic(() => import("./south-indian-wedding/kalyanam/page"), { loading: () => <div>Loading...</div>  }),
   niqah: dynamic(() => import("./muslim-wedding/niqah/page"), { loading: () => <div>Loading...</div>  }),
   vows: dynamic(() => import("./christian-wedding/vows/page"), { loading: () => <div>Loading...</div>  }),
+  sohala: dynamic(() => import("./hindu-wedding/sohala/page"), { loading: () => <div>Loading...</div> }),
 };
 
 const templateFieldConfigs = {

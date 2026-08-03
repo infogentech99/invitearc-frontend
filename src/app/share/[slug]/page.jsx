@@ -1,5 +1,6 @@
 import config from "../../../config/config";
 import HitchedTemplate from "../../templates/hindu-wedding/hitched/page";
+import sohalaTemplate from "../../templates/hindu-wedding/sohala/page";
 import LaavanTemplate from "../../templates/sikh-wedding/laavan/page";
 import StarlightTemplate from "../../templates/sikh-wedding/starlight/page";
 import MayraTemplate from "../../templates/hindu-wedding/mayra/page";
@@ -18,6 +19,7 @@ const templateComponents = {
   kalyanam: kalyanamTemplate,
   niqah:niqahTemplate,
   vows:vowsTemplate,
+  sohala:sohalaTemplate,
 };
 
 const getSiteUrl = () =>
