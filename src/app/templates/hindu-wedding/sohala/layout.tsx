@@ -1,4 +1,4 @@
-import DisableInspect from "@/app/components/DisableInspect";
+// import DisableInspect from "@/app/components/DisableInspect";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./sohala-globals.css";
