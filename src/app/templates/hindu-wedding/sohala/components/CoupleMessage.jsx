@@ -73,7 +73,6 @@ const [coupleBg, setCoupleBgImage] = useState(assets.background_third);
     return () => window.removeEventListener("resize", coupleBg);
   }, []);
 
-
     return (
         <section className="bg-[url('/assets/respo_third.webp')] md:bg-[url('/assets/background_third.webp')] bg-cover bg-no-repeat bg-top md:bg-center w-full overflow-hidden" style={{ backgroundImage: `url(${coupleBg})` }}>
 
