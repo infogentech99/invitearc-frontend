@@ -7,7 +7,7 @@ import {
 import { GiLoveSong } from "react-icons/gi";
 import { AiOutlineShareAlt } from "react-icons/ai";
 
-export const mayraEditorFields = {
+export const sohalaEditorFields = {
   tabs: [
     {
       id: "details",
@@ -46,8 +46,6 @@ export const mayraEditorFields = {
     },
   ],
 
-
-
   detailFields: [
     { name: "groomName", label: "Groom name", type: "text" },
     { name: "brideName", label: "Bride name", type: "text" },
@@ -58,10 +56,11 @@ export const mayraEditorFields = {
       label: "GrandParents Name",
       type: "textarea",
     },
-    { name: "familyName", label: "Family name", type: "text" },
+    // { name: "familyName", label: "Family name", type: "text" },
+    { name: "groomDetails", label: "Groom details", type: "textarea" },
     { name: "headline", label: "Headline", type: "text" },
     { name: "inviteLine", label: "Invitation line", type: "text" },
-    { name: "groomDetails", label: "Groom details", type: "textarea" },
+    
 
     { name: "brideDetails", label: "Bride details", type: "textarea" },
     { name: "eventIntro", label: "Event intro", type: "text" },
@@ -91,10 +90,29 @@ export const mayraEditorFields = {
       label: "Couple message description",
       type: "textarea",
     },
+
+
     {
-      name: "coupleMessageCarouselImages",
-      label: "Upload Couple Images",
-    },
+  name: "coupleMessageImages.image1",
+  label: "Couple Image 1",
+  type: "image",
+},
+{
+  name: "coupleMessageImages.image2",
+  label: "Couple Image 2",
+  type: "image",
+},
+{
+  name: "coupleMessageImages.image3",
+  label: "Couple Image 3",
+  type: "image",
+},
+{
+  name: "coupleMessageImages.image4",
+  label: "Couple Image 4",
+  type: "image",
+}, 
+    
 
     {
       name: "coupleMessageThingsToKnowTitle",
@@ -127,6 +145,8 @@ export const mayraEditorFields = {
       type: "textarea",
     },
   ],
+
+  
 
   rsvpFields: [
     { name: "rsvpSectionHeading", label: "RSVP Section Heading", type: "text" },

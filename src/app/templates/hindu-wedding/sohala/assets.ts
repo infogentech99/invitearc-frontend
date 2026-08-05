@@ -45,5 +45,6 @@ export const assets = {
     weather:weather.src,
     parking:parking.src,
     staff:staff.src,
-    whatsapp:whatsapp.src
+    whatsapp:whatsapp.src,
+    background_song: "/template-audio/sohala.mp3",
 }

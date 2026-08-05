@@ -28,9 +28,10 @@ const templateFieldConfigs = {
   laavan: laavanEditorFields,
   starlight: starlightEditorFields,
   mayra: mayraEditorFields,
-  kalyanam:kalyanamEditorFields,
-  niqah:niqahEditorFields,
-  vows:vowsEditorFields,
+  kalyanam: kalyanamEditorFields,
+  niqah: niqahEditorFields,
+  vows: vowsEditorFields,
+  sohala: sohalaEditorFields,
 };
 
 export function getAvailableTemplates() {
