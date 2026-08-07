@@ -7,12 +7,14 @@ import config from "../../config/config";
 import { AuthContext } from "../../context/AuthContext";
 import ShareLinkModal from "../../components/ShareLinkModal";
 import hitchedPreview from "../../../public/assets/preview-images/hitched.webp";
+import auraPreview from "../../../public/assets/preview-images/aura.png";
 import laavanPreview from "../../../public/assets/preview-images/laavan.webp";
 import starlightPreview from "../../../public/assets/preview-images/starlight.webp";
 import mayraPreview from "../../../public/assets/preview-images/mayra.webp";
 import kalyanamPreview from "../../../public/assets/preview-images/kalyanam.webp";
 import niqahPreview from "../../../public/assets/preview-images/niqah.webp";
 import vowsPreview from "../../../public/assets/preview-images/vows.webp";
+import beyondPreview from "../../../public/assets/preview-images/beyond.webp";
 import sohalaPreview from "../../../public/assets/preview-images/sohala.webp";
 
 
@@ -60,12 +62,14 @@ export default function DashboardPage() {
 
   const previewImages = {
     hitched: hitchedPreview.src,
+    aura: auraPreview.src,
     laavan: laavanPreview.src,
     starlight: starlightPreview.src,
     mayra: mayraPreview.src,
     kalyanam: kalyanamPreview.src,
     niqah:niqahPreview.src,
     vows:vowsPreview.src,
+    beyond:beyondPreview.src,
     sohala:sohalaPreview.src,
   };
 

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import {assets} from "../assets";
 
-export default function CoupleMessage({ data }) {
+export default function CoupleMessage({ data }) { 
 
  const coupleTitle = data?.coupleMessageTitle || "Introducing";
   const coupleDescription = data?.coupleMessageDescription || "The Couple";

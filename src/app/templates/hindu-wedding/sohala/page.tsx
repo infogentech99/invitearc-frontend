@@ -78,7 +78,7 @@ export default function Home({
   const [data, setData] = useState({
     ...initialData,
     ...(initialTemplateData || {}),
-    events:
+    events: 
       initialTemplateData?.events ||
       initialData.events,
   });

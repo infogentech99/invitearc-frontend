@@ -1,5 +1,6 @@
 import config from "../../../config/config";
 import HitchedTemplate from "../../templates/hindu-wedding/hitched/page";
+import auraTemplate from "../../templates/hindu-wedding/aura/page";
 import sohalaTemplate from "../../templates/hindu-wedding/sohala/page";
 import LaavanTemplate from "../../templates/sikh-wedding/laavan/page";
 import StarlightTemplate from "../../templates/sikh-wedding/starlight/page";
@@ -7,18 +8,21 @@ import MayraTemplate from "../../templates/hindu-wedding/mayra/page";
 import kalyanamTemplate from "../../templates/south-indian-wedding/kalyanam/page";
 import niqahTemplate from "../../templates/muslim-wedding/niqah/page";
 import vowsTemplate from "../../templates/christian-wedding/vows/page";
+import beyondTemplate from "../../templates/christian-wedding/beyond/page";
 
 
 export const dynamic = "force-dynamic";
 
 const templateComponents = {
   hitched: HitchedTemplate,
+  aura: auraTemplate,
   laavan: LaavanTemplate,
   starlight: StarlightTemplate,
   mayra: MayraTemplate,
   kalyanam: kalyanamTemplate,
   niqah:niqahTemplate,
   vows:vowsTemplate,
+  beyond:beyondTemplate,
   sohala:sohalaTemplate,
 };
 
