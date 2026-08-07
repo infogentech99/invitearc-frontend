@@ -95,8 +95,6 @@ const initialData = {
   ],
 }
 
-
-
 export default function Home({
   data: initialTemplateData,
 }) {
