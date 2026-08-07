@@ -351,7 +351,6 @@ export default function Home({
           </h2>
         </div>
       </div>
-
       <CoupleMessage data={data} />
 
       <div className="bg-[url('/assets/respo_four.webp')] md:bg-[url('/assets/bg_four.webp')] bg-cover bg-no-repeat" style={{ backgroundImage: `url(${assets.bg_four})` }}>
