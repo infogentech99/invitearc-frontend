@@ -352,7 +352,7 @@ export default function Home({
         </div>
       </div>
 
-      <CoupleMessage />
+      <CoupleMessage data={data} />
 
       <div className="bg-[url('/assets/respo_four.webp')] md:bg-[url('/assets/bg_four.webp')] bg-cover bg-no-repeat" style={{ backgroundImage: `url(${assets.bg_four})` }}>
         <div className="relative flex flex-col items-center h-250 md:h-176 lg:h-325 3xl:h-400">
