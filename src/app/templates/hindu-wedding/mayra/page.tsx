@@ -132,13 +132,6 @@ export default function Home({
   const [editMode, setEditMode] = useState(false);
 
 
-  const updateField = (field, value) => {
-    setData((prev) => ({
-      ...prev,
-      [field]: value,
-    }));
-  };
-
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [started, setStarted] = useState(false);
   const [playing, setPlaying] = useState(false);
