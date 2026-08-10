@@ -401,9 +401,6 @@ export default function Home({
                     <span className="text-[20px]">{event.theme}</span>
                   </p>
 
-
-
-
                   <p className="eb-garamond font-medium text-[#FFF097] text-[14px] sm:text-base mt-2">
                     <span className="text-[18px]">{event.venue}</span> <br />
                     <span className="text-sm md:text-base lg:text-[20px]">{event.venue_address}</span> <br />

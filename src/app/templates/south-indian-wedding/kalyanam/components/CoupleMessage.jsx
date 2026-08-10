@@ -224,62 +224,7 @@ export default function CoupleMessage({data}) {
                       )}
                     </div>
         </div>
-          {/* <div className="flex flex-col items-center md:mt-2 lg:mt-0 gap-10 3xl:gap-12">
-            
-                  <div className="">
-                    <div className="flex flex-col-1 md:gap-0 gap-0 lg:gap-0 justify-center items-center md:not-first:mt-4">
-                      {rsvpMode === "form" ? (
-                        <div className="flex flex-col items-center text-center">
-                          <h2 className="eb-garamond font-normal text-center text-2xl md:text-3xl lg:text-[54px] text-[#FFF097]  pt-15 md:pt-80 lg:pt-50 3xl:pt-150 leading-normal md:leading-8 lg:leading-12 lg:w-140 w-70">
-                            {rsvpSectionHeading}
-                          </h2>
-        
-                          <a
-                            href={rsvpGoogleFormLink || "#"}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="mt-6"
-                          >
-                            <button
-                              type="button"
-                              className="rounded-xl bg-[#FFF097] text-black px-6 py-2 text-sm md:text-lg font-semibold cursor-pointer"
-                            >
-                              {rsvpButtonText}
-                            </button>
-                          </a>
-                        </div>
-                      ) : (
-                        <div className="flex flex-col items-center text-center">
-                          <h2 className="eb-garamond font-normal text-center text-2xl md:text-3xl lg:text-[54px] text-[#FFF097] pt-15 md:pt-80 lg:pt-50 3xl:pt-150 leading-normal md:leading-8 lg:leading-12 lg:w-140 w-70">
-                            {rsvpSectionHeading}
-                          </h2>
-        
-                          <a
-                            href={whatsappHref}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="flex items-center gap-1 mt-4"
-                          >
-                            <img
-                              src={assets.whatsapp}
-                              alt="WhatsApp"
-                              className="h-8 w-8 md:h-8 md:w-8 lg:h-16 lg:w-16"
-                            />
-        
-                            <span className="eb-garamond font-normal text-xs md:text-sm lg:text-[22px] text-[#FFF097]">
-                              {rsvpButtonText}
-                            </span>
-                          </a>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                  <img
-                    src={assets.couple_second}
-                    alt="couple"
-                    className="w-108 h-88 md:w-205 md:h-103 lg:w-full lg:h-full 3xl:w-480 3xl:h-243 object-cover"
-                  />
-                </div> */}
+         
       </div>
     </div>
   );

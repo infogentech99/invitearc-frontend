@@ -18,6 +18,20 @@ type BeyondTemplateData = {
   eventIntro?: string;
   brideParents?: string;
   weddingDate?: string;
+  coupleTitle?: string;
+  thankyoutitle?: string;
+  thankyoumessage?: string;
+  coupleMessageThingsToKnowTitle?: string;
+  coupleMessageThingsToKnowDescription?: string;
+  coupleMessageInstagramTitle?: string;
+  coupleMessageInstagramDetails?: string;
+  coupleMessageWeatherTitle?: string;
+  coupleMessageWeatherDetails?: string;
+  coupleMessageStaffDetails?: string;
+  coupleMessageStaffTitle?: string;
+  coupleMessageParkingTitle?: string;
+  coupleMessageParkingDetails?: string;
+
 
   groomGrandParentsName?: string;
   brideDetails?: string;
@@ -29,8 +43,11 @@ type BeyondTemplateData = {
   temperature?: string;
   staffDetails?: string;
   parkingDetails?: string;
+  marriageCountdownTitle?: string;
+  marriageCountdownDescription?: string;
   marriageCountdownDate?: string;
   locationLink?: string;
+
 
 };
 
@@ -58,15 +75,32 @@ export default function Home({ data: initialTemplateData = {} }: { data?: Beyond
           inviteLine={data?.inviteLine}
         />
         <EventShow events={data?.events} eventIntro={data?.eventIntro} />
-        <ImageSection images={data?.coupleMessageCarouselImages?.map((item) => item.image)} />
+        <ImageSection
+          images={data?.coupleMessageCarouselImages?.map((item) => item.image)}
+          thankyoutitle={data?.thankyoutitle}
+          thankyoumessage={data?.thankyoumessage}
+          coupleTitle={data?.coupleTitle}
+        />
         <SubDetails
           socialLinks={data?.socialLinks}
           temprature={data?.temperature}
           staffDetails={data?.staffDetails}
           parkingDetails={data?.parkingDetails}
+          coupleMessageThingsToKnowTitle={data?.coupleMessageThingsToKnowTitle}
+          coupleMessageThingsToKnowDescription={data?.coupleMessageThingsToKnowDescription}
+          coupleMessageWeatherTitle={data?.coupleMessageWeatherTitle}
+          coupleMessageWeatherDetails={data?.coupleMessageWeatherDetails}
+          coupleMessageInstagramTitle={data?.coupleMessageInstagramTitle}
+          coupleMessageInstagramDetails={data?.coupleMessageInstagramDetails}
+          coupleMessageStaffDetails={data?.coupleMessageStaffDetails}
+          coupleMessageStaffTitle={data?.coupleMessageStaffTitle}
+          coupleMessageParkingTitle={data?.coupleMessageParkingTitle}
+          coupleMessageParkingDetails={data?.coupleMessageParkingDetails}
         />
         <EndDetails
           counterDate={data?.marriageCountdownDate}
+          title={data?.marriageCountdownTitle}
+          description={data?.marriageCountdownDescription}
           locationLink={data?.locationLink}
           socialLinks={data?.socialLinks}
         />

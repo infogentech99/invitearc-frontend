@@ -1,5 +1,6 @@
 import config from "../../../config/config";
 import HitchedTemplate from "../../templates/hindu-wedding/hitched/page";
+import BiyeTemplate from "../../templates/hindu-wedding/biye/page";
 import auraTemplate from "../../templates/hindu-wedding/aura/page";
 import sohalaTemplate from "../../templates/hindu-wedding/sohala/page";
 import LaavanTemplate from "../../templates/sikh-wedding/laavan/page";
@@ -15,6 +16,7 @@ export const dynamic = "force-dynamic";
 
 const templateComponents = {
   hitched: HitchedTemplate,
+  biye: BiyeTemplate,
   aura: auraTemplate,
   laavan: LaavanTemplate,
   starlight: StarlightTemplate,

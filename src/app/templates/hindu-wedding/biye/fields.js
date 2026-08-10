@@ -7,7 +7,7 @@ import {
 import { GiLoveSong } from "react-icons/gi";
 import { AiOutlineShareAlt } from "react-icons/ai";
 
-export const mayraEditorFields = {
+export const biyeEditorFields = {
   tabs: [
     {
       id: "details",
@@ -70,17 +70,35 @@ export const mayraEditorFields = {
     },
   ],
 
-  coupleMessageFields: [ 
-    {name: "thankyoutitle", label:"Thank you title", type: "text"},
-    {name: "thankyoumessage", label:"Thank you Message", type: "textarea"},
-    { name: "coupleMessageTitle", label: "Couple message title", type: "text" }, 
-    { name: "coupleMessageDescription",
+  coupleMessageFields: [
+    { name: "thankyoutitle", label: "Thank you title", type: "text" },
+    { name: "thankyoumessage", label: "Thank you Message", type: "textarea" },
+    { name: "coupleMessageTitle", label: "Couple message title", type: "text" },
+    {
+      name: "coupleMessageDescription",
       label: "Couple message description",
-      type: "textarea", },
-{
-  name: "coupleMessageCarouselImages",
-  label: "Upload Couple Images",
-},
+      type: "textarea",
+    },
+    {
+      name: "coupleMessageImages.image1",
+      label: "Couple Image 1",
+      type: "image",
+    },
+    {
+      name: "coupleMessageImages.image2",
+      label: "Couple Image 2",
+      type: "image",
+    },
+    {
+      name: "coupleMessageImages.image3",
+      label: "Couple Image 3",
+      type: "image",
+    },
+    {
+      name: "coupleMessageImages.image4",
+      label: "Couple Image 4",
+      type: "image",
+    },
 
     {
       name: "coupleMessageThingsToKnowTitle",
@@ -111,13 +129,17 @@ export const mayraEditorFields = {
       label: "Parking details",
       type: "textarea",
     },
-  ], 
+  ],
 
-    rsvpFields: [
+  rsvpFields: [
     { name: "rsvpSectionHeading", label: "RSVP Section Heading", type: "text" },
     { name: "rsvpMode", label: "RSVP Mode (handled in editor)", type: "text" },
     { name: "whatsappNumber", label: "WhatsApp Number", type: "text" },
-    { name: "rsvpWhatsappButtonText", label: "WhatsApp Button Text", type: "text" },
+    {
+      name: "rsvpWhatsappButtonText",
+      label: "WhatsApp Button Text",
+      type: "text",
+    },
     { name: "rsvpFormButtonText", label: "Form Button Text", type: "text" },
     { name: "rsvpGoogleFormLink", label: "Google Form Link", type: "text" },
   ],

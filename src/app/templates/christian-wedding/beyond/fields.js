@@ -70,7 +70,73 @@ export const beyondEditorFields = {
     { name: "link", label: "Route link", type: "text" },
   ],
 
+ coupleMessageFields: [ 
+    {name: "thankyoutitle", label:"Thank you title", type: "text"},
+    {name: "thankyoumessage", label:"Thank you Message", type: "textarea"},
+    { name: "coupleTitle", label: "Couple message title", type: "text" }, 
+    
+{
+  name: "coupleMessageCarouselImages",
+  label: "Upload Couple Images",
+},
 
+    {
+      name: "coupleMessageThingsToKnowTitle",
+      label: "Guide title",
+      type: "text",
+    },
+    {
+      name: "coupleMessageThingsToKnowDescription",
+      label: "Guide description",
+      type: "textarea",
+    },
+
+ { name: "coupleMessageInstagramTitle", label: "Instagram title", type: "text" },
+    {
+      name: "coupleMessageInstagramDetails",
+      label: "Instagram details",
+      type: "textarea",
+    },
+
+    { name: "coupleMessageWeatherTitle", label: "Weather title", type: "text" },
+    {
+      name: "coupleMessageWeatherDetails",
+      label: "Weather details",
+      type: "textarea",
+    },
+    { name: "coupleMessageStaffTitle", label: "Staff title", type: "text" },
+    {
+      name: "coupleMessageStaffDetails",
+      label: "Staff details",
+      type: "textarea",
+    },
+    { name: "coupleMessageParkingTitle", label: "Parking title", type: "text" },
+
+    {
+      name: "coupleMessageParkingDetails",
+      label: "Parking details",
+      type: "textarea",
+    },
+  ],
+
+
+   publishFields: [
+    {
+      name: "sharePreviewImage",
+      label: "Preview Image",
+      type: "image",
+    },
+    {
+      name: "sharePreviewTitle",
+      label: "Preview Title",
+      type: "text",
+    },
+    {
+      name: "sharePreviewDescription",
+      label: "Preview Description",
+      type: "textarea",
+    },
+  ],
 
 
 };

@@ -3,12 +3,20 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import {assets} from "../assets";
 interface EndDetailsProps {
-  counterDate?: string;
+counterDate?: string;
+  title?: string;
+  description?: string;
   locationLink?: string;
   socialLinks?: { platform: string; url: string }[];
 }
 
-const EndDetails = ({ counterDate, locationLink, socialLinks }: EndDetailsProps) => {
+const EndDetails = ({
+  counterDate,
+  title = "The Journey Begins",
+  description = "Surrounded by family and friends, we can't wait to celebrate this beautiful moment with you.",
+  locationLink,
+  socialLinks,
+}: EndDetailsProps) => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 });
 
   useEffect(() => {
@@ -43,11 +51,11 @@ const EndDetails = ({ counterDate, locationLink, socialLinks }: EndDetailsProps)
       </div>
       <p className="font-parisienne-regular font-normal text-2xl md:text-4xl lg:text-6xl text-center leading-[120%] absolute 
                     top-3 md:top-13 lg:top-28 left-1/2 -translate-x-1/2">
-        The Journey Begins <br />
+        {title} <br />
       </p>
       <p className="font-eb-garamond font-medium text-xs md:text-xl lg:text-[28px] text-center absolute left-1/2 -translate-x-1/2 
                     leading-[120%] w-full top-11 md:top-28 lg:top-48">
-        Surrounded by family and friends, we can't wait to celebrate <br /> this beautiful moment with you.
+        {description}
       </p>
       <hr className="w-42 md:w-66 lg:w-94 border lg:border-2 border-[#280F56] my-1 md:my-1 lg:my-2 absolute left-1/2 
                      -translate-x-1/2 leading-[120%] top-19 md:top-45 lg:top-72" />

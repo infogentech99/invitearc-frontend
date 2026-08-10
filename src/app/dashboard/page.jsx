@@ -7,6 +7,7 @@ import config from "../../config/config";
 import { AuthContext } from "../../context/AuthContext";
 import ShareLinkModal from "../../components/ShareLinkModal";
 import hitchedPreview from "../../../public/assets/preview-images/hitched.webp";
+import biyePreview from "../../../public/assets/preview-images/biye.webp";
 import auraPreview from "../../../public/assets/preview-images/aura.png";
 import laavanPreview from "../../../public/assets/preview-images/laavan.webp";
 import starlightPreview from "../../../public/assets/preview-images/starlight.webp";
@@ -62,6 +63,7 @@ export default function DashboardPage() {
 
   const previewImages = {
     hitched: hitchedPreview.src,
+    biye: biyePreview.src,
     aura: auraPreview.src,
     laavan: laavanPreview.src,
     starlight: starlightPreview.src,

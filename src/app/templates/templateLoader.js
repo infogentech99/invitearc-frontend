@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import { hitchedEditorFields } from "./hindu-wedding/hitched/fields";
+import { biyeEditorFields } from "./hindu-wedding/biye/fields";
 import { auraEditorFields } from "./hindu-wedding/aura/fields";
 import { sohalaEditorFields } from "./hindu-wedding/sohala/fields";
 import { laavanEditorFields } from "./sikh-wedding/laavan/fields";
@@ -16,6 +17,7 @@ import { assets as hitchedAssets } from "./hindu-wedding/hitched/assets";
 // Dynamic template loader - maps slug to template component
 const templateMap = {
   hitched: dynamic(() => import("./hindu-wedding/hitched/page"), { loading: () => <div>Loading...</div> }),
+  biye: dynamic(() => import("./hindu-wedding/biye/page"), { loading: () => <div>Loading...</div> }),
   aura: dynamic(() => import("./hindu-wedding/aura/page"), { loading: () => <div>Loading...</div> }),
   laavan: dynamic(() => import("./sikh-wedding/laavan/page"), { loading: () => <div>Loading...</div>  }),
   starlight: dynamic(() => import("./sikh-wedding/starlight/page"), { loading: () => <div>Loading...</div>  }),
@@ -29,6 +31,7 @@ const templateMap = {
 
 const templateFieldConfigs = {
   hitched: hitchedEditorFields,
+  biye: biyeEditorFields,
   aura: auraEditorFields,
   laavan: laavanEditorFields,
   starlight: starlightEditorFields,

@@ -6,36 +6,61 @@ interface SubDetailsProps {
   temprature?: string;
   staffDetails?: string;
   parkingDetails?: string;
+  coupleMessageThingsToKnowTitle?: string;
+  coupleMessageThingsToKnowDescription?: string;
+  coupleMessageInstagramTitle?: string;
+  coupleMessageInstagramDetails?: string;
+  coupleMessageWeatherTitle?: string;
+  coupleMessageWeatherDetails?: string;
+  coupleMessageStaffDetails?: string;
+  coupleMessageStaffTitle?: string;
+  coupleMessageParkingTitle?: string;
+  coupleMessageParkingDetails?: string;
 }
 
-const SubDetails = ({ socialLinks, temprature, staffDetails, parkingDetails }: SubDetailsProps) => {
+const SubDetails = ({
+  socialLinks,
+  temprature,
+  staffDetails,
+  parkingDetails,
+  coupleMessageThingsToKnowTitle = "A Guide For Guests",
+  coupleMessageThingsToKnowDescription = "Your presence means the world to us. To make your experience <br /> effortless and enjoyable, we've gathered a few useful details below.",
+  coupleMessageInstagramTitle = "Instagram",
+  coupleMessageInstagramDetails,
+  coupleMessageWeatherTitle = "Weather",
+  coupleMessageWeatherDetails,
+  coupleMessageStaffTitle = "Staff",
+  coupleMessageStaffDetails,
+  coupleMessageParkingTitle = "Parking",
+  coupleMessageParkingDetails,
+}: SubDetailsProps) => {
   const instagramLink = socialLinks?.find(link => link.platform.toLowerCase() === 'instagram');
   const instagramHashtag = instagramLink?.url ? `Please use ${instagramLink.url}` : "#abkan";
 
   const items = [
     {
       img: assets.instagram,
-      title: "Instagram",
+      title: coupleMessageInstagramTitle,
       className: "w-10 h-10 md:w-10 md:h-12 lg:w-20 lg:h-20",
-      desc: `Please include the hashtag #abkan when posting photos on social media - ${instagramHashtag}`,
+      desc: coupleMessageInstagramDetails || `Please include the hashtag #abkan when posting photos on social media - ${instagramHashtag}`,
     },
     {
       img: assets.weather,
-      title: "Weather",
+      title: coupleMessageWeatherTitle,
       className: "w-10 h-12 md:w-15 md:h-12 lg:w-24 lg:h-21",
-      desc: temprature || "A delighful day awaits with pleasant weather and mild temperatures.",
+      desc: coupleMessageWeatherDetails || temprature || "A delighful day awaits with pleasant weather and mild temperatures.",
     },
     {
       img: assets.staff,
-      title: "Staff",
+      title: coupleMessageStaffTitle,
       className: "w-10 h-12 md:w-15 md:h-12 lg:w-20 lg:h-20",
-      desc: staffDetails || "For those traveling from afar, Royal Orchid Suites offers a comfortable stay nearby.",
+      desc: coupleMessageStaffDetails || staffDetails || "For those traveling from afar, Royal Orchid Suites offers a comfortable stay nearby.",
     },
     {
       img: assets.parking,
-      title: "Parking",
+      title: coupleMessageParkingTitle,
       className: "w-10 h-12 md:w-15 md:h-12 lg:w-24 lg:h-21",
-      desc: parkingDetails || "Guests can enjoy hassle free parking facilities available at the venue.",
+      desc: coupleMessageParkingDetails || parkingDetails || "Guests can enjoy hassle free parking facilities available at the venue.",
     },
   ];
   
@@ -70,7 +95,8 @@ const SubDetails = ({ socialLinks, temprature, staffDetails, parkingDetails }: S
 
       <p className="font-parisienne-regular text-4xl md:text-6xl lg:text-[100px] leading-[120%] absolute left-1/2 
                     -translate-x-1/2 text-center top-1/20 md:top-32 lg:top-50">
-        A Guide For <br /> Guests
+        {/* A Guide For <br /> Guests */}
+        {coupleMessageThingsToKnowTitle}
       </p>
       
       <div className="absolute left-1/2 -translate-x-1/2 text-xs md:text-xl text-center top-0 md:top-45 lg:top-90 leading-[120%]
@@ -87,8 +113,8 @@ const SubDetails = ({ socialLinks, temprature, staffDetails, parkingDetails }: S
       </div>
       <p className="font-eb-garamond font-normal text-sm md:text-lg lg:text-[32px] text-center absolute left-1/2 -translate-x-1/2
                     top-175 md:top-152 lg:top-170 leading-[120%] w-full md:max-w-2xl lg:max-w-6xl">
-        Your presence means the world to us. To make your experience <br /> effortless and enjoyable, we've gathered a few useful
-        details below.
+        
+        {coupleMessageThingsToKnowDescription}
       </p>
     </section>
   );

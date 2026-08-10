@@ -10,7 +10,7 @@ const EASE_BOUNCE = [0.68, -0.55, 0.265, 1.55] as const;
 // interface EventSectionProps {
 //   id?: number;
 //   eventName: string;
-//   date: string;
+//   date: string; 
 //   venue?: string;
 //   time?: string;
 //   img?: string;
