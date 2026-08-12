@@ -13,29 +13,16 @@ export default function HowItWorks () {
 
         <section
           id="features"
-          className="px-6 py-20 sm:px-10 lg:px-0"
+          className="px-0 py-10 sm:px-10 lg:px-0"
         >
-          <div className="mx-auto max-w-7xl">
-            <div className="grid gap-8 md:grid-cols-3">
+          <div className="mx-auto max-w-full">
               <img
-                src="/assets/how1.jpg"
+                src="/assets/hown.png"
                 alt="InviteArc"
-                className="rounded-3xl"
+                className="rounded-xl"
               />
 
-               <img
-                src="/assets/how2.png"
-                alt="InviteArc"
-                className="rounded-3xl shadow"
-              />
-               <img
-                src="/assets/how3.png"
-                alt="InviteArc"
-                className="rounded-3xl"
-              />
-                
-                
-                </div></div></section>
+              </div></section>
         </div>
         </>
     )

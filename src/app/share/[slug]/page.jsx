@@ -1,5 +1,7 @@
 import config from "../../../config/config";
 import HitchedTemplate from "../../templates/hindu-wedding/hitched/page";
+import SaanjhTemplate from "../../templates/hindu-wedding/saanjh/page";
+import MilanTemplate from "../../templates/hindu-wedding/milan/page";
 import BiyeTemplate from "../../templates/hindu-wedding/biye/page";
 import auraTemplate from "../../templates/hindu-wedding/aura/page";
 import sohalaTemplate from "../../templates/hindu-wedding/sohala/page";
@@ -16,6 +18,8 @@ export const dynamic = "force-dynamic";
 
 const templateComponents = {
   hitched: HitchedTemplate,
+  saanjh: SaanjhTemplate,
+  milan: MilanTemplate,
   biye: BiyeTemplate,
   aura: auraTemplate,
   laavan: LaavanTemplate,

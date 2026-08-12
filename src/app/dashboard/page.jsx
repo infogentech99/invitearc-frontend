@@ -7,6 +7,8 @@ import config from "../../config/config";
 import { AuthContext } from "../../context/AuthContext";
 import ShareLinkModal from "../../components/ShareLinkModal";
 import hitchedPreview from "../../../public/assets/preview-images/hitched.webp";
+import saanjhPreview from "../../../public/assets/preview-images/saanjh.webp";
+import milanPreview from "../../../public/assets/preview-images/milan.webp";
 import biyePreview from "../../../public/assets/preview-images/biye.webp";
 import auraPreview from "../../../public/assets/preview-images/aura.png";
 import laavanPreview from "../../../public/assets/preview-images/laavan.webp";
@@ -63,6 +65,8 @@ export default function DashboardPage() {
 
   const previewImages = {
     hitched: hitchedPreview.src,
+    saanjh: saanjhPreview.src,
+    milan: milanPreview.src,
     biye: biyePreview.src,
     aura: auraPreview.src,
     laavan: laavanPreview.src,
