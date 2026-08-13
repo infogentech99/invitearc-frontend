@@ -114,12 +114,12 @@ export const mayraEditorFields = {
   ], 
 
     rsvpFields: [
-    { name: "rsvpSectionHeading", label: "RSVP Section Heading", type: "text" },
-    { name: "rsvpMode", label: "RSVP Mode (handled in editor)", type: "text" },
-    { name: "whatsappNumber", label: "WhatsApp Number", type: "text" },
-    { name: "rsvpWhatsappButtonText", label: "WhatsApp Button Text", type: "text" },
-    { name: "rsvpFormButtonText", label: "Form Button Text", type: "text" },
-    { name: "rsvpGoogleFormLink", label: "Google Form Link", type: "text" },
+    // { name: "rsvpSectionHeading", label: "RSVP Section Heading", type: "text" },
+    // { name: "rsvpMode", label: "RSVP Mode (handled in editor)", type: "text" },
+    // { name: "whatsappNumber", label: "WhatsApp Number", type: "text" },
+    // { name: "rsvpWhatsappButtonText", label: "WhatsApp Button Text", type: "text" },
+    // { name: "rsvpFormButtonText", label: "Form Button Text", type: "text" },
+    // { name: "rsvpGoogleFormLink", label: "Google Form Link", type: "text" },
   ],
 
   publishFields: [

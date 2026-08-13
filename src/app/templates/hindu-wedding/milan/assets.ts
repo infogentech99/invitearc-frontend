@@ -19,13 +19,19 @@ import one from "./assets/one.webp";
 import two from "./assets/two.webp";
 import three from "./assets/three.webp";
 import four from "./assets/four.webp";
+import respo_four from "./assets/respo_four.webp";
+import respo_two from "./assets/respo_two.webp";
+import respo_bg from "./assets/respo_bg.webp";
 
 export const assets = {
 flower_petals:flower_petals.src,
 background:background.src,
 bg_two:bg_two.src,
+respo_two:respo_two.src,
 bg_three_design:bg_three_design.src,
 bg_four:bg_four.src,
+respo_four:respo_four.src,
+respo_bg:respo_bg.src,
 left:left.src,
 right:right.src,
 bg_five:bg_five.src,
@@ -42,4 +48,5 @@ one:one.src,
 two:two.src,
 three:three.src,
 four:four.src,
+background_song: "/template-audio/milan.mp3",
 }

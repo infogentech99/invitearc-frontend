@@ -201,6 +201,10 @@ export default function EditTemplatePage() {
     return editorData.rsvpFields;
   }, [editorData]);
 
+  // Template-defined field configs (from each template's fields.js)
+  const templateRsvpFields = fieldConfig?.rsvpFields || [];
+  // const templateCountdownFields = fieldConfig?.countdownFields || [];
+
   const eventItems = useMemo(() => {
     if (!Array.isArray(editorData?.events)) return [];
     return editorData.events;
@@ -827,11 +831,8 @@ export default function EditTemplatePage() {
                     {activeTab === "rsvp" && (
                       <RsvpEditor
                         editorData={editorData}
-                        rsvpFields={rsvpFields}
+                        templateRsvpFields={templateRsvpFields}
                         updateField={updateField}
-                        addRsvpField={addRsvpField}
-                        removeRsvpField={removeRsvpField}
-                        updateRsvpField={updateRsvpField}
                         formatFieldLabel={formatFieldLabel}
                       />
                     )}
@@ -840,6 +841,7 @@ export default function EditTemplatePage() {
                       <CountdownEditor
                         editorData={editorData}
                         updateCoupleMessageField={updateCoupleMessageField}
+                        // templateCountdownFields={templateCountdownFields}
                       />
                     )}
 

@@ -4,11 +4,9 @@ import { SiGoogleforms } from "react-icons/si";
 
 export default function RsvpEditor({
   editorData = {},
-  rsvpFields = [],
+  // fields defined by the template code (fields.js)
+  templateRsvpFields = [],
   updateField,
-  addRsvpField,
-  removeRsvpField,
-  updateRsvpField,
   formatFieldLabel,
 }) {
   const selectedMode = editorData.rsvpMode || "whatsapp";
@@ -139,6 +137,44 @@ export default function RsvpEditor({
             />
           </div>
         </>
+      )}
+
+      {/* Render template-defined RSVP fields (editable values only) */}
+      {Array.isArray(templateRsvpFields) && templateRsvpFields.length > 0 && (
+        <div>
+          {/* <label className="block text-sm font-semibold text-slate-800 font-georgia">RSVP Fields</label> */}
+
+          
+          <div className="mt-2 space-y-3">
+            {templateRsvpFields.map((field, idx) => {
+              const value = editorData[field.name] ?? "";
+              if (field.type === "textarea") {
+                return (
+                  <div key={idx}>
+                    <label className="text-sm font-semibold text-slate-800 font-georgia">{field.label}</label>
+                    <textarea
+                      rows={3}
+                      value={value}
+                      onChange={(e) => updateField(field.name, e.target.value)}
+                      className="mt-1 w-full rounded-2xl border border-slate-200 bg-slate-50 p-2 text-sm text-slate-900"
+                    />
+                  </div>
+                );
+              }
+              return (
+                <div key={idx}>
+                  <label className="text-sm font-semibold text-slate-900 font-georgia">{field.label}</label>
+                  <input
+                    value={value}
+                    onChange={(e) => updateField(field.name, e.target.value)}
+                    placeholder={field.label}
+                    className="mt-1 w-full rounded-2xl border border-slate-200 bg-slate-50 p-2 text-sm text-slate-900"
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
       )}
     </div>
   );
