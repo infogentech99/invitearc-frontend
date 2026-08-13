@@ -198,7 +198,7 @@ export default function Home({
         playsInline
       />
 
-      {/* hero section */}
+   
       <div 
       // bg-[url('/assets/respo_bg.webp')]   md:bg-[url('/assets/background.webp')]
       className="
