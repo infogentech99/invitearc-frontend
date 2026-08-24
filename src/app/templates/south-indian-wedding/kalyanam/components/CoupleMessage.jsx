@@ -70,8 +70,6 @@ export default function CoupleMessage({data}) {
   const rsvpGoogleFormLink =
     data?.rsvpGoogleFormLink || data?.customData?.rsvpGoogleFormLink || "";
 
-
-
   return (
     <div
       className="bg-[#9e1902] bg-[url('/assets/bg_three_respo.webp')] md:bg-[url('/assets/bg_three.webp')] bg-cover bg-no-repeat"
