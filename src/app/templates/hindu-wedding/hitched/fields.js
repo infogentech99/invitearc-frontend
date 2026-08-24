@@ -46,13 +46,17 @@ export const hitchedEditorFields = {
     },
   ],
   detailFields: [
-    { name: "familyName", label: "Family name", type: "text" },
-    { name: "blessingMessage", label: "Blessing message", type: "text" },
-    { name: "headline", label: "Headline", type: "text" },
-    { name: "inviteLine", label: "Invitation line", type: "text" },
-    { name: "eventIntro", label: "Event intro", type: "text" },
     { name: "groomName", label: "Groom name", type: "text" },
     { name: "brideName", label: "Bride name", type: "text" },
+    { name: "religiousMantra", label: "Religious Mantra", type: "text" },
+    { name: "religiousSign", label: "Religious Sign", type: "religiousSign" },
+
+    { name: "blessingMessage", label: "Blessing message", type: "text" },
+    { name: "grandParentName", label: "Grand Parent Name", type: "text" },
+    { name: "familyName", label: "Family name", type: "text" },
+    { name: "headline", label: "Headline", type: "text" },
+    { name: "inviteLine", label: "Invitation line", type: "text" },
+
     { name: "groomDetails", label: "Groom details", type: "textarea" },
     { name: "brideDetails", label: "Bride details", type: "textarea" },
     {
@@ -60,7 +64,8 @@ export const hitchedEditorFields = {
       label: "Bride GrandParents Name",
       type: "textarea",
     },
-    { name: "noteText", label: "Note text", type: "textarea" },
+    { name: "eventIntro", label: "Event intro", type: "text" },
+    // { name: "noteText", label: "Note text", type: "textarea" },
   ],
   eventFields: [
     { name: "title_ceremony", label: "Title", type: "text" },
@@ -73,6 +78,8 @@ export const hitchedEditorFields = {
   ],
 
   coupleMessageFields: [
+     { name: "thankyoutitle", label: "Thank you title", type: "text" },
+    { name: "thankyoumessage", label: "Thank you Message", type: "textarea" },
     { name: "coupleMessageTitle", label: "Couple message title", type: "text" },
     {
       name: "coupleMessageDescription",
@@ -103,11 +110,22 @@ export const hitchedEditorFields = {
       label: "Location details",
       type: "textarea",
     },
+    {
+      name: "coupleMessageWeatherImage",
+      label: "Weather Image",
+      type: "image",
+    },
     { name: "coupleMessageWeatherTitle", label: "Weather title", type: "text" },
     {
       name: "coupleMessageWeatherDetails",
       label: "Weather details",
       type: "textarea",
+    },
+
+    {
+      name: "coupleMessageParkingImage",
+      label: "Parking Image",
+      type: "image",
     },
     { name: "coupleMessageParkingTitle", label: "Parking title", type: "text" },
     {
@@ -115,7 +133,6 @@ export const hitchedEditorFields = {
       label: "Parking details",
       type: "textarea",
     },
-    
   ],
 
   rsvpFields: [

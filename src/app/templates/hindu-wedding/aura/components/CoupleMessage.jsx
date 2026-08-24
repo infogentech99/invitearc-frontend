@@ -77,7 +77,7 @@ export default function CoupleMessage({ data }) {
     data?.marriageCountdownDescription ||
     "Surrounded by family and friends, we can't wait to celebrate this beautiful moment with you.";
 
-  const targetDate = data?.marriageCountdownDate || "2026-09-21";
+  const targetDate = data?.marriageCountdownDate || "2026-12-21";
   const TARGET_DATE = new Date(targetDate).getTime();
   const [timeLeft, setTimeLeft] = useState({
     days: 0,

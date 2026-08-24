@@ -48,10 +48,15 @@ const initialData = {
   groomName: "Dhiraj",
   groomDetails: "(Grandson of Mrs. Kanta & Mr. Kamal Bhawnani)\n(Son of Mrs. Kanchan & Mr. Sanjay Bhawnani)",
   brideName: "Ritika",
+  religiousMantra: "|| श्री गणेशाय नमः ||",
+  grandParentName:"Late Smt. Kamla Kapoor",
   brideDetails: "(Daughter of Mrs. Sarita & Mr. Pradeep Jain)",
   brideGrandParentsName: "(Granddaughter of Shri J.S. Kapoor)",
   blessingMessage: "With the heavenly blessings of",
   eventIntro: "On the following events",
+   thankyoutitle: "With Love From Us",
+  thankyoumessage:
+    "Thank you for being part our journey. Your presence makes this celebration truly meaningful, and we look forward to sharing these cherished moments with you.",
   coupleMessageTitle: "Introducing",
   coupleMessageDescription: "The Couple",
   coupleMessageThingsToKnowTitle: "A Guide for Guests",
@@ -102,6 +107,8 @@ const initialData = {
     },
 
   ],
+
+   religiousSign: "",
 };
 
 export default function Home({
@@ -547,13 +554,13 @@ export default function Home({
 
           <div className="flex flex-col items-center text-center gap-6 mt-0  lg:pt-250 pt-150 md:pt-0">
             <h2 className="text-white md:text-2xl text-[17px] text-center">
-              || श्री गणेशाय नमः ||
+              {data.religiousMantra}
             </h2>
+            
             <img
-              src={assets.ganesh}
-              alt="ganesh"
-              className="md:w-40 w-28 h-auto"
-            />
+                          src={data?.religiousSign || assets.ganesh}
+                          alt="idol" width={100} height={100}
+                          className="md:w-40 w-28 h-auto" />
 
             <h2 className="text-white lg:text-[30px] md:text-2xl text-[20px] font-Cormorant-upright">
               {data.blessingMessage}
@@ -675,12 +682,12 @@ export default function Home({
             <div className="absolute inset-0 flex items-center text-left lg:ml-0 3xl:ml-50 ml-4 ">
               <div className="lg:pl-24 md:pl-14 pl-0">
                 <h1 className="lg:text-7xl md:text-5xl text-[26px] text-[#E1EF1E] font-parisienne lg:pb-10 md:pb-8 pb-4">
-                  With Love From Us
+                    {data.thankyoutitle}
                 </h1>
 
                 <h2 className="3xl:text-[40px] lg:text-[36px] md:text-2xl text-[14px] text-[#00EAFF] font-Cormorant-upright lg:leading-12.5 md:leading-10 leading-5 md:pr-90 pr-40 3xl:pr-220 lg:pr-150 text-center mb-20">
-                  Thank you for being part of our journey. Your presence makes this celebration truly meaningful, and we look forward to sharing these cherished moments with you.
-                </h2>
+               {data.thankyoumessage}
+                  </h2>
               </div>
             </div>
           </div>

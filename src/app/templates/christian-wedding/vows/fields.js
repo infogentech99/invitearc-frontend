@@ -50,6 +50,7 @@ export const vowsEditorFields ={
    { name: "groomName", label: "Groom name", type: "text" },
     { name: "brideName", label: "Bride name", type: "text" },
     {name: "religiousMantra", label: "Religious Mantra", type:"text"},
+     { name: "religiousSign", label: "Religious Sign", type: "religiousSign" },
      { name: "blessingMessage", label: "Blessing message", type: "text" },
      { name: "groomGrandParentsName", label: "GrandParents Name", type: "textarea" },
       { name: "brideDetails", label: "Bride details", type: "textarea" },

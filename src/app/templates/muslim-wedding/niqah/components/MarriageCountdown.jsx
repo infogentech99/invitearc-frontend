@@ -4,7 +4,7 @@ import {assets} from "../assets";
 
 
 export default function MarriageCountdown({data}) {
-      const targetDate = data?.marriageCountdownDate || "2026-09-21";
+      const targetDate = data?.marriageCountdownDate || "2026-12-21";
     const TARGET_DATE = new Date(targetDate).getTime();
     const [timeLeft, setTimeLeft] = useState({
         days: 0,

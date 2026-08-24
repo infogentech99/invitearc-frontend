@@ -1081,7 +1081,7 @@ export default function EditTemplatePage() {
             <section className="space-y-4 lg:h-[calc(100vh-9rem)] lg:flex lg:flex-col">
               <div className="rounded-3xl bg-white lg:p-6 p-4 shadow-sm flex flex-col gap-4 lg:flex-row items-center lg:justify-between lg:flex-shrink-0">
                 <div>
-                  <p className="text-sm uppercase tracking-[0.14em] text-[#861E1D] font-semibold">
+                  <p className="text-sm uppercase tracking-[0.08em] text-[#861E1D] font-semibold font-georgia">
                     Preview mode
                   </p>
                 </div>
