@@ -21,6 +21,7 @@ import {
   templateComponents,
   templateAssets,
 } from "../../../templates/templateLoader";
+import { assets as starlightAssets } from "../../../templates/sikh-wedding/starlight/assets";
 import Sidebar from "../../../../components/editor/Sidebar";
 import DetailsEditor from "../../../../components/editor/DetailsEditor";
 import EventsEditor from "../../../../components/editor/EventsEditor";
@@ -149,9 +150,23 @@ export default function EditTemplatePage() {
     [templateSlug],
   );
 
+  const uploadFields = useMemo(() => {
+    const uploadTypes = ["image", "religiousSign", "upload"];
+    return (fieldConfig?.detailFields || []).filter((field) =>
+      uploadTypes.includes(field.type),
+    );
+  }, [fieldConfig]);
+
   const detailFields = useMemo(() => {
     if (!editorData) return [];
-    if (fieldConfig?.detailFields?.length) return fieldConfig.detailFields;
+    if (fieldConfig?.detailFields?.length) {
+      const uploadFieldNames = new Set(
+        uploadFields.map((field) => field.name),
+      );
+      return fieldConfig.detailFields.filter(
+        (field) => !uploadFieldNames.has(field.name),
+      );
+    }
     return Object.keys(editorData)
       .filter(
         (field) =>
@@ -174,7 +189,37 @@ export default function EditTemplatePage() {
             ? "textarea"
             : "text",
       }));
-  }, [editorData, fieldConfig]);
+  }, [editorData, fieldConfig, uploadFields]);
+
+  const detailFieldSections = useMemo(() => {
+    if (!fieldConfig?.detailFields?.length) {
+      return [{ type: "editor", fields: detailFields }];
+    }
+
+    const uploadFieldNames = new Set(
+      uploadFields.map((field) => field.name),
+    );
+    const sections = [];
+    let editorSection = [];
+
+    fieldConfig.detailFields.forEach((field) => {
+      if (uploadFieldNames.has(field.name)) {
+        if (editorSection.length) {
+          sections.push({ type: "editor", fields: editorSection });
+          editorSection = [];
+        }
+        sections.push({ type: "upload", field });
+      } else {
+        editorSection.push(field);
+      }
+    });
+
+    if (editorSection.length) {
+      sections.push({ type: "editor", fields: editorSection });
+    }
+
+    return sections;
+  }, [detailFields, fieldConfig, uploadFields]);
 
   const eventFields = useMemo(() => {
     if (fieldConfig?.eventFields?.length) return fieldConfig.eventFields;
@@ -505,7 +550,7 @@ export default function EditTemplatePage() {
     return null;
   };
 
-  const handleCoupleImageUpload = async (event, imageKey) => {
+  const handleCoupleImageUpload = async (event, imageKey, fieldName = null) => {
     const file = event.target.files?.[0];
     if (!file) return;
 
@@ -522,13 +567,22 @@ export default function EditTemplatePage() {
 
       const imageUrl = await uploadImage(file, "invitearc/couple-images");
 
-      setEditorData((prev) => ({
-        ...prev,
-        coupleMessageImages: {
-          ...(prev.coupleMessageImages || {}),
-          [imageKey]: imageUrl,
-        },
-      }));
+      setEditorData((prev) => {
+        if (fieldName && !fieldName.includes(".")) {
+          return {
+            ...prev,
+            [fieldName]: imageUrl,
+          };
+        }
+
+        return {
+          ...prev,
+          coupleMessageImages: {
+            ...(prev.coupleMessageImages || {}),
+            [imageKey]: imageUrl,
+          },
+        };
+      });
 
       toast.success("Image uploaded successfully.");
     } catch (err) {
@@ -565,18 +619,58 @@ export default function EditTemplatePage() {
     }
   };
 
-  const handleCoupleMessageImageUpload = async (event) => {
-    const files = Array.from(event.target.files || []);
-    if (!files.length) return;
-    const existingImages = Array.isArray(editorData.coupleMessageCarouselImages)
-      ? editorData.coupleMessageCarouselImages
-      : [];
+  const handleImageFieldUpload = async (fieldName, event) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
 
-    if (existingImages.length + files.length > 10) {
-      alert("You can upload a maximum of 10 carousel images.");
+    const error = validateCoupleImageFile(file);
+    if (error) {
+      toast.error(error);
       event.target.value = "";
       return;
     }
+
+    try {
+      const imageUrl = await uploadImage(
+        file,
+        `invitearc/${fieldName.toLowerCase()}-images`,
+      );
+
+      setEditorData((prev) => ({
+        ...prev,
+        [fieldName]: imageUrl,
+      }));
+
+      toast.success(`${fieldName} uploaded successfully.`);
+    } catch (error) {
+      console.error(error);
+      toast.error(`Unable to upload ${fieldName}.`);
+    } finally {
+      event.target.value = "";
+    }
+  };
+
+  const handleCoupleMessageImageUpload = async (event) => {
+    const files = Array.from(event.target.files || []);
+    if (!files.length) return;
+
+    const existingImages = Array.isArray(editorData.coupleMessageCarouselImages)
+      ? editorData.coupleMessageCarouselImages
+      : [];
+    const minCoupleImages = 7;
+
+    if (existingImages.length + files.length > 10) {
+      toast.error("You can upload a maximum of 10 carousel images.");
+      event.target.value = "";
+      return;
+    }
+
+    if (existingImages.length + files.length < minCoupleImages) {
+      toast.error(`Please upload at least ${minCoupleImages} couple images.`);
+      event.target.value = "";
+      return;
+    }
+
     try {
       const uploadedImages = await Promise.all(
         files.map(async (file) => {
@@ -602,6 +696,7 @@ export default function EditTemplatePage() {
       event.target.value = "";
     } catch (error) {
       console.error("Failed to upload couple message image files:", error);
+      toast.error("Unable to upload couple images. Please try again.");
     }
   };
 
@@ -784,15 +879,15 @@ export default function EditTemplatePage() {
             </div>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-[minmax(350px,400px)_1fr] 3xl:grid-cols-[minmax(450px,500px)_1fr] md:mt-6">
-            <aside className="rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden">
-              <div className="flex min-h-full">
+          <div className="grid gap-6 lg:grid-cols-[minmax(350px,400px)_1fr] 3xl:grid-cols-[minmax(450px,500px)_1fr] md:mt-6 lg:items-stretch lg:h-[calc(100vh-9rem)]">
+            <aside className="rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden lg:sticky lg:top-8 lg:h-[calc(100vh-9rem)]">
+              <div className="flex h-full min-h-0">
                 <Sidebar
                   tabs={fieldConfig?.tabs}
                   activeTab={activeTab}
                   setActiveTab={setActiveTab}
                 />
-                <div className="flex-1 p-6">
+                <div className="flex-1 overflow-y-auto p-6 min-h-0">
                   <div className="mb-6 text-center">
                     <p className="text-[18px] uppercase tracking-widest text-[#861E1D] font-extrabold font-georgia">
                       {activeTab === "details"
@@ -873,15 +968,82 @@ export default function EditTemplatePage() {
                   </div>
 
                   {activeTab === "details" && (
-                    <DetailsEditor
-                      detailFields={detailFields}
-                      editorData={editorData}
-                      updateField={updateField}
-                      formatFieldLabel={formatFieldLabel}
-                      getFieldIcon={getFieldIcon}
-                      handleLogoUpload={handleLogoUpload}
-                      defaultLogo={defaultLogo}
-                    />
+                    <div className="space-y-1">
+                      {detailFieldSections.map((section, index) => {
+                        if (section.type === "editor") {
+                          return (
+                            <DetailsEditor
+                              key={`editor-${index}`}
+                              detailFields={section.fields}
+                              editorData={editorData}
+                              updateField={updateField}
+                              formatFieldLabel={formatFieldLabel}
+                              getFieldIcon={getFieldIcon}
+                              handleLogoUpload={handleLogoUpload}
+                              defaultLogo={defaultLogo}
+                            />
+                          );
+                        }
+
+                        const field = section.field;
+                        const value = editorData?.[field.name];
+                        const defaultImage =
+                          templateSlug === "starlight" &&
+                          field.name === "religiousSign"
+                            ? starlightAssets.symbol
+                            : "";
+                        const previewImage = value || defaultImage;
+
+                        return (
+                          <div
+                            key={field.name}
+                            className="flex gap-4 space-y-4 py-2"
+                          >
+                            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#F7EAEA] text-[#861E1D] text-lg">
+                              ✎
+                            </div>
+                            <div className="flex-1 space-y-2">
+                              <label className="text-sm font-semibold text-slate-800">
+                                {field.label || field.name}
+                              </label>
+                              <div className="mt-3">
+                                <div className="h-32 w-48 overflow-hidden rounded-xl border border-slate-200 bg-white">
+                                  {previewImage ? (
+                                    <img
+                                      src={previewImage}
+                                      alt={field.label || field.name}
+                                      className="h-full w-full object-contain"
+                                    />
+                                  ) : (
+                                    <div className="flex h-full items-center justify-center text-xs text-slate-400">
+                                      No image selected
+                                    </div>
+                                  )}
+                                </div>
+                                <label className="mt-3 inline-flex cursor-pointer items-center justify-center rounded-xl bg-[#861E1D] px-4 py-2 text-sm font-medium text-white hover:bg-[#6f191c]">
+                                  {value
+                                    ? `Change ${field.label || field.name}`
+                                    : `Choose ${field.label || field.name}`}
+                                  <input
+                                    type="file"
+                                    accept="image/*"
+                                    className="hidden"
+                                    onChange={(event) =>
+                                      handleImageFieldUpload(field.name, event)
+                                    }
+                                  />
+                                </label>
+                                <p className="mt-2 text-xs text-slate-500">
+                                  {value
+                                    ? "Custom image uploaded"
+                                    : "Using default image"}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
                   )}
 
                   {activeTab === "events" && (
@@ -916,22 +1078,22 @@ export default function EditTemplatePage() {
               </div>
             </aside>
 
-            <section className="space-y-4">
-              <div className="rounded-3xl bg-white lg:p-6 p-4 shadow-sm flex flex-col gap-4 lg:flex-row items-center lg:justify-between">
+            <section className="space-y-4 lg:h-[calc(100vh-9rem)] lg:flex lg:flex-col">
+              <div className="rounded-3xl bg-white lg:p-6 p-4 shadow-sm flex flex-col gap-4 lg:flex-row items-center lg:justify-between lg:flex-shrink-0">
                 <div>
                   <p className="text-sm uppercase tracking-[0.14em] text-[#861E1D] font-semibold">
                     Preview mode
                   </p>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 rounded-2xl bg-slate-100 p-1">
                   <button
                     type="button"
                     onClick={() => setView("mobile")}
-                    className={`cursor-pointer inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition ${
+                    className={`cursor-pointer inline-flex min-w-[110px] items-center justify-center gap-2 rounded-xl border px-4 py-2 text-sm font-semibold transition ${
                       view === "mobile"
-                        ? "bg-[#861E1D] text-white"
-                        : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                        ? "border-[#861E1D] bg-[#861E1D] text-white shadow-sm"
+                        : "border-transparent bg-transparent text-slate-600 hover:bg-white"
                     }`}
                   >
                     <HiDevicePhoneMobile className="text-lg" />
@@ -941,10 +1103,10 @@ export default function EditTemplatePage() {
                   <button
                     type="button"
                     onClick={() => setView("tablet")}
-                    className={`hidden md:inline-flex cursor-pointer items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition ${
+                    className={`hidden md:inline-flex min-w-[110px] items-center justify-center gap-2 rounded-xl border px-4 py-2 text-sm font-semibold transition ${
                       view === "tablet"
-                        ? "bg-[#861E1D] text-white"
-                        : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                        ? "border-[#861E1D] bg-[#861E1D] text-white shadow-sm"
+                        : "border-transparent bg-transparent text-slate-600 hover:bg-white"
                     }`}
                   >
                     <MdTabletMac />
@@ -954,10 +1116,10 @@ export default function EditTemplatePage() {
                   <button
                     type="button"
                     onClick={() => setView("desktop")}
-                    className={`hidden lg:inline-flex cursor-pointer items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition ${
+                    className={`hidden lg:inline-flex min-w-[110px] items-center justify-center gap-2 rounded-xl border px-4 py-2 text-sm font-semibold transition ${
                       view === "desktop"
-                        ? "bg-[#861E1D] text-white"
-                        : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                        ? "border-[#861E1D] bg-[#861E1D] text-white shadow-sm"
+                        : "border-transparent bg-transparent text-slate-600 hover:bg-white"
                     }`}
                   >
                     <IoDesktopOutline />
@@ -967,7 +1129,7 @@ export default function EditTemplatePage() {
               </div>
 
               <div
-                className="mx-auto mt-6 w-full overflow-hidden rounded-4xl border-[6px] bg-white shadow-xl transition-all"
+                className="mx-auto mt-6 w-full overflow-hidden rounded-4xl border-[6px] bg-white shadow-xl transition-all lg:sticky lg:top-8 lg:h-[calc(100vh-14rem)]"
                 style={{
                   width: "100%",
                   maxWidth:
@@ -979,13 +1141,17 @@ export default function EditTemplatePage() {
                             window.innerWidth >= 1600
                           ? "1300px"
                           : "950px",
+                  height:
+                    view === "mobile"
+                      ? "calc(100vh - 180px)"
+                      : undefined,
                 }}
               >
-                <div className="h-200 overflow-y-auto overflow-x-hidden bg-slate-100">
+                <div className="h-full overflow-y-auto overflow-x-hidden bg-slate-100">
                   <iframe
                     ref={iframeRef}
                     src={`/preview/${templateId}`}
-                    className="w-full h-full border-0 bg-white"
+                    className="w-full h-full min-h-full border-0 bg-white"
                   />
                 </div>
               </div>

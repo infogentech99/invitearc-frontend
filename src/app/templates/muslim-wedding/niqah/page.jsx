@@ -57,9 +57,9 @@ const initialData = {
     "Thank you for being part our journey. Your presence makes this celebration truly meaningful, and we look forward to sharing these cherished moments with you.",
 
   coupleMessageClosingTitle: "Awaiting the Pleasure of Your Company",
-  coupleMessageRsvpText: "Click on the Whatsapp icon to RSVP",
+  coupleMessageRsvpText: "Click the link to RSVP",
   rsvpMode: "whatsapp",
-  rsvpWhatsappButtonText: "Click on the Whatsapp icon to RSVP",
+  rsvpWhatsappButtonText: "Click the link to RSVP",
   rsvpFormButtonText: "Fill RSVP Form",
   whatsappNumber: "919876543210",
   rsvpGoogleFormLink: "",

@@ -17,11 +17,11 @@ export default function CoupleMessageEditor({
         .replace(/^./, (str) => str.toUpperCase());
     const type = field.type || "text";
 
-    console.log(field);
-    console.log(name);
-    console.log(typeof name);
     if (type === "image") {
-      const imageKey = name.split(".")[1];
+      const imageKey = name.includes(".") ? name.split(".")[1] : name;
+      const previewImage = name.includes(".")
+        ? editorData?.coupleMessageImages?.[imageKey]
+        : editorData?.[name] || editorData?.[imageKey];
 
       return (
         <div key={name} className="space-y-3">
@@ -30,11 +30,10 @@ export default function CoupleMessageEditor({
           </label>
 
           <div className="flex items-center gap-4">
-            {/* Image Preview */}
             <div className="w-32 h-24 rounded-lg border border-slate-200 overflow-hidden bg-slate-100 flex items-center justify-center">
-              {editorData?.coupleMessageImages?.[imageKey] ? (
+              {previewImage ? (
                 <img
-                  src={editorData.coupleMessageImages[imageKey]}
+                  src={previewImage}
                   alt={label}
                   className="w-full h-full object-cover"
                 />
@@ -45,25 +44,20 @@ export default function CoupleMessageEditor({
               )}
             </div>
 
-            {/* Upload */}
             <div className="flex flex-col gap-1">
               <label className="inline-flex cursor-pointer items-center rounded-xl bg-[#861E1D] px-4 py-2 text-sm font-normal text-white hover:bg-[#6f191c]">
-                {editorData?.coupleMessageImages?.[imageKey]
-                  ? "Change Image"
-                  : "Choose File"}
+                {previewImage ? "Change Image" : "Choose File"}
 
                 <input
                   type="file"
                   accept="image/*"
-                  onChange={(e) => handleCoupleImageUpload(e, imageKey)}
+                  onChange={(e) => handleCoupleImageUpload(e, imageKey, name)}
                   className="hidden"
                 />
               </label>
 
               <p className="text-xs text-slate-500">
-                {editorData?.coupleMessageImages?.[imageKey]
-                  ? "Image uploaded successfully ✓"
-                  : "No file selected"}
+                {previewImage ? "Image uploaded successfully ✓" : "No file selected"}
               </p>
             </div>
           </div>
@@ -87,7 +81,7 @@ export default function CoupleMessageEditor({
             className="w-full rounded-2xl border border-slate-200 bg-slate-50 p-2 text-sm text-slate-900 cursor-pointer"
           />
           <label className="block text-[11px] font-normal text-slate-600 font-georgia">
-            Please upload minimum 6 couple images
+            Please upload minimum 7 couple images
           </label>
           {(Array.isArray(editorData.coupleMessageCarouselImages)
             ? editorData.coupleMessageCarouselImages

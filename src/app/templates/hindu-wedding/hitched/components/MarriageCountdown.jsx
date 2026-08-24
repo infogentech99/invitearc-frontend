@@ -68,7 +68,7 @@ export default function MarriageCountdown({ data }) {
 
 
 const rsvpText =
-    data?.coupleMessageRsvpText || "Click on the Whatsapp icon to RSVP";
+    data?.coupleMessageRsvpText || "Click the link to RSVP";
   const rsvpMode = data?.rsvpMode || data?.customData?.rsvpMode || "whatsapp";
   const whatsappNumber =
     data?.whatsappNumber || data?.customData?.whatsappNumber || "919876543210";

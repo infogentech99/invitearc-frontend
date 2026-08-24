@@ -65,7 +65,7 @@ export default function CoupleMessage({data}) {
         "Fill RSVP Form"
       : data?.rsvpWhatsappButtonText ||
         data?.customData?.rsvpWhatsappButtonText ||
-        "Click on the Whatsapp icon to RSVP";
+        "Click the link to RSVP";
 
   const rsvpGoogleFormLink =
     data?.rsvpGoogleFormLink || data?.customData?.rsvpGoogleFormLink || "";

@@ -37,12 +37,13 @@ const initialData = {
   coupleMessageThingsToKnowDescription:
     "Your presence means the world to us. To make your experience effortless and enjoyable, we've gathered a few useful details below.",
   coupleMessageClosingTitle: "Awaiting the Pleasure of Your Company",
-  coupleMessageRsvpText: "Click on the Whatsapp icon to RSVP",
+  coupleMessageRsvpText: "Click the link to RSVP",
   rsvpMode: "whatsapp",
-  rsvpWhatsappButtonText: "Click on the Whatsapp icon to RSVP",
+  rsvpWhatsappButtonText: "Click the link to RSVP",
   rsvpFormButtonText: "Fill RSVP Form",
   whatsappNumber: "919876543210",
   Logo: "",
+  religiousSign: "",
 
 
   events: [
@@ -296,7 +297,7 @@ export default function Home({
               {data.religiousMantra}
             </h2>
             <Image
-              src={assets.symbol}
+              src={data?.religiousSign || assets.symbol}
               alt="idol" width={100} height={100}
               className="w-20 h-15 md:w-40 md:h-30 lg:w-59 lg:h-45 object-cover" />
 

@@ -21,6 +21,8 @@ import two from "./assets/two.webp";
 import three from "./assets/three.webp";
 import four from "./assets/four.webp";
 import five from "./assets/five.webp";
+import six from "./assets/six.png";
+import seven from "./assets/seven.png";
 
 export const assets = {
     background: background.src,
@@ -47,4 +49,6 @@ export const assets = {
     three:three.src,
     four:four.src,
     five:five.src,
+    six:six.src,
+    seven:seven.src,
 }

@@ -4,7 +4,7 @@ export default function Sidebar({
   setActiveTab,
 }) {
   return (
-    <div className="w-24 bg-[#861E1D] px-3 py-6 text-white">
+    <div className="w-24 bg-[#861E1D] px-3 py-6 text-white lg:h-full">
       <div className="space-y-8 text-center">
         {tabs?.map((tab) => {
           const Icon = tab.icon;

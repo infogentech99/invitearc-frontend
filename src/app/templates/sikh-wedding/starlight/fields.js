@@ -50,6 +50,7 @@ export const starlightEditorFields = {
     { name: "groomName", label: "Groom name", type: "text" },
     { name: "brideName", label: "Bride name", type: "text" },
     { name: "religiousMantra", label: "Religious Mantra", type: "text" },
+    { name: "religiousSign", label: "Religious Sign", type: "religiousSign" },
     { name: "blessingMessage", label: "Blessing message", type: "text" },
     {
       name: "brideGrandParentsName",
@@ -105,18 +106,23 @@ export const starlightEditorFields = {
       type: "textarea",
     },
 
+    { name: "coupleMessageWeatherImage", label: "Weather Image", type: "image" },
     { name: "coupleMessageWeatherTitle", label: "Weather title", type: "text" },
     {
       name: "coupleMessageWeatherDetails",
       label: "Weather details",
       type: "textarea",
     },
+
+    { name: "coupleMessageStaffImage", label: "Staff Image", type: "image" },
     { name: "coupleMessageStaffTitle", label: "Staff title", type: "text" },
     {
       name: "coupleMessageStaffDetails",
       label: "Staff details",
       type: "textarea",
     },
+
+    { name: "coupleMessageParkingImage", label: "Parking Image", type: "image" },
     { name: "coupleMessageParkingTitle", label: "Parking title", type: "text" },
 
     {

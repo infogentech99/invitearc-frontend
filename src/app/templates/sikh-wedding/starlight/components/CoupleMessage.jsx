@@ -54,7 +54,8 @@ export default function CoupleMessage({ data }) {
           assets.three,
           assets.four,
           assets.five,
-          // assets.image6,
+          assets.six,
+          assets.seven,
         ];
 
   const coupleTitle = data?.coupleMessageTitle || "Introducing";
@@ -110,7 +111,7 @@ export default function CoupleMessage({ data }) {
       className="bg-[url('/assets/respo_bg_two.webp')] md:bg-[url('/assets/bg_two.webp')] bg-cover bg-no-repeat"
       style={{ backgroundImage: `url(${assets.bg_two})` }}
     >
-      <div className="h-650 md:h-650 lg:h-1050 3xl:h-807">
+      <div className="h-650 md:h-650 lg:h-1050 3xl:h-1007">
         <h1 className="eb-garamond font-medium text-base md:text-2xl lg:text-[38px] text-center text-[#FFD74B] lg:pt-40 pt-20">
           {coupleTitle}
         </h1>
@@ -118,7 +119,47 @@ export default function CoupleMessage({ data }) {
           {coupleDescription}
         </h2>
 
-        <div className=" h-100 lg:h-180 flex justify-center gap-0 items-center md:mt-40 lg:mt-80 3xl:mt-40 md:pr-5 lg:pr-10 3xl:pr-30">
+
+  <div className="md:mt-32 mt-26 lg:mt-44 flex justify-center items-center overflow-visible">
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            autoplay={{ delay: 3500, disableOnInteraction: false }}
+            loop
+            centeredSlides={true}
+            pagination={{ clickable: true }}
+            className="w-full py-12 max-w-screen-3xl overflow-visible"
+            breakpoints={{
+              0: {
+                slidesPerView: 1.5,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2.2,
+                spaceBetween: 30,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+              },
+              1536: {
+                slidesPerView: 3.5,
+                spaceBetween: 50,
+              },
+            }}
+          >
+            {carouselImages.map((item, index) => (
+              <SwiperSlide key={index} className="flex justify-center">
+                <img
+                  src={extractImageSrc(item)}
+                  alt={`Carousel ${index + 1}`}
+                  className="w-full h-120 md:h-90 lg:h-135 3xl:h-175 object-cover rounded-[60px]"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        <div className=" h-100 lg:h-180 flex justify-center gap-0 items-center md:mt-40 lg:mt-80 3xl:mt-40 md:pr-5 lg:pr-10 3xl:pr-0">
           <div
             className="bg-[url('/assets/RSVP_Symbol.webp')] w-65 h-65 md:w-100 md:h-100 lg:w-150 lg:h-150 bg-contain bg-no-repeat"
             style={{ backgroundImage: `url(${assets.rsvp_symbol})` }}
@@ -170,44 +211,7 @@ export default function CoupleMessage({ data }) {
           </div>
         </div>
 
-        <div className="md:mt-32 mt-26 lg:mt-44 flex justify-center items-center overflow-visible">
-          <Swiper
-            modules={[Autoplay, Pagination]}
-            autoplay={{ delay: 3500, disableOnInteraction: false }}
-            loop
-            centeredSlides={true}
-            pagination={{ clickable: true }}
-            className="w-full py-12 max-w-screen-3xl overflow-visible"
-            breakpoints={{
-              0: {
-                slidesPerView: 1.5,
-                spaceBetween: 20,
-              },
-              768: {
-                slidesPerView: 2.2,
-                spaceBetween: 30,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 40,
-              },
-              1536: {
-                slidesPerView: 3.5,
-                spaceBetween: 50,
-              },
-            }}
-          >
-            {carouselImages.map((item, index) => (
-              <SwiperSlide key={index} className="flex justify-center">
-                <img
-                  src={extractImageSrc(item)}
-                  alt={`Carousel ${index + 1}`}
-                  className="w-full h-120 md:h-90 lg:h-135 3xl:h-175 object-cover rounded-[60px]"
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+      
 
         <h1 className="parisienne-regular font-normal text-5xl md:text-6xl lg:text-[100px] text-center text-[#FFD74B] pt-10 md:pt-35 lg:pt-65 3xl:pt-70 leading-tight">
           {thingsToKnowTitle}
@@ -217,7 +221,7 @@ export default function CoupleMessage({ data }) {
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-20 lg:gap-0 3xl:gap-0">
             <div className=" flex flex-col items-center justify-center text-center">
               <img
-                src={assets.weather}
+                src={data?.coupleMessageWeatherImage || assets.weather}
                 alt="weather"
                 className="w-31 h-25 md:w-24 md:h-22 lg:w-33 lg:h-26"
               />
@@ -231,7 +235,7 @@ export default function CoupleMessage({ data }) {
             <hr className="hidden lg:block lg:rotate-90 lg:w-65 lg:border-2 border-[#FFD74B] lg:my-28" />
             <div className=" flex flex-col items-center justify-center text-center">
               <img
-                src={assets.staff}
+                src={data?.coupleMessageStaffImage || assets.staff}
                 alt="drive"
                 className="w-28 h-35 md:w-17 md:h-23 lg:w-21 lg:h-27"
               />
@@ -245,7 +249,7 @@ export default function CoupleMessage({ data }) {
             <hr className="hidden lg:block lg:rotate-90 lg:w-65 lg:border-2 border-[#FFD74B] lg:my-28" />
             <div className=" flex flex-col items-center justify-center text-center">
               <img
-                src={assets.parking}
+                src={data?.coupleMessageParkingImage || assets.parking}
                 alt="car"
                 className="w-31 h-25 md:w-26 md:h-23 lg:w-30 lg:h-27"
               />

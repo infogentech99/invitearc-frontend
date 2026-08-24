@@ -228,7 +228,7 @@ export default function EventsEditor({
                   </div>
                 )}
 
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid gap-4 sm:grid-cols-1">
                   {fields.map((fieldDef) => {
                     const value = event[fieldDef.name] ?? "";
                     const isLargeInput =

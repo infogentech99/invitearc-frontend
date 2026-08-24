@@ -45,7 +45,7 @@ export default function CoupleMessage({ data }) {
         "Fill RSVP Form"
       : data?.rsvpWhatsappButtonText ||
         data?.customData?.rsvpWhatsappButtonText ||
-        "Click on the Whatsapp icon to RSVP";
+        "Click the link to RSVP";
 
   const rsvpGoogleFormLink =
     data?.rsvpGoogleFormLink || data?.customData?.rsvpGoogleFormLink || "";
@@ -106,7 +106,7 @@ const [coupleBg, setCoupleBgImage] = useState(assets.background_third);
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-14 md:gap-25 lg:gap-0 3xl:gap-0">
                 <div className="flex flex-col items-center justify-center text-center">
                   <img
-                    src={assets.weather}
+                    src={data?.coupleMessageWeatherImage || assets.weather}
                     alt="weather"
                     className="w-30 h-26 md:w-25 md:h-20 lg:w-32 lg:h-27 3xl:w-36 3xl:h-31"
                   />
@@ -120,7 +120,7 @@ const [coupleBg, setCoupleBgImage] = useState(assets.background_third);
                 <hr className="hidden lg:block lg:rotate-90 lg:w-65 lg:border-2 border-[#FFFFFF] lg:my-28" />
                 <div className="flex flex-col items-center justify-center text-center">
                   <img
-                    src={assets.staff}
+                    src={data?.coupleMessageStaffImage || assets.staff}
                     alt="drive"
                     className="w-26 h-27 md:w-20 md:h-20 lg:w-21 lg:h-27 3xl:w-26 3xl:h-31"
                   />
@@ -134,7 +134,7 @@ const [coupleBg, setCoupleBgImage] = useState(assets.background_third);
                 <hr className="hidden lg:block lg:rotate-90 lg:w-65 lg:border-2 border-[#FFFFFF] lg:my-28" />
                 <div className="flex flex-col items-center justify-center text-center">
                   <img
-                    src={assets.parking}
+                    src={data?.coupleMessageParkingImage || assets.parking}
                     alt="car"
                     className="w-30 h-27 md:w-25 md:h-20 lg:w-30 lg:h-27 3xl:w-34 3xl:h-31"
                   />
