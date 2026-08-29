@@ -388,9 +388,9 @@ export default function Home({
           </div>
 
 
-          <div className="relative flex flex-col items-center pt-40 lg:pt-80 3xl:pt-140 3xl:gap-60 ">
+          <div className="relative flex flex-col items-center pt-32 lg:pt-80 3xl:pt-140 3xl:gap-60">
             {/* Center Text */}
-            <div className="absolute flex flex-col justify-center text-center md:mb-0 top-28 md:top-31 lg:top-60 3xl:top-152 3xl:px-130 px-16 lg:px-80 md:px-50">
+            <div className="absolute flex flex-col text-center md:mb-0 top-28 md:top-31 lg:top-60 3xl:top-152 3xl:px-130 px-16 lg:px-80 md:px-50">
               <p className="parisienne-regular text-3xl md:text-5xl lg:text-7xl lg:leading-22 text-[#FFD74B]">
                 {data.thankyoutitle}
               </p>
@@ -401,10 +401,18 @@ export default function Home({
                 </span>
               </h2>
             </div>
-            <Image
+            {/* <Image
               src={assets.couple}
               alt="couple" width={900} height={1200}
-              className="w-full h-104 md:w-full md:h-198 lg:w-full lg:h-264 3xl:w-480 3xl:h-463 object-cover" />
+              
+              className="w-full h-104 md:w-full md:h-198 lg:w-full lg:h-264 3xl:w-480 3xl:h-463 object-cover" /> */}
+              <Image
+  src={assets.couple}
+  alt="couple"
+  width={900}
+  height={1200}
+  className="w-full h-auto md:h-198 lg:h-264 3xl:w-480 3xl:h-463 object-contain"
+/>
           </div>
         </div>
       </div>
@@ -413,7 +421,7 @@ export default function Home({
 
       <div className="bg-[url('/assets/respo_three.webp')] md:bg-[url('/assets/bg_three.webp')] bg-cover bg-no-repeat" style={{ backgroundImage: `url(${coupleImage})` }} >
         <div className="h-253 md:h-179 lg:h-330 3xl:h-421 flex flex-col items-center relative">
-          <img src={data?.Logo || assets.logo} alt="logo" width={250} height={300} className="absolute top-50 w-30 h-25 md:top-41 md:w-41 md:h-40 lg:top-84 lg:w-72 lg:h-58 3xl:top-118" />
+          <img src={data?.Logo || assets.logo} alt="logo" width={250} height={300} className="absolute top-50 w-37 h-30 md:top-41 md:w-41 md:h-40 lg:top-84 lg:w-72 lg:h-58 3xl:top-118" />
         </div>
       </div>
 

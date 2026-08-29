@@ -97,7 +97,7 @@ export default function CoupleMessage({ data }) {
         "Fill RSVP Form"
       : data?.rsvpWhatsappButtonText ||
         data?.customData?.rsvpWhatsappButtonText ||
-        "Click the link to RSVP";
+        "Click For RSVP";
 
   const rsvpGoogleFormLink =
     data?.rsvpGoogleFormLink || data?.customData?.rsvpGoogleFormLink || "";
@@ -112,15 +112,14 @@ export default function CoupleMessage({ data }) {
       style={{ backgroundImage: `url(${assets.bg_two})` }}
     >
       <div className="h-650 md:h-650 lg:h-1050 3xl:h-1007">
-        <h1 className="eb-garamond font-medium text-base md:text-2xl lg:text-[38px] text-center text-[#FFD74B] lg:pt-40 pt-20">
+        <h1 className="eb-garamond font-medium text-[22px] md:text-2xl lg:text-[38px] text-center text-[#FFD74B] lg:pt-40 pt-20">
           {coupleTitle}
         </h1>
         <h2 className="parisienne-regular font-normal text-5xl md:text-6xl lg:text-[100px] text-center text-[#FFD74B] px-3 md:px-17 lg:px-51 3xl:px-103 mt-12 lg:mt-24 leading-5 md:leading-tight">
           {coupleDescription}
         </h2>
 
-
-  <div className="md:mt-32 mt-26 lg:mt-44 flex justify-center items-center overflow-visible">
+        <div className="md:mt-32 mt-26 lg:mt-44 flex justify-center items-center overflow-visible">
           <Swiper
             modules={[Autoplay, Pagination]}
             autoplay={{ delay: 3500, disableOnInteraction: false }}
@@ -211,14 +210,12 @@ export default function CoupleMessage({ data }) {
           </div>
         </div>
 
-      
-
         <h1 className="parisienne-regular font-normal text-5xl md:text-6xl lg:text-[100px] text-center text-[#FFD74B] pt-10 md:pt-35 lg:pt-65 leading-tight">
           {thingsToKnowTitle}
         </h1>
 
         <div className="flex justify-center mt-10 md:mt-20 pb-10 md:pb-0 md:px-10 lg:px-10">
-          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-20 lg:gap-0 3xl:gap-0 3xl:px-80">
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-20 lg:gap-0 3xl:gap-0 3xl:px-80 md:px-0 px-20">
             <div className=" flex flex-col items-center justify-center text-center">
               <img
                 src={data?.coupleMessageWeatherImage || assets.weather}
@@ -268,7 +265,7 @@ export default function CoupleMessage({ data }) {
         </h2>
 
         <div className="flex flex-col h-50 md:h-89 lg:h-200 3xl:h-210 md:gap-3 lg:gap-8 3xl:gap-8 items-center text-center">
-          <h2 className="parisienne-regular font-normal text-2xl md:text-4xl lg:text-6xl text-center text-[#FFD74B] pt-40 md:pt-60 lg:pt-75 3xl:pt-55">
+          <h2 className="parisienne-regular font-normal text-4xl lg:text-6xl text-center text-[#FFD74B] pt-40 md:pt-60 lg:pt-75 3xl:pt-55">
             {title}
           </h2>
           <p className="eb-garamond font-medium text-xs md:text-xl lg:text-[28px] text-[#FFD74B] mt-4 text-center px-6 md:px-25 lg:px-65 3xl:px-120">
@@ -276,7 +273,6 @@ export default function CoupleMessage({ data }) {
           </p>
           <hr className="w-42 md:w-66 lg:w-94 border lg:border-2 border-[#FFD74B] my-2 md:my-4 lg:my-4" />
           <h2 className="eb-garamond font-normal text-2xl md:text-5xl lg:text-[80px] text-center text-[#FFD74B]">
-           
             {timeLeft.days}D - {timeLeft.hours}H - {timeLeft.minutes}M
           </h2>
 
