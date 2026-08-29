@@ -545,13 +545,14 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
         className="hidden md:block bg-cover bg-no-repeat"
         style={{ backgroundImage: `url(${assets.background_couple})` }}
       >
-        <div className="flex md:h-180 lg:h-335 3xl:h-408 lg:pt-90 md:pt-50 3xl:pt-110 justify-center">
+        {/* <div className="flex md:h-180 lg:h-335 3xl:h-408 lg:pt-90 md:pt-50 3xl:pt-110 justify-center"> */}
+         <div className="flex justify-center md:h-175 lg:h-237.5 xl:h-275 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96">
           <img
             src={assets.logo}
             alt="logo"
             className="w-32 h-48 md:w-44 md:h-34 lg:w-65 lg:h-52"
           />
-        </div>
+        </div> 
       </div>
 
       <div className="md:hidden relative flex items-start justify-center">

@@ -373,9 +373,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
             <p className="font-eb-garamond font-medium text-base md:text-2xl lg:text-3xl text-[#FFF4B9] text-center">
               {data.religiousMantra}
             </p>
-            <p className="font-eb-garamond font-medium text-base md:text-2xl lg:text-3xl text-[#FFF4B9] text-center">
-              Bismillahir Rahmanir Raheem
-            </p>
+          
             <h2 className="font-eb-garamond font-medium text-base md:text-2xl lg:text-3xl text-[#FFF4B9]">
               {data.blessingMessage} <br /> {data.brideGrandParentsName}
             </h2>

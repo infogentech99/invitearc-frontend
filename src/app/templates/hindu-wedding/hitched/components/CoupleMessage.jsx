@@ -137,10 +137,27 @@ export default function CoupleMessage({ data }) {
           </h1>
 
           <div className="flex justify-center mt-10 md:pb-12 pb-16 lg:px-50">
-            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 lg:gap-4 gap-10 sm:gap-16">
-              <div className="flex flex-col items-center justify-center text-center md:mt-15">
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 lg:gap-4 gap-10 sm:gap-16 md:mt-15">
+              
+              <div className="flex flex-col items-center justify-center text-center 3xl:w-80">
                 <img
-                  src={assets.location}
+                  // src={assets.weather}
+                  src={data?.coupleMessageWeatherImage || assets.weather}
+                  alt="weather"
+                  className="lg:h-20 lg:w-24 h-26 w-32 "
+                /> 
+                <h2 className="lg:text-[32px] text-[50px] text-[#FFF5B9] mt-2 font-garamond">
+                  {weatherTitle}
+                </h2>
+                <p className="md:text-[18px] text-[14px] text-[#FFF5B9] mt-1 font-cormorant md:leading-5">
+                  {weatherDetails}
+                </p>
+              </div>
+
+              <div className="flex flex-col items-center justify-center text-center ">
+                <img
+                  // src={assets.location}
+                  src={data?.coupleMessageLocationImage || assets.location}
                   alt="car"
                   className="lg:h-20 lg:w-24 h-26 w-32 "
                 />
@@ -161,32 +178,14 @@ export default function CoupleMessage({ data }) {
                       </span>
                     ))}
                 </p>
-                <a
-                  href={routeLink}
-                  className="text-[#FFF5B9] underline md:text-sm md:text-[16px] text-[14px] mt-2 font-cormorant"
-                  target="_blank"
-                >
-                  View Directions
-                </a>
+              
               </div>
 
-              <div className="flex flex-col items-center justify-center text-center">
-                <img
-                  src={assets.weather}
-                  alt="weather"
-                  className="lg:h-20 lg:w-24 h-26 w-32 "
-                />
-                <h2 className="lg:text-[32px] text-[50px] text-[#FFF5B9] mt-2 font-garamond">
-                  {weatherTitle}
-                </h2>
-                <p className="md:text-[18px] text-[14px] text-[#FFF5B9] mt-1 font-cormorant md:leading-5">
-                  {weatherDetails}
-                </p>
-              </div>
 
-              <div className="flex flex-col items-center justify-center text-center">
+              <div className="flex flex-col items-center justify-center text-center 3xl:w-80">
                 <img
-                  src={assets.car}
+                  // src={assets.car}
+                   src={data?.coupleMessageParkingImage || assets.car}
                   alt="car"
                   className="lg:h-20 lg:w-24 h-26 w-32 "
                 />
@@ -201,54 +200,7 @@ export default function CoupleMessage({ data }) {
           </div>
           <h2 className="lg:text-[30px] text-[18px] text-center text-[#FFF5B9] lg:px-60 px-6  mb-12 font-cormorant">
             {thingsToKnowDescription}
-          </h2>
-          {/* <div className="flex flex-col justify-center items-center 3xl:mt-0 lg:ml-140 ml-34 md:ml-50 lg:mt-40 md:mt-0 mt-40">
-            {rsvpMode === "form" ? (
-              <div className="w-full max-w-xl rounded-3xl px-1 py-4 md:mt-4 flex flex-col items-center text-center">
-                <h3 className="lg:text-6xl text-[32px] md:text-[30px] text-[#FFF5B9] lg:pt-63 pt-1 font-Cormorant-upright md:leading-12 leading-8">
-                  {rsvpSectionHeading}
-                </h3>
-                <a
-                  href={rsvpGoogleFormLink || "#"}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-4"
-                >
-                  <button
-                    type="button"
-                    className="rounded-xl bg-[#FFF5B9] px-8 py-1 text-[20px] font-bold text-[#861E1D] font-Cormorant-upright cursor-pointer"
-                  >
-                    {rsvpButtonText}
-                  </button>
-                </a>
-              </div>
-            ) : (
-              <div className="flex justify-center items-center mt-4">
-                <div className="flex flex-col items-center text-center">
-                  <h3 className="lg:text-6xl text-[32px] md:text-[40px] text-[#FFF5B9] lg:pt-63 pt-1 font-Cormorant-upright md:leading-12 leading-8">
-                    {rsvpSectionHeading}
-                  </h3>
-
-                  <a
-                    href={whatsappHref}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-3 flex items-center justify-center gap-1 cursor-pointer"
-                  >
-                    <img
-                      src={assets.whatsapp}
-                      alt="WhatsApp"
-                      className="lg:h-10 lg:w-10 h-6 w-6"
-                    />
-
-                    <button className="rounded-full md:px-4 py-2 px-1 text-[20px] md:text-[30px] font-semibold text-[#FFF5B9] cursor-pointer font-Cormorant-upright">
-                      {rsvpButtonText}
-                    </button>
-                  </a>
-                </div>
-              </div>
-            )}
-          </div> */}
+          </h2>   
         </div>
       </div>
     </>

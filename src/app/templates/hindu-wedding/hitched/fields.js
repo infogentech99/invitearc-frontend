@@ -100,6 +100,12 @@ export const hitchedEditorFields = {
       label: "Guide description",
       type: "textarea",
     },
+
+      {
+      name: "coupleMessageLocationImage",
+      label: "Location Image",
+      type: "image",
+    },
     {
       name: "coupleMessageLocationTitle",
       label: "Location title",

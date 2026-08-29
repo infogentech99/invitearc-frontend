@@ -53,6 +53,7 @@ const initialData = {
   brideDetails: "(Daughter of Mrs. Sarita & Mr. Pradeep Jain)",
   brideGrandParentsName: "(Granddaughter of Shri J.S. Kapoor)",
   blessingMessage: "With the heavenly blessings of",
+  
   eventIntro: "On the following events",
    thankyoutitle: "With Love From Us",
   thankyoumessage:
@@ -564,7 +565,7 @@ export default function Home({
 
             <h2 className="text-white lg:text-[30px] md:text-2xl text-[20px] font-Cormorant-upright">
               {data.blessingMessage}
-              <br /> Late Smt. Kamla Kapoor
+              <br /> {data.grandParentName}
             </h2>
             <h2 className="text-white font-Cormorant-upright lg:text-[34px] md:text-2xl text-[26px]">
               {data.familyName}
@@ -681,11 +682,11 @@ export default function Home({
             {/* Left Side Text */}
             <div className="absolute inset-0 flex items-center text-left lg:ml-0 3xl:ml-50 ml-4 ">
               <div className="lg:pl-24 md:pl-14 pl-0">
-                <h1 className="lg:text-7xl md:text-5xl text-[26px] text-[#E1EF1E] font-parisienne lg:pb-10 md:pb-8 pb-4">
+                <h1 className="lg:text-7xl md:text-5xl text-[26px] text-[#E1EF1E] font-parisienne lg:pb-10 md:pb-8 pb-4 3xl:pl-8">
                     {data.thankyoutitle}
                 </h1>
 
-                <h2 className="3xl:text-[40px] lg:text-[36px] md:text-2xl text-[14px] text-[#00EAFF] font-Cormorant-upright lg:leading-12.5 md:leading-10 leading-5 md:pr-90 pr-40 3xl:pr-220 lg:pr-150 text-center mb-20">
+                <h2 className="3xl:text-[38px] lg:text-[34px] md:text-2xl text-[14px] text-[#ADACD7] font-garamond lg:leading-12 md:leading-10 leading-5 md:pr-90 pr-40 3xl:pr-220 lg:pr-150 text-center mb-20">
                {data.thankyoumessage}
                   </h2>
               </div>
