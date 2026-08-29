@@ -111,7 +111,7 @@ export default function CoupleMessage({ data }) {
       className="bg-[url('/assets/respo_bg_two.webp')] md:bg-[url('/assets/bg_two.webp')] bg-cover bg-no-repeat"
       style={{ backgroundImage: `url(${assets.bg_two})` }}
     >
-      <div className="h-650 md:h-650 lg:h-1050 3xl:h-1007">
+      <div className="h-680 md:h-650 lg:h-1050 3xl:h-1007">
         <h1 className="eb-garamond font-medium text-[22px] md:text-2xl lg:text-[38px] text-center text-[#FFD74B] lg:pt-40 pt-20">
           {coupleTitle}
         </h1>

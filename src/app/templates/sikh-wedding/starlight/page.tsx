@@ -388,7 +388,7 @@ export default function Home({
           </div>
 
 
-          <div className="relative flex flex-col items-center pt-32 lg:pt-80 3xl:pt-140 3xl:gap-60">
+          <div className="relative flex flex-col items-center pt-50 lg:pt-80 3xl:pt-140 3xl:gap-60">
             {/* Center Text */}
             <div className="absolute flex flex-col text-center md:mb-0 top-28 md:top-31 lg:top-60 3xl:top-152 3xl:px-130 px-16 lg:px-80 md:px-50">
               <p className="parisienne-regular text-3xl md:text-5xl lg:text-7xl lg:leading-22 text-[#FFD74B]">
