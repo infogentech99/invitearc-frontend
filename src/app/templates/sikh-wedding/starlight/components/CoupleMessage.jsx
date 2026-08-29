@@ -178,7 +178,7 @@ export default function CoupleMessage({ data }) {
                 >
                   <button
                     type="button"
-                    className="rounded-xl bg-[#FFF097] text-black px-6 py-2 text-sm md:text-lg font-semibold cursor-pointer"
+                    className="rounded-xl bg-[#8B4302] text-black px-6 py-2 text-sm md:text-lg font-semibold cursor-pointer"
                   >
                     {rsvpButtonText}
                   </button>
@@ -202,7 +202,7 @@ export default function CoupleMessage({ data }) {
                     className="h-8 w-8 md:h-8 md:w-8 lg:h-16 lg:w-16"
                   />
 
-                  <span className="eb-garamond font-normal text-xs md:text-sm lg:text-[22px] text-[#FFF097]">
+                  <span className="eb-garamond font-normal text-xs md:text-sm lg:text-[22px] text-[#8B4302]">
                     {rsvpButtonText}
                   </span>
                 </a>
@@ -213,12 +213,12 @@ export default function CoupleMessage({ data }) {
 
       
 
-        <h1 className="parisienne-regular font-normal text-5xl md:text-6xl lg:text-[100px] text-center text-[#FFD74B] pt-10 md:pt-35 lg:pt-65 3xl:pt-70 leading-tight">
+        <h1 className="parisienne-regular font-normal text-5xl md:text-6xl lg:text-[100px] text-center text-[#FFD74B] pt-10 md:pt-35 lg:pt-65 leading-tight">
           {thingsToKnowTitle}
         </h1>
 
         <div className="flex justify-center mt-10 md:mt-20 pb-10 md:pb-0 md:px-10 lg:px-10">
-          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-20 lg:gap-0 3xl:gap-0">
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-20 lg:gap-0 3xl:gap-0 3xl:px-80">
             <div className=" flex flex-col items-center justify-center text-center">
               <img
                 src={data?.coupleMessageWeatherImage || assets.weather}
