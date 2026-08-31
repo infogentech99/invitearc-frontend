@@ -1099,7 +1099,7 @@ export default function EditTemplatePage() {
                     <HiDevicePhoneMobile className="text-lg" />
                     <span>Mobile</span>
                   </button>
-
+                  
                   <button
                     type="button"
                     onClick={() => setView("tablet")}

@@ -11,9 +11,7 @@ import "./milan-globals.css";
 import { assets } from "./assets";
 
 const initialData = {
-  mainHeading: "JOIN US AS WE CELEBRATE A BEAUTIFUL JOURNEY OF LOVE THAT LASTS FOREVERJOIN US AS WE CELEBRATE ",
-  // title: "A BEAUTIFUL JOURNEY OF LOVE",
-  // subTitle: "THAT LASTS FOREVER",
+  mainHeading: "JOIN US AS WE CELEBRATE A BEAUTIFUL JOURNEY OF LOVE THAT LASTS FOREVER",
   groomName: "ROSHAN",
   brideName: "TANVI",
   blessingTitle: "Celebrate With Us",

@@ -1,30 +1,30 @@
 "use client";
 
 import { assets } from "../assets";
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 export default function CoupleEvents({ data }) {
- const [coupleImage, setCoupleImage] = useState(assets.bg_four);
+  const [coupleImage, setCoupleImage] = useState(assets.bg_four);
 
-   useEffect(() => {
-      const coupleBg = () => {
-        if (window.innerWidth >= 1536) {
-          // Desktop Large
-          setCoupleImage(assets.bg_four);
-        } else if (window.innerWidth >= 768) {
-          // Tablet/Desktop
-          setCoupleImage(assets.bg_four);
-        } else {
-          // Mobile
-          setCoupleImage(assets.respo_four);
-        }
-      };
-  
-      coupleBg();
-      window.addEventListener("resize", coupleBg);
-  
-      return () => window.removeEventListener("resize", coupleBg);
-    }, []);
- 
+  useEffect(() => {
+    const coupleBg = () => {
+      if (window.innerWidth >= 1536) {
+        // Desktop Large
+        setCoupleImage(assets.bg_four);
+      } else if (window.innerWidth >= 768) {
+        // Tablet/Desktop
+        setCoupleImage(assets.bg_four);
+      } else {
+        // Mobile
+        setCoupleImage(assets.respo_four);
+      }
+    };
+
+    coupleBg();
+    window.addEventListener("resize", coupleBg);
+
+    return () => window.removeEventListener("resize", coupleBg);
+  }, []);
+
   return (
     <div
       className="
@@ -36,7 +36,7 @@ export default function CoupleEvents({ data }) {
       "
       style={{ backgroundImage: `url(${coupleImage})` }}
     >
-      <div className="flex flex-col items-center  bg-cover bg-top bg-no-repeat min-h-screen w-full relative overflow-hidden md:pb-30">
+      <div className="flex flex-col items-center  bg-cover bg-top bg-no-repeat min-h-screen w-full relative overflow-hidden md:pb-30  ">
         <img
           src={assets.bg_three_design}
           alt="frame-design"
@@ -60,73 +60,120 @@ export default function CoupleEvents({ data }) {
             grid grid-cols-2 md:grid-cols-4
             justify-center items-center
             gap-6 md:gap-4 lg:gap-12 3xl:gap-20
-            mt-15 md:mt-6 lg:mt-12 3xl:mt-20
+            mt-15 md:mt-6 lg:mt-12 3xl:mt-20 
           "
         >
-          {/* {events.map((event, index) => ( */}
-           {(data?.events || []).map((event, i) => (
-            <div
-              // key={event.id || index}
-              key={i}
-              className="
-                flex justify-center items-center
-                bg-[url('/assets/events_frame.webp')]
-                bg-cover bg-no-repeat bg-center
-                w-40 h-58
-                md:w-45 md:h-65
-                lg:w-68 lg:h-100
-              "
-              style={{
-                backgroundImage: `url(${assets.events_frame})`,
-              }}
-            >
-              <div className="flex flex-col leading-none px-3">
+          {(data?.events || []).map((event, i) => {
+            const eventTitle =
+              event?.title_ceremony || event?.title || `Event ${i + 1}`;
+            const eventImage =
+              event?.image || event?.imageUrl || event?.eventImage;
+            const isCustomFrame = Boolean(eventImage && eventImage.trim());
 
-                <h3
-                  className="
-                    font-parisienne-regular font-normal
-                    text-3xl md:text-4xl lg:text-[52px]
-                    text-center text-[#E1B340]
-                  "
-                >
-                  {event.title}
-                </h3>
+            return (
+              <div
+                key={i}
+                className="
+                  flex justify-center items-center
+                  bg-cover bg-no-repeat bg-center
+                  w-40 h-58
+                  md:w-45 md:h-65
+                  lg:w-68 lg:h-100 
+                "
+                style={{
+                  backgroundImage: isCustomFrame
+                    ? `url(${eventImage})`
+                    : `url(${assets.events_frame})`,
+                }}
+              >
+                {/* {!isCustomFrame && (
+                  <div className="flex flex-col leading-none px-3 text-center">
+                    <h3
+                      className="
+                        font-parisienne-regular font-normal
+                        text-3xl md:text-4xl lg:text-[52px]
+                        text-center text-[#E1B340]
+                      "
+                    >
+                      {eventTitle}
+                    </h3>
 
-                <p
-                  className="
-                    font-eb-garamond font-normal
-                    text-base md:text-xl lg:text-[24px]
-                    text-center text-[#5D5D5D]
-                  "
-                >
-                  {event.date}
-                </p>
+                    <p
+                      className="
+                        font-eb-garamond font-normal
+                        text-base md:text-xl lg:text-[24px]
+                        text-center text-[#5D5D5D]
+                      "
+                    >
+                      {event.date}
+                    </p>
 
-                <p
-                  className="
-                    font-eb-garamond font-normal
-                    text-xs md:text-sm lg:text-lg
-                    text-center text-[#5D5D5D]
-                  "
-                >
-                  {event.time}
-                </p>
+                    <p
+                      className="
+                        font-eb-garamond font-normal
+                        text-xs md:text-sm lg:text-lg
+                        text-center text-[#5D5D5D]
+                      "
+                    >
+                      {event.time}
+                    </p>
 
-                <p
-                  className="
-                    font-eb-garamond font-normal
-                    text-xs md:text-sm lg:text-lg
-                    text-center text-[#5D5D5D]
-                  "
-                >
-                  {event.venue}
-                </p>
+                    <p
+                      className="
+                        font-eb-garamond font-normal
+                        text-xs md:text-sm lg:text-lg
+                        text-center text-[#5D5D5D]
+                      "
+                    >
+                      {event.venue}
+                    </p>
+                  </div>
+                )} */}
+                <div className="flex flex-col leading-none px-3 text-center relative z-10">
+                  <h3
+                    className="
+      font-parisienne-regular font-normal
+      text-3xl md:text-4xl lg:text-[52px]
+      text-center text-[#E1B340]
+    "
+                  >
+                    {eventTitle}
+                  </h3>
 
+                  <p
+                    className="
+      font-eb-garamond font-normal
+      text-base md:text-xl lg:text-[24px]
+      text-center text-[#5D5D5D]
+    "
+                  >
+                    {event.date}
+                  </p>
+
+                  <p
+                    className="
+      font-eb-garamond font-normal
+      text-xs md:text-sm lg:text-lg
+      text-center text-[#5D5D5D]
+    "
+                  >
+                    {event.time}
+                  </p>
+
+                  <p
+                    className="
+      font-eb-garamond font-normal
+      text-xs md:text-sm lg:text-lg
+      text-center text-[#5D5D5D]
+    "
+                  >
+                    {event.venue}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
-
       </div>
     </div>
   );

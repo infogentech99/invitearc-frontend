@@ -102,6 +102,10 @@ export const milanEditorFields = {
   ],
 
 
+  eventFields:[
+//  { name: "eventTitle", label: "Event Title", type: "text" },
+  ],
+
    rsvpFields: [
     { name: "attendingTitle", label: "Attending Title", type: "text" },
     { name: "celebrateTitle", label: "Celebrate Title", type: "text" },

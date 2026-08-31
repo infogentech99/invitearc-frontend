@@ -18,8 +18,10 @@ export default function EventsEditor({
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <div className="flex justify-between">
-            <h3 className="text-base font-semibold text-slate-900 font-georgia">Events</h3>
-           
+            <h3 className="text-base font-semibold text-slate-900 font-georgia">
+              Events
+            </h3>
+
             <button
               type="button"
               onClick={addEventItem}
@@ -81,17 +83,19 @@ export default function EventsEditor({
                   <input
                     type="file"
                     accept="image/*"
-                    onChange={(e) => handleEventImageUpload(selectedEventIndex, e)}
+                    onChange={(e) =>
+                      handleEventImageUpload(selectedEventIndex, e)
+                    }
                     className="hidden"
                   />
                 </label>
-                {editorData.events[selectedEventIndex].imageFileName ? (
+                {/* {editorData.events[selectedEventIndex].imageFileName ? (
                   <p className="text-xs text-slate-500">
                     {editorData.events[selectedEventIndex].imageFileName}
                   </p>
                 ) : editorData.events[selectedEventIndex].image ? (
                   <p className="text-xs text-slate-500">Image selected</p>
-                ) : null}
+                ) : null} */}
               </div>
             </div>
 
@@ -111,48 +115,53 @@ export default function EventsEditor({
                           : "text",
                     }),
                   )
-              ).map((fieldDef) => {
-                const value =
-                  (editorData.events[selectedEventIndex] || {})[
-                    fieldDef.name
-                  ] ?? "";
-                const isLargeInput =
-                  fieldDef.type === "textarea" ||
-                  (typeof value === "string" && value.length > 80);
-                return (
-                  <div key={fieldDef.name} className="space-y-2">
-                    <label className="block text-sm font-semibold text-slate-800">
-                      {formatFieldLabel(fieldDef.label, value)}
-                    </label>
-                    {isLargeInput ? (
-                      <textarea
-                        rows={3}
-                        value={value}
-                        onChange={(e) =>
-                          updateEventField(
-                            selectedEventIndex,
-                            fieldDef.name,
-                            e.target.value,
-                          )
-                        }
-                        className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900"
-                      />
-                    ) : (
-                      <input
-                        value={value}
-                        onChange={(e) =>
-                          updateEventField(
-                            selectedEventIndex,
-                            fieldDef.name,
-                            e.target.value,
-                          )
-                        }
-                        className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900"
-                      />
-                    )}
-                  </div>
-                );
-              })}
+              )
+                .filter(
+                  (fieldDef) =>
+                    !["image", "imageFileName"].includes(fieldDef.name),
+                )
+                .map((fieldDef) => {
+                  const value =
+                    (editorData.events[selectedEventIndex] || {})[
+                      fieldDef.name
+                    ] ?? "";
+                  const isLargeInput =
+                    fieldDef.type === "textarea" ||
+                    (typeof value === "string" && value.length > 80);
+                  return (
+                    <div key={fieldDef.name} className="space-y-2">
+                      <label className="block text-sm font-semibold text-slate-800">
+                        {formatFieldLabel(fieldDef.label, value)}
+                      </label>
+                      {isLargeInput ? (
+                        <textarea
+                          rows={3}
+                          value={value}
+                          onChange={(e) =>
+                            updateEventField(
+                              selectedEventIndex,
+                              fieldDef.name,
+                              e.target.value,
+                            )
+                          }
+                          className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900"
+                        />
+                      ) : (
+                        <input
+                          value={value}
+                          onChange={(e) =>
+                            updateEventField(
+                              selectedEventIndex,
+                              fieldDef.name,
+                              e.target.value,
+                            )
+                          }
+                          className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900"
+                        />
+                      )}
+                    </div>
+                  );
+                })}
             </div>
           </div>
         )}
@@ -189,7 +198,6 @@ export default function EventsEditor({
                     </p>
                   </div>
                   <div className="flex flex-col items-end gap-2 text-right">
-                    
                     <button
                       type="button"
                       onClick={() => removeEventItem(index)}
@@ -229,45 +237,51 @@ export default function EventsEditor({
                 )}
 
                 <div className="grid gap-4 sm:grid-cols-1">
-                  {fields.map((fieldDef) => {
-                    const value = event[fieldDef.name] ?? "";
-                    const isLargeInput =
-                      fieldDef.type === "textarea" ||
-                      (typeof value === "string" && value.length > 80);
-                    return (
-                      <div key={fieldDef.name} className="space-y-2">
-                        <label className="block text-sm font-semibold text-slate-800">
-                          {formatFieldLabel(fieldDef.label)}
-                        </label>
-                        {isLargeInput ? (
-                          <textarea
-                            rows={3}
-                            value={value}
-                            onChange={(event) =>
-                              updateEventField(
-                                index,
-                                fieldDef.name,
-                                event.target.value,
-                              )
-                            }
-                            className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200"
-                          />
-                        ) : (
-                          <input
-                            value={value}
-                            onChange={(event) =>
-                              updateEventField(
-                                index,
-                                fieldDef.name,
-                                event.target.value,
-                              )
-                            }
-                            className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200"
-                          />
-                        )}
-                      </div>
-                    );
-                  })}
+                  {/* {fields.map((fieldDef) => { */}
+                  {fields
+                    .filter(
+                      (fieldDef) =>
+                        !["image", "imageFileName"].includes(fieldDef.name),
+                    )
+                    .map((fieldDef) => {
+                      const value = event[fieldDef.name] ?? "";
+                      const isLargeInput =
+                        fieldDef.type === "textarea" ||
+                        (typeof value === "string" && value.length > 80);
+                      return (
+                        <div key={fieldDef.name} className="space-y-2">
+                          <label className="block text-sm font-semibold text-slate-800">
+                            {formatFieldLabel(fieldDef.label)}
+                          </label>
+                          {isLargeInput ? (
+                            <textarea
+                              rows={3}
+                              value={value}
+                              onChange={(event) =>
+                                updateEventField(
+                                  index,
+                                  fieldDef.name,
+                                  event.target.value,
+                                )
+                              }
+                              className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200"
+                            />
+                          ) : (
+                            <input
+                              value={value}
+                              onChange={(event) =>
+                                updateEventField(
+                                  index,
+                                  fieldDef.name,
+                                  event.target.value,
+                                )
+                              }
+                              className="w-full rounded-2xl border border-slate-200 bg-white p-3 text-sm text-slate-900 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200"
+                            />
+                          )}
+                        </div>
+                      );
+                    })}
                 </div>
               </div>
             );
