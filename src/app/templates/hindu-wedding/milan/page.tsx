@@ -8,32 +8,33 @@ import CoupleEvents from "./components/CoupleEvents";
 import CoupleMessage from "./components/CoupleMessage";
 import CoupleFooter from "./components/CoupleFooter";
 import "./milan-globals.css";
-import {assets} from "./assets";
+import { assets } from "./assets";
 
 const initialData = {
-  mainHeading: "JOIN US AS WE CELEBRATE",
-  title: "A BEAUTIFUL JOURNEY OF LOVE",
-  subTitle: "THAT LASTS FOREVER",
+  mainHeading: "JOIN US AS WE CELEBRATE A BEAUTIFUL JOURNEY OF LOVE THAT LASTS FOREVERJOIN US AS WE CELEBRATE ",
+  // title: "A BEAUTIFUL JOURNEY OF LOVE",
+  // subTitle: "THAT LASTS FOREVER",
   groomName: "ROSHAN",
   brideName: "TANVI",
-  blessingTitle:"Celebrate With Us",
-  blessingMessage:"With grateful hearts and joyful spirits, we invite you to witness the celebration of our love and the beginning of our forever. Your presence will make our day truly special.",
-  brideParentsTitle:"Beloved Daughter of",
-  brideParentsDetails:"Mr. & Mrs. Sharma",
-  groomParentsTitle:"Beloved Son of",
-  groomParentsDetails:"Mr. & Mrs. Kapoor",
+  blessingTitle: "Celebrate With Us",
+  blessingMessage: "With grateful hearts and joyful spirits, we invite you to witness the celebration of our love and the beginning of our forever. Your presence will make our day truly special.",
+  brideParentsTitle: "Beloved Daughter of",
+  brideParentsDetails: "Mr. & Mrs. Sharma",
+  eventDate:"20ᵗʰ - 21ˢᵗ November, 2026",
+  groomParentsTitle: "Beloved Son of",
+  groomParentsDetails: "Mr. & Mrs. Kapoor",
   venue: "The Oberoi Amarvilas Agra",
-  coupleTitle:"Love in Frames",
-  thankyoutitle:"We Look Forward to Celebrating With You",
-  thankyoumessage:"The Bride & Groom's Families",
+  coupleTitle: "Love in Frames",
+  thankyoutitle: "We Look Forward to Celebrating With You",
+  thankyoumessage: "The Bride & Groom's Families",
   attendingTitle: "I'M ATTENDING",
-  celebrateTitle:"We're Excited to Celebrate With You",
+  celebrateTitle: "We're Excited to Celebrate With You",
   rsvpSectionHeading: "Kindly RSVP by April 20, 2026",
-  weatherTitle:"Weather Forecast",
-  weatherTitleDescription:"28°C | Sunny Skies",
+  weatherTitle: "Weather Forecast",
+  weatherTitleDescription: "28°C | Sunny Skies",
 
 
-  events : [
+  events: [
     {
       title: "Sangeet",
       date: "04 April 2026",
@@ -102,36 +103,36 @@ export default function Home({
   data: initialTemplateData,
 }) {
 
-    const [data, setData] = useState({
-      ...initialData,
-      ...(initialTemplateData || {}),
-      events:
-        (initialTemplateData?.events || []).map((event, index) => ({
+  const [data, setData] = useState({
+    ...initialData,
+    ...(initialTemplateData || {}),
+    events:
+      (initialTemplateData?.events || []).map((event, index) => ({
+        ...initialData.events?.[index],
+        ...event,
+      })).length > 0
+        ? (initialTemplateData?.events || []).map((event, index) => ({
           ...initialData.events?.[index],
           ...event,
-        })).length > 0
+        }))
+        : initialData.events,
+  });
+
+  useEffect(() => {
+    setData((prev) => ({
+      ...prev,
+      ...initialTemplateData,
+      events:
+        (initialTemplateData?.events || []).length > 0
           ? (initialTemplateData?.events || []).map((event, index) => ({
-              ...initialData.events?.[index],
-              ...event,
-            }))
-          : initialData.events,
-    });
-  
-    useEffect(() => {
-      setData((prev) => ({
-        ...prev,
-        ...initialTemplateData,
-        events:
-          (initialTemplateData?.events || []).length > 0
-            ? (initialTemplateData?.events || []).map((event, index) => ({
-                ...initialData.events?.[index],
-                ...event,
-              }))
-            : prev.events || initialData.events,
-      }));
-    }, [initialTemplateData]);
-  
-    const backgroundMusicUrl = data?.backgroundMusicUrl || assets.background_song;
+            ...initialData.events?.[index],
+            ...event,
+          }))
+          : prev.events || initialData.events,
+    }));
+  }, [initialTemplateData]);
+
+  const backgroundMusicUrl = data?.backgroundMusicUrl || assets.background_song;
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [started, setStarted] = useState(false);
@@ -189,7 +190,7 @@ export default function Home({
 
       {/* <audio ref={audioRef} src="/assets/background_song.mp3" loop preload="auto" playsInline /> */}
 
- <audio
+      <audio
         key={backgroundMusicUrl}
         ref={audioRef}
         src={backgroundMusicUrl}
@@ -198,44 +199,37 @@ export default function Home({
         playsInline
       />
 
-   
-      <div 
-      // bg-[url('/assets/respo_bg.webp')]   md:bg-[url('/assets/background.webp')]
-      className="
-   
-    bg-cover
-    bg-top bg-no-repeat
-    w-full relative overflow-hidden
-    md:min-h-screen
-  "
-                      style={{ backgroundImage: `url(${assets.background})`, }}>
+      <div className="bg-cover bg-top bg-no-repeat w-full relative overflow-hidden md:min-h-screen"
+        style={{ backgroundImage: `url(${assets.background})`, }}>
         <RoseHeroTemp />
 
         <div className="relative flex flex-col items-center pt-15 md:pt-22 lg:pt-50 3xl:pt-90 pb-5 z-10 h-145 md:h-280 lg:h-510 3xl:h-650">
           <h2 className="flex flex-col text-[#69301B] text-center justify-center items-center">
-            <span className="font-eb-garamond font-semibold text-sm md:text-xl lg:text-[36px] text-[#1051A5]">
-              {data.mainHeading} <br /> {data.title} <br /> {data.subTitle}
+            <span className="font-eb-garamond font-semibold text-sm md:text-xl lg:text-[36px] text-[#1051A5] lg:w-130 w-70">
+              {data.mainHeading}
+               {/* JOIN US AS WE CELEBRATE A BEAUTIFUL JOURNEY OF LOVE THAT LASTS FOREVER */}
+              {/* <br /> {data.title} <br /> {data.subTitle} */}
             </span>
             <br className="hidden md:block" />
-          <div className="flex gap-2 md:gap-3 mt-5 md:mt-0"> 
-            <span className="font-eb-garamond font-medium text-3xl md:text-5xl lg:text-[82px] bg-linear-to-r from-[#1051A5] via-[#1C6ACE] to-[#1051A5] bg-clip-text text-transparent">{data.brideName}</span>
-            <span className="font-eb-garamond font-medium text-xl md:text-3xl lg:text-[62px] pt-2 md:pt-3 bg-linear-to-r from-[#1051A5] via-[#1C6ACE] to-[#1051A5] bg-clip-text text-transparent">Weds</span>
-            <span className="font-eb-garamond font-medium text-3xl md:text-5xl lg:text-[82px] bg-linear-to-r from-[#1051A5] via-[#1C6ACE] to-[#1051A5] bg-clip-text text-transparent">{data.groomName}</span>
-          </div>
+            <div className="flex gap-2 md:gap-3 mt-5 md:mt-0">
+              <span className="font-eb-garamond font-medium text-3xl md:text-5xl lg:text-[82px] bg-linear-to-r from-[#1051A5] via-[#1C6ACE] to-[#1051A5] bg-clip-text text-transparent">{data.brideName}</span>
+              <span className="font-eb-garamond font-medium text-xl md:text-3xl lg:text-[62px] pt-2 md:pt-3 bg-linear-to-r from-[#1051A5] via-[#1C6ACE] to-[#1051A5] bg-clip-text text-transparent">Weds</span>
+              <span className="font-eb-garamond font-medium text-3xl md:text-5xl lg:text-[82px] bg-linear-to-r from-[#1051A5] via-[#1C6ACE] to-[#1051A5] bg-clip-text text-transparent">{data.groomName}</span>
+            </div>
             <br className="hidden md:block" />
-          </h2>          
+          </h2>
         </div>
       </div>
 
-      <CelebrateUs data={data}/>
-      
-      <MarriageCountdown data={data}/>
+      <CelebrateUs data={data} />
 
-      <CoupleEvents data={data} /> 
+      <MarriageCountdown data={data} />
 
-      <CoupleMessage data={data}/>
+      <CoupleEvents data={data} />
 
-      <CoupleFooter data={data}/>
+      <CoupleMessage data={data} />
+
+      <CoupleFooter data={data} />
 
     </>
   );

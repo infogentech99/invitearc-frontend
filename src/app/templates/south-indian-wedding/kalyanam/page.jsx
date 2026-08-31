@@ -197,13 +197,13 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
             className="text-[#C47E39] text-center leading-tight text-3xl md:text-5xl lg:text-[64px]  
                            flex flex-col items-center gap-y-0 lg:gap-y-5 pb-170 md:pb-780 lg:pb-780 3xl:pb-950"
           >
-            <span className="eb-garamond font-medium">{data.groomName}</span>
+            <span className="eb-garamond font-semibold ">{data.groomName}</span>
 
             <span className="jacques-francois text-xl md:text-3xl lg:text-5xl tracking-widest">
               WEDS
             </span>
 
-            <span className="eb-garamond font-medium">{data.brideName}</span>
+            <span className="eb-garamond font-semibold">{data.brideName}</span>
           </h2>
 
           <div className="flex flex-col items-center text-center gap-6 pt-20 md:pt-35 lg:pt-80 3xl:pt-100">

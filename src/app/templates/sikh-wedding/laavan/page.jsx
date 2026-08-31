@@ -59,7 +59,7 @@ const initialData = {
       link: "https://maps.app.goo.gl/TVyrP9mLFCpr4VXA9",
     },
     {
-      title_ceremony: "Anand Karaj", 
+      title_ceremony: "Anand Karaj",
       image: assets.Anand_Karaj,
       date: "Saturday, 20th June 2026",
       venue: "The Central Park Hotel",
@@ -90,30 +90,34 @@ export default function Home({
   isOwner = false,
 }) {
   const [bgImage, setBgImage] = useState(assets.desktop_bg);
- const [coupleImage, setCoupleImage] = useState(assets.desktop_bg);
- 
- const [data, setData] = useState({
+  const [coupleImage, setCoupleImage] = useState(assets.desktop_bg);
+
+  const [data, setData] = useState({
     ...initialData,
     ...(initialTemplateData || {}),
-    events: (initialTemplateData?.events || []).map((event, index) => ({
-      ...initialData.events?.[index],
-      ...event,
-    })).length > 0 ? (initialTemplateData?.events || []).map((event, index) => ({
-      ...initialData.events?.[index],
-      ...event,
-    })) : initialData.events,
+    events:
+      (initialTemplateData?.events || []).map((event, index) => ({
+        ...initialData.events?.[index],
+        ...event,
+      })).length > 0
+        ? (initialTemplateData?.events || []).map((event, index) => ({
+            ...initialData.events?.[index],
+            ...event,
+          }))
+        : initialData.events,
   });
 
   useEffect(() => {
     setData((prev) => ({
       ...prev,
       ...initialTemplateData,
-      events: (initialTemplateData?.events || []).length > 0 
-        ? (initialTemplateData?.events || []).map((event, index) => ({
-            ...initialData.events?.[index],
-            ...event,
-          }))
-        : prev.events || initialData.events,
+      events:
+        (initialTemplateData?.events || []).length > 0
+          ? (initialTemplateData?.events || []).map((event, index) => ({
+              ...initialData.events?.[index],
+              ...event,
+            }))
+          : prev.events || initialData.events,
     }));
   }, [initialTemplateData]);
 
@@ -190,8 +194,7 @@ export default function Home({
     return () => window.removeEventListener("resize", updateBg);
   }, []);
 
-
-   useEffect(() => {
+  useEffect(() => {
     const coupleBg = () => {
       if (window.innerWidth >= 1536) {
         // Desktop Large
@@ -219,7 +222,7 @@ export default function Home({
         }}
         className="fixed bottom-4 right-4 z-50 bg-[#FF35A1] text-white p-3 rounded-xl text-xl cursor-pointer"
       >
-        {playing ? "⏸" : "▶"} 
+        {playing ? "⏸" : "▶"}
       </button>
 
       <audio
@@ -254,13 +257,12 @@ export default function Home({
           </h2>
 
           <div className="flex flex-col items-center text-center gap-6 mt-0 lg:pt-50 pt-0">
-           
-             <p className="text-[#15528A] eb-garamond font-medium text-sm md:text-xl lg:text-2xl mt-6 md:w-50 w-30">
+            <p className="text-[#15528A] eb-garamond font-medium text-sm md:text-xl lg:text-2xl mt-6 md:w-50 w-30">
               {data.religiousMantra}
             </p>
 
             <Image
-              src={assets.vachan}
+              src={data?.religiousSign || assets.vachan}
               alt="idol"
               width={100}
               height={100}
@@ -319,7 +321,11 @@ export default function Home({
                   {event.image && (
                     <img
                       src={event.image}
-                      alt={event.title_ceremony ? `${event.title_ceremony} image` : `Event ${i + 1} image`}
+                      alt={
+                        event.title_ceremony
+                          ? `${event.title_ceremony} image`
+                          : `Event ${i + 1} image`
+                      }
                       className="w-75 md:w-76 lg:w-80 3xl:w-100 h-auto"
                     />
                   )}
@@ -332,18 +338,16 @@ export default function Home({
                     <p className="text-sm md:text-base lg:text-xl">
                       {event.date}
                     </p>
-                     <p className="text-sm md:text-base lg:text-xl">
+                    <p className="text-sm md:text-base lg:text-xl">
                       {event.time}
                     </p>
-                    
-                   
                   </h2>
 
                   <h2 className="text-[#15528A] eb-garamond font-medium text-sm md:text-base">
                     <p className="text-sm md:text-base lg:text-xl">
                       {event.venue}
                     </p>
-                     <p className="text-sm md:text-base lg:text-xl">
+                    <p className="text-sm md:text-base lg:text-xl">
                       {event.venue_address}
                     </p>
                     <br />
@@ -386,10 +390,13 @@ export default function Home({
       </div>
 
       <CoupleMessage data={data} isOwner={isOwner} updateField={updateField} />
-      <div className="bg-[url('/assets/respo_three.webp')] md:bg-[url('/assets/bg_three.webp')] bg-cover bg-no-repeat" style={{
-        backgroundImage: `url(${coupleImage})`,
-      }}>
-        <div className="h-253 md:h-179 lg:h-330 3xl:h-421 flex flex-col items-center relative">
+      <div
+        className="bg-[url('/assets/respo_three.webp')] md:bg-[url('/assets/bg_three.webp')] bg-cover bg-no-repeat"
+        style={{
+          backgroundImage: `url(${coupleImage})`,
+        }}
+      >
+        <div className="h-220 md:h-179 lg:h-330 3xl:h-421 flex flex-col items-center relative">
           <img
             src={data?.Logo || assets.logo}
             alt="logo"
@@ -399,6 +406,9 @@ export default function Home({
           />
         </div>
       </div>
+
+
+      
 
       <MarriageCountdown
         data={data}

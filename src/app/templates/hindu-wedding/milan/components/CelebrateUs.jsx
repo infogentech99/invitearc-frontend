@@ -45,7 +45,8 @@ const [bgImage, setBgImage] = useState(assets.background);
             {data.brideParentsTitle} <br /> {data.brideParentsDetails}
           </p>
           <p className="font-eb-garamond font-medium text-xl md:text-2xl lg:text-[42px] text-center mt-6 text-[#D99447]">
-            20ᵗʰ - 21ˢᵗ November, 2026
+            {/* 20ᵗʰ - 21ˢᵗ November, 2026 */}
+            {data.eventDate}
           </p>
           <h2 className="font-parisienne-regular font-normal text-3xl md:text-5xl lg:text-[82px] mt-6 md:pt-10 text-[#D99447]">
             {data.groomName}

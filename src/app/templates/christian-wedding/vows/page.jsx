@@ -396,7 +396,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
 
         {/* <FallingLamps /> */}
 
-        <div className="pt-12 md:pt-24 md:pb-20 relative z-10 pb-24">
+        <div className="pt-12 md:pt-24 3xl:pt-50 md:pb-20 relative z-10 pb-24">
           <h2
             className="flex flex-col justify-center items-center text-[#15528A] text-center leading-tight text-2xl md:text-5xl 
                          lg:text-[64px] lg:pb-500 md:pb-370 pb-0 md:gap-y-2 gap-y-1 md:pt-10"
@@ -524,7 +524,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
         className="bg-cover bg-no-repeat"
         style={{ backgroundImage: `url(${assets.meet_christian})` }}
       >
-        <div className="h-100 md:h-180 lg:h-325 flex md:flex-col items-start pl-2 md:pl-4 lg:pl-20 pt-18 md:pt-57 lg:pt-48">
+        <div className="h-100 md:h-180 lg:h-325 3xl:h-360 flex md:flex-col items-start pl-2 md:pl-4 lg:pl-20 pt-10 md:pt-57 lg:pt-48 md:w-[100%] w-50">
           <div>
             <h1 className="font-parisienne-regular text-3xl md:text-5xl lg:text-7xl pt-12 md:pt-0 lg:pt-54 text-center text-[#FFFFFF]">
               {data.thankyoutitle}

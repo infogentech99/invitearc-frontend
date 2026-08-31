@@ -72,7 +72,7 @@ const coupleTitle = data?.coupleMessageTitle || "Introducing";
   return (
     <div className="bg-[url('/assets/bg_two.webp')] md:bg-[url('/assets/bg_md.webp')] 
                     3xl:bg-[url('/assets/couple_bg.webp')] bg-cover bg-no-repeat" style={{ backgroundImage: `url(${coupleImage})`, }}>
-      <div className="h-670 md:h-600 lg:h-1100 3xl:h-1280">
+      <div className="h-670 md:h-610 lg:h-1100 3xl:h-1280">
         <h1 className="font-eb-garamond font-medium text-base md:text-2xl lg:text-[38px] text-center pt-12 lg:pt-32 leading-12 text-[#FFF097]">
           {coupleTitle}
         </h1>
@@ -105,10 +105,11 @@ const coupleTitle = data?.coupleMessageTitle || "Introducing";
         </h1>
         
         <div className="flex justify-center mt-15 3xl:mt-30 pb-15 md:pb-24 lg:px-50 md:px-10 px-5">
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-14 lg:gap-0">
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-14 lg:gap-0 3xl:w-250">
             <div className="flex flex-col items-center justify-center text-center">
               <img
-                src={assets.weather}
+                // src={assets.weather}
+                 src={data?.coupleMessageWeatherImage || assets.weather}
                 alt="weather"
                 className="lg:h-23 lg:w-24 h-26 w-32"/>
               <h2 className="font-eb-garamond font-normal text-[40px] md:text-3xl lg:text-[42px] mt-2 text-[#FFF097]">
@@ -122,21 +123,24 @@ const coupleTitle = data?.coupleMessageTitle || "Introducing";
             <hr className="hidden lg:block lg:rotate-90 lg:w-65 lg:border-2 border-[#FFF097] lg:my-28" />
             <div className="flex flex-col items-center justify-center text-center">
               <img
-                src={assets.staff}
+                // src={assets.staff}
+                 src={data?.coupleMessageStaffImage || assets.staff}
                 alt="drive"
                 className="w-29 h-32 md:h-26 lg:w-21 lg:h-23"/>
+               
               <h2 className="font-eb-garamond font-normal text-[40px] md:text-3xl lg:text-[42px] mt-2 text-[#FFF097]">
                 {StaffTitle}
               </h2>
               <p className="font-eb-garamond font-normal text-sm lg:text-[15px] mt-1 md:leading-5 text-[#FFF097]">
                 {StaffDetails}
-              </p>
+              </p> 
             </div>
 
             <hr className="hidden lg:block lg:rotate-90 lg:w-65 lg:border-2 border-[#FFF097] lg:my-28" />
             <div className="flex flex-col items-center justify-center text-center">
               <img
-                src={assets.parking}
+              src={data?.coupleMessageParkingImage || assets.parking}
+                // src={assets.parking}
                 alt="car"
                 className="lg:h-24 lg:w-24 h-26 w-32"/>
               <h2 className="font-eb-garamond font-normal text-[40px] md:text-3xl lg:text-[42px] mt-2 text-[#FFF097]">
@@ -148,24 +152,12 @@ const coupleTitle = data?.coupleMessageTitle || "Introducing";
             </div>
           </div>
         </div>
-        <h2 className="font-eb-garamond font-medium text-lg md:text-2xl lg:text-3xl text-center mt-20 md:mt-15 lg:mt-4 lg:pt-6 text-[#FFF097] px-4 md:px-20 lg:px-56 3xl:px-107">
+        <h2 className="font-eb-garamond font-medium text-lg md:text-2xl lg:text-3xl text-center mt-20 md:mt-4 lg:mt-4 lg:pt-6 text-[#FFF097] px-4 md:px-20 lg:px-56 3xl:px-107">
           {coupleMessageThingsToKnowDescription}
         </h2>
 
-        {/* <h2 className="font-eb-garamond font-medium text-3xl lg:text-[64px] text-center pt-24 md:pt-15 lg:pt-46 leading-8 md:leading-11 lg:leading-16 text-[#FFF097]">
-          Awaiting the Pleasure <br/> of Your Company
-        </h2> */}
         <div className="flex flex-col-1 gap-1 md:gap-2 justify-center items-center mt-5 md:mt-1 lg:mt-8">
-          {/* <a href="#" target="_blank">
-            <img
-              src={assets.whatsapp}
-              alt="whatsapp"
-              className=" h-7.5 w-7.5 md:w-9 md:h-9 lg:w-10.5 lg:h-10.5"/>
-          </a>
-          <h2 className="font-eb-garamond font-medium text-sm md:text-base lg:text-[22px] text-center text-[#FFF097]">
-            Share Your RSVP
-          </h2> */}
-
+        
            {rsvpMode === "form" ? (
                                   <div className="flex flex-col items-center text-center">
                                     <h2 className="font-eb-garamond font-medium text-3xl lg:text-[64px] text-center pt-24 md:pt-15 lg:pt-46 leading-8 md:leading-11 lg:leading-16 text-[#FFF097] lg:px-50 3xl:px-150 md:px-50">

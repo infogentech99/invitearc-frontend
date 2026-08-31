@@ -220,7 +220,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
       >
         {playing ? "⏸" : "▶"}
       </button>
-
+ 
       <audio
         key={backgroundMusicUrl}
         ref={audioRef}
@@ -532,7 +532,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
 
       <CoupleMessage data={data} isOwner={isOwner} updateField={updateField} />
 
-      <div
+      {/* <div
         className="hidden md:block bg-cover bg-no-repeat "
         style={{ backgroundImage: `url(${assets.sunset_img})` }}
       >
@@ -544,21 +544,46 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
             height={300}
             className=" top-80 lg:w-70 lg:h-20 lg:mt-110 md:mt-50"
           />
-        </div>
-      </div>
+        </div> 
+      </div> */}
 
-      {/* mobile visible section */}
-      <div className="md:hidden bg-[url('/assets/sunset.png')] bg-cover bg-no-repeat" style={{ backgroundImage: `url(${assets.sunset})` }}>
-        <div className="flex flex-col items-center h-230">
-          <img
+
+
+<div
+        className="hidden md:block bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${assets.sunset_img})` }}
+      >
+        <div className="flex justify-center md:h-175 lg:h-237.5 xl:h-266 2xl:h-325 3xl:h-[1580px] md:pt-48 lg:pt-72 3xl:pt-96">
+        <img
             src={data?.Logo || assets.logo}
             alt="logo"
             width={250}
             height={300}
-            className=" top-80 lg:w-70 lg:h-20 mt-48"
+            className=" top-80 lg:w-70 lg:h-20 lg:mt-20 md:mt-50"
           />
-        </div>
+
+          </div>
       </div>
+
+
+
+      <div className="md:hidden relative flex items-start justify-center">
+      
+              <img
+                src={assets.sunset}
+                alt="background"
+                className="w-full h-full object-contain"
+              />
+              <div className="absolute top-[25svh] left-0 right-0 flex justify-center">
+                  <img
+            src={data?.Logo || assets.logo}
+            alt="logo"
+            width={250}
+            height={300}
+            className=" top-80 lg:w-70 lg:h-20 mt-0"
+          />
+              </div>
+            </div>
 
       <MarriageCountdown
         data={data}

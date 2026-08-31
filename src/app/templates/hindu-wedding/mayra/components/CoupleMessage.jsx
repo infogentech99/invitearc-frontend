@@ -94,12 +94,12 @@ export default function CoupleMessage({ data }) {
   }, []);
 
   return (
-    <div 
+    <div
       className="bg-[url('/assets/respo_two.webp')] md:bg-[url('/assets/bg_two.webp')] bg-cover bg-no-repeat"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="h-696 md:h-585 lg:h-893 3xl:h-1054">
-        <h1 className="eb-garamond font-medium text-base md:text-2xl lg:text-[38px] text-center text-[#FFF097] lg:pt-40 pt-20">
+        <h1 className="eb-garamond font-medium text-[20px] md:text-2xl lg:text-[38px] text-center text-[#FFF097] lg:pt-40 pt-20">
           {coupleTitle}
         </h1>
         <h2 className="parisienne-regular text-5xl md:text-6xl lg:text-[100px] text-center text-[#FFF097] px-3 md:px-17 lg:px-53 3xl:px-103 mt-12 lg:mt-36 leading-5 md:leading-tight">
@@ -122,7 +122,7 @@ export default function CoupleMessage({ data }) {
                 slidesPerView: 2.2,
                 spaceBetween: 30,
               },
-              1024: { 
+              1024: {
                 slidesPerView: 3,
                 spaceBetween: 40,
               },
@@ -132,7 +132,6 @@ export default function CoupleMessage({ data }) {
               },
             }}
           >
-           
             {carouselImages.map((item, index) => (
               <SwiperSlide key={index} className="flex justify-center">
                 <img
@@ -152,10 +151,16 @@ export default function CoupleMessage({ data }) {
         <div className="flex justify-center mt-20 pb-24 md:pb-0 lg:px-40 px-12">
           <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-10 md:gap-14 lg:gap-30 3xl:gap-30">
             <div className="flex flex-col items-center justify-center text-center">
-              <img
+              {/* <img
                 src={assets.weather}
                 alt="weather"
                 className="lg:h-26 lg:w-28 h-26 w-32 "
+              />  */}
+
+              <img
+                src={data?.coupleMessageWeatherImage || assets.weather}
+                alt="weather"
+                className="w-31 h-25 md:w-24 md:h-22 lg:w-33 lg:h-26"
               />
               <h2 className="eb-garamond font-normal text-[40px] md:text-3xl lg:text-[42px] text-[#FFF097] mt-2">
                 {weatherTitle}
@@ -165,10 +170,15 @@ export default function CoupleMessage({ data }) {
               </p>
             </div>
             <div className="flex flex-col items-center justify-center text-center">
-              <img
+              {/* <img
                 src={assets.staff}
                 alt="drive"
                 className="md:h-26 lg:h-27 lg:w-21 h-36 w-29"
+              /> */}
+              <img
+                src={data?.coupleMessageStaffImage || assets.staff}
+                alt="drive"
+                className="w-28 h-35 md:w-17 md:h-23 lg:w-21 lg:h-27"
               />
               <h2 className="eb-garamond font-normal text-[40px] md:text-3xl lg:text-[42px] text-[#FFF097] mt-2">
                 {StaffTitle}
@@ -178,10 +188,15 @@ export default function CoupleMessage({ data }) {
               </p>
             </div>
             <div className="flex flex-col items-center justify-center text-center">
-              <img
+              {/* <img
                 src={assets.parking}
                 alt="car"
                 className="lg:h-27 lg:w-30 h-26 w-32 "
+              /> */}
+              <img
+                src={data?.coupleMessageParkingImage || assets.parking}
+                alt="car"
+                className="w-31 h-25 md:w-26 md:h-23 lg:w-30 lg:h-27"
               />
               <h2 className="eb-garamond font-normal text-[40px] md:text-3xl lg:text-[42px] text-[#FFF097] mt-2">
                 {parkingTitle}
@@ -249,7 +264,7 @@ export default function CoupleMessage({ data }) {
           <img
             src={assets.couple_second}
             alt="couple"
-            className="w-108 h-88 md:w-205 md:h-103 lg:w-full lg:h-full 3xl:w-480 3xl:h-243 object-cover"
+            className="w-108 h-88 md:w-205 md:h-103 lg:w-full lg:h-full 3xl:w-480 3xl:h-243 object-cover lg:mt-105 3xl:mt-80"
           />
         </div>
       </div>

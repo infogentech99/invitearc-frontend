@@ -50,7 +50,7 @@ const initialData = {
     {
       title_ceremony: "Mehendi",
       image: assets.mehendi,
-       date: "Saturday, April 18th 2026",
+      date: "Saturday, April 18th 2026",
       venue: "The Central Park Hotel",
       venue_address:
         "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
@@ -63,7 +63,7 @@ const initialData = {
     {
       title_ceremony: "Anand Karaj",
       image: assets.anand_karaj,
-       date: "Saturday, April 20th 2026",
+      date: "Saturday, April 20th 2026",
       venue: "The Central Park Hotel",
       venue_address:
         "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
@@ -75,7 +75,7 @@ const initialData = {
     {
       title_ceremony: "Reception",
       image: assets.reception,
-       date: "Saturday, April 22nd 2026",
+      date: "Saturday, April 22nd 2026",
       venue: "The Central Park Hotel",
       venue_address:
         "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
@@ -263,7 +263,7 @@ export default function Home({
 
       {/* <audio ref={audioRef} src="/assets/background_song.mp3" loop preload="auto" playsInline /> */}
 
-      
+
       <audio
         key={backgroundMusicUrl}
         ref={audioRef}
@@ -372,7 +372,7 @@ export default function Home({
                     <p className="text-sm md:text-base lg:text-xl">
                       {event.venue_address}
                     </p>
-                     <p className="text-sm md:text-base lg:text-xl">
+                    <p className="text-sm md:text-base lg:text-xl">
                       {event.theme}
                     </p>
                   </h2>
@@ -406,18 +406,18 @@ export default function Home({
               alt="couple" width={900} height={1200}
               
               className="w-full h-104 md:w-full md:h-198 lg:w-full lg:h-264 3xl:w-480 3xl:h-463 object-cover" /> */}
-              <Image
-  src={assets.couple}
-  alt="couple"
-  width={900}
-  height={1200}
-  className="w-full h-auto md:h-198 lg:h-264 3xl:w-480 3xl:h-463 object-contain"
-/>
+            <Image
+              src={assets.couple}
+              alt="couple"
+              width={900}
+              height={1200}
+              className="w-full h-auto md:h-198 lg:h-264 3xl:w-480 3xl:h-463 object-contain"
+            />
           </div>
         </div>
       </div>
 
-      <CoupleMessage  data={data} />
+      <CoupleMessage data={data} />
 
       <div className="bg-[url('/assets/respo_three.webp')] md:bg-[url('/assets/bg_three.webp')] bg-cover bg-no-repeat" style={{ backgroundImage: `url(${coupleImage})` }} >
         <div className="h-253 md:h-179 lg:h-330 3xl:h-421 flex flex-col items-center relative">
@@ -425,7 +425,7 @@ export default function Home({
         </div>
       </div>
 
-    
+
     </>
   );
 }

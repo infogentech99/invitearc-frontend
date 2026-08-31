@@ -50,16 +50,20 @@ export const milanEditorFields = {
 
   detailFields: [
     { name: "mainHeading", label: "Main Heading", type: "text" },
-    { name: "title", label: "Title", type: "text" },
-    { name: "subTitle", label: "Subtitle", type: "text" },
+    // { name: "title", label: "Title", type: "text" },
+    // { name: "subTitle", label: "Subtitle", type: "text" },
+     
+    { name: "brideName", label: "Bride name", type: "text" },
+     { name: "groomName", label: "Groom name", type: "text" },
     { name: "blessingTitle", label: "Blessing Title", type: "text" },
-    { name: "blessingMessage", label: "Blessing message", type: "text" },
+    { name: "blessingMessage", label: "Blessing message", type: "textarea" },
     { name: "brideParentsTitle", label: "Bride Parents Title", type: "text" },
     {
       name: "brideParentsDetails",
       label: "Bride Parents details",
       type: "text",
     },
+     { name: "eventDate", label: "Event Date", type: "text" },
     { name: "groomParentsTitle", label: "Groom Parents Title", type: "text" },
     {
       name: "groomParentsDetails",

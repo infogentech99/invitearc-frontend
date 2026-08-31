@@ -45,6 +45,7 @@ const initialData = {
   groomName: "VEERENDRA",
   brideName: "MEERA",
   religiousMantra: "ॐ श्री गणेशाय नम",
+  familyName: " Chauhan Family",
   groomDetails: "(Son of Mrs. Kanchan & Mr. Sanjay Bhawnani)",
   blessingMessage: "With the heavenly blessings of",
   brideGrandParentsName: "Shri Rajesh Gaur & Shrimati Sunita Gaur",
@@ -251,16 +252,16 @@ export default function Home({
 
         {/* Decorative Lamps - Natural Flow Pattern */}
         {/* Left-to-Right Lamps - Less crowded */}
-        <FloatingLamp className="absolute top-10 left-8 w-40 h-40 transform rotate-12 opacity-90" />
-        <FloatingLamp className="absolute top-30 left-20 w-36 h-36 transform rotate-45 opacity-80" />
-        <FloatingLamp className="absolute top-50 left-40 w-32 h-32 transform rotate-30 opacity-85" />
-        <FloatingLamp className="absolute top-70 left-60 w-38 h-38 transform rotate-15 opacity-80" />
-        <FloatingLamp className="absolute top-90 left-80 w-34 h-34 transform rotate-25 opacity-75" />
-        <FloatingLamp className="absolute top-110 left-100 w-28 h-28 transform rotate-10 opacity-85" />
-        <FloatingLamp className="absolute top-130 left-120 w-36 h-36 transform rotate-35 opacity-75" />
-        <FloatingLamp className="absolute top-150 left-140 w-30 h-30 transform rotate-22 opacity-85" />
-        <FloatingLamp className="absolute top-170 left-160 w-32 h-32 transform rotate-18 opacity-80" />
-        <FloatingLamp className="absolute top-190 left-180 w-40 h-40 transform rotate-28 opacity-85" />
+        <FloatingLamp className="absolute top-10 left-8 w-18 h-18 transform rotate-12 opacity-90" />
+        <FloatingLamp className="absolute top-30 left-20 w-16 h-16 transform rotate-45 opacity-80" />
+        <FloatingLamp className="absolute top-50 left-40 w-16 h-16 transform rotate-30 opacity-85" />
+        <FloatingLamp className="absolute top-70 left-60 w-18 h-18 transform rotate-15 opacity-80" />
+        <FloatingLamp className="absolute top-90 left-80 w-14 h-14 transform rotate-25 opacity-75" />
+        <FloatingLamp className="absolute top-110 left-100 w-18 h-18 transform rotate-10 opacity-85" />
+        <FloatingLamp className="absolute top-130 left-120 w-16 h-16 transform rotate-35 opacity-75" />
+        <FloatingLamp className="absolute top-150 left-140 w-14 h-14 transform rotate-22 opacity-85" />
+        <FloatingLamp className="absolute top-170 left-160 w-18 h-18 transform rotate-18 opacity-80" />
+        <FloatingLamp className="absolute top-190 left-180 w-20 h-20 transform rotate-28 opacity-85" />
 
 
         <FloatingLamp className="hidden lg:block absolute top-50 left-40 w-40 h-40 transform rotate-30 opacity-85" />
@@ -281,16 +282,16 @@ export default function Home({
 
 
         {/* Right-to-Left Lamps - Less crowded */}
-        <FloatingLamp className="absolute top-20 right-12 w-32 h-32 transform -rotate-6 opacity-85" reverse={true} />
-        <FloatingLamp className="absolute top-40 right-32 w-28 h-28 transform -rotate-12 opacity-75" reverse={true} />
-        <FloatingLamp className="absolute top-60 right-52 w-36 h-36 transform -rotate-20 opacity-90" reverse={true} />
-        <FloatingLamp className="absolute top-80 right-72 w-30 h-30 transform -rotate-8 opacity-85" reverse={true} />
-        <FloatingLamp className="absolute top-100 right-92 w-34 h-34 transform -rotate-15 opacity-80" reverse={true} />
-        <FloatingLamp className="absolute top-120 right-112 w-38 h-38 transform -rotate-25 opacity-90" reverse={true} />
-        <FloatingLamp className="absolute top-140 right-132 w-26 h-26 transform -rotate-18 opacity-80" reverse={true} />
-        <FloatingLamp className="absolute top-160 right-152 w-32 h-32 transform -rotate-30 opacity-75" reverse={true} />
-        <FloatingLamp className="absolute top-180 right-172 w-36 h-36 transform -rotate-22 opacity-85" reverse={true} />
-        <FloatingLamp className="absolute top-200 right-192 w-30 h-30 transform -rotate-35 opacity-85" reverse={true} />
+        <FloatingLamp className="absolute top-20 right-12 w-16 h-16 transform -rotate-6 opacity-85" reverse={true} />
+        <FloatingLamp className="absolute top-40 right-32 w-18 h-18 transform -rotate-12 opacity-75" reverse={true} />
+        <FloatingLamp className="absolute top-60 right-52 w-16 h-16 transform -rotate-20 opacity-90" reverse={true} />
+        <FloatingLamp className="absolute top-80 right-72 w-18 h-18 transform -rotate-8 opacity-85" reverse={true} />
+        <FloatingLamp className="absolute top-100 right-92 w-16 h-16 transform -rotate-15 opacity-80" reverse={true} />
+        <FloatingLamp className="absolute top-120 right-112 w-18 h-18 transform -rotate-25 opacity-90" reverse={true} />
+        <FloatingLamp className="absolute top-140 right-132 w-16 h-16 transform -rotate-18 opacity-80" reverse={true} />
+        <FloatingLamp className="absolute top-160 right-152 w-18 h-18 transform -rotate-30 opacity-75" reverse={true} />
+        <FloatingLamp className="absolute top-180 right-172 w-16 h-16 transform -rotate-22 opacity-85" reverse={true} />
+        <FloatingLamp className="absolute top-200 right-192 w-18 h-18 transform -rotate-35 opacity-85" reverse={true} />
 
 
         <FloatingLamp className="hidden lg:block absolute top-30 right-12 w-40 h-40 transform -rotate-6 opacity-85" reverse={true} />
@@ -322,10 +323,17 @@ export default function Home({
 
           <div className="flex flex-col items-center text-center gap-6 mt-0  lg:pt-50 pt-0">
             <p className="eb-garamond font-normal text-base md:text-2xl lg:text-3xl text-[#FFF097] text-center">{data.religiousMantra}</p>
-            <Image
+            {/* <Image
               src={assets.ganesha}
               alt="idol" width={100} height={100}
-              className="w-23 h-30 md:w-35 md:h-46 lg:w-41 lg:h-53  object-cover" />
+              className="w-23 h-30 md:w-35 md:h-46 lg:w-41 lg:h-53  object-cover" /> */}
+                 <Image
+              src={data?.religiousSign || assets.ganesha}
+              alt="idol"
+              width={100}
+              height={100}
+              className="w-23 h-30 md:w-35 md:h-46 lg:w-41 lg:h-53  object-cover"
+            />
 
             <h2 className="eb-garamond font-medium text-[#FFF097] text-sm md:text-xl lg:text-[26px] md:pt-8">
               {data.blessingMessage} <br />
@@ -334,7 +342,8 @@ export default function Home({
 
             <hr className="lg:w-24 w-16 border-[#FFF097] my-2 md:my-4" />
             <h2 className="eb-garamond font-medium text-[#FFF097] text-sm md:text-xl lg:text-[26px]">
-              Shri Amit Chauhan & Shrimati Vaishali Chauhan
+             
+              {data.familyName}
             </h2>
           </div>
 
@@ -436,13 +445,29 @@ export default function Home({
 
       <CoupleMessage data={data}/>
 
-      <div className="bg-[url('/assets/respo_three.webp')] md:bg-[url('/assets/bg_three.webp')] bg-cover bg-no-repeat" style={{
-        backgroundImage: `url(${coupleImage})`,
-      }} >
-        <div className="h-255 md:h-179 lg:h-440 3xl:h-419 flex flex-col items-center relative">
-          <img src={data?.Logo || assets.logo} alt="logo" width={250} height={300} className="absolute top-28 w-42 h-48 md:top-41 md:w-28 md:h-35 lg:top-78 lg:w-48 lg:h-55 3xl:top-101" />
+
+
+        <div
+              className="hidden md:block bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: `url(${coupleImage})` }}
+            >
+              <div className="flex justify-center md:h-175 lg:h-237.5 xl:h-275 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96 relative" > 
+                <img src={data?.Logo || assets.logo} alt="logo" width={250} height={300} className="absolute top-28 w-42 h-48 md:top-41 md:w-28 md:h-35 lg:top-78 lg:w-40 lg:h-40 3xl:top-101" />
         </div>
-      </div>
+            </div>
+
+
+            <div className="md:hidden relative flex items-start justify-center">
+            
+                    <img
+                      src={coupleImage}
+                      alt="background"
+                      className="w-full h-full object-contain"
+                    />
+                    <div className="absolute top-[25svh] left-0 right-0 flex justify-center">
+                       <img src={data?.Logo || assets.logo} alt="logo" width={250} height={300} className="absolute top-08 w-22 h-26" />
+                    </div>
+                  </div>
 
       <MarriageCountdown data={data}
          />

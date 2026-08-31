@@ -132,11 +132,16 @@ export default function CoupleMessage({  data }) {
         <div className="flex justify-center mt-20 pb-24 md:pb-0 lg:px-70 px-20">
           <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-10 md:gap-10 lg:gap-20 3xl:gap-20">
             <div className="flex flex-col items-center justify-center text-center">
-              <img
-                src={assets.weather}
+              {/* <img
+                src={assets.weather} 
                 alt="weather"
                 className="w-31 h-25 md:w-24 md:h-22 lg:w-28 lg:h-26"
-              />
+              /> */}
+                <img
+                              src={data?.coupleMessageWeatherImage || assets.weather}
+                              alt="weather"
+                              className="w-31 h-25 md:w-24 md:h-22 lg:w-33 lg:h-26"
+                            />
               <h2 className="eb-garamond font-normal text-[40px] md:text-3xl lg:text-[42px] text-[#15528A] mt-1">
                 {weatherTitle}
               </h2>
@@ -145,11 +150,16 @@ export default function CoupleMessage({  data }) {
               </p>
             </div>
             <div className="flex flex-col items-center justify-center text-center">
-              <img
+              {/* <img
                 src={assets.staff}
                 alt="drive"
                 className="w-28 h-35 md:w-17 md:h-23 lg:w-21 lg:h-27"
-              />
+              /> */}
+              <img
+                              src={data?.coupleMessageStaffImage || assets.staff}
+                              alt="drive"
+                              className="w-28 h-35 md:w-17 md:h-23 lg:w-21 lg:h-27"
+                            />
               <h2 className="eb-garamond font-normal text-[40px] md:text-3xl lg:text-[42px] text-[#15528A] mt-1">
                 {StaffTitle}
               </h2>
@@ -158,11 +168,16 @@ export default function CoupleMessage({  data }) {
               </p>
             </div>
             <div className="flex flex-col items-center justify-center text-center">
-              <img
+              {/* <img
                 src={assets.parking}
                 alt="car"
                 className="w-31 h-25 md:w-26 md:h-23 lg:w-30 lg:h-27"
-              />
+              /> */}
+              <img
+                              src={data?.coupleMessageParkingImage || assets.parking}
+                              alt="car"
+                              className="w-31 h-25 md:w-26 md:h-23 lg:w-30 lg:h-27"
+                            />
               <h2 className="eb-garamond font-normal text-[40px] md:text-3xl lg:text-[42px] text-[#15528A] mt-1">
                 {parkingTitle}
               </h2>
@@ -213,10 +228,10 @@ export default function CoupleMessage({  data }) {
                 <img
                   src={assets.whatsapp}
                   alt="WhatsApp"
-                  className="h-8 w-8 md:h-8 md:w-8 lg:h-16 lg:w-16"
+                  className="h-14 w-14 md:h-8 md:w-8 lg:h-16 lg:w-16"
                 />
 
-                <span className="eb-garamond font-normal text-xs md:text-sm lg:text-[22px] text-[#15528A]">
+                <span className="eb-garamond font-normal text-xl md:text-sm lg:text-[22px] text-[#15528A]">
                   {rsvpButtonText}
                 </span>
               </a>

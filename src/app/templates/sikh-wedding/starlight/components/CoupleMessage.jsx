@@ -122,7 +122,7 @@ export default function CoupleMessage({ data }) {
         <div className="md:mt-32 mt-26 lg:mt-44 flex justify-center items-center overflow-visible">
           <Swiper
             modules={[Autoplay, Pagination]}
-            autoplay={{ delay: 3500, disableOnInteraction: false }}
+            autoplay={{ delay: 3500, disableOnInteraction: false }} 
             loop
             centeredSlides={true}
             pagination={{ clickable: true }}

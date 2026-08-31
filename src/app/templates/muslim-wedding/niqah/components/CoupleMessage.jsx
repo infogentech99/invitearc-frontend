@@ -79,7 +79,7 @@ const extractImageSrc = (image) => {
       className="bg-[url('/assets/bg_second.webp')] bg-cover bg-no-repeat"
       style={{ backgroundImage: `url(${assets.bg_second})` }}
     >
-      <div className="3xl:h-1017 lg:h-982 md:h-607 h-652">
+      <div className="3xl:h-1017 lg:h-902 md:h-607 h-652">
         <h1 className="font-eb-garamond font-medium text-base md:text-2xl lg:text-[38px] text-center text-[#FFF4B9] lg:pt-40 pt-20">
           {coupleTitle}
         </h1>
@@ -114,7 +114,7 @@ const extractImageSrc = (image) => {
                 <img
                   src={extractImageSrc(item)}
                   alt={`Carousel ${index + 1}`}
-                  className="w-full h-120 md:h-90 lg:h-135 3xl:h-175 object-cover rounded-[60px]"
+                  className="w-full h-80 md:h-90 lg:h-135 3xl:h-175 object-cover rounded-[60px]"
                 />
               </SwiperSlide>
             ))}
@@ -126,7 +126,7 @@ const extractImageSrc = (image) => {
         </h1>
 
         <div className="flex justify-center mt-20 pb-24">
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-20 lg:gap-0">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-20 lg:gap-0 w-280 px-10">
             <div className="flex flex-col items-center justify-center text-center">
               <img
                 src={assets.weather}
@@ -184,21 +184,9 @@ const extractImageSrc = (image) => {
           <img
             src={assets.couple_img2}
             alt="couple"
-            className="w-70 h-90 md:w-120 md:h-140 lg:w-260 lg:h-307 3xl:w-300 3xl:h-336 object-cover "
+            className="w-70 h-90 md:w-120 md:h-140 lg:w-180 lg:h-307 3xl:w-260 3xl:h-378 object-cover "
           />
-          {/* <div className="">
-            <h2 className="font-eb-garamond font-medium text-center text-xl md:text-3xl lg:text-5xl text-[#FFF4B9] pt-26 md:pt-20 lg:pt-40 3xl:pt-150 leading-6 md:leading-10 lg:leading-14">
-              Awaiting the Pleasure <br/> of Your Company
-            </h2>
-            <div className="flex flex-col-1 justify-center items-center md:not-first:mt-0">
-              <a href="#" target="_blank">
-                <img src={assets.whatsapp} alt="whatsapp" className="h-6 w-6 md:w-9 md:h-9 lg:w-10.5 lg:h-10.5 3xl:w-20 3xl:h-20 mt-1" />
-              </a>
-              <h2 className="font-eb-garamond font-medium text-center text-xs md:text-sm lg:text-[22px] 3xl:text-2xl text-[#FFF4B9]">
-                Share Your RSVP
-              </h2>
-            </div>
-            </div> */}
+       
           {rsvpMode === "form" ? (
             <div className="flex flex-col items-center text-center">
               <h2 className="font-eb-garamond font-medium text-center text-xl md:text-3xl lg:text-5xl text-[#FFF4B9] pt-26 md:pt-20 lg:pt-40 3xl:pt-150 leading-6 md:leading-10 lg:leading-14">
@@ -244,70 +232,16 @@ const extractImageSrc = (image) => {
             </div>
           )}
         </div>
-
-        {/* Mobile responsive */}
+       
         <div className="block md:hidden gap-0">
-          <div className="text-center">
-            {/* <h2 className="font-eb-garamond font-medium text-center text-3xl text-[#FFF5B9] pt-34 leading-10">
-              Awaiting the Pleasure <br/> of Your Company
-            </h2> */}
+          <div className="text-center">  
             <div className="flex flex-col-1 md:gap-4 gap-0 lg:gap-0 justify-center items-center md:not-first:mt-4">
-              {/* <a href="#" target="_blank">
-                <img src="/assets/whatsapp.webp" alt="" className="h-7.5 w-7.5 mt-1" />
-              </a>
-              <h2 className="font-eb-garamond font-medium text-center text-lg text-[#FFF5B9]">
-                Share Your RSVP
-              </h2> */}
-              {/* {rsvpMode === "form" ? (
-                                      <div className="flex flex-col items-center text-center">
-                                        <h2 className="eb-garamond font-normal text-center text-2xl md:text-3xl lg:text-[54px] text-[#FFF097]  pt-5 md:pt-80 lg:pt-50 3xl:pt-150 leading-normal md:leading-8 lg:leading-12 lg:w-140 w-70">
-                                          {rsvpSectionHeading}
-                                        </h2>
-                      
-                                        <a
-                                          href={rsvpGoogleFormLink || "#"}
-                                          target="_blank"
-                                          rel="noreferrer"
-                                          className="mt-6"
-                                        >
-                                          <button
-                                            type="button"
-                                            className="rounded-xl bg-[#FFF097] text-black px-6 py-2 text-sm md:text-lg font-semibold cursor-pointer"
-                                          >
-                                            {rsvpButtonText}
-                                          </button>
-                                        </a>
-                                      </div>
-                                    ) : (
-                                      <div className="flex flex-col items-center text-center">
-                                        <h2 className="eb-garamond font-normal text-center text-2xl md:text-3xl lg:text-[54px] text-[#FFF097] pt-5 md:pt-30 lg:pt-50 3xl:pt-150 leading-normal md:leading-8 lg:leading-12 lg:w-140 w-70">
-                                          {rsvpSectionHeading}
-                                        </h2>
-                      
-                                        <a
-                                          href={whatsappHref}
-                                          target="_blank"
-                                          rel="noreferrer"
-                                          className="flex items-center gap-1 mt-4"
-                                        >
-                                          <img
-                                            src={assets.whatsapp}
-                                            alt="WhatsApp"
-                                            className="h-8 w-8 md:h-8 md:w-8 lg:h-16 lg:w-16"
-                                          />
-                      
-                                          <span className="eb-garamond font-normal text-xs md:text-sm lg:text-[22px] text-[#FFF097]">
-                                            {rsvpButtonText}
-                                          </span>
-                                        </a>
-                                      </div>
-                                    )} */}
             </div>
           </div>
           <img
             src={assets.couple_img2}
             alt="couple"
-            className="w-108 h-120 md:w-100 md:h-128 lg:w-285 lg:h-320 object-cover mt-35"
+            className="w-108 h-120 md:w-100 md:h-128 lg:w-285 lg:h-320 object-cover mt-54 md:mt-35"
           />
         </div>
       </div>

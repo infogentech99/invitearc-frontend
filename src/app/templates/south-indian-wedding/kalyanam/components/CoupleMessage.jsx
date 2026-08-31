@@ -119,8 +119,8 @@ export default function CoupleMessage({data}) {
           {thingsToKnowTitle}
         </h1>
 
-        <div className="flex justify-center mt-15 3xl:mt-30 pb-15 md:pb-24 lg:px-50 md:px-10 px-5">
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-14 lg:gap-0">
+        <div className="flex justify-center mt-15 3xl:mt-30 pb-15 md:pb-24 lg:px-50 md:px-10 px-5 ">
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-14 lg:gap-0 w-250">
             <div className="flex flex-col items-center justify-center text-center">
               <img
                 src={assets.weather}
@@ -178,7 +178,7 @@ export default function CoupleMessage({data}) {
           <div className="flex flex-col-1 md:gap-0 gap-0 lg:gap-0 justify-center items-center md:not-first:mt-4">
                       {rsvpMode === "form" ? (
                         <div className="flex flex-col items-center text-center">
-                          <h2 className="eb-garamond font-normal text-center text-2xl md:text-3xl lg:text-[54px] text-[#FFF097]  pt-5 md:pt-80 lg:pt-50 3xl:pt-150 leading-normal md:leading-8 lg:leading-12 lg:w-140 w-70">
+                          <h2 className="eb-garamond font-normal text-center text-2xl md:text-3xl lg:text-[54px] text-[#FFF097]  pt-5 md:pt-80 lg:pt-0 3xl:pt-50 leading-normal md:leading-8 lg:leading-12 lg:w-140 w-70">
                             {rsvpSectionHeading}
                           </h2>
         
@@ -198,7 +198,7 @@ export default function CoupleMessage({data}) {
                         </div>
                       ) : (
                         <div className="flex flex-col items-center text-center">
-                          <h2 className="eb-garamond font-normal text-center text-2xl md:text-3xl lg:text-[54px] text-[#FFF097] pt-5 md:pt-30 lg:pt-50 3xl:pt-150 leading-normal md:leading-8 lg:leading-12 lg:w-140 w-70">
+                          <h2 className="eb-garamond font-normal text-center text-2xl md:text-3xl lg:text-[54px] text-[#FFF097] pt-5 md:pt-30 lg:pt-0 3xl:pt-50 leading-normal md:leading-8 lg:leading-12 lg:w-140 w-70">
                             {rsvpSectionHeading}
                           </h2>
         
