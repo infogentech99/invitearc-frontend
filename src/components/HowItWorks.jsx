@@ -17,7 +17,7 @@ export default function HowItWorks () {
         >
           <div className="mx-auto max-w-full">
               <img
-                src="/assets/hown.png"
+                src="/assets/hown.webp"
                 alt="InviteArc"
                 className="rounded-xl"
               />

@@ -1,16 +1,16 @@
 "use client";
-
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
+// import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { AuthContext } from "../context/AuthContext";
 import { usePathname } from "next/navigation";
-import { useContext } from "react";
+// import { useContext } from "react";
 import AuthModal from "../components/AuthModal";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-
+const menuRef = useRef(null);
   const pathname = usePathname();
 
   if (pathname.startsWith("/share")) {
@@ -26,6 +26,22 @@ export default function Header() {
     authTab,
   } = useContext(AuthContext);
   const router = useRouter();
+
+  useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setMenuOpen(false);
+    }
+  };
+
+  if (menuOpen) {
+    document.addEventListener("mousedown", handleClickOutside);
+  }
+
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, [menuOpen]);
 
   const handleLogout = () => {
     logout();
@@ -72,7 +88,8 @@ export default function Header() {
 
           <div className="relative flex items-center gap-3">
             {user ? (
-              <div className="relative">
+              // <div className="relative">
+              <div ref={menuRef} className="relative">
                 <button
                   type="button"
                   onClick={() => setMenuOpen((c) => !c)}
@@ -87,7 +104,7 @@ export default function Header() {
                   </span>
                 </button>
                 {menuOpen ? (
-                  <div className="absolute right-0 mt-3 w-52 rounded-3xl border border-slate-200 bg-white p-3 shadow-xl">
+                  <div className="absolute right-0 mt-2 w-52 rounded-3xl border border-slate-200 bg-white p-3 shadow-xl">
                     <div className="mb-3 rounded-3xl bg-slate-50 px-4 py-3 text-sm text-slate-700">
                       <p className="font-semibold text-slate-900">
                         {user.name}
