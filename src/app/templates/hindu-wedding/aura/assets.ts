@@ -19,6 +19,8 @@ import five from "./assets/five.webp";
 import rsvp from "./assets/rsvp.webp";
 import whatsapp from "./assets/whatsapp.webp";
 import couple_logo from "./assets/couple_logo.webp";
+import respo_four from "./assets/respo_four.webp";
+import respo_bg from "./assets/respo_bg.webp";
 
 export const assets = {
 background:background.src,
@@ -42,5 +44,7 @@ five:five.src,
 rsvp:rsvp.src,
 whatsapp:whatsapp.src,
 couple_logo:couple_logo.src,
+respo_four:respo_four.src,
+respo_bg:respo_bg.src,
 background_song: "/template-audio/aura.mp3",
 }

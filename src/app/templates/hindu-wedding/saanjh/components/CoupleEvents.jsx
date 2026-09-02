@@ -74,7 +74,8 @@ export default function CoupleEvents({ data }) {
         backgroundImage: `url(${assets.bg_three})`,
       }}
     >
-      <div className="h-480 md:h-250 lg:h-466 3xl:h-421 flex flex-col items-center relative">
+      {/* <div className="h-480 md:h-250 lg:h-466 3xl:h-421 flex flex-col items-center relative"> */}
+      <div className="min-h-[480px] md:min-h-[250px] lg:min-h-[466px] 3xl:min-h-[421px] flex flex-col items-center relative md:pb-20 pb-20">
         <h2 className="font-eb-garamond font-normal text-xs md:text-xl lg:text-[26px] 3xl:text-[36px] pt-10 md:pt-15 3xl:pt-25 bg-linear-to-r from-[#D99447] via-[#F5C691] to-[#D99447] bg-clip-text text-transparent">
           {eventTitle}
         </h2>

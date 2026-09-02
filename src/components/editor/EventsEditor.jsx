@@ -202,7 +202,7 @@ export default function EventsEditor({
                       type="button"
                       onClick={() => removeEventItem(index)}
                       aria-label="Remove event"
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-rose-300 bg-white text-rose-600 hover:bg-rose-50"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-rose-300 bg-white text-rose-600 hover:bg-rose-50 cursor-pointer"
                     >
                       ✕
                     </button>

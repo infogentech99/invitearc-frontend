@@ -92,7 +92,7 @@ export default function Home({
 
   const [bgImage, setBgImage] = useState(assets.desktop_bg);
   const [coupleImage, setCoupleImage] = useState(assets.bg_four);
-  
+
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [started, setStarted] = useState(false);
   const [playing, setPlaying] = useState(false);
@@ -221,7 +221,12 @@ export default function Home({
 
           <div className="flex flex-col items-center text-center gap-6 pt-20 md:pt-35 lg:pt-80 3xl:pt-100">
             <p className="font-eb-garamond font-medium text-base md:text-2xl lg:text-3xl text-[#D90305] text-center">{data.religiousMantra}</p>
-            <img src={assets.ganesha} alt="ganesh" className="w-25 h-29 md:w-34 md:h-38 lg:w-41 lg:h-53" />
+            <img
+              src={data?.religiousSign || assets.ganesha}
+              alt="idol" width={100} height={100}
+              className="w-25 h-29 md:w-34 md:h-38 lg:w-41 lg:h-53" />
+
+
             <h2 className="font-eb-garamond font-medium text-[#D90305] text-sm md:text-xl lg:text-3xl">
               {data.blessingMessage} <br /> {data.brideGrandParentsName}
             </h2>
@@ -283,7 +288,7 @@ export default function Home({
                     <span className="text-base md:text-base lg:text-[15px]">{event.date}</span>  <br />
                     <span className="text-base md:text-base lg:text-[15px]">  {event.time} </span> <br />
                     <span className="text-base md:text-base lg:text-[15px] uppercase"> {event.venue}</span> <br />
-                    <span className="text-sm md:text-base lg:text-[20px]">{event.venue_address}</span>
+                    <span className="text-sm md:text-base lg:text-[20px] px-4">{event.venue_address}</span>
                   </p>
 
                   <a href={event.link} className="font-eb-garamond font-medium text-[#D90305] underline text-base md:text-sm mt-2"
@@ -316,13 +321,39 @@ export default function Home({
 
       <CoupleMessage data={data} />
 
-      <div className="bg-[url('/assets/respo_four.webp')] md:bg-[url('/assets/bg_four.webp')] bg-cover bg-no-repeat" style={{
-        backgroundImage: `url(${coupleImage})`,
-      }}>
-        <div className="flex flex-col items-center h-251 md:h-180 lg:h-332 3xl:h-400">
-          <img src={assets.logo} alt="logo" width={250} height={300} className="w-30 h-27 mt-26 md:w-30 md:h-27 md:mt-45 lg:w-40 lg:h-37 lg:mt-78" />
+
+
+
+      <div
+        className="hidden md:block bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${coupleImage})` }}
+      >
+        <div className="relative flex justify-center md:h-175 lg:h-237.5 xl:h-275 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96">
+
+
+          <img
+            src={data?.Logo || assets.logo}
+            alt="logo"
+            width={250}
+            height={300}
+            className="absolute w-34 h-30 top-40 md:w-34 md:h-30 md:top-42 lg:w-50 lg:h-44 lg:top-86"
+          />
         </div>
       </div>
+
+
+      <div className="md:hidden relative flex items-start justify-center">
+        <img
+          src={coupleImage}
+          alt="background"
+          className="w-full h-full object-contain"
+        />
+        <div className="absolute top-[25svh] left-0 right-0 flex justify-center">
+          <img src={data?.Logo || assets.logo} alt="logo" width={250} height={300} className="absolute w-32 h-26" />
+        </div>
+      </div>
+
+
 
       <MarriageCountdown data={data} />
     </>

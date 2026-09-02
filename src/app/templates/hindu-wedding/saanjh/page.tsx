@@ -86,7 +86,7 @@ const initialData = {
 export default function Home({
   data: initialTemplateData,
 }) {
-
+const [bgImage, setBgImage] = useState(assets.background);
   const [data, setData] = useState({
     ...initialData,
     ...(initialTemplateData || {}),
@@ -161,6 +161,32 @@ export default function Home({
     };
   }, [started]);
 
+
+
+
+    useEffect(() => {
+      const updateBg = () => {
+        if (window.innerWidth >= 1536) {
+          // Desktop Large
+          setBgImage(assets.background);
+        } else if (window.innerWidth >= 768) {
+          // Tablet/Desktop
+          setBgImage(assets.respo_bg);
+        } else {
+          // Mobile
+          setBgImage(assets.respo_bg);
+        }
+      };
+  
+      updateBg();
+      window.addEventListener("resize", updateBg);
+  
+      return () => window.removeEventListener("resize", updateBg);
+    }, []);
+
+
+
+
   return (
     <>
       <button
@@ -182,11 +208,11 @@ export default function Home({
       />
       <div
         className="
-    bg-[url('/assets/respo_bg.png')] md:bg-[url('/assets/background.webp')] bg-[length:100%_auto]  md:bg-cover bg-top bg-no-repeat w-full relative
-     overflow-hidden md:min-h-screen" style={{ backgroundImage: `url(${assets.background})`, }} >
+    bg-[url('/assets/respo_bg.png')] md:bg-[url('/assets/background.webp')] bg-[length:100%_auto]  md:bg-cover bg-top bg-no-repeat w-full relative 
+     overflow-hidden md:min-h-screen" style={{ backgroundImage: `url(${bgImage})`, }} >
         <RoseHeroTemp />
 
-        <div className=" flex flex-col items-center pt-15 md:pt-22 lg:pt-16 3xl:pt-20 pb-5 relative z-10">
+        <div className=" flex flex-col items-center pt-15 md:pt-22 lg:pt-16 3xl:pt-20  relative z-10">
           <h2 className="flex flex-col text-[#69301B] text-center leading-tight justify-center items-center">
             <span className="font-eb-garamond font-normal text-xs md:text-base lg:text-[22px] bg-linear-to-r from-[#D99447] via-[#F5C691] to-[#D99447] bg-clip-text text-transparent">
               {data.welcomeTitle}

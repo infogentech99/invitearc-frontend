@@ -46,23 +46,20 @@ export const auraEditorFields = {
     },
   ],
 
-
- detailFields: [
+  detailFields: [
     { name: "groomName", label: "Groom name", type: "text" },
     { name: "brideName", label: "Bride name", type: "text" },
     { name: "religiousMantra", label: "Religious Mantra", type: "text" },
+    { name: "religiousSign", label: "Religious Sign", type: "religiousSign" },
     { name: "blessingMessage", label: "Blessing message", type: "text" },
     {
       name: "brideGrandParentsName",
       label: "GrandParents Name",
       type: "textarea",
     },
-    // { name: "familyName", label: "Family name", type: "text" },
-    { name: "groomDetails", label: "Groom details", type: "textarea" },
     { name: "headline", label: "Headline", type: "text" },
     { name: "inviteLine", label: "Invitation line", type: "text" },
-    
-
+    { name: "groomDetails", label: "Groom details", type: "textarea" },
     { name: "brideDetails", label: "Bride details", type: "textarea" },
     { name: "eventIntro", label: "Event intro", type: "text" },
     {
@@ -82,7 +79,7 @@ export const auraEditorFields = {
     { name: "link", label: "Route link", type: "text" },
   ],
 
-    coupleMessageFields: [
+  coupleMessageFields: [
     { name: "thankyoutitle", label: "Thank you title", type: "text" },
     { name: "thankyoumessage", label: "Thank you Message", type: "textarea" },
     { name: "coupleMessageTitle", label: "Couple message title", type: "text" },
@@ -91,29 +88,10 @@ export const auraEditorFields = {
       label: "Couple message description",
       type: "textarea",
     },
-
-
-    {
-  name: "coupleMessageImages.image1",
-  label: "Couple Image 1",
-  type: "image",
-},
 {
-  name: "coupleMessageImages.image2",
-  label: "Couple Image 2",
-  type: "image",
+  name: "coupleMessageCarouselImages",
+  label: "Upload Couple Images",
 },
-{
-  name: "coupleMessageImages.image3",
-  label: "Couple Image 3",
-  type: "image",
-},
-{
-  name: "coupleMessageImages.image4",
-  label: "Couple Image 4",
-  type: "image",
-}, 
-    
 
     {
       name: "coupleMessageThingsToKnowTitle",
@@ -125,19 +103,21 @@ export const auraEditorFields = {
       label: "Guide description",
       type: "textarea",
     },
-
+     { name: "coupleMessageWeatherImage", label: "Weather Image", type: "image" }, 
     { name: "coupleMessageWeatherTitle", label: "Weather title", type: "text" },
     {
       name: "coupleMessageWeatherDetails",
       label: "Weather details",
       type: "textarea",
     },
+     { name: "coupleMessageStaffImage", label: "Staff Image", type: "image" },
     { name: "coupleMessageStaffTitle", label: "Staff title", type: "text" },
     {
       name: "coupleMessageStaffDetails",
       label: "Staff details",
       type: "textarea",
     },
+     { name: "coupleMessageParkingImage", label: "Parking Image", type: "image" },
     { name: "coupleMessageParkingTitle", label: "Parking title", type: "text" },
 
     {
@@ -146,8 +126,6 @@ export const auraEditorFields = {
       type: "textarea",
     },
   ],
-
-  
 
   rsvpFields: [
     // { name: "rsvpSectionHeading", label: "RSVP Section Heading", type: "text" },
@@ -179,5 +157,4 @@ export const auraEditorFields = {
       type: "textarea",
     },
   ],
-
 };

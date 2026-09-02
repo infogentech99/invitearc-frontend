@@ -316,7 +316,7 @@ export default function EditTemplatePage() {
         ...(Array.isArray(prev.events) ? prev.events : []),
         {
           title_ceremony: "New Event",
-          date: "Saturday, 10th December 2026",
+          date: "Date",
           venue: "Royal Palace",
           venue_address:
             "Bund Garden Road, Agarkar Nagar Pune, Maharashtra, 411001",

@@ -77,7 +77,7 @@ const [coupleBg, setCoupleBgImage] = useState(assets.background_third);
         <section className="bg-[url('/assets/respo_third.webp')] md:bg-[url('/assets/background_third.webp')] bg-cover bg-no-repeat bg-top md:bg-center w-full overflow-hidden" style={{ backgroundImage: `url(${coupleBg})` }}>
 
         <div className="h-505 md:h-517 lg:h-956 3xl:h-1182">
-          <h1 className="eb-garamond font-medium text-base md:text-2xl lg:text-[38px] text-center text-[#FFFFFF] lg:pt-40 pt-20">{coupleTitle}</h1>
+          <h1 className="eb-garamond font-medium text-[24px] md:text-2xl lg:text-[38px] text-center text-[#FFFFFF] lg:pt-40 pt-20">{coupleTitle}</h1>
           <h2 className="parisienne-regular font-normal text-5xl md:text-6xl lg:text-[100px] text-center text-[#FFFFFF] px-3 md:px-17 lg:px-51 3xl:px-103 mt-12 lg:mt-24 leading-5 md:leading-tight">
             {coupleDescription}
           </h2>
@@ -103,7 +103,7 @@ const [coupleBg, setCoupleBgImage] = useState(assets.background_third);
             </h1>
 
             <div className="flex justify-center mt-10 md:mt-14 lg:mt-30 3xl:mt-40 pb-10 md:pb-16 lg:pb-24 3xl:pb-34 lg:px-48 px-12">
-              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-14 md:gap-25 lg:gap-0 3xl:gap-0">
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-14 md:gap-25 lg:gap-0 3xl:gap-0 lg:w-300 3xl:w-250">
                 <div className="flex flex-col items-center justify-center text-center">
                   <img
                     src={data?.coupleMessageWeatherImage || assets.weather}
@@ -155,7 +155,7 @@ const [coupleBg, setCoupleBgImage] = useState(assets.background_third);
           <div className="lg:mt-20 3xl:mt-40">
              {rsvpMode === "form" ? (
                             <div className="flex flex-col items-center text-center">
-                              <h2 className="eb-garamond font-normal text-center text-xl md:text-3xl lg:text-[64px] text-[#FFFFFF] pt-26 md:pt-50 lg:pt-85 3xl:pt-150 leading-6 md:leading-8 lg:leading-19 pr-26 md:pr-66 lg:pr-155">
+                              <h2 className="eb-garamond font-normal text-center text-xl md:text-3xl lg:text-[64px] text-[#FFFFFF] pt-26 md:pt-50 lg:pt-85 3xl:pt-150 leading-6 md:leading-8 lg:leading-19 pr-26 md:pr-66 lg:pr-155 lg:w-400">
                                 {rsvpSectionHeading}
                               </h2>
             
@@ -175,7 +175,7 @@ const [coupleBg, setCoupleBgImage] = useState(assets.background_third);
                             </div>
                           ) : (
                             <div className="flex flex-col items-center text-center">
-                              <h2 className="eb-garamond font-normal text-center text-xl md:text-3xl lg:text-[64px] text-[#FFFFFF] pt-26 md:pt-50 lg:pt-85 3xl:pt-150 leading-6 md:leading-8 lg:leading-19 pr-26 md:pr-66 lg:pr-155">
+                              <h2 className="eb-garamond font-normal text-center text-xl md:text-3xl lg:text-[64px] text-[#FFFFFF] pt-26 md:pt-50 lg:pt-85 3xl:pt-150 leading-6 md:leading-8 lg:leading-19 pr-26 md:pr-66 lg:pr-155 lg:w-400">
                                 {rsvpSectionHeading}
                               </h2>
             

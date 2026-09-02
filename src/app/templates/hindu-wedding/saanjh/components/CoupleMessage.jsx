@@ -15,6 +15,31 @@ import "swiper/css/pagination";
 import { assets } from "../assets";
 
 export default function CoupleMessage({ data }) {
+const [coupleBg, setCoupleBg] = useState(assets.bg_four);
+
+    useEffect(() => {
+    const updateBg = () => {
+      if (window.innerWidth >= 1536) {
+        // Desktop Large
+        setCoupleBg(assets.bg_four);
+      } else if (window.innerWidth >= 768) {
+        // Tablet/Desktop
+        setCoupleBg(assets.bg_four);
+      } else {
+        // Mobile
+        setCoupleBg(assets.respo_four);
+      }
+    };
+
+    updateBg();
+    window.addEventListener("resize", updateBg);
+
+    return () => window.removeEventListener("resize", updateBg);
+  }, []);
+
+
+
+
   const extractImageSrc = (image) => {
     if (!image) return "";
     if (typeof image === "string") return image;
@@ -47,7 +72,7 @@ export default function CoupleMessage({ data }) {
   return (
     <div
       className="bg-[url('/assets/respo_four.png')] md:bg-[url('/assets/bg_four.webp')] bg-cover bg-no-repeat"
-      style={{ backgroundImage: `url(${assets.bg_four})` }}
+      style={{ backgroundImage: `url(${coupleBg})` }}
     >
       <div className="h-330 md:h-360 lg:h-500 3xl:h-630">
         <h1 className=" font-eb-garamond font-normal text-base md:text-xl lg:text-[26px] text-center pt-10 lg:pt-20 bg-linear-to-r from-[#D99447] via-[#F5C691] to-[#D99447] bg-clip-text text-transparent">
@@ -80,11 +105,8 @@ export default function CoupleMessage({ data }) {
         </div>
 
         <div className="flex flex-col items-center mt-25 md:mt-5 lg:mt-20 3xl:mt-50 gap-4">
-          <img
-            src={assets.aum}
-            alt="aum"
-            className="w-11 h-15 md:w-15 md:h-20 lg:w-22 lg:h-29"
-          />
+      
+          <img src={data?.religiousSign || assets.aum} alt="logo" width={250} height={300} className="w-7 h-10 md:w-14 md:h-20 lg:w-22 lg:h-29" />
           <h2 className="font-eb-garamond font-normal text-2xl md:text-3xl lg:text-[62px] text-center lg:pt-4 leading-tight text-[#E1B340]">
             {thingsToKnowTitle}
           </h2>

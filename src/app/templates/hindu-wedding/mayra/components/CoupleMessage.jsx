@@ -142,7 +142,7 @@ export default function CoupleMessage({ data }) {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
+        </div> 
 
         <h1 className="parisienne-regular text-5xl md:text-6xl lg:text-[100px] text-center text-[#FFF097] pt-16 md:pt-20 lg:pt-32 leading-tight">
           {thingsToKnowTitle}

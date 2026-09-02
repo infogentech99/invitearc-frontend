@@ -3,7 +3,7 @@ import { useEffect, useState, useRef, useMemo } from "react";
 import FallingLamps from "./components/FallingLamps";
 import CoupleMessage from "./components/CoupleMessage";
 import "./aura-globals.css";
-import {assets} from "./assets";
+import { assets } from "./assets";
 
 const FloatingLamp = ({ className, style, reverse = false }: { className: string; style?: React.CSSProperties; reverse?: boolean }) => {
   // Memoize random values to prevent recalculation on re-renders
@@ -44,7 +44,7 @@ const initialData = {
   groomName: "Dhiraj",
   brideName: "Ritika",
   religiousMantra: "ॐ श्री गणेशाय नम",
-   blessingMessage: "With the heavenly blessings of",
+  blessingMessage: "With the heavenly blessings of",
   groomDetails: "S/O Savita Kapoor and Sunil Kapoor",
   brideGrandParentsName: "Shri Rajesh Kapoor  & Shrimati Sunita Kapoor ",
   brideDetails: "D/O Mrs. Shalini & Mr. Aakash Mittal,",
@@ -54,7 +54,7 @@ const initialData = {
   thankyoutitle: "With Love From Us",
   thankyoumessage:
     "Thank you for being part our journey. Your presence makes this celebration truly meaningful, and we look forward to sharing these cherished moments with you.",
- 
+
 
   events: [
     {
@@ -98,11 +98,11 @@ const initialData = {
 export default function Home({
   data: initialTemplateData,
 }) {
-
- const [data, setData] = useState({
+  const [bgImage, setBgImage] = useState(assets.background);
+  const [data, setData] = useState({
     ...initialData,
     ...(initialTemplateData || {}),
-    events: 
+    events:
       initialTemplateData?.events ||
       initialData.events,
   });
@@ -116,41 +116,12 @@ export default function Home({
   }, [initialTemplateData]);
 
 
-  const events = [
-    {
-      title_ceremony: "Mehendi",
-      image: assets.mehandi,
-      date: "Saturday, April 18th 2026",
-      time: "Join Us at 11 am",
-      venue: "The Leela Palace, Udaipur",
-      link: "https://maps.app.goo.gl/53z68ksx4cYgoNm59",
-    },
-
-    {
-      title_ceremony: "Shaadi",
-      image: assets.Shaadi,
-      date: "Saturday, April 18th 2026",
-      time: "Join Us at 11 am",
-      venue: "The Leela Palace, Udaipur",
-      link: "https://maps.app.goo.gl/mxcwCxWhH1TXBC8c9",
-    },
-    {
-      title_ceremony: "Reception",
-      image: assets.Reception,
-      date: "Saturday, April 18th 2026",
-      time: "Join Us at 11 am",
-      venue: "The Leela Palace, Udaipur",
-      link: "https://maps.app.goo.gl/f599YkTSEYKDEK5L7",
-    },
-
-
-  ];
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [started, setStarted] = useState(false);
   const [playing, setPlaying] = useState(false);
 
   const backgroundMusicUrl = data?.backgroundMusicUrl || assets.background_song;
-  
+
   const startMusic = async () => {
     const audio = audioRef.current;
     if (!audio || started) return;
@@ -192,15 +163,37 @@ export default function Home({
   }, [started]);
 
 
+
+  useEffect(() => {
+    const updateBg = () => {
+      if (window.innerWidth >= 1536) {
+        // Desktop Large
+        setBgImage(assets.background);
+      } else if (window.innerWidth >= 768) {
+        // Tablet/Desktop
+        setBgImage(assets.background);
+      } else {
+        // Mobile
+        setBgImage(assets.respo_bg);
+      }
+    };
+
+    updateBg();
+    window.addEventListener("resize", updateBg);
+
+    return () => window.removeEventListener("resize", updateBg);
+  }, []);
+
+
   return (
     <>
-      <button onClick={() => {started ? toggleMusic() : startMusic();}}
-       className="fixed bottom-4 right-4 z-50 bg-[#FF35A1] text-white p-3 rounded-xl text-xl">
-       {playing ? "⏸" : "▶"}
+      <button onClick={() => { started ? toggleMusic() : startMusic(); }}
+        className="fixed bottom-4 right-4 z-50 bg-[#FF35A1] text-white p-3 rounded-xl text-xl">
+        {playing ? "⏸" : "▶"}
       </button>
 
       {/* <audio ref={audioRef} src="/assets/background_song_inter.mp3" loop preload="auto" playsInline /> */}
-<audio
+      <audio
         key={backgroundMusicUrl}
         ref={audioRef}
         src={backgroundMusicUrl}
@@ -210,7 +203,7 @@ export default function Home({
       />
       {/* hero section */}
       <div className="bg-[url('/assets/respo_bg.webp')] md:bg-[url('/assets/background.webp')] bg-cover bg-top bg-no-repeat 
-                      min-h-screen w-full relative overflow-hidden" style={{ backgroundImage: `url(${assets.background})` }}>
+                      min-h-screen w-full relative overflow-hidden" style={{ backgroundImage: `url(${bgImage})` }}>
 
         {/* Decorative Lamps - Natural Flow Pattern */}
         {/* Left-to-Right Lamps - Less crowded */}
@@ -265,9 +258,9 @@ export default function Home({
         <FloatingLamp className="hidden lg:block absolute top-190 right-172 w-40 h-40 transform -rotate-22 opacity-85" reverse={true} />
 
         {/* <FallingLamps /> */}
-        <div className="pt-12 md:pt-24 pb-24 md:pb-20 relative z-10">
-          <h2 className="text-center leading-tight text-5xl md:text-6xl lg:text-[80px] pb-80 md:pb-280 lg:pb-300 3xl:pb-420 flex flex-col 
-                         items-center gap-y-2 text-[#FFB700]">
+        <div className="pt-12 md:pt-24 3xl:pt-30 pb-24 md:pb-20 relative z-10">
+          <h2 className="text-center leading-tight text-2xl md:text-6xl lg:text-[80px] pb-80 md:pb-280 lg:pb-300 3xl:pb-420 flex flex-col 
+                         items-center md:gap-y-2 text-[#FFB700]">
             <span className="font-parisienne-regular font-normal">{data.groomName}</span>
             <span className="font-jacques-francois font-normal text-xl md:text-2xl lg:text-[38px] tracking-widest">WEDS</span>
             <span className="font-parisienne-regular font-normal">{data.brideName}</span>
@@ -276,11 +269,17 @@ export default function Home({
             <h2 className="font-eb-garamond font-medium text-base md:text-2xl lg:text-3xl text-center text-[#FFB700]">
               {data.religiousMantra}
             </h2>
-            <img src={assets.ganesha} alt="ganesh-image" className="w-28 h-auto md:w-40 lg:w-41 lg:h-53"/>
+            {/* <img src={assets.ganesha} alt="ganesh-image" className="w-28 h-auto md:w-40 lg:w-41 lg:h-53"/> */}
+            <img
+              src={data?.religiousSign || assets.ganesha}
+              alt="idol" width={100} height={100}
+              className="w-30 h-39 md:w-40 md:h-50 lg:w-50 lg:h-65 object-cover" />
+
+
             <h2 className="font-eb-garamond font-medium text-base md:text-xl lg:text-3xl text-[#FFB700]">
               {data.blessingMessage} <br /> {data.brideGrandParentsName}
             </h2>
-            
+
           </div>
 
           <div className="mt-8 lg:mt-12 text-center">
@@ -294,7 +293,7 @@ export default function Home({
               {data.groomName}
             </h2>
             <p className="font-eb-garamond font-medium text-base md:text-xl lg:text-3xl mt-2 text-[#FFB700]">
-             {data.groomDetails}
+              {data.groomDetails}
             </p>
             <h2 className="font-eb-garamond font-medium text-center mt-4 text-5xl md:text-6xl lg:text-[100px] leading-tight text-[#FFB700]">
               <span className="font-eb-garamond font-medium text-center mt-4 lg:mt-10 text-5xl md:text-6xl lg:text-[100px] leading-tight text-[#FFB700]">
@@ -306,11 +305,11 @@ export default function Home({
               {data.brideDetails}
             </p>
             <p className="font-eb-garamond font-medium text-base md:text-xl lg:text-3xl mt-8 text-[#FFB700]">
-             {data.eventIntro}
+              {data.eventIntro}
             </p>
           </div>
 
-       <div className="flex justify-center mt-20 lg:mt-40 mb-30">
+          <div className="flex justify-center mt-20 lg:mt-40 mb-30">
             <div
               className={`grid gap-16 lg:gap-26 lg:px-18 3xl:px-0 ${data?.events?.length === 1
                 ? "grid-cols-1 justify-items-center"
@@ -321,14 +320,14 @@ export default function Home({
             >
               {(data?.events || []).map((event, i) => (
                 <div key={i} className="flex flex-col items-center text-center">
-                  <img src={event.image} alt={event.venue} className="w-95 md:w-76 lg:w-80 h-auto"/>
+                  <img src={event.image} alt={event.venue} className="w-70 md:w-76 lg:w-80 h-auto" />
                   <h2 className="font-jacques-francois font-normal text-3xl md:text-2xl lg:text-[42px] mt-4 text-[#FFB700]">
                     {event.title_ceremony}
                   </h2>
                   <p className="font-jacques-francois font-normal mt-2 text-[#FFB700]">
                     <span className="text-base md:text-base lg:text-[15px]">{event.date}</span>  <br />
                     <span className="text-base md:text-base lg:text-[15px]">  {event.time} </span> <br />
-                    <span className="text-base md:text-base lg:text-[15px] uppercase"> {event.venue}</span> 
+                    <span className="text-base md:text-base lg:text-[15px] uppercase"> {event.venue}</span>
                     <span className="text-sm md:text-base lg:text-[20px]">{event.venue_address}</span> <br />
                   </p>
                   <a href={event.link} className="font-jacques-francois font-normal underline text-lg md:text-sm mt-2 text-[#FFB700]" target="_blank">
@@ -341,21 +340,53 @@ export default function Home({
         </div>
       </div>
 
-      <div className=" bg-[url('/assets/bg_two.webp')] bg-cover bg-no-repeat" style={{ backgroundImage: `url(${assets.bg_two})` }}>
-        <div className="h-84 md:h-160 lg:h-285 3xl:h-360">
+      <div className=" bg-[url('/assets/bg_two.webp')] bg-cover bg-no-repeat flex flex-col items-center md:pt-30 pt-10" style={{ backgroundImage: `url(${assets.bg_two})` }}>
+        <div className="h-84 md:h-160 lg:h-285 3xl:h-360  md:w-200 w-80">
           <h2 className="font-parisienne-regular font-normal text-[26px] md:text-4xl lg:text-7xl text-center pt-4 md:pt-12 lg:pt-30 text-[#FFB700]">
             {data.thankyoutitle}
           </h2>
           <h2 className="font-eb-garamond font-medium text-xs md:text-base lg:text-3xl text-center pt-0 md:pt-2 lg:pt-4 leading-4 md:leading-6 lg:leading-10 text-[#FFB700]">
-              {data.thankyoumessage}
+            {data.thankyoumessage}
           </h2>
         </div>
       </div>
       <CoupleMessage data={data} />
 
-      <div className="bg-[url('/assets/respo_four.webp')] md:bg-[url('/assets/bg_four.webp')] bg-cover bg-no-repeat" style={{ backgroundImage: `url(${assets.bg_four})` }}>
+      {/* <div className="bg-[url('/assets/respo_four.webp')] md:bg-[url('/assets/bg_four.webp')] bg-cover bg-no-repeat" style={{ backgroundImage: `url(${assets.bg_four})` }}>
         <div className="relative flex flex-col items-center h-250 md:h-176 lg:h-325 3xl:h-400">
           <img src={assets.couple_logo} alt="logo" width={250} height={300} className="absolute w-34 h-30 top-40 md:w-34 md:h-30 md:top-42 lg:w-50 lg:h-44 lg:top-86" />
+        </div>
+      </div> */}
+
+
+
+      <div
+        className="hidden md:block bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${assets.bg_four})` }}
+      >
+        <div className="relative flex justify-center md:h-175 lg:h-237.5 xl:h-275 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96">
+          {/* <img src={assets.couple_logo} alt="logo" width={250} height={300} className="absolute w-34 h-30 top-40 md:w-34 md:h-30 md:top-42 lg:w-50 lg:h-44 lg:top-86" /> */}
+         
+      
+       <img
+                  src={data?.Logo || assets.couple_logo}
+                  alt="logo"
+                  width={250}
+                  height={300}
+                  className="absolute w-34 h-30 top-40 md:w-34 md:h-30 md:top-42 lg:w-50 lg:h-44 lg:top-86"
+                />
+                 </div>
+      </div>
+
+
+      <div className="md:hidden relative flex items-start justify-center">
+        <img
+          src={assets.respo_four}
+          alt="background"
+          className="w-full h-full object-contain"
+        />
+        <div className="absolute top-[25svh] left-0 right-0 flex justify-center">
+          <img src={data?.Logo || assets.couple_logo} alt="logo" width={250} height={300} className="absolute w-32 h-26 top-4" />
         </div>
       </div>
     </>

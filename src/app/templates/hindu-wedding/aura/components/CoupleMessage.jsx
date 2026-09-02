@@ -7,25 +7,24 @@ import { assets } from "../assets";
 
 export default function CoupleMessage({ data }) {
   const extractImageSrc = (image) => {
-      if (!image) return "";
-      if (typeof image === "string") return image;
-      return image?.image || image?.src || image?.url || "";
-    };
-  
-    const carouselImages =
-      Array.isArray(data?.coupleMessageCarouselImages) &&
-      data.coupleMessageCarouselImages.length > 0
-        ? data.coupleMessageCarouselImages
-        : [
-            assets.one,
-            assets.two,
-            assets.three,
-            assets.four,
-            assets.five,
-            // assets.image6,
-          ];
+    if (!image) return "";
+    if (typeof image === "string") return image;
+    return image?.image || image?.src || image?.url || "";
+  };
 
-          
+  const carouselImages =
+    Array.isArray(data?.coupleMessageCarouselImages) &&
+    data.coupleMessageCarouselImages.length > 0
+      ? data.coupleMessageCarouselImages
+      : [
+          assets.one,
+          assets.two,
+          assets.three,
+          assets.four,
+          assets.five,
+          // assets.image6,
+        ];
+
   const coupleTitle = data?.coupleMessageTitle || "INTRODUCTION";
   const coupleDescription = data?.coupleMessageDescription || "The Couple";
   const thingsToKnowTitle =
@@ -135,46 +134,15 @@ export default function CoupleMessage({ data }) {
       className="bg-[url('/assets/respo_three.webp')] md:bg-[url('/assets/bg_three.webp')] bg-cover bg-no-repeat bg-center"
       style={{ backgroundImage: `url(${assets.bg_three})` }}
     >
-      <div className="h-700 md:h-620 lg:h-810">
+      <div className="h-640 md:h-620 lg:h-810 3xl:h-850">
         <h2 className="font-eb-garamond font-medium text-xl md:text-2xl lg:text-[38px] text-center text-[#FFB700] lg:pt-32 pt-12">
           {coupleTitle}
         </h2>
         <h2 className="font-parisienne-regular font-normal text-5xl md:text-6xl lg:text-[100px] text-center text-[#FFB700] lg:px-60 px-6 mt-12 lg:mt-28 leading-7 md:leading-8 lg:leading-8">
           {coupleDescription}
         </h2>
-        {/* <div className="md:mt-32 mt-26 flex justify-center items-center">
-          <Swiper
-            modules={[Autoplay, Pagination]}
-            autoplay={{ delay: 3500, disableOnInteraction: false }}
-            loop
-            centeredSlides={true}
-            spaceBetween={20}
-            pagination={{ clickable: true }}
-            className="w-full py-12 overflow-visible"
-            breakpoints={{
-              0: {
-                slidesPerView: 1.25,
-              },
-              768: {
-                slidesPerView: 2.2,
-              },
-              1024: {
-                slidesPerView: 3,
-              },
-            }}
-          >
-            {testimonial.map((item, index) => (
-              <SwiperSlide key={index} className="flex justify-center">
-                <img
-                  src={item.img}
-                  alt=""
-                  className="w-full lg:h-125 h-120 object-cover rounded-[60px]"
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div> */}
-         <div className="md:mt-32 mt-26 lg:mt-44 flex justify-center items-center overflow-visible">
+
+        <div className="md:mt-32 mt-26 lg:mt-44 flex justify-center items-center overflow-visible">
           <Swiper
             modules={[Autoplay, Pagination]}
             autoplay={{ delay: 3500, disableOnInteraction: false }}
@@ -191,7 +159,7 @@ export default function CoupleMessage({ data }) {
                 slidesPerView: 2.2,
                 spaceBetween: 30,
               },
-              1024: { 
+              1024: {
                 slidesPerView: 3,
                 spaceBetween: 40,
               },
@@ -201,13 +169,12 @@ export default function CoupleMessage({ data }) {
               },
             }}
           >
-           
             {carouselImages.map((item, index) => (
               <SwiperSlide key={index} className="flex justify-center">
                 <img
                   src={extractImageSrc(item)}
                   alt={`Carousel ${index + 1}`}
-                  className="w-full h-120 md:h-90 lg:h-135 3xl:h-175 object-cover rounded-[60px]"
+                  className="w-full h-90 md:h-90 lg:h-135 3xl:h-175 object-cover rounded-[60px]"
                 />
               </SwiperSlide>
             ))}
@@ -269,16 +236,16 @@ export default function CoupleMessage({ data }) {
         <div className="flex flex-col justify-center items-center lg:mt-15 mt-18">
           <h2 className="font-parisienne-regular font-normal text-5xl md:text-6xl lg:text-[100px] text-center lg:pt-6 text-[#FFB700]">
             {thingsToKnowTitle}
-          </h2>
+          </h2> 
         </div>
 
         <div className="flex justify-center mt-10 md:mt-20 pb-10 md:pb-0 md:px-20 3xl:60 px-10">
-          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-20 lg:gap-0 3xl:gap-0">
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-20 lg:gap-0 3xl:gap-0 lg:w-300 3xl:w-250">
             <div className=" flex flex-col items-center justify-center text-center">
               <img
-                src={assets.weather}
+                src={data?.coupleMessageWeatherImage || assets.weather}
                 alt="weather"
-                className="w-31 h-25 md:w-26 md:h-23 lg:w-33 lg:h-26"
+                className="w-31 h-25 md:w-24 md:h-22 lg:w-33 lg:h-26"
               />
               <h2 className="font-eb-garamond font-normal text-[40px] md:text-4xl lg:text-[42px] text-[#FFB700] mt-1">
                 {weatherTitle}
@@ -290,7 +257,7 @@ export default function CoupleMessage({ data }) {
             <hr className="hidden lg:block lg:rotate-90 lg:w-65 lg:border-2 border-[#FFB700] lg:my-28" />
             <div className=" flex flex-col items-center justify-center text-center">
               <img
-                src={assets.staff}
+                src={data?.coupleMessageStaffImage || assets.staff}
                 alt="drive"
                 className="w-28 h-35 md:w-17 md:h-23 lg:w-21 lg:h-27"
               />
@@ -304,7 +271,7 @@ export default function CoupleMessage({ data }) {
             <hr className="hidden lg:block lg:rotate-90 lg:w-65 lg:border-2 border-[#FFB700] lg:my-28" />
             <div className=" flex flex-col items-center justify-center text-center">
               <img
-                src={assets.parking}
+                src={data?.coupleMessageParkingImage || assets.parking}
                 alt="car"
                 className="w-31 h-25 md:w-26 md:h-23 lg:w-30 lg:h-27"
               />
@@ -329,7 +296,7 @@ export default function CoupleMessage({ data }) {
           <h2 className="font-parisienne-regular font-normal text-3xl md:text-4xl lg:text-6xl text-center pt-28 md:pt-32 lg:pt-42 text-[#FFB700]">
             {title}
           </h2>
-          <p className="font-eb-garamond font-medium text-base md:text-lg lg:text-[28px] mt-2 lg:mt-4 text-center text-[#FFB700]">
+          <p className="font-eb-garamond font-medium text-base md:text-lg lg:text-[28px] mt-2 lg:mt-4 text-center text-[#FFB700] px-10">
             {description}
           </p>
           <hr className="w-54 md:w-62 lg:w-94 border lg:border-2 border-[#FFB700] my-2 md:my-2 lg:my-4" />

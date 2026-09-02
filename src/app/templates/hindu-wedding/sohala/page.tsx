@@ -40,7 +40,7 @@ const initialData = {
       venue_address: "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
       theme: "Pretty in Pink: Florals, Pastels & Pink Hues",
       link: "https://maps.app.goo.gl/53z68ksx4cYgoNm59",
-    },
+    }, 
 
     {
       title_ceremony: "Shaadi",
@@ -91,42 +91,7 @@ export default function Home({
     }));
   }, [initialTemplateData]);
 
-  const events = [
-    {
-      title_ceremony: "Mehendi",
-      image: assets.mehandi,
-      date: "Saturday, April 18th 2026",
-      time: "Join Us at 11 am",
-      venue: "The Leela Palace, Udaipur",
-      link: "https://maps.app.goo.gl/53z68ksx4cYgoNm59",
-    },
-
-
-
-
-
-    {
-      title_ceremony: "Shaadi",
-      image: assets.shaadi,
-      date: "Saturday, April 18th 2026",
-      time: "Join Us at 11 am",
-      venue: "The Leela Palace, Udaipur",
-      link: "https://maps.app.goo.gl/mxcwCxWhH1TXBC8c9",
-    },
-
-
-    {
-      title_ceremony: "Reception",
-      image: assets.reception,
-      date: "Saturday, April 18th 2026",
-      time: "Join Us at 11 am",
-      venue: "The Leela Palace, Udaipur",
-      link: "https://maps.app.goo.gl/f599YkTSEYKDEK5L7",
-    },
-
-
-  ];
-
+  
   const backgroundMusicUrl = data?.backgroundMusicUrl || assets.background_song;
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [started, setStarted] = useState(false);
@@ -221,10 +186,10 @@ export default function Home({
                       bg-cover bg-top bg-no-repeat min-h-screen w-full relative overflow-hidden " style={{ backgroundImage: `url(${bgImage})` }}>
 
         <RoseHeroTemp />
-        <div className="pt-12 md:pt-34 lg:pt-64 relative z-10">
+        <div className="pt-12 md:pt-34 lg:pt-64 3xl:pt-90 relative z-10">
 
           <h2 className="text-[#FFFFFF] text-center leading-tight text-3xl md:text-5xl lg:text-[64px] pb-130 md:pb-220 lg:pb-400
-                           3xl:pb-500 flex flex-col items-center gap-y-2 lg:gap-y-5">
+                           3xl:pb-600 flex flex-col items-center gap-y-2 lg:gap-y-5">
 
             <span className="eb-garamond font-medium">{data.groomName}</span>
 
@@ -236,8 +201,11 @@ export default function Home({
 
           <div className="flex flex-col items-center text-center gap-6 pt-0 md:pt-30 lg:pt-50">
             <p className="eb-garamond font-normal text-[#FFFFFF] text-xl md:text-2xl lg:text-3xl text-center">{data.religiousMantra}</p>
-            <img src={assets.ganesh} alt="ganesh" className="w-30 h-39 md:w-40 md:h-50 lg:w-50 lg:h-65 object-cover" />
-
+            {/* <img src={assets.ganesh} alt="ganesh" className="w-30 h-39 md:w-40 md:h-50 lg:w-50 lg:h-65 object-cover" /> */}
+  <img
+                          src={data?.religiousSign || assets.ganesh}
+                          alt="idol" width={100} height={100}
+                          className="w-30 h-39 md:w-40 md:h-50 lg:w-50 lg:h-65 object-cover" />
             <h2 className="eb-garamond font-medium text-[#FFFFFF] text-sm md:text-xl lg:text-3xl">
               {data.blessingMessage} <br /> {data.brideGrandParentsName}
             </h2>

@@ -18,6 +18,9 @@ import mehendi from "./assets/mehendi.webp";
 import reception from "./assets/reception.webp";
 import wedding from "./assets/wedding.webp";
 import circle from "./assets/circle.webp";
+import respo_bg from "./assets/respo_bg.png";
+import respo_two from "./assets/respo_two.png";
+import respo_four from "./assets/respo_four.png";
 
 export const assets = {
     background: background.src,
@@ -40,6 +43,9 @@ export const assets = {
     reception: reception.src,
     wedding:wedding.src,
     circle: circle.src,
+    respo_bg:respo_bg.src,
+    respo_two:respo_two.src,
+    respo_four:respo_four.src,
     background_song: "/template-audio/saanjh.mp3",
 
 }

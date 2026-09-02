@@ -50,7 +50,7 @@ export default function CoupleMessage({ data }) {
       className="bg-[#9e1902] bg-[url('/assets/respo_three.webp')] md:bg-[url('/assets/bg_three.webp')] bg-cover bg-no-repeat"
       style={{ backgroundImage: `url(${assets.bg_three})` }}
     >
-      <div className="h-637 md:h-744 lg:h-1141 3xl:h-1200">
+      <div className="h-630 md:h-744 lg:h-1141 3xl:h-1200">
         <h1 className="font-eb-garamond font-medium text-base md:text-2xl lg:text-[38px] text-center text-[#A25000] lg:pt-40 pt-20">
           {coupleTitle}
         </h1>
@@ -59,7 +59,7 @@ export default function CoupleMessage({ data }) {
         </h2>
 
         <div className="relative flex flex-col mt-10 md:mt-10 lg:mt-20">
-          <h2 className="absolute font-eb-garamond font-medium text-3xl md:text-5xl lg:text-[68px] text-center text-[#A25000] 3xl:left-50">
+          <h2 className="absolute font-eb-garamond font-medium text-3xl md:text-5xl lg:text-[60px] 3xl:text-[68px] text-center text-[#A25000] 3xl:left-50">
             <span className="absolute font-eb-garamond font-medium top-5 left-13 md:top-16 md:left-23 lg:top-6 lg:left-60">
               {data.groomName}
             </span>
@@ -102,14 +102,15 @@ export default function CoupleMessage({ data }) {
           {thingsToKnowTitle}
         </h1>
 
-        <div className="flex justify-center mt-15 3xl:mt-30 pb-15 md:pb-24 lg:px-50 px-10">
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-14 lg:gap-0">
-            <div className="flex flex-col items-center justify-center text-center">
-              <img
-                src={assets.weather}
-                alt="weather"
-                className="h-26 w-32 md:w-25 md:h-20 lg:w-30 lg:h-25"
-              />
+        <div className="flex justify-center mt-15 3xl:mt-30 pb-15 md:pb-24 lg:px-50 px-10 "> 
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-14 lg:gap-0 lg:w-300 3xl:w-250">
+            <div className="flex flex-col items-center justify-center text-center ">
+            
+                <img
+                              src={data?.coupleMessageWeatherImage || assets.weather}
+                              alt="weather"
+                              className="w-31 h-25 md:w-24 md:h-22 lg:w-33 lg:h-26"
+                            />
               <h2 className="font-eb-garamond font-medium text-[40px] md:text-3xl lg:text-[42px] text-[#A25000] mt-2">
                 {weatherTitle}
               </h2>
@@ -119,11 +120,18 @@ export default function CoupleMessage({ data }) {
             </div>
             <hr className="hidden lg:block lg:rotate-90 lg:w-65 lg:border-2 border-[#A25000] lg:my-28" />
             <div className="flex flex-col items-center justify-center text-center">
-              <img
+              {/* <img
                 src={assets.staff}
                 alt="drive"
                 className="h-34 w-29 md:w-13 md:h-20 lg:w-18 lg:h-25"
-              />
+              /> */}
+
+
+              <img
+                              src={data?.coupleMessageStaffImage || assets.staff}
+                              alt="drive"
+                              className="w-28 h-35 md:w-17 md:h-23 lg:w-21 lg:h-27"
+                            />
               <h2 className="font-eb-garamond font-medium text-[40px] md:text-3xl lg:text-[42px] text-[#A25000] mt-2">
                 {StaffTitle}
               </h2>
@@ -133,11 +141,17 @@ export default function CoupleMessage({ data }) {
             </div>
             <hr className="hidden lg:block lg:rotate-90 lg:w-65 lg:border-2 border-[#A25000] lg:my-28" />
             <div className="flex flex-col items-center justify-center text-center">
-              <img
+              {/* <img
                 src={assets.parking}
                 alt="car"
                 className="w-32 h-26 md:w-25 md:h-20 lg:w-30 lg:h-25"
-              />
+              /> */}
+
+               <img
+                              src={data?.coupleMessageParkingImage || assets.parking}
+                              alt="car"
+                              className="w-31 h-25 md:w-26 md:h-23 lg:w-30 lg:h-27"
+                            />
               <h2 className="font-eb-garamond font-medium text-[40px] md:text-3xl lg:text-[42px] text-[#A25000] mt-2">
                 {parkingTitle}
               </h2>
@@ -148,7 +162,7 @@ export default function CoupleMessage({ data }) {
           </div>
         </div>
 
-        <h2 className="font-eb-garamond font-normal text-xl md:text-2xl lg:text-3xl text-center px-6 md:px-0 md:pt-4 lg:pt-10 lg:mt-4 lg:leading-tight text-[#A25000]">
+        <h2 className="font-eb-garamond font-normal text-xl md:text-2xl lg:text-3xl text-center px-6 md:px-0 md:pt-4 lg:pt-10 lg:mt-4 lg:leading-tight text-[#A25000] 3xl:px-100 lg:px-40">
           {coupleMessageThingsToKnowDescription}
         </h2>
 
@@ -168,7 +182,7 @@ export default function CoupleMessage({ data }) {
                 >
                   <button
                     type="button"
-                    className="rounded-xl bg-[#A25000] text-white px-6 py-2 text-sm md:text-lg font-semibold cursor-pointer"
+                    className="rounded-xl bg-[#A25000] text-white px-6 py-2 text-[14px] md:text-lg font-semibold cursor-pointer"
                   >
                     {rsvpButtonText}
                   </button>
@@ -192,7 +206,7 @@ export default function CoupleMessage({ data }) {
                     className="h-8 w-8 md:h-8 md:w-8 lg:h-16 lg:w-16"
                   />
 
-                  <span className="font-eb-garamond font-normal text-xs md:text-sm lg:text-[22px] text-[#A25000]">
+                  <span className="font-eb-garamond font-normal text-[16px] md:text-sm lg:text-[22px] text-[#A25000]">
                     {rsvpButtonText}
                   </span>
                 </a>
@@ -204,7 +218,7 @@ export default function CoupleMessage({ data }) {
           <img
             src={assets.bg_three_couple}
             alt="whatsapp"
-            className="w-108 h-100 md:w-205 md:h-150 lg:w-381 lg:h-280"
+            className="w-108 h-90 md:w-205 md:h-150 lg:w-381 lg:h-280"
           />
         </div>
       </div>

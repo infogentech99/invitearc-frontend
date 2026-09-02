@@ -48,7 +48,9 @@ export const saanjhEditorFields = {
     { name: "groomName", label: "Groom name", type: "text" },
     { name: "brideName", label: "Bride name", type: "text" },
     { name: "weddingDate", label: "Wedding Date", type: "text" },
+     { name: "religiousSign", label: "Religious Sign", type: "religiousSign" },
     { name: "blessingMessage", label: "Blessing message", type: "textarea" },
+     { name: "blessingMessage2", label: "Blessing message2", type: "textarea" },
     { name: "brideParentsTitle", label: "Bride Parents Title", type: "text" },
     {
       name: "brideParentsDetails",
@@ -61,6 +63,7 @@ export const saanjhEditorFields = {
       label: "Groom Parents details",
       type: "text",
     },
+     { name: "jointext", label: "Join Text", type: "textarea" },
     { name: "eventTitle", label: "Event Title", type: "text" },
     { name: "eventIntro", label: "Event intro", type: "text" },
   ],
@@ -69,6 +72,8 @@ export const saanjhEditorFields = {
  eventFields: [
     { name: "title_ceremony", label: "Title", type: "text" },
     { name: "date", label: "Date", type: "text" },
+    { name: "month", label: "Month", type: "text" },
+     { name: "description", label: "Description", type: "text" },
     { name: "time", label: "Time", type: "text" },
     
   ],
