@@ -2,32 +2,59 @@ export default function Sidebar({
   tabs,
   activeTab,
   setActiveTab,
+  onDetailsClick,
+  onEventsClick,
+  onCoupleClick,
+  onRsvpClick,
+  onCountdownClick,
 }) {
+  const handleTabClick = (tabId) => {
+    setActiveTab(tabId);
+
+    if (tabId === "details") {
+      onDetailsClick?.();
+    }
+    if (tabId === "events") {
+      onEventsClick?.();
+    }
+
+    if (tabId === "coupleMessage") {
+      onCoupleClick?.();
+    }
+
+    if (tabId === "rsvp") {
+      onRsvpClick?.();
+    }
+
+    if (tabId === "countdown") {
+      onCountdownClick?.();
+    }
+  };
+
   return (
     <div className="w-24 bg-[#861E1D] px-3 py-6 text-white lg:h-full">
       <div className="space-y-8 text-center">
         {tabs?.map((tab) => {
           const Icon = tab.icon;
 
-          return ( 
+          return (
             <div key={tab.id} className="flex flex-col items-center">
               <button
                 type="button"
-                onClick={() => setActiveTab(tab.id)}
+                onClick={() => handleTabClick(tab.id)}
                 className={`flex h-12 w-12 items-center justify-center rounded-xl transition cursor-pointer ${
                   activeTab === tab.id
-                    ? "bg-white text-[#861E1D] shadow-sm  border-l-2 border-amber-300"
+                    ? "bg-white text-[#861E1D] shadow-sm border-l-2 border-amber-300"
                     : "text-white hover:bg-white/10"
                 }`}
               >
                 <Icon className="text-[24px]" />
               </button>
 
-              <span className="mt-2 text-[10px] uppercase tracking-[0.15em] text-white font-georgia ">
+              <span className="mt-2 text-[10px] uppercase tracking-[0.15em] text-white font-georgia">
                 {tab.label}
               </span>
             </div>
-      
           );
         })}
       </div>

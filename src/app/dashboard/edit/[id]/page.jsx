@@ -35,6 +35,51 @@ export default function EditTemplatePage() {
   const params = useParams();
   const router = useRouter();
   const iframeRef = useRef(null);
+  const scrollToDetails = () => {
+  iframeRef.current?.contentWindow?.postMessage(
+    {
+      type: "SCROLL_TO_DETAILS",
+    },
+    window.location.origin
+  );
+};
+const scrollToEvents = () => {
+  iframeRef.current?.contentWindow?.postMessage(
+    {
+      type: "SCROLL_TO_EVENTS",
+    },
+    window.location.origin
+  );
+};
+
+const scrollToCouple = () => {
+  iframeRef.current?.contentWindow?.postMessage(
+    {
+      type: "SCROLL_TO_COUPLE",
+    },
+    window.location.origin
+  );
+};
+
+const scrollToRsvp = () => {
+  iframeRef.current?.contentWindow?.postMessage(
+    {
+      type: "SCROLL_TO_RSVP",
+    },
+    window.location.origin
+  );
+};
+
+
+const scrollToCountdown = () => {
+  iframeRef.current?.contentWindow?.postMessage(
+    {
+      type: "SCROLL_TO_COUNTDOWN",
+    },
+    window.location.origin
+  );
+};
+
   const templateId = params.id;
   const [clientTemplate, setClientTemplate] = useState(null);
   const [editorData, setEditorData] = useState({});
@@ -886,6 +931,11 @@ export default function EditTemplatePage() {
                   tabs={fieldConfig?.tabs}
                   activeTab={activeTab}
                   setActiveTab={setActiveTab}
+                  onDetailsClick={scrollToDetails}
+                  onEventsClick={scrollToEvents}
+                  onCoupleClick = {scrollToCouple}
+                  onRsvpClick = {scrollToRsvp} 
+                  onCountdownClick = {scrollToCountdown}
                 />
                 <div className="flex-1 overflow-y-auto p-6 min-h-0">
                   <div className="mb-6 text-center">

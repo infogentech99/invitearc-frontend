@@ -279,9 +279,9 @@ export default function Home({
 
         <RoseHeroTemp />
 
-        <div className="pt-15 md:pt-53 lg:pt-60 3xl:pt-80 relative z-10">
-          <h2 className="text-[#69301B] text-center leading-tight text-xl md:text-5xl lg:text-6xl pb-150
-                          md:pb-350 lg:pb-470 3xl:pb-550 flex flex-col items-center gap-y-0 lg:gap-y-5">
+        <div className="pt-15 md:pt-53 lg:pt-50 3xl:pt-80 relative z-10">
+          <h2 className="text-[#69301B] text-center leading-tight text-xl md:text-5xl lg:text-5xl 3xl:text-6xl pb-150
+                          md:pb-350 lg:pb-470 3xl:pb-550 flex flex-col items-center gap-y-0 lg:gap-y-5" id="details-section">
 
             <span className="parisienne-regular">{data.groomName}</span>
 
@@ -342,7 +342,7 @@ export default function Home({
             </p>
           </div>
 
-          <div className="flex justify-center mt-20 lg:mt-40">
+          <div className="flex justify-center mt-20 lg:mt-40" id="events-section">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 lg:gap-32 3xl:gap-50 px-15">
               {(data.events || []).map((event, i) => (
                 <div key={i} className="flex flex-col items-center text-center">
@@ -388,7 +388,7 @@ export default function Home({
           </div>
 
 
-          <div className="relative flex flex-col items-center pt-50 lg:pt-80 3xl:pt-140 3xl:gap-60">
+          <div className="relative flex flex-col items-center pt-50 lg:pt-80 3xl:pt-140 3xl:gap-60" id="couple-section">
             {/* Center Text */}
             <div className="absolute flex flex-col text-center md:mb-0 top-28 md:top-31 lg:top-60 3xl:top-152 3xl:px-130 px-16 lg:px-80 md:px-50">
               <p className="parisienne-regular text-3xl md:text-5xl lg:text-7xl lg:leading-22 text-[#FFD74B]">
@@ -419,11 +419,26 @@ export default function Home({
 
       <CoupleMessage data={data} />
 
-      <div className="bg-[url('/assets/respo_three.webp')] md:bg-[url('/assets/bg_three.webp')] bg-cover bg-no-repeat" style={{ backgroundImage: `url(${coupleImage})` }} >
-        <div className="h-253 md:h-179 lg:h-330 3xl:h-421 flex flex-col items-center relative">
-          <img src={data?.Logo || assets.logo} alt="logo" width={250} height={300} className="absolute top-50 w-37 h-30 md:top-41 md:w-41 md:h-40 lg:top-84 lg:w-72 lg:h-58 3xl:top-118" />
-        </div>
-      </div>
+      <div
+              className="hidden md:block bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: `url(${coupleImage})` }}
+            >
+              <div className="flex justify-center md:h-175 lg:h-237.5 xl:h-275 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96">
+              <img src={data?.Logo || assets.logo} alt="logo" width={250} height={300} className=" top-50 w-37 h-30 md:top-41 md:w-41 md:h-40 lg:top-84 lg:w-72 lg:h-58 3xl:top-118" />
+            </div>
+            </div>
+      
+            <div className="md:hidden relative flex items-start justify-center">
+      
+              <img
+                src={coupleImage}
+                alt="background"
+                className="w-full h-full object-contain"
+              />
+              <div className="absolute top-[25svh] left-0 right-0 flex justify-center">
+              <img src={data?.Logo || assets.logo} alt="logo" width={250} height={300} className=" top-50 w-37 h-30 md:top-41 md:w-41 md:h-40 lg:top-84 lg:w-72 lg:h-58 3xl:top-118" />
+            </div>
+            </div>
 
 
     </>

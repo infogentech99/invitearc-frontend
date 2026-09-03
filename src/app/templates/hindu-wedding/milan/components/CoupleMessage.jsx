@@ -22,7 +22,7 @@ export default function CoupleMessage({ data }) {
     data?.rsvpGoogleFormLink || data?.customData?.rsvpGoogleFormLink || "";
 
   return (
-    <div className="relative flex flex-col items-center h-285 md:h-440 lg:h-630 3xl:h-640">
+    <div className="relative flex flex-col items-center h-285 md:h-440 lg:h-630 3xl:h-640" id="couple-section">
       <img
         src={assets.left}
         alt="frame-design"
@@ -68,7 +68,7 @@ export default function CoupleMessage({ data }) {
         alt="frame-design"
         className="w-16 h-5 md:w-26 md:h-8 lg:w-41 lg:h-10 mt-12"
       />
-      <h2 className="font-parisienne-regular font-medium text-3xl md:text-5xl lg:text-[82px] text-center pt-4 lg:pt-4 leading-8 md:leading-tight text-[#D99447] md:w-180 w-80">
+      <h2 className="font-parisienne-regular font-medium text-3xl md:text-5xl lg:text-[82px] text-center pt-4 lg:pt-4 leading-8 md:leading-tight text-[#D99447] md:w-180 w-80" id="rsvp-section">
         {data.thankyoutitle}
       </h2>
       <p className="font-eb-garamond font-medium text-sm md:text-lg lg:text-3xl text-center mt-6 md:mt-8 text-[#D99447]">

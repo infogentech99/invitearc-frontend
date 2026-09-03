@@ -47,13 +47,91 @@ const [liveData, setLiveData] = useState(null);
     fetchTemplate();
   }, [token, templateId, authLoading]);
 
-  useEffect(() => {
+//   useEffect(() => {
+//   const handleMessage = (event) => {
+//     if (event.origin !== window.location.origin) return;
+
+//     if (event.data?.type === "EDITOR_UPDATE") {
+//       setLiveData(event.data.data);
+//     }
+//   };
+
+//   window.addEventListener("message", handleMessage);
+
+//   return () => {
+//     window.removeEventListener("message", handleMessage);
+//   };
+// }, []);
+
+
+useEffect(() => {
   const handleMessage = (event) => {
     if (event.origin !== window.location.origin) return;
 
     if (event.data?.type === "EDITOR_UPDATE") {
       setLiveData(event.data.data);
     }
+
+    if (event.data?.type === "SCROLL_TO_DETAILS") {
+      const element = document.getElementById("details-section");
+
+      if (!element) {
+        console.log("details-section not found");
+        return;
+      }
+
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+
+// for event tab
+if (event.data?.type === "SCROLL_TO_EVENTS") {
+      const element = document.getElementById("events-section");
+
+      element?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+
+
+// for couple tab
+
+if (event.data?.type === "SCROLL_TO_COUPLE") {
+      const element = document.getElementById("couple-section");
+
+      element?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+
+
+ // for rsvp tab   
+
+if (event.data?.type === "SCROLL_TO_RSVP") {
+      const element = document.getElementById("rsvp-section");
+
+      element?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+
+// countdown tab
+
+
+if (event.data?.type === "SCROLL_TO_COUNTDOWN") {
+      const element = document.getElementById("countdown-section");
+
+      element?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+
   };
 
   window.addEventListener("message", handleMessage);
@@ -62,6 +140,10 @@ const [liveData, setLiveData] = useState(null);
     window.removeEventListener("message", handleMessage);
   };
 }, []);
+
+
+
+
 
   if (loading) {
     return (

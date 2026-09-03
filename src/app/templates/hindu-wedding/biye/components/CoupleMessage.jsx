@@ -141,12 +141,7 @@ export default function CoupleMessage({ data }) {
             </div>
             <hr className="hidden lg:block lg:rotate-90 lg:w-65 lg:border-2 border-[#A25000] lg:my-28" />
             <div className="flex flex-col items-center justify-center text-center">
-              {/* <img
-                src={assets.parking}
-                alt="car"
-                className="w-32 h-26 md:w-25 md:h-20 lg:w-30 lg:h-25"
-              /> */}
-
+             
                <img
                               src={data?.coupleMessageParkingImage || assets.parking}
                               alt="car"
@@ -166,7 +161,7 @@ export default function CoupleMessage({ data }) {
           {coupleMessageThingsToKnowDescription}
         </h2>
 
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center" id="rsvp-section">
           <div className="flex flex-col-1 md:gap-0 gap-0 lg:gap-0 justify-center items-center 3xl:w-180">
             {rsvpMode === "form" ? (
               <div className="flex flex-col items-center text-center">

@@ -76,7 +76,7 @@ const [coupleBg, setCoupleBgImage] = useState(assets.background_third);
     return (
         <section className="bg-[url('/assets/respo_third.webp')] md:bg-[url('/assets/background_third.webp')] bg-cover bg-no-repeat bg-top md:bg-center w-full overflow-hidden" style={{ backgroundImage: `url(${coupleBg})` }}>
 
-        <div className="h-505 md:h-517 lg:h-956 3xl:h-1182">
+        <div className="h-505 md:h-517 lg:h-950 3xl:h-1182">
           <h1 className="eb-garamond font-medium text-[24px] md:text-2xl lg:text-[38px] text-center text-[#FFFFFF] lg:pt-40 pt-20">{coupleTitle}</h1>
           <h2 className="parisienne-regular font-normal text-5xl md:text-6xl lg:text-[100px] text-center text-[#FFFFFF] px-3 md:px-17 lg:px-51 3xl:px-103 mt-12 lg:mt-24 leading-5 md:leading-tight">
             {coupleDescription}
@@ -152,10 +152,10 @@ const [coupleBg, setCoupleBgImage] = useState(assets.background_third);
             </h2>
             {/*  */}
           </div>
-          <div className="lg:mt-20 3xl:mt-40">
+          <div className="lg:mt-20 3xl:mt-40" id="rsvp-section">
              {rsvpMode === "form" ? (
                             <div className="flex flex-col items-center text-center">
-                              <h2 className="eb-garamond font-normal text-center text-xl md:text-3xl lg:text-[64px] text-[#FFFFFF] pt-26 md:pt-50 lg:pt-85 3xl:pt-150 leading-6 md:leading-8 lg:leading-19 pr-26 md:pr-66 lg:pr-155 lg:w-400">
+                              <h2 className="eb-garamond font-normal text-center text-xl md:text-3xl lg:text-[50px] 3xl:text-[64px] text-[#FFFFFF] pt-26 md:pt-50 lg:pt-85 3xl:pt-150 leading-6 md:leading-8 lg:leading-15 pr-26 md:pr-66 lg:pr-155 lg:w-350">
                                 {rsvpSectionHeading}
                               </h2>
             
@@ -175,7 +175,7 @@ const [coupleBg, setCoupleBgImage] = useState(assets.background_third);
                             </div>
                           ) : (
                             <div className="flex flex-col items-center text-center">
-                              <h2 className="eb-garamond font-normal text-center text-xl md:text-3xl lg:text-[64px] text-[#FFFFFF] pt-26 md:pt-50 lg:pt-85 3xl:pt-150 leading-6 md:leading-8 lg:leading-19 pr-26 md:pr-66 lg:pr-155 lg:w-400">
+                              <h2 className="eb-garamond font-normal text-center text-xl md:text-3xl lg:text-[50px] 3xl:text-[64px] text-[#FFFFFF] pt-26 md:pt-50 lg:pt-85 3xl:pt-150 leading-6 md:leading-8 lg:leading-15 pr-26 md:pr-66 lg:pr-155 lg:w-350">
                                 {rsvpSectionHeading}
                               </h2>
             

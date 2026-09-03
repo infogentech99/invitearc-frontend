@@ -62,40 +62,6 @@ const initialData = {
 
 }
 
-// const FloatingLamp = ({ className, style, reverse = false }: { className: string; style?: React.CSSProperties; reverse?: boolean }) => {
-//   // Memoize random values to prevent recalculation on re-renders
-//   const lampValues = useMemo(() => {
-//     // const duration = 60 + Math.random() * 40; // 60–100s (very slow flow)
-//     // const duration = 40 + Math.random() * 10; // 40–50s
-//     const duration = 60 + Math.random() * 10; // 60–70s
-//     const delay = Math.random() * 15;
-
-//     // depth feel - dramatic size variety
-//     const scale = Math.random() < 0.5
-//       ? 0.3 + Math.random() * 0.4  // 0.3–0.7 (small lamps)
-//       : 1.2 + Math.random() * 0.8; // 1.2–2.0 (large lamps)
-//     const blur = scale < 0.7 ? "blur(1.5px)" : "blur(0px)";
-
-//     return { duration, delay, scale, blur };
-//   }, []); // Empty dependency array means these values are calculated only once
-
-//   return (
-//     <img
-//       src="/flower_petals.webp"
-//       alt="petal"
-//       className={`floating-lamp ${className}`}
-//       style={{
-//         animationName: reverse ? 'lampFlowReverse' : 'lampFlow',
-//         animationDuration: `${lampValues.duration}s`,
-//         animationDelay: `${lampValues.delay}s`,
-//         transform: `scale(${lampValues.scale})`,
-//         filter: `drop-shadow(0 0 18px rgba(255,180,90,0.9)) ${lampValues.blur}`,
-//         '--scale': lampValues.scale,
-//         ...style,
-//       } as React.CSSProperties}
-//     />
-//   );
-// };
 
 export default function Home({
   data: initialTemplateData,
@@ -201,8 +167,8 @@ export default function Home({
         style={{ backgroundImage: `url(${assets.background})`, }}>
         <RoseHeroTemp />
 
-        <div className="relative flex flex-col items-center pt-15 md:pt-22 lg:pt-50 3xl:pt-90 pb-5 z-10 h-145 md:h-280 lg:h-510 3xl:h-650">
-          <h2 className="flex flex-col text-[#69301B] text-center justify-center items-center">
+        <div className="relative flex flex-col items-center pt-15 md:pt-22 lg:pt-55 3xl:pt-90 pb-5 z-10 h-145 md:h-280 lg:h-510 3xl:h-650">
+          <h2 className="flex flex-col text-[#69301B] text-center justify-center items-center" id="details-section">
             <span className="font-eb-garamond font-semibold text-sm md:text-xl lg:text-[36px] text-[#1051A5] lg:w-130 w-70">
               {data.mainHeading}
                {/* JOIN US AS WE CELEBRATE A BEAUTIFUL JOURNEY OF LOVE THAT LASTS FOREVER */}

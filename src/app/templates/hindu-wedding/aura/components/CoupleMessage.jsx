@@ -184,7 +184,7 @@ export default function CoupleMessage({ data }) {
         <div className="flex flex-col-1 justify-center items-center mt-16">
           <div
             className="bg-[url('/assets/rsvp.webp')] bg-cover bg-no-repeat w-80 h-80 md:w-100 md:h-100 lg:w-150 lg:h-150"
-            style={{ backgroundImage: `url(${assets.rsvp})` }}
+            style={{ backgroundImage: `url(${assets.rsvp})` }} id="rsvp-section"
           >
             {rsvpMode === "form" ? (
               <div className="flex flex-col items-center text-center W-70">
@@ -196,11 +196,11 @@ export default function CoupleMessage({ data }) {
                   href={rsvpGoogleFormLink || "#"}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-6 pr-30 md:pr-70 lg:mr-90"
+                  className="mt-3 md:mt-6 pr-0 md:pr-70 lg:mr-90"
                 >
                   <button
                     type="button"
-                    className="rounded-xl bg-[#FFF097] text-black px-6 py-2 text-sm md:text-lg font-semibold cursor-pointer"
+                    className="rounded-xl bg-[#FFF097] text-black px-4 md:px-6 py-2 text-sm md:text-lg font-semibold cursor-pointer"
                   >
                     {rsvpButtonText}
                   </button>
@@ -216,7 +216,7 @@ export default function CoupleMessage({ data }) {
                   href={whatsappHref}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-1 mt-4 md:w-70 w-50"
+                  className="flex items-center gap-1 mt-2 md:mt-4 md:w-70 w-55 justify-center"
                 >
                   <img
                     src={assets.whatsapp}
@@ -292,7 +292,7 @@ export default function CoupleMessage({ data }) {
           {coupleMessageThingsToKnowDescription}
         </h2>
 
-        <div className="flex flex-col lg:h-110 md:h-100 h-80 items-center gap-1 md:gap-2">
+        <div className="flex flex-col lg:h-110 md:h-100 h-80 items-center gap-1 md:gap-2" id="countdown-section">
           <h2 className="font-parisienne-regular font-normal text-3xl md:text-4xl lg:text-6xl text-center pt-28 md:pt-32 lg:pt-42 text-[#FFB700]">
             {title}
           </h2>

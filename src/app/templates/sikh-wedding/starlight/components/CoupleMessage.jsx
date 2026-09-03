@@ -158,7 +158,7 @@ export default function CoupleMessage({ data }) {
           </Swiper>
         </div>
 
-        <div className=" h-100 lg:h-180 flex justify-center gap-0 items-center md:mt-40 lg:mt-80 3xl:mt-40 md:pr-5 lg:pr-10 3xl:pr-0">
+        <div className=" h-100 lg:h-180 flex justify-center gap-0 items-center md:mt-40 lg:mt-80 3xl:mt-40 md:pr-5 lg:pr-10 3xl:pr-0" id="rsvp-section">
           <div
             className="bg-[url('/assets/RSVP_Symbol.webp')] w-65 h-65 md:w-100 md:h-100 lg:w-150 lg:h-150 bg-contain bg-no-repeat"
             style={{ backgroundImage: `url(${assets.rsvp_symbol})` }}
@@ -173,11 +173,11 @@ export default function CoupleMessage({ data }) {
                   href={rsvpGoogleFormLink || "#"}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-6"
+                  className="mt-3 md:mt-6"
                 >
                   <button
                     type="button"
-                    className="rounded-xl bg-[#8B4302] text-black px-6 py-2 text-sm md:text-lg font-semibold cursor-pointer"
+                    className="rounded-xl bg-[#883F21] text-white px-4 md:px-6 py-2 text-[10px] md:text-lg font-semibold cursor-pointer"
                   >
                     {rsvpButtonText}
                   </button>
@@ -210,7 +210,7 @@ export default function CoupleMessage({ data }) {
           </div>
         </div>
 
-        <h1 className="parisienne-regular font-normal text-5xl md:text-6xl lg:text-[100px] text-center text-[#FFD74B] pt-10 md:pt-35 lg:pt-65 leading-tight">
+        <h1 className="parisienne-regular font-normal text-5xl md:text-6xl lg:text-[100px] text-center text-[#FFD74B] pt-10 md:pt-35 lg:pt-65 leading-tight px-4 md:px-0">
           {thingsToKnowTitle}
         </h1>
 
@@ -264,7 +264,7 @@ export default function CoupleMessage({ data }) {
           {coupleMessageThingsToKnowDescription}
         </h2>
 
-        <div className="flex flex-col h-50 md:h-89 lg:h-200 3xl:h-210 md:gap-3 lg:gap-8 3xl:gap-8 items-center text-center">
+        <div className="flex flex-col h-50 md:h-89 lg:h-200 3xl:h-210 md:gap-3 lg:gap-8 3xl:gap-8 items-center text-center" id="countdown-section">
           <h2 className="parisienne-regular font-normal text-4xl lg:text-6xl text-center text-[#FFD74B] pt-40 md:pt-60 lg:pt-75 3xl:pt-55">
             {title}
           </h2>

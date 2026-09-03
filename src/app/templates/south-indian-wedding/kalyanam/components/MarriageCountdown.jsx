@@ -41,7 +41,7 @@ export default function MarriageCountdown({data}) {
     "Surrounded by family and friends, we can't wait to celebrate this beautiful moment with you.";
     return (
         <>
-            <div className="bg-cover bg-no-repeat md:pb-12" style={{backgroundImage: `url(${assets.bg_last})`}}>
+            <div className="bg-cover bg-no-repeat md:pb-12" style={{backgroundImage: `url(${assets.bg_last})`}} id="countdown-section">
                 <div className="flex flex-col items-center h-70 md:h-92 lg:h-130 3xl:h-183 gap-2 md:gap-4 lg:gap-4">
                     <h2 className="parisienne-regular font-normal text-2xl md:text-4xl lg:text-6xl text-center text-[#FFF5B9] pt-10 md:pt-16 lg:pt-24 3xl:pt-55">{title}</h2>
                     <p className="eb-garamond font-medium text-[#FFF5B9] text-center text-xs md:text-xl lg:text-[28px] px-3 md:px-25 lg:px-70 3xl:px-110">

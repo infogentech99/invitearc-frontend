@@ -9,7 +9,6 @@ import { assets } from "./assets";
 const FloatingLamp = ({ className, style, reverse = false }) => {
   // Memoize random values to prevent recalculation on re-renders
   const lampValues = useMemo(() => {
-  
     const duration = 60 + Math.random() * 10; // 60–70s
     const delay = Math.random() * 15;
 
@@ -105,7 +104,7 @@ const initialData = {
 };
 
 export default function Home({ data: initialTemplateData, isOwner = false }) {
-   const [bgImage, setBgImage] = useState(assets.desktop_bg);
+  const [bgImage, setBgImage] = useState(assets.desktop_bg);
   const [data, setData] = useState({
     ...initialData,
     ...(initialTemplateData || {}),
@@ -174,7 +173,6 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
     }
   };
 
-
   useEffect(() => {
     const updateBg = () => {
       if (window.innerWidth >= 1536) {
@@ -194,8 +192,6 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
 
     return () => window.removeEventListener("resize", updateBg);
   }, []);
-
-
 
   // First user interaction (mobile + desktop)
   useEffect(() => {
@@ -220,7 +216,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
       >
         {playing ? "⏸" : "▶"}
       </button>
- 
+
       <audio
         key={backgroundMusicUrl}
         ref={audioRef}
@@ -354,7 +350,10 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
         />
 
         {/* <FallingLamps /> */}
-        <div className="pt-12 md:pt-44 lg:pt-64 md:pb-0 relative z-10">
+        <div
+          className="pt-12 md:pt-44 lg:pt-64 md:pb-0 relative z-10"
+          id="details-section"
+        >
           <h2
             className="text-[#FFF097] text-center leading-tight text-3xl md:text-5xl lg:text-[64px] lg:pb-400  3xl:pb-540
                            md:pb-450 pb-120 flex flex-col items-center gap-y-2 lg:gap-y-5"
@@ -373,7 +372,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
             <p className="font-eb-garamond font-medium text-base md:text-2xl lg:text-3xl text-[#FFF4B9] text-center">
               {data.religiousMantra}
             </p>
-          
+
             <h2 className="font-eb-garamond font-medium text-base md:text-2xl lg:text-3xl text-[#FFF4B9]">
               {data.blessingMessage} <br /> {data.brideGrandParentsName}
             </h2>
@@ -412,7 +411,10 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
             </p>
           </div>
 
-          <div className="flex justify-center mt-20 lg:mt-40 pb-40">
+          <div
+            className="flex justify-center mt-20 lg:mt-40 pb-40"
+            id="events-section"
+          >
             <div
               className={`grid gap-16 lg:gap-26 lg:px-18 3xl:px-0 ${
                 data?.events?.length === 1
@@ -468,62 +470,66 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
             </div>
           </div>
 
-          <div className="hidden md:block  md:flex items-center justify-between pt-30 lg:pt-100">
-            <img
-              src={assets.couple}
-              alt="couple"
-              className="w-60 h-138 md:w-104 md:h-133 lg:w-205 lg:h-284 3xl:w-6xl 3xl:h-365 object-cover"
-            />
-
-            {/* Center Text */}
-            <div className="flex flex-col justify-center items-center text-center md:mb-54 lg:mb-130">
-              <p className="font-parisienne-regular text-center text-2xl md:text-[40px] lg:text-7xl lg:leading-22 text-[#E1EF1E]">
-                {data.thankyoutitle}
-              </p>
-              <h2 className="text-[10px] md:text-base lg:text-3xl text-center pt-0 md:pt-2 md:leading-6 lg:leading-10">
-                <span className="font-eb-garamond font-normal text-[#EAD670]">
-                  {data.thankyoumessage}
-                </span>
-              </h2>
-            </div>
-            <div className="self-end">
-              <img
-                src={assets.lights}
-                alt="lights"
-                className="w-20 h-58 md:w-30 md:h-100 lg:w-42 lg:h-162 3xl:h-190 object-cover"
-              />
-            </div>
-          </div>
-
-          {/* Mobile responsive */}
-          <div className="block md:hidden pt-30">
-            {/* Center Text */}
-            <div className="flex flex-col justify-center items-center text-center">
-              <p className="font-parisienne-regular text-3xl text-[#E1EF1E]">
-                With <br /> Love From Us
-              </p>
-              <h2 className="text-sm text-center lg:pt-12 leading-4 pt-4">
-                <span className="font-eb-garamond font-normal text-[#EAD670]">
-                  Thank you for being part our journey. <br />
-                  Your presence makes this celebration truly <br />
-                  meaningful, and we look forward to sharing <br />
-                  these cherished moments with you.
-                </span>
-              </h2>
-            </div>
-
-            <div className="flex items-center justify-between pt-20">
+          <div id="couple-section">
+            <div className="hidden md:flex items-center justify-between pt-30 lg:pt-100">
               <img
                 src={assets.couple}
                 alt="couple"
-                className="w-90 h-108 lg:w-286 lg:h-365 object-cover"
+                className="w-60 h-138 md:w-104 md:h-133 lg:w-205 lg:h-284 3xl:w-6xl 3xl:h-365 object-cover"
               />
+
+              {/* Center Text */}
+              <div className="flex flex-col justify-center items-center text-center md:mb-54 lg:mb-130">
+                <p className="font-parisienne-regular text-center text-2xl md:text-[40px] lg:text-7xl lg:leading-22 text-[#E1EF1E]">
+                  {data.thankyoutitle}
+                </p>
+                <h2 className="text-[10px] md:text-base lg:text-3xl text-center pt-0 md:pt-2 md:leading-6 lg:leading-10">
+                  <span className="font-eb-garamond font-normal text-[#EAD670]">
+                    {data.thankyoumessage}
+                  </span>
+                </h2>
+              </div>
               <div className="self-end">
                 <img
                   src={assets.lights}
                   alt="lights"
-                  className="w-20 h-58 lg:w-60 lg:h-185 object-cover"
+                  className="w-20 h-58 md:w-30 md:h-100 lg:w-42 lg:h-162 3xl:h-190 object-cover"
                 />
+              </div>
+            </div>
+
+            {/* Mobile responsive */}
+            <div className="block md:hidden pt-30">
+              {/* Center Text */}
+              <div className="flex flex-col justify-center items-center text-center">
+                <p className="font-parisienne-regular text-3xl text-[#E1EF1E] px-20">
+                  {/* With <br /> Love From Us */}
+                  {data.thankyoutitle}
+                </p>
+                <h2 className="text-sm text-center lg:pt-12 leading-4 pt-4 px-10">
+                  <span className="font-eb-garamond font-normal text-[#EAD670] ">
+                    {/* Thank you for being part our journey. <br />
+                  Your presence makes this celebration truly <br />
+                  meaningful, and we look forward to sharing <br />
+                  these cherished moments with you. */}
+                    {data.thankyoumessage}
+                  </span>
+                </h2>
+              </div>
+
+              <div className="flex items-center justify-between pt-20">
+                <img
+                  src={assets.couple}
+                  alt="couple"
+                  className="w-90 h-108 lg:w-286 lg:h-365 object-cover"
+                />
+                <div className="self-end">
+                  <img
+                    src={assets.lights}
+                    alt="lights"
+                    className="w-20 h-58 lg:w-60 lg:h-185 object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -547,43 +553,37 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
         </div> 
       </div> */}
 
-
-
-<div
+      <div
         className="hidden md:block bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${assets.sunset_img})` }}
       >
         <div className="flex justify-center md:h-175 lg:h-237.5 xl:h-266 2xl:h-325 3xl:h-[1580px] md:pt-48 lg:pt-72 3xl:pt-96">
-        <img
+          <img
             src={data?.Logo || assets.logo}
             alt="logo"
             width={250}
             height={300}
             className=" top-80 lg:w-70 lg:h-20 lg:mt-20 md:mt-50"
           />
-
-          </div>
+        </div>
       </div>
 
-
-
       <div className="md:hidden relative flex items-start justify-center">
-      
-              <img
-                src={assets.sunset}
-                alt="background"
-                className="w-full h-full object-contain"
-              />
-              <div className="absolute top-[25svh] left-0 right-0 flex justify-center">
-                  <img
+        <img
+          src={assets.sunset}
+          alt="background"
+          className="w-full h-full object-contain"
+        />
+        <div className="absolute top-[25svh] left-0 right-0 flex justify-center">
+          <img
             src={data?.Logo || assets.logo}
             alt="logo"
             width={250}
             height={300}
             className=" top-80 lg:w-70 lg:h-20 mt-0"
           />
-              </div>
-            </div>
+        </div>
+      </div>
 
       <MarriageCountdown
         data={data}

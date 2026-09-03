@@ -1,6 +1,6 @@
 import { assets } from "../assets";
 import { useEffect, useState } from "react";
-export default function CoupleMessage({  data }) {
+export default function CoupleMessage({ data }) {
   const [bgImage, setBgImage] = useState(assets.bg_two);
   useEffect(() => {
     const updateBg = () => {
@@ -50,26 +50,21 @@ export default function CoupleMessage({  data }) {
   const whatsappHref = `https://wa.me/${String(whatsappNumber).replace(/\D/g, "")}`;
 
   const rsvpSectionHeading =
-  data?.coupleMessageClosingTitle ||
-  data?.customData?.coupleMessageClosingTitle ||
-  "Awaiting the Pleasure of Your Company";
+    data?.coupleMessageClosingTitle ||
+    data?.customData?.coupleMessageClosingTitle ||
+    "Awaiting the Pleasure of Your Company";
 
   const rsvpButtonText =
     rsvpMode === "form"
-      ? (
-          data?.rsvpFormButtonText ||
-          data?.customData?.rsvpFormButtonText ||
-          "Fill RSVP Form"
-        )
-      : (
-          data?.rsvpWhatsappButtonText ||
-          data?.customData?.rsvpWhatsappButtonText ||
-          "Click the link to RSVP"
-        );
+      ? data?.rsvpFormButtonText ||
+        data?.customData?.rsvpFormButtonText ||
+        "Fill RSVP Form"
+      : data?.rsvpWhatsappButtonText ||
+        data?.customData?.rsvpWhatsappButtonText ||
+        "Click the link to RSVP";
 
   const rsvpGoogleFormLink =
     data?.rsvpGoogleFormLink || data?.customData?.rsvpGoogleFormLink || "";
-
 
   return (
     <div
@@ -87,12 +82,14 @@ export default function CoupleMessage({  data }) {
         </h2>
         <div className="relative flex flex-col items-center mt-12 md:mt-12 lg:mt-20 3xl:mt-30">
           <h2 className=" text-[#15528A] text-left text-xl md:text-4xl lg:text-[68px] 3xl:text-[78px] pl-60 md:pl-104 lg:pl-210 3xl:pl-280 md:mt-2 lg:mt-3 3xl:mt-5 flex flex-col justify-end ">
-            <span className="eb-garamond font-medium uppercase">{data.groomName}</span>
+            <span className="eb-garamond font-medium uppercase">
+              {data.groomName}
+            </span>
             <span className="eb-garamond font-medium opacity-50 text-[#6CB9FF] text-5xl md:text-7xl lg:text-[150px] tracking-widest -mt-6 pl-7 md:-mt-9 md:pl-13 lg:-mt-18 lg:pl-24 -rotate-26">
               &
             </span>
             <span className="eb-garamond font-medium -mt-4 md:-mt-6 lg:-mt-8 uppercase">
-             {data.brideName}
+              {data.brideName}
             </span>
           </h2>
 
@@ -101,9 +98,9 @@ export default function CoupleMessage({  data }) {
             alt="couple"
             className="absolute right-33 w-35 h-28 md:right-78 md:w-60 md:h-46 lg:right-143 lg:w-106 lg:h-83 3xl:right-167 3xl:w-146 3xl:h-103 z-20"
           />
-      
+
           <img
-            src={data?.coupleMessageImages?.image2 ||assets.two}
+            src={data?.coupleMessageImages?.image2 || assets.two}
             alt="couple_one"
             className=" absolute top-15 left-6 w-32 h-55 md:left-21 md:top-24 md:w-54 md:h-90 lg:left-50 lg:top-45 lg:w-97 lg:h-166 3xl:left-68 3xl:top-60 3xl:w-117 3xl:h-186 z-10"
           />
@@ -137,11 +134,11 @@ export default function CoupleMessage({  data }) {
                 alt="weather"
                 className="w-31 h-25 md:w-24 md:h-22 lg:w-28 lg:h-26"
               /> */}
-                <img
-                              src={data?.coupleMessageWeatherImage || assets.weather}
-                              alt="weather"
-                              className="w-31 h-25 md:w-24 md:h-22 lg:w-33 lg:h-26"
-                            />
+              <img
+                src={data?.coupleMessageWeatherImage || assets.weather}
+                alt="weather"
+                className="w-31 h-25 md:w-24 md:h-22 lg:w-33 lg:h-26"
+              />
               <h2 className="eb-garamond font-normal text-[40px] md:text-3xl lg:text-[42px] text-[#15528A] mt-1">
                 {weatherTitle}
               </h2>
@@ -156,10 +153,10 @@ export default function CoupleMessage({  data }) {
                 className="w-28 h-35 md:w-17 md:h-23 lg:w-21 lg:h-27"
               /> */}
               <img
-                              src={data?.coupleMessageStaffImage || assets.staff}
-                              alt="drive"
-                              className="w-28 h-35 md:w-17 md:h-23 lg:w-21 lg:h-27"
-                            />
+                src={data?.coupleMessageStaffImage || assets.staff}
+                alt="drive"
+                className="w-28 h-35 md:w-17 md:h-23 lg:w-21 lg:h-27"
+              />
               <h2 className="eb-garamond font-normal text-[40px] md:text-3xl lg:text-[42px] text-[#15528A] mt-1">
                 {StaffTitle}
               </h2>
@@ -174,10 +171,10 @@ export default function CoupleMessage({  data }) {
                 className="w-31 h-25 md:w-26 md:h-23 lg:w-30 lg:h-27"
               /> */}
               <img
-                              src={data?.coupleMessageParkingImage || assets.parking}
-                              alt="car"
-                              className="w-31 h-25 md:w-26 md:h-23 lg:w-30 lg:h-27"
-                            />
+                src={data?.coupleMessageParkingImage || assets.parking}
+                alt="car"
+                className="w-31 h-25 md:w-26 md:h-23 lg:w-30 lg:h-27"
+              />
               <h2 className="eb-garamond font-normal text-[40px] md:text-3xl lg:text-[42px] text-[#15528A] mt-1">
                 {parkingTitle}
               </h2>
@@ -192,7 +189,7 @@ export default function CoupleMessage({  data }) {
           {thingsToKnowDescription}
         </h2>
 
-        <div className="flex justify-center md:justify-end md:mt-2 lg:mt-135 3xl:mt-210 md:pr-5 lg:pr-10 3xl:pr-30">
+        <div className="flex justify-center md:justify-end md:mt-2 lg:mt-135 3xl:mt-210 md:pr-5 lg:pr-10 3xl:pr-30" id="rsvp-section">
           {rsvpMode === "form" ? (
             <div className="flex flex-col items-center text-center">
               <h2 className="eb-garamond font-normal text-center text-2xl md:text-3xl lg:text-[54px] text-[#15528A] pt-15 md:pt-80 lg:pt-50 3xl:pt-150 leading-normal md:leading-8 lg:leading-12 lg:w-140 w-70">

@@ -242,10 +242,10 @@ export default function Home({
       >
         <RoseHeroTemp />
 
-        <div className="pt-36 md:pt-128 lg:pt-145 3xl:pt-200 relative z-10">
+        <div className="pt-36 md:pt-128 lg:pt-135 3xl:pt-200 relative z-10">
           <h2
             className="text-[#AE633A] text-center leading-tight text-2xl md:text-5xl lg:text-[80px] pb-120
-                          md:pb-350 lg:pb-470 3xl:pb-550 flex flex-col items-center gap-y-0 lg:gap-y-5"
+                          md:pb-350 lg:pb-470 3xl:pb-550 flex flex-col items-center gap-y-0 lg:gap-y-5" id="details-section"
           >
             <span className="parisienne-regular">{data.groomName}</span>
 
@@ -314,7 +314,7 @@ export default function Home({
             </p>
           </div>
 
-          <div className="flex justify-center mt-20 lg:mt-40">
+          <div className="flex justify-center mt-20 lg:mt-40 " id="events-section">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 lg:gap-32 3xl:gap-50 px-15">
               {(data.events || []).map((event, i) => (
                 <div key={i} className="flex flex-col items-center text-center">
@@ -367,7 +367,7 @@ export default function Home({
 
           <div className="relative flex flex-col items-center pt-30 lg:pt-80 3xl:pt-90 3xl:gap-60">
             {/* Center Text */}
-            <div className="absolute flex flex-col justify-center items-center text-center md:mb-0 top-28 md:top-31 lg:top-84 3xl:top-152">
+            <div className="absolute flex flex-col justify-center items-center text-center md:mb-0 top-28 md:top-31 lg:top-84 3xl:top-152" id="couple-section">
               <p className="parisienne-regular text-3xl md:text-5xl lg:text-7xl lg:leading-22 text-[#0064BF]">
                 {data.thankyoutitle}
               </p>

@@ -44,7 +44,7 @@ export default function MarriageCountdown({ data }) {
       <div
         className=" bg-cover bg-no-repeat"
         style={{ backgroundImage: `url(${assets.bg_four})` }}
-      >
+    id="countdown-section"  >
         <div className="flex flex-col h-47 md:h-89 lg:h-166 3xl:h-210 md:gap-3 lg::gap-8 3xl:gap-8">
           <h2 className="parisienne-regular text-2xl md:text-4xl lg:text-[60px] text-center text-[#FFF097] pt-4 md:pt-11 lg:pt-42 3xl:pt-55">
             {title}

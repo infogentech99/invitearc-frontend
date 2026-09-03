@@ -45,10 +45,10 @@ export default function MarriageCountdown({data}) {
 
     return (
         <>
-            <div className="bg-[url('/assets/bg_last.webp')] bg-cover bg-no-repeat pb-12" style={{backgroundImage: `url(${assets.bg_last})`,}}>
+            <div className="bg-[url('/assets/bg_last.webp')] bg-cover bg-no-repeat pb-12" style={{backgroundImage: `url(${assets.bg_last})`,}} >
                 <div className="flex flex-col items-center h-65 md:h-100 lg:h-170 gap-2 md:gap-4">
-                    <h2 className="font-parisienne-regular font-normal text-2xl md:text-4xl lg:text-6xl text-center text-[#FFF4B9] pt-12 md:pt-18 lg:pt-20 3xl:pt-45">{title}</h2>
-                    <p className="font-eb-garamond font-medium text-[#FFF4B9] text-center text-xs md:text-xl lg:text-[28px] mt-2">
+                    <h2 className="font-parisienne-regular font-normal text-2xl md:text-4xl lg:text-6xl text-center text-[#FFF4B9] pt-12 md:pt-18 lg:pt-20 3xl:pt-45"  id="countdown-section">{title}</h2>
+                    <p className="font-eb-garamond font-medium text-[#FFF4B9] text-center text-xs md:text-xl lg:text-[28px] mt-2 px-2">
                         {description}
                     </p>
                     <hr className="w-42 md:w-66 lg:w-94 border lg:border-2 border-[#FFF4B9] my-1 md:my-1 lg:my-2" />

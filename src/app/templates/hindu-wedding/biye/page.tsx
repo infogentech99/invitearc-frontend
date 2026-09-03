@@ -213,7 +213,7 @@ export default function Home({
         <div className="pt-36 md:pt-50 lg:pt-54 relative z-10">
 
           <h2 className="flex flex-col items-center text-center leading-tight text-3xl md:text-5xl lg:text-[64px]  
-                         gap-y-0 lg:gap-y-5 pb-200 md:pb-560 lg:pb-500 text-[#D90305]">
+                         gap-y-0 lg:gap-y-5 pb-200 md:pb-560 lg:pb-500 text-[#D90305]" id="details-section">
             <span className="font-eb-garamond font-medium">{data.groomName}</span>
             <span className="font-eb-garamond font-medium text-xl md:text-3xl lg:text-5xl tracking-widest">WEDS</span>
             <span className="font-eb-garamond font-medium">{data.brideName}</span>
@@ -264,7 +264,7 @@ export default function Home({
             </p>
           </div>
 
-          <div className="flex justify-center mt-15 md:mt-25 lg:mt-40 mb-20">
+          <div className="flex justify-center mt-15 md:mt-25 lg:mt-40 mb-20" id="events-section">
             <div
               className={`grid gap-16 lg:gap-26 lg:px-18 3xl:px-0 ${data?.events?.length === 1
                 ? "grid-cols-1 justify-items-center"
@@ -306,7 +306,7 @@ export default function Home({
               backgroundImage: `url(${assets.bg_two})`,
             }}>
             {/* Center Text */}
-            <div className="flex flex-col justify-center items-center text-center pt-8 md:pt-10 lg:pt-20">
+            <div className="flex flex-col justify-center items-center text-center pt-8 md:pt-10 lg:pt-20" id="couple-section">
               <p className="font-parisienne-regular font-normal text-center text-2xl md:text-[40px] lg:text-7xl lg:leading-22 text-[#FFFFFF]">
                 {data.thankyoutitle}
               </p>

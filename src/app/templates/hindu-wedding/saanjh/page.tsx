@@ -212,7 +212,7 @@ const [bgImage, setBgImage] = useState(assets.background);
      overflow-hidden md:min-h-screen" style={{ backgroundImage: `url(${bgImage})`, }} >
         <RoseHeroTemp />
 
-        <div className=" flex flex-col items-center pt-15 md:pt-22 lg:pt-16 3xl:pt-20  relative z-10">
+        <div className=" flex flex-col items-center pt-15 md:pt-22 lg:pt-24 3xl:pt-20  relative z-10" id="details-section">
           <h2 className="flex flex-col text-[#69301B] text-center leading-tight justify-center items-center">
             <span className="font-eb-garamond font-normal text-xs md:text-base lg:text-[22px] bg-linear-to-r from-[#D99447] via-[#F5C691] to-[#D99447] bg-clip-text text-transparent">
               {data.welcomeTitle}

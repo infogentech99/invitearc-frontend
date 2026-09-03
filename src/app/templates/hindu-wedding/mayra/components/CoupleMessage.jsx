@@ -98,7 +98,7 @@ export default function CoupleMessage({ data }) {
       className="bg-[url('/assets/respo_two.webp')] md:bg-[url('/assets/bg_two.webp')] bg-cover bg-no-repeat"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
-      <div className="h-696 md:h-585 lg:h-893 3xl:h-1054">
+      <div className="h-612 md:h-585 lg:h-893 3xl:h-1054">
         <h1 className="eb-garamond font-medium text-[20px] md:text-2xl lg:text-[38px] text-center text-[#FFF097] lg:pt-40 pt-20">
           {coupleTitle}
         </h1>
@@ -137,7 +137,7 @@ export default function CoupleMessage({ data }) {
                 <img
                   src={extractImageSrc(item)}
                   alt={`Carousel ${index + 1}`}
-                  className="w-full h-120 md:h-90 lg:h-135 3xl:h-175 object-cover rounded-[60px]"
+                  className="w-full h-80 md:h-90 lg:h-135 3xl:h-175 object-cover rounded-[60px]"
                 />
               </SwiperSlide>
             ))}
@@ -213,7 +213,7 @@ export default function CoupleMessage({ data }) {
         </h2>
 
         <div className="flex flex-col items-center md:mt-2 lg:mt-0 gap-10 3xl:gap-12">
-          <div className="">
+          <div id="rsvp-section">
             <div className="flex flex-col-1 md:gap-0 gap-0 lg:gap-0 justify-center items-center md:not-first:mt-4">
               {rsvpMode === "form" ? (
                 <div className="flex flex-col items-center text-center">
@@ -253,7 +253,7 @@ export default function CoupleMessage({ data }) {
                       className="h-8 w-8 md:h-8 md:w-8 lg:h-16 lg:w-16"
                     />
 
-                    <span className="eb-garamond font-normal text-xs md:text-sm lg:text-[22px] text-[#FFF097]">
+                    <span className="eb-garamond font-normal text-[16px] md:text-sm lg:text-[22px] text-[#FFF097]">
                       {rsvpButtonText}
                     </span>
                   </a>

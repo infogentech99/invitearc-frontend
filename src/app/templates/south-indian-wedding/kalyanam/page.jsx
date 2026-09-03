@@ -194,8 +194,8 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
         {/* <FallingLamps /> */}
         <div className="pt-6 md:pt-34 lg:pt-54 3xl:pt-90 relative z-10">
           <h2
-            className="text-[#C47E39] text-center leading-tight text-3xl md:text-5xl lg:text-[64px]  
-                           flex flex-col items-center gap-y-0 lg:gap-y-5 pb-170 md:pb-780 lg:pb-780 3xl:pb-950"
+            className="text-[#C47E39] text-center leading-tight text-2xl md:text-5xl lg:text-[64px]  
+                           flex flex-col items-center gap-y-0 lg:gap-y-5 pb-170 md:pb-780 lg:pb-780 3xl:pb-950" id="details-section"
           >
             <span className="eb-garamond font-semibold ">{data.groomName}</span>
 
@@ -259,7 +259,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 lg:gap-24 3xl:gap-40 pb-40">
               {events.map((event, i) => (
                 <div key={i} className="flex flex-col items-center text-center"> */}
-          <div className="flex justify-center mt-20 lg:mt-40 pb-40">
+          <div className="flex justify-center mt-20 lg:mt-40 pb-40" id="events-section">
             <div
               className={`grid gap-16 lg:gap-26 lg:px-18 3xl:px-0 ${
                 data?.events?.length === 1
@@ -326,7 +326,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
             }}
           >
             {/* Center Text */}
-            <div className="flex flex-col justify-center items-center text-center pt-30 pl-58 md:pt-56 md:pl-110 lg:pt-107 lg:pl-210 3xl:pt-145 3xl:pl-240">
+            <div className="flex flex-col justify-center items-center text-center pt-30 pl-58 md:pt-56 md:pl-110 lg:pt-107 lg:pl-210 3xl:pt-145 3xl:pl-240" id="couple-section">
               <p className="parisienne-regular text-center text-2xl md:text-[40px] lg:text-7xl lg:leading-22 text-[#C47E39]">
                 {data.thankyoutitle}
               </p>

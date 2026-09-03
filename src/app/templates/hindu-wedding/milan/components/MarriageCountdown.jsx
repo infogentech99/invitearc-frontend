@@ -58,7 +58,7 @@ export default function MarriageCountdown({ data }) {
     "Surrounded by family and friends, we can't wait to celebrate this beautiful moment with you.";
   return (
     <>
-      <div className="flex flex-col items-center h-100 md:h-120 lg:h-200 md:gap-3 lg::gap-8 3xl:gap-8">
+      <div className="flex flex-col items-center h-100 md:h-120 lg:h-200 md:gap-3 lg::gap-8 3xl:gap-8" id="countdown-section">
         <img
           src={assets.bg_three_design}
           alt="frame-design"

@@ -41,7 +41,7 @@ const title = data?.marriageCountdownTitle || "The Journey Begins";
 
     return (
         <>
-            <div className="bg-[url('/assets/background_fifth.webp')] bg-cover bg-no-repeat pb-12" style={{ backgroundImage: `url(${assets.background_fifth})` }}>
+            <div className="bg-[url('/assets/background_fifth.webp')] bg-cover bg-no-repeat pb-12" style={{ backgroundImage: `url(${assets.background_fifth})` }} id="countdown-section">
                 <div className="flex flex-col items-center h-60 md:h-100 lg:h-150 3xl:h-195 gap-2 md:gap-4 lg:gap-4 3xl:gap-14">
                     <h2 className="parisienne-regular font-normal text-2xl md:text-4xl lg:text-6xl text-center text-[#FFFFFF] pt-10 md:pt-20 lg:pt-30 3xl:pt-55">{title}</h2>
                     <p className="eb-garamond font-medium text-[#FFFFFF] text-center text-xs md:text-xl lg:text-[28px] px-3 md:px-25 lg:px-70 3xl:px-110">

@@ -28,7 +28,7 @@ export default function CoupleEvents({ data }) {
     const imageClass = event?.imageClass || (side === "left" ? event?.leftClass : event?.rightClass);
 
     return (
-      <div className="flex flex-col items-center md:flex-row md:items-center md:justify-center gap-10">
+      <div className="flex flex-col items-center md:flex-row md:items-center md:justify-center gap-10" id="events-section">
         {side === "left" && (
           <img src={image} alt={alt} className={imageClass} />
         )}

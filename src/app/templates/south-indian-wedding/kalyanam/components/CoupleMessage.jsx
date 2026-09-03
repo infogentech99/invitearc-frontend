@@ -169,7 +169,7 @@ export default function CoupleMessage({data}) {
           {coupleMessageThingsToKnowDescription}
         </h2>
 
-        <div className="flex items-center mt-15 md:mt-20 lg:mt-60 3xl:mt-90 gap-0 md:gap-10 lg:gap-0 3xl:gap-13 flex-col md:flex-row">
+        <div className="flex items-center mt-15 md:mt-20 lg:mt-60 3xl:mt-90 gap-0 md:gap-10 lg:gap-0 3xl:gap-13 flex-col md:flex-row" id="rsvp-section">
           <img
             src={assets.couplelast}
             alt="couple"
@@ -214,7 +214,7 @@ export default function CoupleMessage({data}) {
                               className="h-8 w-8 md:h-8 md:w-8 lg:h-16 lg:w-16"
                             />
         
-                            <span className="eb-garamond font-normal text-xs md:text-sm lg:text-[22px] text-[#FFF097]">
+                            <span className="eb-garamond font-normal text-[16px] md:text-sm lg:text-[22px] text-[#FFF097]">
                               {rsvpButtonText}
                             </span>
                           </a>

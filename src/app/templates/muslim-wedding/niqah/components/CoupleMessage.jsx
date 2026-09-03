@@ -79,8 +79,8 @@ const extractImageSrc = (image) => {
       className="bg-[url('/assets/bg_second.webp')] bg-cover bg-no-repeat"
       style={{ backgroundImage: `url(${assets.bg_second})` }}
     >
-      <div className="3xl:h-1017 lg:h-902 md:h-607 h-652">
-        <h1 className="font-eb-garamond font-medium text-base md:text-2xl lg:text-[38px] text-center text-[#FFF4B9] lg:pt-40 pt-20">
+      <div className="3xl:h-1017 lg:h-902 md:h-607 h-644">
+        <h1 className="font-eb-garamond font-medium text-xl md:text-2xl lg:text-[38px] text-center text-[#FFF4B9] lg:pt-40 pt-20">
           {coupleTitle}
         </h1>
         <h2 className="font-parisienne-regular font-normal text-5xl md:text-6xl lg:text-[100px] text-center text-[#FFF4B9] px-3 md:px-17 lg:px-51 3xl:px-103 mt-12 lg:mt-24 leading-5 md:leading-tight">
@@ -175,16 +175,16 @@ const extractImageSrc = (image) => {
 
         <h2
           className="font-eb-garamond font-normal text-xl md:text-2xl lg:text-[32px] text-center text-[#FFF4B9] 
-                         px-4 md:px-20 lg:px-56 3xl:px-107 pt-4 md:pt-10 lg:pt-30 3xl:pt-46 mt-2 lg:mt-4 lg:leading-tight"
+                         px-4 md:px-20 lg:px-56 3xl:px-107 pt-4 md:pt-10 lg:pt-30 3xl:pt-46 mt-2 lg:mt-4 lg:leading-tight"  
         >
           {coupleMessageThingsToKnowDescription}
         </h2>
 
-        <div className="hidden md:block md:flex items-center md:mt-49 lg:mt-70 gap-0">
+        <div className="md:flex items-center md:mt-49 lg:mt-70 gap-0" id="rsvp-section">
           <img
             src={assets.couple_img2}
             alt="couple"
-            className="w-70 h-90 md:w-120 md:h-140 lg:w-180 lg:h-307 3xl:w-260 3xl:h-378 object-cover "
+            className="w-70 h-90 md:w-120 md:h-140 lg:w-180 lg:h-307 3xl:w-260 3xl:h-378 object-cover md:block hidden"
           />
        
           {rsvpMode === "form" ? (
@@ -225,15 +225,21 @@ const extractImageSrc = (image) => {
                   className="h-8 w-8 md:h-8 md:w-8 lg:h-16 lg:w-16"
                 />
 
-                <span className="font-eb-garamond font-medium text-center text-xs md:text-sm lg:text-[22px] 3xl:text-2xl text-[#FFF4B9]">
+                <span className="font-eb-garamond font-medium text-center text-[16px] md:text-sm lg:text-[22px] 3xl:text-2xl text-[#FFF4B9]">
                   {rsvpButtonText}
                 </span>
               </a>
             </div>
           )}
+
+          <img
+            src={assets.couple_img2}
+            alt="couple"
+            className="w-full h-full object-cover md:hidden mt-20"
+          />
         </div>
        
-        <div className="block md:hidden gap-0">
+        {/* <div className="block md:hidden gap-0">
           <div className="text-center">  
             <div className="flex flex-col-1 md:gap-4 gap-0 lg:gap-0 justify-center items-center md:not-first:mt-4">
             </div>
@@ -243,7 +249,7 @@ const extractImageSrc = (image) => {
             alt="couple"
             className="w-108 h-120 md:w-100 md:h-128 lg:w-285 lg:h-320 object-cover mt-54 md:mt-35"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

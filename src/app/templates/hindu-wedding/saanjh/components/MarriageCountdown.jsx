@@ -97,7 +97,7 @@ useEffect(() => {
     <>
       <div
         className="bg-[url('/assets/respo_two.png')] md:bg-[url('/assets/bg_two.webp')] md:bg-cover bg-no-repeat "
-        style={{ backgroundImage: `url(${coupleBg})`}}
+        style={{ backgroundImage: `url(${coupleBg})`}} id="countdown-section"
       >
         <div className="flex flex-col items-center h-180 md:h-210 lg:h-400 3xl:h-400 md:gap-3 lg::gap-8 3xl:gap-8">
           <p className="font-eb-garamond font-normal text-xs md:text-lg md:tracking-widest lg:tracking-normal lg:text-[26px] mt-20 md:mt-24 lg:mt-60 text-center bg-linear-to-r from-[#D99447] via-[#F5C691] to-[#D99447] bg-clip-text text-transparent">

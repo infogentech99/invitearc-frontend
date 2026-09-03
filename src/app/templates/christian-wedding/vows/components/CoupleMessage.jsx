@@ -156,7 +156,7 @@ const coupleTitle = data?.coupleMessageTitle || "Introducing";
           {coupleMessageThingsToKnowDescription}
         </h2>
 
-        <div className="flex flex-col-1 gap-1 md:gap-2 justify-center items-center mt-5 md:mt-1 lg:mt-8">
+        <div className="flex flex-col-1 gap-1 md:gap-2 justify-center items-center mt-5 md:mt-1 lg:mt-8" id="rsvp-section">
         
            {rsvpMode === "form" ? (
                                   <div className="flex flex-col items-center text-center">

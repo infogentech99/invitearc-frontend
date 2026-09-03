@@ -77,14 +77,14 @@ export default function CoupleMessage({ data }) {
           backgroundImage: `url(${assets.couple_bg})`,
         }}
       >
-        <div className="lg:h-520 md:h-400 h-530 pt-2 flex flex-col  items-center">
+        <div className="lg:h-520 md:h-440 h-530 pt-2 flex flex-col  items-center">
           <h1 className="lg:text-[60px] md:text-3xl text-[32px] text-center text-[#FFF5B9] lg:pt-36 pt-12 font-garamond px-6 leading-12">
             {coupleTitle}
           </h1>
           <h2 className="lg:text-[100px] text-[60px]  text-center text-[#FFF5B9] lg:px-60 font-parisienne px-6 lg:mt-28 mt-12 font-Cormorant-upright lg:leading-8 md:leading-8 leading-6">
             {coupleDescription}
           </h2>
-          <div className="w-full md:w-3/4 md:mt-32 mt-12">
+          <div className="w-full lg:w-3/4 md:mt-32 mt-12">
             <Swiper
               effect={"coverflow"}
               centeredSlides={true}

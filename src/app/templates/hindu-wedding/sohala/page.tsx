@@ -189,7 +189,7 @@ export default function Home({
         <div className="pt-12 md:pt-34 lg:pt-64 3xl:pt-90 relative z-10">
 
           <h2 className="text-[#FFFFFF] text-center leading-tight text-3xl md:text-5xl lg:text-[64px] pb-130 md:pb-220 lg:pb-400
-                           3xl:pb-600 flex flex-col items-center gap-y-2 lg:gap-y-5">
+                           3xl:pb-600 flex flex-col items-center gap-y-2 lg:gap-y-5" id="details-section">
 
             <span className="eb-garamond font-medium">{data.groomName}</span>
 
@@ -247,7 +247,7 @@ export default function Home({
             </p>
           </div>
 
-          <div className="flex justify-center mt-20 lg:mt-40 mb-30">
+          <div className="flex justify-center mt-20 lg:mt-40 mb-30" id="events-section">
             <div
               className={`grid gap-16 lg:gap-26 lg:px-18 3xl:px-0 ${data?.events?.length === 1
                 ? "grid-cols-1 justify-items-center"
@@ -294,7 +294,7 @@ export default function Home({
       </div>
 
       {/* Second section */}
-      <section className="bg-[url('/assets/background_second.webp')] bg-cover bg-no-repeat " style={{ backgroundImage: `url(${assets.background_second})` }}>
+      <section className="bg-[url('/assets/background_second.webp')] bg-cover bg-no-repeat " style={{ backgroundImage: `url(${assets.background_second})` }}  id="couple-section">
         <div className="h-95 md:h-181 lg:h-335 3xl:h-424 flex flex-col items-center pt-6 md:pt-16 lg:pt-30 3xl:pt-56 lg:w-160 md:w-80 w-50 mx-auto">
           <p className="parisienne-regular text-center text-2xl md:text-[40px] lg:text-7xl lg:leading-22 text-[#FFE323]">
             {data.thankyoutitle}

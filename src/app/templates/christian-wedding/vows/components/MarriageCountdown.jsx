@@ -45,7 +45,7 @@ export default function MarriageCountdown({data}) {
 
     return (
         <>
-            <div className=" bg-cover bg-no-repeat pb-12" style={{backgroundImage: `url(${assets.countdown_bg})`,}}>
+            <div className=" bg-cover bg-no-repeat pb-12" style={{backgroundImage: `url(${assets.countdown_bg})`,}} id="countdown-section">
                 <div className="flex flex-col justify-center items-center h-70 md:h-90 lg:h-125 3xl:h-115 md:px-0 px-6">
                     <h2 className="font-parisienne-regular text-2xl md:text-4xl lg:text-6xl text-center text-[#FFF097] pt-12 lg:pt-22">{title}</h2> 
                     <p className="font-eb-garamond font-medium text-base md:text-xl lg:text-[28px] text-[#FFF097] mt-4 lg:mt-6 text-center lg:leading-8">

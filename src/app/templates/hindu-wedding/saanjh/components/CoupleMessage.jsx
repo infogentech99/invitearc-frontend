@@ -72,7 +72,7 @@ const [coupleBg, setCoupleBg] = useState(assets.bg_four);
   return (
     <div
       className="bg-[url('/assets/respo_four.png')] md:bg-[url('/assets/bg_four.webp')] bg-cover bg-no-repeat"
-      style={{ backgroundImage: `url(${coupleBg})` }}
+      style={{ backgroundImage: `url(${coupleBg})` }} id="couple-section"
     >
       <div className="h-330 md:h-360 lg:h-500 3xl:h-630">
         <h1 className=" font-eb-garamond font-normal text-base md:text-xl lg:text-[26px] text-center pt-10 lg:pt-20 bg-linear-to-r from-[#D99447] via-[#F5C691] to-[#D99447] bg-clip-text text-transparent">

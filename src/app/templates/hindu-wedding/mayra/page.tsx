@@ -310,8 +310,8 @@ export default function Home({
         <FloatingLamp className="hidden lg:block absolute top-190 right-172 w-40 h-40 transform -rotate-22 opacity-85" reverse={true} />
 
         <div className="lg:pt-40 md:pt-30 md:pb-0 relative z-10 pt-6">
-          <h2 className="text-[#AF630E] text-center leading-tight text-3xl md:text-5xl lg:text-[64px] pb-120
-                          md:pb-400 lg:pb-470 3xl:pb-500 flex flex-col items-center gap-y-0 lg:gap-y-5">
+          <h2 className="text-[#AF630E] text-center leading-tight text-2xl md:text-5xl lg:text-[64px] pb-120
+                          md:pb-400 lg:pb-470 3xl:pb-500 flex flex-col items-center gap-y-0 lg:gap-y-5" id="details-section">
 
             <span className="eb-garamond font-medium">{data.groomName}</span>
 
@@ -377,7 +377,7 @@ export default function Home({
             </p>
           </div>
 
-          <div className="flex justify-center mt-20 lg:mt-40">
+          <div className="flex justify-center mt-20 lg:mt-40" id="events-section">
             <div
               className={`grid gap-16 lg:gap-26 lg:px-18 3xl:px-0 ${data?.events?.length === 1
                 ? "grid-cols-1 justify-items-center"
@@ -421,7 +421,7 @@ export default function Home({
           </div>
 
 
-          <div className="flex items-center pt-30 lg:pt-50 3xl:pt-90 3xl:gap-0 md:mr-8 mr-2">
+          <div className="flex items-center pt-30 lg:pt-50 3xl:pt-90 3xl:gap-0 md:mr-8 mr-2" id="couple-section">
             <Image
               src={assets.couple_one}
               alt="couple" width={900} height={1200}

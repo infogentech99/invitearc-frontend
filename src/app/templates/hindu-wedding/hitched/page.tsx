@@ -363,7 +363,7 @@ export default function Home({
 
 
         <div className=" md:pt-24 pt-4 relative z-10 ">
-          <h2 className="text-[#15528A]  text-center leading-tight text-[32px] sm:text-5xl lg:text-[100px] lg:pb-300 3xl:pb-370 md:pb-470 pb-0 flex flex-col items-center gap-y-2 ">
+          <h2 className="text-[#15528A]  text-center leading-tight text-[32px] sm:text-5xl lg:text-[100px] lg:pb-300 3xl:pb-370 md:pb-470 pb-0 flex flex-col items-center gap-y-2" id="details-section">
             <span className="font-parisienne [text-shadow:2px_2px_4px_rgba(0,0,0,0.4)] font-extrabold">
               {data.groomName}
             </span>
@@ -429,7 +429,7 @@ export default function Home({
 
           </div>
 
-          <div className="flex justify-center mt-20 flex-wrap lg:px-0 md:px-10 px-12">
+          <div className="flex justify-center mt-20 flex-wrap lg:px-0 md:px-10 px-12" id="events-section">
 
             <div
               className={`grid gap-16 lg:gap-26 lg:px-18 3xl:px-0 ${data?.events?.length === 1
@@ -498,7 +498,7 @@ export default function Home({
             />
 
          
-            <div className="absolute inset-0 flex items-center text-left lg:ml-0 3xl:ml-50 ml-4 ">
+            <div className="absolute inset-0 flex items-center text-left lg:ml-0 3xl:ml-50 ml-4" id="couple-section">
               <div className="lg:pl-24 md:pl-14 pl-0">
                 <h1 className="lg:text-7xl md:text-5xl text-[26px] text-[#E1EF1E] font-parisienne lg:pb-10 md:pb-8 pb-4 3xl:pl-8">
                     {data.thankyoutitle}

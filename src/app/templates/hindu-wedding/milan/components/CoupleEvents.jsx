@@ -34,7 +34,8 @@ export default function CoupleEvents({ data }) {
         md:bg-cover bg-top bg-no-repeat
         w-full relative overflow-hidden lg:min-h-screen
       "
-      style={{ backgroundImage: `url(${coupleImage})` }}
+      style={{ backgroundImage: `url(${coupleImage})` }} id="events-section"
+
     >
       <div className="flex flex-col items-center  bg-cover bg-top bg-no-repeat min-h-screen w-full relative overflow-hidden md:pb-30  ">
         <img
