@@ -191,7 +191,7 @@ const TempHero = ({
 
 
   return (
-    <section className=" relative w-full overflow-hidden">
+    <section className=" relative w-full overflow-hidden" >
       <motion.img
         src={heroImage}
         alt="wedding-photo"
@@ -248,7 +248,7 @@ const TempHero = ({
 
         <motion.h1
           className="font-parisienne-regular text-6xl md:text-8xl lg:text-[180px] lg:leading-50 
-                   text-[#53602B] text-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50"
+                   text-[#53602B] text-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50" id="details-section"
             initial={{ opacity: 0, y: 40, scale: 0.95 }}
             animate={{
             opacity: 1,
@@ -257,7 +257,7 @@ const TempHero = ({
             transition: { duration: 1.1, delay: 0.4, ease: EASE_SOFT_OUT },
           }}>
           {data.groomName}
-          <span className="text-5xl md:text-7xl lg:text-[150px] opacity-55 leading-6"> <br /> 
+          <span className="text-5xl md:text-7xl lg:text-[150px] opacity-55 leading-6" > <br /> 
             Weds
           </span> <br /> 
           {data.brideName}

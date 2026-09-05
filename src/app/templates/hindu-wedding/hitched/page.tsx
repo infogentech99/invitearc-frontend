@@ -49,13 +49,13 @@ const initialData = {
   groomDetails: "(Grandson of Mrs. Kanta & Mr. Kamal Bhawnani)\n(Son of Mrs. Kanchan & Mr. Sanjay Bhawnani)",
   brideName: "Ritika",
   religiousMantra: "|| श्री गणेशाय नमः ||",
-  grandParentName:"Late Smt. Kamla Kapoor",
+  grandParentName: "Late Smt. Kamla Kapoor",
   brideDetails: "(Daughter of Mrs. Sarita & Mr. Pradeep Jain)",
   brideGrandParentsName: "(Granddaughter of Shri J.S. Kapoor)",
   blessingMessage: "With the heavenly blessings of",
-  
+
   eventIntro: "On the following events",
-   thankyoutitle: "With Love From Us",
+  thankyoutitle: "With Love From Us",
   thankyoumessage:
     "Thank you for being part our journey. Your presence makes this celebration truly meaningful, and we look forward to sharing these cherished moments with you.",
   coupleMessageTitle: "Introducing",
@@ -77,39 +77,65 @@ const initialData = {
   noteText: "Note: Themes optional, vibes unmatched",
   events: [
     {
-      title_ceremony: "Haldi + Mehendi",
+      title_ceremony: "Haldi",
       image: assets.mehandi,
       date: "Saturday, 20th June 2026",
       venue: "THE ASHOK HOTEL",
       venue_address: "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
       time: "4pm Onwards",
-      theme: "Pretty in Pink: Florals, Pastels & Pink Hues",
+      theme: "The Pink Edit",
       link: "https://maps.app.goo.gl/TVyrP9mLFCpr4VXA9",
     },
     {
-      title_ceremony: "Engagement + Sangeet",
+      title_ceremony: "Haldi",
+      image: assets.cocktail,
+      date: "Saturday, 20th June 2026",
+      venue: "The Central Park Hotel",
+      venue_address: "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
+      time: "8pm Onwards", 
+      theme: "The Pink Edit", 
+      link: "https://maps.app.goo.gl/fKxi3eDGsTSd5Aaz6?g_st=ic",
+    },
+    {
+      title_ceremony: "Sangeet",
       image: assets.cocktail,
       date: "Saturday, 20th June 2026",
       venue: "The Central Park Hotel",
       venue_address: "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
       time: "8pm Onwards",
-      theme: "Glitz & Glam: Shimmer, sequins & Statement Fits",
+      theme: "The Pink Edit",
       link: "https://maps.app.goo.gl/fKxi3eDGsTSd5Aaz6?g_st=ic",
     },
     {
-      title_ceremony: "Wedding + Reception",
+      title_ceremony: "Engagement",
       image: assets.engagement,
       date: "Sunday, 21st June 2026",
       venue: "The Central Park Hotel",
-      venue_address: "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
       time: "5pm Onwards",
-      theme: "Timeless Royalty: Elegant Ethnic & Royal Silhouettes",
+      theme: "The Pink Edit",
+     link: "https://maps.app.goo.gl/fKxi3eDGsTSd5Aaz6?g_st=ic",
+    },
+    {
+      title_ceremony: "Shaadi",
+      image: assets.engagement,
+      date: "Sunday, 21st June 2026",
+      venue: "The Central Park Hotel",
+      time: "5pm Onwards",
+      theme: "The Pink Edit",
+      link: "https://maps.app.goo.gl/fKxi3eDGsTSd5Aaz6?g_st=ic",
+    },
+    {
+      title_ceremony: "Reception",
+      image: assets.engagement,
+      date: "Sunday, 21st June 2026",
+      venue: "The Central Park Hotel",
+      time: "5pm Onwards",
       link: "https://maps.app.goo.gl/fKxi3eDGsTSd5Aaz6?g_st=ic",
     },
 
   ],
 
-   religiousSign: "",
+  religiousSign: "",
 };
 
 export default function Home({
@@ -278,7 +304,7 @@ export default function Home({
         {editMode && (
           <div className="fixed inset-0 z-50 overflow-auto bg-black/40 p-4">
             <div className="mx-auto w-full max-w-4xl rounded-3xl bg-white p-6 shadow-2xl">
-          
+
             </div>
           </div>
         )}
@@ -295,7 +321,7 @@ export default function Home({
         <FloatingLamp className="hidden lg:block absolute top-190 left-180 w-18 h-18 transform rotate-28 opacity-85" />
 
         <FloatingLamp className="lg:hidden absolute top-10 left-8 w-12 h-12 transform rotate-12 opacity-90" />
-        <FloatingLamp className="lg:hidden absolute top-30 left-20 w-12 h-12 transform rotate-45 opacity-80" /> 
+        <FloatingLamp className="lg:hidden absolute top-30 left-20 w-12 h-12 transform rotate-45 opacity-80" />
         <FloatingLamp className="lg:hidden absolute top-50 left-40 w-10 h-10 transform rotate-30 opacity-85" />
         <FloatingLamp className="lg:hidden absolute top-70 left-60 w-10 h-10 transform rotate-15 opacity-80" />
         <FloatingLamp className="lg:hidden absolute top-90 left-80 w-12 h-12 transform rotate-25 opacity-75" />
@@ -375,11 +401,11 @@ export default function Home({
             <h2 className="text-white md:text-2xl text-[17px] text-center">
               {data.religiousMantra}
             </h2>
-            
+
             <img
-                          src={data?.religiousSign || assets.ganesh}
-                          alt="idol" width={100} height={100}
-                          className="md:w-40 w-28 h-auto" />
+              src={data?.religiousSign || assets.ganesh}
+              alt="idol" width={100} height={100}
+              className="md:w-40 w-28 h-auto" />
 
             <h2 className="text-white lg:text-[30px] md:text-2xl text-[20px] font-Cormorant-upright">
               {data.blessingMessage}
@@ -463,7 +489,7 @@ export default function Home({
                     <span className="text-[20px]">{event.theme}</span>
                   </p>
 
-                  <p className="text-white font-Cormorant-upright text-[14px] sm:text-base mt-2">
+                  <p className="text-white font-Cormorant-upright text-[14px] sm:text-base">
                     <span className="text-[18px]">{event.venue}</span> <br />
                     {event.venue_address.split("\n").map((line, li) => (
                       <span key={li}>
@@ -497,16 +523,16 @@ export default function Home({
               className="w-full"
             />
 
-         
+
             <div className="absolute inset-0 flex items-center text-left lg:ml-0 3xl:ml-50 ml-4" id="couple-section">
               <div className="lg:pl-24 md:pl-14 pl-0">
                 <h1 className="lg:text-7xl md:text-5xl text-[26px] text-[#E1EF1E] font-parisienne lg:pb-10 md:pb-8 pb-4 3xl:pl-8">
-                    {data.thankyoutitle}
+                  {data.thankyoutitle}
                 </h1>
 
                 <h2 className="3xl:text-[38px] lg:text-[34px] md:text-2xl text-[14px] text-[#ADACD7] font-garamond lg:leading-12 md:leading-10 leading-5 md:pr-90 pr-40 3xl:pr-220 lg:pr-150 text-center mb-20">
-               {data.thankyoumessage}
-                  </h2>
+                  {data.thankyoumessage}
+                </h2>
               </div>
             </div>
           </div>
@@ -514,12 +540,21 @@ export default function Home({
       </div>
 
       <CoupleMessage data={data} />
- 
+
       <div
         className="hidden md:block bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${assets.moon})` }}
       >
-        <div className="flex justify-center md:h-175 lg:h-237.5 xl:h-275 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96" />
+        <div className="flex justify-center md:h-175 lg:h-237.5 xl:h-275 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96">
+
+          <img
+            src={data?.Logo || assets.couple_logo}
+            alt="logo"
+            width={250}
+            height={300}
+            className=" w-34 h-30 top-40 md:w-34 md:h-30 md:top-42 lg:w-50 lg:h-44 lg:top-86"
+          />
+        </div>
       </div>
 
       <div className="md:hidden relative flex items-start justify-center">
@@ -530,6 +565,7 @@ export default function Home({
           className="w-full h-full object-contain"
         />
         <div className="absolute top-[25svh] left-0 right-0 flex justify-center">
+          <img src={data?.Logo || assets.couple_logo} alt="logo" width={250} height={300} className=" w-32 h-26 top-4" />
         </div>
       </div>
 

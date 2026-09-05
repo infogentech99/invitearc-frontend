@@ -23,6 +23,7 @@ import couple_bg from "./assets/couple_bg.png";
 import countdown_desktop_bg from "./assets/countdown_desktop_bg.png";
 import countdown_mobile_bg from "./assets/countdown_mobile_bg.jpg";
 import hitched_pre from "./assets/hitched_pre.png";
+import couple_logo from "./assets/couple_logo.png";
 export const assets = {
   lamp: lamp.src, 
   Rohit_mobilebgn: Rohit_mobilebgn.src,
@@ -51,4 +52,5 @@ export const assets = {
 countdown_desktop_bg: countdown_desktop_bg.src,
 countdown_mobile_bg: countdown_mobile_bg.src,
 hitched_pre:hitched_pre.src, 
+couple_logo:couple_logo.src,
 };
