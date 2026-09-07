@@ -6,6 +6,7 @@ import MarriageCountdown from "./components/MarriageCountdown";
 import "./niqah-globals.css";
 import { assets } from "./assets";
 import IntroVideo from "./components/IntroVideo";
+import ScratchText from "./components/ScratchText";
 
 const FloatingLamp = ({ className, style, reverse = false }) => {
   // Memoize random values to prevent recalculation on re-renders
@@ -64,6 +65,7 @@ const initialData = {
   whatsappNumber: "919876543210",
   rsvpGoogleFormLink: "",
   Logo: "",
+  eventDate: "Saturday, April 18th 2026",
 
   events: [
     {
@@ -408,9 +410,12 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
             <p className="font-eb-garamond font-medium text-[#FFF4B9] text-base md:text-2xl lg:text-3xl mt-2">
               {data.brideDetails}
             </p>
+            <br/><br/>
+             <ScratchText text={data.eventDate} />
             <p className="font-eb-garamond font-medium text-[#FFF4B9] text-2xl md:text-2xl lg:text-3xl mt-8 lg:mt-14">
               {data.eventIntro}
             </p>
+            
           </div>
 
           <div
@@ -439,6 +444,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
                   </h2>
 
                   <p className="font-eb-garamond font-medium text-[#FFF4B9] mt-2">
+                   
                     <span className="text-base md:text-base lg:text-[15px]">
                       {event.date}
                     </span>

@@ -11,7 +11,7 @@ import saanjhPreview from "../../../public/assets/preview-images/saanjh.webp";
 import milanPreview from "../../../public/assets/preview-images/milan.webp";
 import biyePreview from "../../../public/assets/preview-images/biye.webp";
 import auraPreview from "../../../public/assets/preview-images/aura.png";
-import jodiPreview from "../../../public/assets/preview-images/jodi.webp";
+import jodiPreview from "../../../public/assets/preview-images/laavan.webp";
 import starlightPreview from "../../../public/assets/preview-images/starlight.webp";
 import mayraPreview from "../../../public/assets/preview-images/mayra.webp";
 import kalyanamPreview from "../../../public/assets/preview-images/kalyanam.webp";

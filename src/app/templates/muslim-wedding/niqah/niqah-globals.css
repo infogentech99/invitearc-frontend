@@ -201,3 +201,31 @@ body {
 .swiper-pagination-bullet-active {
   background: #ffffff!important;
 }
+
+
+.scratch-shine {
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    transparent 35%,
+    rgba(255,255,255,.35) 50%,
+    transparent 65%,
+    transparent 100%
+  );
+
+  background-size: 250% 100%;
+
+  animation: shineMove 2.8s linear infinite;
+}
+
+@keyframes shineMove {
+
+  from{
+    background-position:-250% 0;
+  }
+
+  to{
+    background-position:250% 0;
+  }
+
+}

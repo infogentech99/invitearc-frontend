@@ -60,6 +60,7 @@ detailFields: [
     { name: "inviteLine", label: "Invitation line", type: "text" },
       { name: "brideDetails", label: "Bride details", type: "textarea" },
     { name: "eventIntro", label: "Event intro", type: "text" },
+     { name: "eventDate", label: "Event date", type: "text" },
     {
   name: "Logo",
   label: "Wedding Logo",

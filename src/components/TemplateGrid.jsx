@@ -260,6 +260,7 @@ export default function TemplateGrid() {
                         ? `/templates/${template.slug}`
                         : `/demo/${template.slug}`
                     }
+                     prefetch={false}
                     className="block overflow-hidden border-2 border-black rounded-4xl"
                   >
                     {template.isBuiltIn ? (
@@ -311,6 +312,7 @@ export default function TemplateGrid() {
                       <>
                         <Link
                           href={`/templates/${template.slug}`}
+                          prefetch={false}
                           className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
                         >
                           Preview
@@ -326,6 +328,7 @@ export default function TemplateGrid() {
                       <>
                         <Link
                           href={`/demo/${template.slug}`}
+                          prefetch={false}
                           className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
                         >
                           Demo
