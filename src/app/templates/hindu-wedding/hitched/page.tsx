@@ -111,6 +111,7 @@ const initialData = {
       image: assets.engagement,
       date: "Sunday, 21st June 2026",
       venue: "The Central Park Hotel",
+        venue_address: "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
       time: "5pm Onwards",
       theme: "The Pink Edit",
      link: "https://maps.app.goo.gl/fKxi3eDGsTSd5Aaz6?g_st=ic",
@@ -120,6 +121,7 @@ const initialData = {
       image: assets.engagement,
       date: "Sunday, 21st June 2026",
       venue: "The Central Park Hotel",
+        venue_address: "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
       time: "5pm Onwards",
       theme: "The Pink Edit",
       link: "https://maps.app.goo.gl/fKxi3eDGsTSd5Aaz6?g_st=ic",
@@ -129,6 +131,7 @@ const initialData = {
       image: assets.engagement,
       date: "Sunday, 21st June 2026",
       venue: "The Central Park Hotel",
+        venue_address: "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
       time: "5pm Onwards",
       link: "https://maps.app.goo.gl/fKxi3eDGsTSd5Aaz6?g_st=ic",
     },
@@ -491,7 +494,7 @@ export default function Home({
 
                   <p className="text-white font-Cormorant-upright text-[14px] sm:text-base">
                     <span className="text-[18px]">{event.venue}</span> <br />
-                    {event.venue_address.split("\n").map((line, li) => (
+                   {(event.venue_address || "").split("\n").map((line, li) => (
                       <span key={li}>
                         {line}
                         <br />

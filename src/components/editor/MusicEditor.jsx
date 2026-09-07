@@ -4,6 +4,7 @@ export default function MusicEditor({
   editorData = {},
   updateField,
   handleMusicUpload,
+  isMusicUploading = false,
 }) {
   return (
     <div className="space-y-6">
@@ -33,33 +34,40 @@ export default function MusicEditor({
         /> */}
 
 
-        <label className="mt-2 flex cursor-pointer items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 transition hover:bg-white">
+        <label className={`mt-2 flex items-center justify-between rounded-2xl border px-4 py-3 transition ${isMusicUploading ? "cursor-wait border-blue-200 bg-blue-50" : "cursor-pointer border-slate-200 bg-slate-50 hover:bg-white"}`}>
   <div className="flex items-center gap-3">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-5 w-5 text-[#861E1D]"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M9 19V6l12-2v13M9 19a2 2 0 11-4 0 2 2 0 014 0zm12-2a2 2 0 11-4 0 2 2 0 014 0z"
+    {isMusicUploading ? (
+      <span
+        className="h-5 w-5 animate-spin rounded-full border-2 border-blue-200 border-t-[#861E1D]"
+        aria-label="Uploading music"
       />
-    </svg>
+    ) : (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-5 w-5 text-[#861E1D]"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M9 19V6l12-2v13M9 19a2 2 0 11-4 0 2 2 0 014 0zm12-2a2 2 0 11-4 0 2 2 0 014 0z"
+        />
+      </svg>
+    )}
 
-    <span className="text-sm text-slate-600">
-      {editorData.backgroundMusicFileName || "Upload background music"}
+    <span className={`text-sm ${isMusicUploading ? "font-medium text-[#861E1D]" : "text-slate-600"}`}>
+      {isMusicUploading ? "Uploading music..." : editorData.backgroundMusicFileName || "Upload background music"}
     </span>
   </div>
-
 
   <input
     type="file"
     accept="audio/*"
     onChange={handleMusicUpload}
+    disabled={isMusicUploading}
     className="hidden"
   />
 </label>

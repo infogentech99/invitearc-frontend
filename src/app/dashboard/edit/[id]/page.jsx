@@ -87,6 +87,7 @@ const scrollToCountdown = () => {
   const [publishing, setPublishing] = useState(false);
   const [shareSaving, setShareSaving] = useState(false);
   const [previewUploading, setPreviewUploading] = useState(false);
+  const [isMusicUploading, setIsMusicUploading] = useState(false);
   const [sharePrefix, setSharePrefix] = useState("");
   const [baseUrl, setBaseUrl] = useState("");
 
@@ -486,6 +487,8 @@ const scrollToCountdown = () => {
     const file = event.target.files?.[0];
     if (!file) return;
 
+    setIsMusicUploading(true);
+
     try {
       const musicUrl = await uploadFile(file, "invitearc/music", "video");
 
@@ -498,6 +501,8 @@ const scrollToCountdown = () => {
       event.target.value = "";
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsMusicUploading(false);
     }
   };
 
@@ -995,6 +1000,7 @@ const scrollToCountdown = () => {
                         editorData={editorData}
                         updateField={updateField}
                         handleMusicUpload={handleMusicUpload}
+                        isMusicUploading={isMusicUploading}
                       />
                     )}
 

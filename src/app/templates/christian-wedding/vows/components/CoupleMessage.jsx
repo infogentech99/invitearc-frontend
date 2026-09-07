@@ -123,7 +123,7 @@ export default function CoupleMessage({ data }) {
           />
         </div>
 
-        <h1 className="font-parisienne-regular text-5xl md:text-6xl lg:text-[100px] text-center pt-0 md:pt-30 lg:pt-112 text-[#FFF097]">
+        <h1 className="font-parisienne-regular text-5xl md:text-6xl lg:text-[100px] text-center pt-0 md:pt-30 lg:pt-120 3xl:pt-112 text-[#FFF097]">
           {thingsToKnowTitle}
         </h1>
 

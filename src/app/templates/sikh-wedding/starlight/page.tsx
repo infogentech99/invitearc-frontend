@@ -411,7 +411,7 @@ export default function Home({
               alt="couple"
               width={900}
               height={1200}
-              className="w-full h-auto md:h-198 lg:h-264 3xl:w-480 3xl:h-463 object-contain"
+              className="w-full h-auto md:h-198 lg:h-240 lg:w-500 3xl:w-480 3xl:h-300"
             />
           </div>
         </div>

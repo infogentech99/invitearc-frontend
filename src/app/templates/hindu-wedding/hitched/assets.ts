@@ -11,7 +11,7 @@ import Image5 from "./assets/Image5.png";
 import moon_mobile2 from "./assets/moon_mobile2.webp";
 import moon from "./assets/moon.webp";
 import Rohit_bdmd from "./assets/rohit_desktop2_tab_laptop.webp";
-import Rohit_desktop from "./assets/hitched_codedesktopbg.webp";
+import Rohit_desktop from "./assets/hitched_codedesktopbg2.webp";
 import instagram from "./assets/instagram_w.png";
 import location from "./assets/location.png";
 import weather from "./assets/weather_h.png";

@@ -5,6 +5,7 @@ import CoupleMessage from "./components/CoupleMessage";
 import MarriageCountdown from "./components/MarriageCountdown";
 import "./niqah-globals.css";
 import { assets } from "./assets";
+import IntroVideo from "./components/IntroVideo";
 
 const FloatingLamp = ({ className, style, reverse = false }) => {
   // Memoize random values to prevent recalculation on re-renders
@@ -208,6 +209,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
 
   return (
     <>
+        <IntroVideo />
       <button
         onClick={() => {
           started ? toggleMusic() : startMusic();
@@ -553,11 +555,11 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
         </div> 
       </div> */}
 
-      <div
+      {/* <div
         className="hidden md:block bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${assets.sunset_img})` }}
       >
-        <div className="flex justify-center md:h-175 lg:h-237.5 xl:h-266 2xl:h-325 3xl:h-[1580px] md:pt-48 lg:pt-72 3xl:pt-96">
+        <div className="flex justify-center md:h-175 lg:h-237.5 xl:h-266 2xl:h-325 3xl:h-[1590px] md:pt-48 lg:pt-72 3xl:pt-96">
           <img
             src={data?.Logo || assets.logo}
             alt="logo"
@@ -566,7 +568,23 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
             className=" top-80 lg:w-70 lg:h-20 lg:mt-20 md:mt-50"
           />
         </div>
-      </div>
+      </div> */}
+
+
+      <div
+  className="hidden md:block bg-center bg-no-repeat bg-[length:100%_100%]"
+  style={{ backgroundImage: `url(${assets.sunset_img})` }}
+>
+  <div className="flex justify-center md:min-h-175 lg:min-h-237.5 xl:min-h-266 2xl:min-h-325 3xl:min-h-[1590px] md:pt-48 lg:pt-72 3xl:pt-96">
+    <img
+      src={data?.Logo || assets.logo}
+      alt="logo"
+      width={250}
+      height={300}
+      className="object-contain lg:w-70 lg:h-20"
+    />
+  </div>
+</div>
 
       <div className="md:hidden relative flex items-start justify-center">
         <img

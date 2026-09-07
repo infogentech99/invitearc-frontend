@@ -90,14 +90,14 @@ export default function CoupleMessage({data}) {
             src={data?.coupleMessageImages?.image1 || assets.couple1}
             alt="couple_one"
             className="absolute top-6 w-50 h-60 
-                          md:top-15 md:w-80 md:h-95 lg:top-30 lg:w-140 lg:h-145 3xl:top-30 3xl:w-130 3xl:h-150 z-10"
+                          md:top-15 md:w-80 md:h-95 lg:top-30 lg:w-135 lg:h-145 3xl:top-30 3xl:w-130 3xl:h-150 z-10"
           />
 
             <img
             src={data?.coupleMessageImages?.image2 ||assets.couple2}
             alt="couple_one"
             className="absolute top-30 w-30 h-35 
-                          md:top-45 md:w-60 md:h-60 lg:top-70 lg:w-65 lg:h-85 3xl:top-90 3xl:w-75 3xl:h-77 z-10 md:ml-70 lg:ml-105 ml-40"
+                          md:top-45 md:w-60 md:h-60 lg:top-70 lg:w-65 lg:h-80 3xl:top-90 3xl:w-75 3xl:h-77 z-10 md:ml-70 lg:ml-105 ml-40"
           /> 
 
 
@@ -105,13 +105,13 @@ export default function CoupleMessage({data}) {
             src={data?.coupleMessageImages?.image3 || assets.couple3}
             alt="couple_one"
             className="absolute top-6 w-30 h-35 
-                          md:top-15 md:w-60 md:h-40 lg:top-10 lg:w-65 lg:h-85 3xl:top-30 3xl:w-75 3xl:h-77 z-10 md:ml-60 lg:ml-130 ml-45"
+                          md:top-15 md:w-60 md:h-40 lg:top-10 lg:w-65 lg:h-70 3xl:top-30 3xl:w-75 3xl:h-77 z-10 md:ml-60 lg:ml-130 ml-45"
           />
             <img
             src={data?.coupleMessageImages?.image4 || assets.couple4}
             alt="couple_one"
             className="absolute top-60 w-40 h-30 
-                          md:top-90 md:w-60 md:h-45 lg:top-150 lg:w-85 lg:h-85 3xl:top-150 3xl:w-95 3xl:h-77 z-10 md:ml-25 lg:ml-70 ml-20"
+                          md:top-90 md:w-60 md:h-45 lg:top-150 lg:w-85 lg:h-70 3xl:top-150 3xl:w-95 3xl:h-77 z-10 md:ml-25 lg:ml-70 ml-20"
           />
         </div>
 

@@ -16,6 +16,8 @@ const previewImages = {
   invitation: "/templates/invitation-preview.jpg",
 };
 
+const popularTemplateOrder = ["hitched", "starlight", "laavan", "sohala", "mayra"];
+
 export default function TemplateGrid() {
   const router = useRouter();
   const { user, token, openAuthModal } = useContext(AuthContext);
@@ -188,13 +190,21 @@ export default function TemplateGrid() {
 
   // const templates = [...apiTemplates];
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const templates =
+  const filteredTemplates =
     selectedCategory === "All"
       ? apiTemplates
       : apiTemplates.filter(
           (template) =>
             template.category?.toLowerCase() === selectedCategory.toLowerCase(),
         );
+  const templates = [...filteredTemplates].sort((firstTemplate, secondTemplate) => {
+    const firstIndex = popularTemplateOrder.indexOf(firstTemplate.slug);
+    const secondIndex = popularTemplateOrder.indexOf(secondTemplate.slug);
+    const firstPriority = firstIndex === -1 ? popularTemplateOrder.length : firstIndex;
+    const secondPriority = secondIndex === -1 ? popularTemplateOrder.length : secondIndex;
+
+    return firstPriority - secondPriority;
+  });
   return (
     <>
       <div className="mb-8 flex flex-wrap gap-5 mt-12 justify-center ">

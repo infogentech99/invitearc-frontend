@@ -327,7 +327,7 @@ export default function Home({
               src={assets.ganesha}
               alt="idol" width={100} height={100}
               className="w-23 h-30 md:w-35 md:h-46 lg:w-41 lg:h-53  object-cover" /> */}
-                 <Image
+            <Image
               src={data?.religiousSign || assets.ganesha}
               alt="idol"
               width={100}
@@ -342,7 +342,7 @@ export default function Home({
 
             <hr className="lg:w-24 w-16 border-[#FFF097] my-2 md:my-4" />
             <h2 className="eb-garamond font-medium text-[#FFF097] text-sm md:text-xl lg:text-[26px]">
-             
+
               {data.familyName}
             </h2>
           </div>
@@ -443,34 +443,50 @@ export default function Home({
         </div>
       </div>
 
-      <CoupleMessage data={data}/>
+      <CoupleMessage data={data} />
 
 
 
-        <div
-              className="hidden md:block bg-cover bg-center bg-no-repeat"
+      {/* <div
+        className="hidden md:block bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${coupleImage})` }}
+      >
+        <div className="flex justify-center md:h-175 lg:h-237.5 xl:h-275 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96 relative" >
+          <img src={data?.Logo || assets.logo} alt="logo" width={250} height={300} className="absolute top-28 w-42 h-48 md:top-41 md:w-28 md:h-35 lg:top-78 lg:w-40 lg:h-40 3xl:top-101" />
+        </div>
+      </div> */}
+
+
+
+      <div
+              className="hidden md:block bg-cover bg-no-repeat"
               style={{ backgroundImage: `url(${coupleImage})` }}
             >
-              <div className="flex justify-center md:h-175 lg:h-237.5 xl:h-275 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96 relative" > 
-                <img src={data?.Logo || assets.logo} alt="logo" width={250} height={300} className="absolute top-28 w-42 h-48 md:top-41 md:w-28 md:h-35 lg:top-78 lg:w-40 lg:h-40 3xl:top-101" />
-        </div>
+            
+               <div className="flex justify-center md:h-175 lg:h-237.5 xl:h-275 2xl:h-340 3xl:h-[1650px] md:pt-48 lg:pt-72 3xl:pt-96 lg:mt-20 3xl:mt-0">
+                <img
+                  src={data?.Logo || assets.logo}
+                  alt="logo"
+                  className="top-28 w-42 h-48 md:top-41 md:w-28 md:h-35 lg:top-78 lg:w-40 lg:h-40 3xl:top-101"
+                />
+              </div> 
             </div>
 
 
-            <div className="md:hidden relative flex items-start justify-center">
-            
-                    <img
-                      src={coupleImage}
-                      alt="background"
-                      className="w-full h-full object-contain"
-                    />
-                    <div className="absolute top-[25svh] left-0 right-0 flex justify-center">
-                       <img src={data?.Logo || assets.logo} alt="logo" width={250} height={300} className="absolute top-08 w-22 h-26" />
-                    </div>
-                  </div>
+      <div className="md:hidden relative flex items-start justify-center">
+
+        <img
+          src={coupleImage}
+          alt="background"
+          className="w-full h-full object-contain"
+        />
+        <div className="absolute top-[25svh] left-0 right-0 flex justify-center">
+          <img src={data?.Logo || assets.logo} alt="logo" width={250} height={300} className="absolute top-08 w-22 h-26" />
+        </div>
+      </div>
 
       <MarriageCountdown data={data}
-         />
+      />
 
     </>
   );

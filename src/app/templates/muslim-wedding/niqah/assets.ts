@@ -1,4 +1,4 @@
-import background from "./assets/background.webp";
+import background from "./assets/background2.webp";
 import couple from "./assets/couple.webp";
 import lights from "./assets/lights.png";
 import bg_second from "./assets/bg_second.webp";
@@ -6,7 +6,7 @@ import weather from "./assets/weather.webp";
 import staff from "./assets/staff.webp";
 import parking from "./assets/parking.webp";
 import bg_last from "./assets/bg_last.webp";
-import sunset_img from "./assets/sunset_img.webp";
+import sunset_img from "./assets/sunset_img.jpg";
 import instagram from "./assets/instagram.webp";
 import couple_img2 from "./assets/couple_img2.webp";
 import whatsapp from "./assets/whatsapp.webp";
@@ -22,6 +22,8 @@ import coupleimage4 from "./assets/coupleimage4.webp";
 import coupleimage5 from "./assets/coupleimage5.webp";
 import responsive from "./assets/responsive.webp";
 import sunset from "./assets/sunset.png";
+import hero_videoimg from "./assets/hero_videoimg.png";
+import icon2 from "./assets/icon2.png";
 
 export const assets = {
     background: background.src,
@@ -49,4 +51,7 @@ export const assets = {
     coupleimage5:coupleimage5.src,
     sunset:sunset.src,
     background_song: "/template-audio/niqah.mp3",
+    hero_videoimg:hero_videoimg.src,
+    icon2:icon2.src,
+    hero_video:"/template-audio/hero_video.mp4",
 }
