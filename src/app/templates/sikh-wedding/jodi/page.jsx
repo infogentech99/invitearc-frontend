@@ -242,7 +242,7 @@ export default function Home({
       >
         <RoseHeroTemp />
 
-        <div className="pt-36 md:pt-128 lg:pt-135 3xl:pt-200 relative z-10">
+        <div className="pt-36 md:pt-100 lg:pt-135 3xl:pt-200 relative z-10">
           <h2
             className="text-[#AE633A] text-center leading-tight text-2xl md:text-5xl lg:text-[80px] pb-120
                           md:pb-350 lg:pb-470 3xl:pb-550 flex flex-col items-center gap-y-0 lg:gap-y-5" id="details-section"
@@ -315,7 +315,7 @@ export default function Home({
           </div>
 
           <div className="flex justify-center mt-20 lg:mt-40 " id="events-section">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 lg:gap-32 3xl:gap-50 px-15">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-16 lg:gap-32 3xl:gap-50 px-15">
               {(data.events || []).map((event, i) => (
                 <div key={i} className="flex flex-col items-center text-center">
                   {event.image && (
@@ -383,7 +383,7 @@ export default function Home({
               alt="couple"
               width={900}
               height={1200}
-              className="w-108 h-104 md:w-205 md:h-198 lg:w-393 lg:h-374 3xl:w-480 3xl:h-463 object-cover"
+              className="w-108 h-104 md:w-245 md:h-198 lg:w-393 lg:h-374 3xl:w-480 3xl:h-463 object-cover"
             />
           </div>
         </div>
