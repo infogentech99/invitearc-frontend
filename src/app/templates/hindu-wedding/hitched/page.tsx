@@ -77,7 +77,7 @@ const initialData = {
   noteText: "Note: Themes optional, vibes unmatched",
   events: [
     {
-      title_ceremony: "Haldi",
+      title_ceremony: "Mehandi",
       image: assets.mehandi,
       date: "Saturday, 20th June 2026",
       venue: "THE ASHOK HOTEL",
@@ -86,18 +86,9 @@ const initialData = {
       theme: "The Pink Edit",
       link: "https://maps.app.goo.gl/TVyrP9mLFCpr4VXA9",
     },
+    
     {
-      title_ceremony: "Haldi",
-      image: assets.cocktail,
-      date: "Saturday, 20th June 2026",
-      venue: "The Central Park Hotel",
-      venue_address: "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
-      time: "8pm Onwards", 
-      theme: "The Pink Edit", 
-      link: "https://maps.app.goo.gl/fKxi3eDGsTSd5Aaz6?g_st=ic",
-    },
-    {
-      title_ceremony: "Sangeet",
+      title_ceremony: "Cocktail",
       image: assets.cocktail,
       date: "Saturday, 20th June 2026",
       venue: "The Central Park Hotel",
@@ -106,16 +97,7 @@ const initialData = {
       theme: "The Pink Edit",
       link: "https://maps.app.goo.gl/fKxi3eDGsTSd5Aaz6?g_st=ic",
     },
-    {
-      title_ceremony: "Engagement",
-      image: assets.engagement,
-      date: "Sunday, 21st June 2026",
-      venue: "The Central Park Hotel",
-        venue_address: "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
-      time: "5pm Onwards",
-      theme: "The Pink Edit",
-     link: "https://maps.app.goo.gl/fKxi3eDGsTSd5Aaz6?g_st=ic",
-    },
+   
     {
       title_ceremony: "Shaadi",
       image: assets.engagement,
@@ -126,15 +108,7 @@ const initialData = {
       theme: "The Pink Edit",
       link: "https://maps.app.goo.gl/fKxi3eDGsTSd5Aaz6?g_st=ic",
     },
-    {
-      title_ceremony: "Reception",
-      image: assets.engagement,
-      date: "Sunday, 21st June 2026",
-      venue: "The Central Park Hotel",
-        venue_address: "Bund Garden Road, Agarkar Nagar\nPune, Maharashtra, 411001",
-      time: "5pm Onwards",
-      link: "https://maps.app.goo.gl/fKxi3eDGsTSd5Aaz6?g_st=ic",
-    },
+   
 
   ],
 

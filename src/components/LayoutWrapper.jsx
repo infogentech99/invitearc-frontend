@@ -10,6 +10,7 @@ export default function LayoutWrapper({ children }) {
 
   const hideLayout =
     pathname.startsWith("/preview");
+  const hideFooter = pathname.startsWith("/dashboard/edit/");
 
   return (
     <>
@@ -18,7 +19,7 @@ export default function LayoutWrapper({ children }) {
       {children}
 
       {!hideLayout && <WhatsAppButton />}
-      {!hideLayout && <Footer />}
+      {!hideLayout && !hideFooter && <Footer />}
     </>
   );
 }
