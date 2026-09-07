@@ -6,7 +6,7 @@ import { useEffect, useState, useRef, useMemo } from "react";
 import RoseHeroTemp from "./components/RoseHeroTemp";
 import CoupleMessage from "./components/CoupleMessage";
 import MarriageCountdown from "./components/MarriageCountdown";
-import "./laavan-globals.css";
+import "./jodi-globals.css";
 import { assets } from "./assets";
 
 const initialData = {
@@ -181,7 +181,7 @@ export default function Home({
         setBgImage(assets.desktop_bg);
       } else if (window.innerWidth >= 768) {
         // Tablet/Desktop
-        setBgImage(assets.small_laavan);
+        setBgImage(assets.laavan);
       } else {
         // Mobile
         setBgImage(assets.laavan_mobile);

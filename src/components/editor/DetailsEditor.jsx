@@ -1,5 +1,5 @@
 import { IoCloudUploadOutline } from "react-icons/io5";
-// import { assets } from "../../app/templates/sikh-wedding/laavan/assets";
+// import { assets } from "../../app/templates/sikh-wedding/jodi/assets";
 export default function DetailsEditor({
   detailFields,
   editorData,

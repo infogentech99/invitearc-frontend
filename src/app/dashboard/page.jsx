@@ -11,7 +11,7 @@ import saanjhPreview from "../../../public/assets/preview-images/saanjh.webp";
 import milanPreview from "../../../public/assets/preview-images/milan.webp";
 import biyePreview from "../../../public/assets/preview-images/biye.webp";
 import auraPreview from "../../../public/assets/preview-images/aura.png";
-import laavanPreview from "../../../public/assets/preview-images/laavan.webp";
+import jodiPreview from "../../../public/assets/preview-images/jodi.webp";
 import starlightPreview from "../../../public/assets/preview-images/starlight.webp";
 import mayraPreview from "../../../public/assets/preview-images/mayra.webp";
 import kalyanamPreview from "../../../public/assets/preview-images/kalyanam.webp";
@@ -69,7 +69,7 @@ export default function DashboardPage() {
     milan: milanPreview.src,
     biye: biyePreview.src,
     aura: auraPreview.src,
-    laavan: laavanPreview.src,
+    jodi: jodiPreview.src,
     starlight: starlightPreview.src,
     mayra: mayraPreview.src,
     kalyanam: kalyanamPreview.src,

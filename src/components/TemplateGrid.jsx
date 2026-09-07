@@ -16,7 +16,7 @@ const previewImages = {
   invitation: "/templates/invitation-preview.jpg",
 };
 
-const popularTemplateOrder = ["hitched", "starlight", "laavan", "sohala", "mayra"];
+const popularTemplateOrder = ["hitched", "jodi", "sohala", "mayra", "starlight"];
 
 export default function TemplateGrid() {
   const router = useRouter();

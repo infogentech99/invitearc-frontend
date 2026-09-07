@@ -93,7 +93,7 @@ export default function footer() {
                 </li>
 
                 <li>
-                  <a href="/">Laavan</a>
+                  <a href="/">jodi</a>
                 </li>
 
                 <li>

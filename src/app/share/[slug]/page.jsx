@@ -5,7 +5,7 @@ import MilanTemplate from "../../templates/hindu-wedding/milan/page";
 import BiyeTemplate from "../../templates/hindu-wedding/biye/page";
 import auraTemplate from "../../templates/hindu-wedding/aura/page";
 import sohalaTemplate from "../../templates/hindu-wedding/sohala/page";
-import LaavanTemplate from "../../templates/sikh-wedding/laavan/page";
+import jodiTemplate from "../../templates/sikh-wedding/jodi/page";
 import StarlightTemplate from "../../templates/sikh-wedding/starlight/page";
 import MayraTemplate from "../../templates/hindu-wedding/mayra/page";
 import kalyanamTemplate from "../../templates/south-indian-wedding/kalyanam/page";
@@ -22,7 +22,7 @@ const templateComponents = {
   milan: MilanTemplate,
   biye: BiyeTemplate,
   aura: auraTemplate,
-  laavan: LaavanTemplate,
+  jodi: jodiTemplate,
   starlight: StarlightTemplate,
   mayra: MayraTemplate,
   kalyanam: kalyanamTemplate,

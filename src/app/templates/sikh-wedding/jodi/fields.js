@@ -7,7 +7,7 @@ import {
 import { GiLoveSong } from "react-icons/gi";
 import { AiOutlineShareAlt } from "react-icons/ai"; 
 
-export const laavanEditorFields = {
+export const jodiEditorFields = {
   tabs: [
     {
       id: "details",

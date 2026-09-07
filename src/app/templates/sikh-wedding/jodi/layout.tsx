@@ -1,7 +1,7 @@
 // import DisableInspect from "@/app/components/DisableInspect";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./laavan-globals.css";
+import "./jodi-globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
