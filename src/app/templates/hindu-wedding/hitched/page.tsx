@@ -522,7 +522,7 @@ export default function Home({
         className="hidden md:block bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${assets.moon})` }}
       >
-        <div className="flex justify-center md:h-175 lg:h-237.5 xl:h-275 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96">
+        <div className="flex justify-center md:h-195 lg:h-237.5 xl:h-272 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96">
 
           <img
             src={data?.Logo || assets.couple_logo}
