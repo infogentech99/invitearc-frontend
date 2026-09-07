@@ -28,9 +28,9 @@ export default function PurchaseOptionsModal({
   const expertPrice = country === "IN" ? selfPrice + 1000 : selfPrice + 20;
 
   return (
-    <div className="fixed inset-0 z-60 grid min-h-dvh place-items-center overflow-y-auto bg-[#171b1a]/75 px-3 py-4 backdrop-blur-sm sm:px-6 sm:py-8">
+    <div className="fixed inset-x-0 bottom-0 top-24 z-60 grid place-items-center overflow-y-auto bg-[#171b1a]/75 px-3 py-4 backdrop-blur-sm sm:px-6 sm:py-8">
       <div className="absolute inset-0" onClick={onClose} aria-hidden="true" />
-      <section className="relative z-10 my-0 max-h-[calc(100dvh-2rem)] w-full max-w-5xl overflow-y-auto rounded-3xl border border-white/70 bg-[#fcfbf7] px-5 py-7 shadow-[0_24px_80px_rgba(0,0,0,0.28)] sm:max-h-[calc(100dvh-4rem)] sm:rounded-[1.75rem] sm:px-9 sm:py-8 lg:px-10 lg:py-9">
+      <section className="relative z-10 my-0 max-h-[calc(100dvh-7rem)] w-full max-w-5xl overflow-y-auto rounded-3xl border border-white/70 bg-[#fcfbf7] px-5 py-7 shadow-[0_24px_80px_rgba(0,0,0,0.28)] sm:max-h-[calc(100dvh-7rem)] sm:rounded-[1.75rem] sm:px-9 sm:py-8 lg:px-10 lg:py-9">
         <div className="flex items-start justify-between gap-5">
           <div className="mx-auto max-w-2xl text-center">
             <div className="flex items-center justify-center gap-3 text-[10px] font-bold uppercase tracking-[0.3em] text-[#9b806e] sm:text-xs">
@@ -55,7 +55,7 @@ export default function PurchaseOptionsModal({
           </button>
         </div>
 
-        <div className="mt-7 grid gap-5 md:grid-cols-2 lg:mt-8 lg:gap-6">
+        <div className="mt-7 grid gap-8 md:grid-cols-2 lg:mt-8 lg:gap-6">
           <article className="group flex flex-col rounded-[1.35rem] border border-[#f7bd7c] bg-[#fffefa] p-6 shadow-[0_8px_24px_rgba(48,59,43,0.04)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(48,59,43,0.09)] sm:p-7">
             <div className="flex items-start justify-between">
               <div>
