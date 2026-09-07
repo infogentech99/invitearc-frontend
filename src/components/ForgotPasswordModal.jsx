@@ -15,22 +15,43 @@ export default function ForgotPasswordModal({ open, onClose }) {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const resetForm = () => {
+    setEmail("");
+    setOtp("");
+    setNewPassword("");
+    setConfirmPassword("");
+    setOtpSent(false);
+    setOtpVerified(false);
+    setError("");
+  };
+
+  const closeModal = () => {
+    resetForm();
+    onClose();
+  };
+
   if (!open) return null;
 
   const handleForgotPassword = async () => {
+    const normalizedEmail = email.trim().toLowerCase();
+    if (!normalizedEmail) {
+      setError("Enter your email address");
+      return;
+    }
+
     try {
       setLoading(true);
       setError("");
 
       const response = await fetch(
-        `${config.api.baseUrl}/api/auth/forgot-password`,
+        `${config.api.baseUrl}${config.api.endpoints.auth.forgotPassword}`,
        
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ email }),
+          body: JSON.stringify({ email: normalizedEmail }),
         },
       );
 
@@ -50,12 +71,17 @@ export default function ForgotPasswordModal({ open, onClose }) {
   };
 
   const handleVerifyOtp = async () => {
+    if (!/^\d{6}$/.test(otp.trim())) {
+      setError("Enter the six-digit OTP from your email");
+      return;
+    }
+
     try {
       setLoading(true);
       setError("");
 
       const response = await fetch(
-        `${config.api.baseUrl}/api/auth/verify-otp`,
+        `${config.api.baseUrl}${config.api.endpoints.auth.verifyOtp}`,
         // "http://localhost:5000/api/auth/verify-otp",
         {
           method: "POST",
@@ -63,8 +89,8 @@ export default function ForgotPasswordModal({ open, onClose }) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            email,
-            otp,
+            email: email.trim().toLowerCase(),
+            otp: otp.trim(),
           }),
         },
       );
@@ -85,6 +111,11 @@ export default function ForgotPasswordModal({ open, onClose }) {
   };
 
   const handleResetPassword = async () => {
+    if (newPassword.length < 8) {
+      setError("Password must be at least 8 characters");
+      return;
+    }
+
     try {
       setLoading(true);
       setError("");
@@ -95,7 +126,7 @@ export default function ForgotPasswordModal({ open, onClose }) {
       }
 
       const response = await fetch(
-         `${config.api.baseUrl}/api/auth/reset-password`,
+         `${config.api.baseUrl}${config.api.endpoints.auth.resetPassword}`,
         // "http://localhost:5000/api/auth/reset-password",
         {
           method: "POST",
@@ -103,8 +134,8 @@ export default function ForgotPasswordModal({ open, onClose }) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            email,
-            otp,
+            email: email.trim().toLowerCase(),
+            otp: otp.trim(),
             newPassword,
           }),
         },
@@ -119,14 +150,7 @@ export default function ForgotPasswordModal({ open, onClose }) {
 
       alert("Password reset successfully");
 
-      setEmail("");
-      setOtp("");
-      setNewPassword("");
-      setConfirmPassword("");
-      setOtpSent(false);
-      setOtpVerified(false);
-
-      onClose();
+      closeModal();
     } catch (error) {
       setError("Something went wrong");
     } finally {
@@ -136,7 +160,7 @@ export default function ForgotPasswordModal({ open, onClose }) {
 
   return (
     <div className="fixed inset-0 z-60 flex items-center justify-center bg-slate-950/70 px-4 py-8">
-      <div className="absolute inset-0" onClick={onClose} />
+      <div className="absolute inset-0" onClick={closeModal} />
 
       <div className="relative z-10 w-full max-w-md rounded-3xl bg-white p-8 shadow-2xl">
         <div className="flex items-center justify-between">
@@ -152,7 +176,7 @@ export default function ForgotPasswordModal({ open, onClose }) {
 
           <button
             type="button"
-            onClick={onClose}
+            onClick={closeModal}
             className="rounded-full border border-slate-200 px-3 py-2 text-slate-600 transition hover:bg-slate-100 cursor-pointer"
           >
             X

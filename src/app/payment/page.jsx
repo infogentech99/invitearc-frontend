@@ -6,6 +6,7 @@ import Link from "next/link";
 import axios from "axios";
 import config from "../../config/config";
 import { AuthContext } from "../../context/AuthContext";
+import PurchaseOptionsModal from "../../components/PurchaseOptionsModal";
 
 const loadRazorpayScript = () => {
   return new Promise((resolve, reject) => {
@@ -35,12 +36,15 @@ function PaymentContent() {
   const [error, setError] = useState("");
   const [processing, setProcessing] = useState(false);
   const [success, setSuccess] = useState("");
+  const [purchaseOptionsOpen, setPurchaseOptionsOpen] = useState(false);
 
   useEffect(() => {
     if (!loading && !user) {
       openAuthModal("login");
+    } else if (!loading && user && template) {
+      setPurchaseOptionsOpen(true);
     }
-  }, [loading, user]);
+  }, [loading, user, template, openAuthModal]);
 
   useEffect(() => {
     const fetchTemplate = async () => {
@@ -73,7 +77,7 @@ function PaymentContent() {
     fetchTemplate();
   }, [templateId]);
 
-  const openRazorpayCheckout = async () => {
+  const openRazorpayCheckout = async (serviceType = "self-edit") => {
     if (!templateId || !user) {
       setError("Please login to continue.");
       return;
@@ -88,7 +92,7 @@ function PaymentContent() {
 
       const orderResponse = await axios.post(
         `${config.api.baseUrl}${config.api.endpoints.clientTemplates.createOrder}`,
-        { templateId },
+        { templateId, serviceType },
         {
           withCredentials: true,
         },
@@ -193,6 +197,17 @@ function PaymentContent() {
 
   return (
     <main className="bg-slate-50 min-h-screen text-slate-900">
+      <PurchaseOptionsModal
+        open={purchaseOptionsOpen}
+        template={template}
+        country="IN"
+        processing={processing}
+        onClose={() => setPurchaseOptionsOpen(false)}
+        onPay={(serviceType) => {
+          setPurchaseOptionsOpen(false);
+          openRazorpayCheckout(serviceType);
+        }}
+      />
       <section className="mx-auto max-w-5xl px-6 py-20 sm:px-10 lg:px-12">
         <div className="rounded-4xl bg-white p-8 shadow-xl">
           <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">

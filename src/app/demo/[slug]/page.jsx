@@ -9,6 +9,7 @@ import {
   getTemplateComponent,
   templateMetadata,
 } from "../../templates/templateLoader";
+import PurchaseOptionsModal from "../../../components/PurchaseOptionsModal";
 export default function TemplateDemoPage() {
   const { user, token, openAuthModal } = useContext(AuthContext);
   const [view, setView] = useState("desktop");
@@ -19,6 +20,8 @@ export default function TemplateDemoPage() {
   const [loadingTemplate, setLoadingTemplate] = useState(false);
   const [fetchError, setFetchError] = useState("");
   const [country, setCountry] = useState("IN");
+  const [selectedPurchase, setSelectedPurchase] = useState(null);
+  const [purchaseOptionsOpen, setPurchaseOptionsOpen] = useState(false);
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -121,22 +124,9 @@ export default function TemplateDemoPage() {
       ? `₹ ${template?.indprice || 0}`
       : `$${template?.usaprice || 0}`;
 
-  useEffect(() => {
-    const pendingTemplate = localStorage.getItem("pendingTemplate");
-
-    if (user && pendingTemplate) {
-      const template = JSON.parse(pendingTemplate);
-
-      localStorage.removeItem("pendingTemplate");
-
-      handlePayment(template);
-    }
-  }, [user]);
-
-  const handlePayment = async (template) => {
+  const handlePayment = async (template, serviceType = "self-edit") => {
     if (!user) {
-      localStorage.setItem("pendingTemplate", JSON.stringify(template));
-
+      setSelectedPurchase(template);
       openAuthModal("login");
       return;
     }
@@ -148,6 +138,7 @@ export default function TemplateDemoPage() {
         {
           templateId: template._id,
           country,
+          serviceType,
         },
         {
           headers: {
@@ -229,9 +220,29 @@ export default function TemplateDemoPage() {
     view === "mobile" ? "Mobile" : view === "tablet" ? "Tablet" : "Desktop";
   return (
     <main className="bg-slate-50 min-h-screen relative">
+      <PurchaseOptionsModal
+        open={purchaseOptionsOpen}
+        template={selectedPurchase}
+        country={country}
+        onClose={() => {
+          setPurchaseOptionsOpen(false);
+          setSelectedPurchase(null);
+        }}
+        onPay={(serviceType) => {
+          setPurchaseOptionsOpen(false);
+          handlePayment(selectedPurchase, serviceType);
+        }}
+      />
       {hasTemplate && (
         <button
-          onClick={() => handlePayment(remoteTemplate)}
+          onClick={() => {
+            setSelectedPurchase(remoteTemplate);
+            if (user) {
+              setPurchaseOptionsOpen(true);
+            } else {
+              openAuthModal("login");
+            }
+          }}
           className="fixed z-50 bottom-4 left-1/2 -translate-x-1/2 text-sm font-semibold transition flex items-center gap-3 border-white border-2 bg-white/0 backdrop-blur text-white px-6 py-3 rounded-full shadow-lg cursor-pointer"
         >
           Buy Now {priceLabel}

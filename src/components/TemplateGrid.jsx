@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
+import PurchaseOptionsModal from "./PurchaseOptionsModal";
 
 import config from "../config/config";
 
@@ -24,6 +25,8 @@ export default function TemplateGrid() {
   const [apiTemplates, setApiTemplates] = useState([]);
   const [loading, setLoading] = useState(true);
   const [country, setCountry] = useState("IN");
+  const [selectedPurchase, setSelectedPurchase] = useState(null);
+  const [purchaseOptionsOpen, setPurchaseOptionsOpen] = useState(false);
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -72,10 +75,9 @@ export default function TemplateGrid() {
   }, []);
 
   const handlePayment = useCallback(
-    async (template) => {
+    async (template, serviceType = "self-edit") => {
       if (!user) {
-        localStorage.setItem("pendingTemplate", JSON.stringify(template));
-
+        setSelectedPurchase(template);
         openAuthModal("login");
         return;
       }
@@ -86,6 +88,7 @@ export default function TemplateGrid() {
           {
             templateId: template._id,
             country,
+            serviceType,
           },
           {
             headers: {
@@ -165,16 +168,10 @@ export default function TemplateGrid() {
   );
 
   useEffect(() => {
-    const pendingTemplate = localStorage.getItem("pendingTemplate");
-
-    if (user && pendingTemplate) {
-      const template = JSON.parse(pendingTemplate);
-
-      localStorage.removeItem("pendingTemplate");
-
-      handlePayment(template);
+    if (user && selectedPurchase) {
+      setPurchaseOptionsOpen(true);
     }
-  }, [user, handlePayment]);
+  }, [user, selectedPurchase]);
 
   const descriptionText = (template) => {
     return template.description;
@@ -207,6 +204,19 @@ export default function TemplateGrid() {
   });
   return (
     <>
+      <PurchaseOptionsModal
+        open={purchaseOptionsOpen}
+        template={selectedPurchase}
+        country={country}
+        onClose={() => {
+          setPurchaseOptionsOpen(false);
+          setSelectedPurchase(null);
+        }}
+        onPay={(serviceType) => {
+          setPurchaseOptionsOpen(false);
+          handlePayment(selectedPurchase, serviceType);
+        }}
+      />
       <div className="mb-8 flex flex-wrap gap-5 mt-12 justify-center ">
         {[
           "All",
@@ -334,7 +344,14 @@ export default function TemplateGrid() {
                           Demo
                         </Link>
                         <button
-                          onClick={() => handlePayment(template)}
+                          onClick={() => {
+                            setSelectedPurchase(template);
+                            if (user) {
+                              setPurchaseOptionsOpen(true);
+                            } else {
+                              openAuthModal("login");
+                            }
+                          }}
                           className="inline-flex items-center justify-center rounded-full bg-[#861E1D] px-5 py-3 cursor-pointer text-sm font-semibold text-white transition hover:bg-slate-700"
                         >
                           Buy now

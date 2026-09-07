@@ -8,6 +8,9 @@ const config = {
         me: "/api/auth/get-me",
         refresh: "/api/auth/refreshToken",
         logout: "/api/auth/logout",
+        forgotPassword: "/api/auth/forgot-password",
+        verifyOtp: "/api/auth/verify-otp",
+        resetPassword: "/api/auth/reset-password",
       },
       templates: {
         all: "/api/template/all",
