@@ -181,7 +181,7 @@ export default function Home({
         setBgImage(assets.desktop_bg);
       } else if (window.innerWidth >= 768) {
         // Tablet/Desktop
-        setBgImage(assets.laavan);
+        setBgImage(assets.small_laavan);
       } else {
         // Mobile
         setBgImage(assets.laavan_mobile);

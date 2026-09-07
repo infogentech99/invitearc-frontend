@@ -62,5 +62,4 @@ weather:weather.src,
 background_song: "/template-audio/laavan.mp3",
 petals:petals.src,
 
-
 }
