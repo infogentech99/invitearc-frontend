@@ -390,7 +390,7 @@ export default function Home({
 
           <div className="relative flex flex-col items-center pt-50 lg:pt-80 3xl:pt-140 3xl:gap-60" id="couple-section">
             {/* Center Text */}
-            <div className="absolute flex flex-col text-center md:mb-0 top-28 md:top-31 lg:top-60 3xl:top-152 3xl:px-130 px-16 lg:px-80 md:px-50">
+            <div className="absolute left-0 right-0 w-full flex flex-col items-center text-center md:mb-0 top-28 md:top-31 lg:top-60 3xl:top-152 3xl:px-130 px-16 lg:px-80 md:px-50">
               <p className="parisienne-regular text-3xl md:text-5xl lg:text-7xl lg:leading-22 text-[#FFD74B]">
                 {data.thankyoutitle}
               </p>
@@ -401,11 +401,7 @@ export default function Home({
                 </span>
               </h2>
             </div>
-            {/* <Image
-              src={assets.couple}
-              alt="couple" width={900} height={1200}
-              
-              className="w-full h-104 md:w-full md:h-198 lg:w-full lg:h-264 3xl:w-480 3xl:h-463 object-cover" /> */}
+          
             <Image
               src={assets.couple}
               alt="couple"
