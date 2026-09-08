@@ -126,7 +126,7 @@ export default function CoupleMessage({ data }) {
           />
         </div>
         <div className="lg:mt-25">
-          <h1 className="parisienne-regular font-normal text-5xl md:text-6xl lg:text-[122px] text-center text-[#FFFFFF] pt-10 md:pt-35 lg:pt-30 3xl:pt-60 leading-tight">
+          <h1 className="parisienne-regular font-normal text-5xl md:text-6xl lg:text-[122px] text-center text-[#FFFFFF] pt-10 md:pt-35 lg:pt-30 3xl:pt-60 leading-tight md:px-0 px-8">
             {thingsToKnowTitle}
           </h1>
 
