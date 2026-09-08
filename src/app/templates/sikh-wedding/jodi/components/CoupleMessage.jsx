@@ -73,7 +73,7 @@ export default function CoupleMessage({ data }) {
         backgroundImage: `url(${bgImage})`,
       }}
     >
-      <div className="h-689 md:h-585 lg:h-1083 3xl:h-1367">
+      <div className="h-689 md:h-650 lg:h-1083 3xl:h-1367">
         <h1 className="eb-garamond font-medium text-base md:text-2xl lg:text-[38px] text-center text-[#15528A] lg:pt-40 pt-20">
           {coupleTitle}
         </h1>
@@ -189,7 +189,7 @@ export default function CoupleMessage({ data }) {
           {thingsToKnowDescription}
         </h2>
 
-        <div className="flex justify-center md:justify-end md:mt-2 lg:mt-135 3xl:mt-210 md:pr-5 lg:pr-10 3xl:pr-30" id="rsvp-section">
+        <div className="flex justify-center md:justify-end md:mt-80 lg:mt-220 3xl:mt-210 md:pr-5 lg:pr-10 3xl:pr-30" id="rsvp-section">
           {rsvpMode === "form" ? (
             <div className="flex flex-col items-center text-center">
               <h2 className="eb-garamond font-normal text-center text-2xl md:text-3xl lg:text-[54px] text-[#15528A] pt-15 md:pt-80 lg:pt-50 3xl:pt-150 leading-normal md:leading-8 lg:leading-12 lg:w-140 w-70">

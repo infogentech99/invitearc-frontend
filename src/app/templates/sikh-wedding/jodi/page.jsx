@@ -390,13 +390,13 @@ export default function Home({
       </div>
 
       <CoupleMessage data={data} isOwner={isOwner} updateField={updateField} />
-      <div
+      {/* <div
         className="bg-[url('/assets/respo_three.webp')] md:bg-[url('/assets/bg_three.webp')] bg-cover bg-no-repeat"
         style={{
           backgroundImage: `url(${coupleImage})`,
         }}
       >
-        <div className="h-220 md:h-179 lg:h-330 3xl:h-421 flex flex-col items-center relative">
+        <div className="h-220 md:h-200 lg:h-330 2xl:h-340 xl:h-280 3xl:h-421 flex flex-col items-center relative">
           <img
             src={data?.Logo || assets.logo}
             alt="logo"
@@ -405,7 +405,43 @@ export default function Home({
             className="absolute top-50 w-20 h-24 md:top-41 md:w-31 md:h-35 lg:top-84 lg:w-46 lg:h-52 3xl:top-118"
           />
         </div>
+      </div> */}
+
+
+
+
+ <div
+        className="hidden md:block bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${coupleImage})` }}
+      >
+        <div className="flex justify-center md:h-195 lg:h-237.5 xl:h-272 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96">
+
+          <img
+            src={data?.Logo || assets.logo}
+            alt="logo"
+            width={250}
+            height={300}
+            className=" top-50 w-20 h-24 md:top-41 md:w-31 md:h-35 lg:top-84 lg:w-46 lg:h-52 3xl:top-118"
+          />
+        </div>
       </div>
+
+      <div className="md:hidden relative flex items-start justify-center">
+
+        <img
+          src={coupleImage}
+          alt="background"
+          className="w-full h-full object-contain"
+        />
+        <div className="absolute top-[25svh] left-0 right-0 flex justify-center">
+          <img src={data?.Logo || assets.logo} alt="logo" width={250} height={300} className=" top-50 w-20 h-24 md:top-41 md:w-31 md:h-35 lg:top-84 lg:w-46 lg:h-52 3xl:top-118" />
+        </div>
+      </div>
+
+
+
+
+
 
 
       
