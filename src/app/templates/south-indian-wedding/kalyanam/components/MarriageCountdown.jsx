@@ -54,7 +54,7 @@ export default function MarriageCountdown({data}) {
                        <a href="https://www.instagram.com/theinvitearc/" target="_blank"><img src={assets.instagram} alt="" className="w-7.5 h-7.5 md:w-10 md:h-10 lg:w-12 lg:h-12"/></a>
                        
                     </div>
-                    <p className="eb-garamond font-medium text-xs md:text-sm lg:text-base text-[#FFF5B9] mt-2 3xl:mt-12 text-center">
+                    <p className="eb-garamond font-medium text-xs md:text-sm lg:text-base text-[#FFF5B9] mt-2 3xl:mt-2 text-center">
                         © <a href="https://invitearc.com/" target="_blank">InviteArc</a> 2026 </p>
                 </div>
             </div>

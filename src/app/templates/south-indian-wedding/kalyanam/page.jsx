@@ -195,7 +195,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
         <div className="pt-6 md:pt-34 lg:pt-54 3xl:pt-90 relative z-10">
           <h2
             className="text-[#C47E39] text-center leading-tight text-2xl md:text-5xl lg:text-[64px]  
-                           flex flex-col items-center gap-y-0 lg:gap-y-5 pb-170 md:pb-780 lg:pb-780 3xl:pb-950" id="details-section"
+                           flex flex-col items-center gap-y-0 lg:gap-y-5 pb-170 md:pb-600 lg:pb-780 3xl:pb-950" id="details-section"
           >
             <span className="eb-garamond font-semibold ">{data.groomName}</span>
 
@@ -319,7 +319,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
           </div>
 
           <div
-            className="bg-cover bg-no-repeat w-full h-96 md:h-181 lg:h-335 3xl:h-422
+            className="bg-cover bg-no-repeat w-full h-96 md:h-205 lg:h-335 3xl:h-422
                           overflow-hidden relative"
             style={{
               backgroundImage: `url(${assets.bg_second})`,
