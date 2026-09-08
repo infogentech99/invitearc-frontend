@@ -85,7 +85,7 @@ export default function CoupleMessage({data}) {
          {coupleDescription}
         </h2>
 
-        <div className="relative flex flex-col items-start mt-7 md:mt-12 lg:mt-20 ml-10 md:ml-60 lg:ml-70 3xl:ml-130">
+        <div className="relative flex flex-col items-start mt-7 md:mt-12 lg:mt-20 ml-10 md:ml-45 lg:ml-70 3xl:ml-130">
           <img
             src={data?.coupleMessageImages?.image1 || assets.couple1}
             alt="couple_one"
@@ -178,7 +178,7 @@ export default function CoupleMessage({data}) {
           <div className="flex flex-col-1 md:gap-0 gap-0 lg:gap-0 justify-center items-center md:not-first:mt-4">
                       {rsvpMode === "form" ? (
                         <div className="flex flex-col items-center text-center">
-                          <h2 className="eb-garamond font-normal text-center text-2xl md:text-3xl lg:text-[54px] text-[#FFF097]  pt-5 md:pt-80 lg:pt-0 3xl:pt-50 leading-normal md:leading-8 lg:leading-12 lg:w-140 w-70">
+                          <h2 className="eb-garamond font-normal text-center text-2xl md:text-3xl lg:text-[54px] text-[#FFF097]  pt-5 md:pt-20 lg:pt-0 3xl:pt-50 leading-normal md:leading-8 lg:leading-12 lg:w-140 w-90">
                             {rsvpSectionHeading}
                           </h2>
         
@@ -198,7 +198,7 @@ export default function CoupleMessage({data}) {
                         </div>
                       ) : (
                         <div className="flex flex-col items-center text-center">
-                          <h2 className="eb-garamond font-normal text-center text-2xl md:text-3xl lg:text-[54px] text-[#FFF097] pt-5 md:pt-30 lg:pt-0 3xl:pt-50 leading-normal md:leading-8 lg:leading-12 lg:w-140 w-70">
+                          <h2 className="eb-garamond font-normal text-center text-2xl md:text-3xl lg:text-[54px] text-[#FFF097] pt-5 md:pt-20 lg:pt-0 3xl:pt-50 leading-normal md:leading-8 lg:leading-12 lg:w-140 w-90">
                             {rsvpSectionHeading}
                           </h2>
         
