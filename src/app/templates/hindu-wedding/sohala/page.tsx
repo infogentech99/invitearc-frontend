@@ -295,7 +295,7 @@ export default function Home({
 
       {/* Second section */}
       <section className="bg-[url('/assets/background_second.webp')] bg-cover bg-no-repeat " style={{ backgroundImage: `url(${assets.background_second})` }}  id="couple-section">
-        <div className="h-95 md:h-181 lg:h-335 3xl:h-424 flex flex-col items-center pt-6 md:pt-16 lg:pt-30 3xl:pt-56 lg:w-160 md:w-80 w-50 mx-auto">
+        <div className="h-95 md:h-200 lg:h-335 3xl:h-424 flex flex-col items-center pt-6 md:pt-16 lg:pt-30 3xl:pt-56 lg:w-160 md:w-80 w-50 mx-auto">
           <p className="parisienne-regular text-center text-2xl md:text-[40px] lg:text-7xl lg:leading-22 text-[#FFE323]">
             {data.thankyoutitle}
           </p>
@@ -313,8 +313,8 @@ export default function Home({
 
       {/* Fourth section */}
       <section className="bg-[url('/assets/background_fourth.webp')] bg-cover bg-no-repeat" style={{ backgroundImage: `url(${assets.background_fourth})` }}>
-        <div className="h-96 md:h-181 lg:h-338 3xl:h-426 flex justify-center">
-          <img src={assets.couple_name} alt="couple_name" className="mt-8 w-24 h-12 md:mt-15 md:w-50 md:h-25 lg:mt-30 lg:w-80 lg:h-40 3xl:mt-40 3xl:w-105 3xl:h-60" />
+        <div className="h-88 md:h-190 lg:h-265 2xl:h-340 3xl:h-426 flex justify-center">
+          <img src={assets.couple_name} alt="couple_name" className="mt-8 w-24 h-12 md:mt-15 md:w-50 md:h-25 lg:mt-30 lg:w-60 lg:h-30 3xl:mt-40 3xl:w-105 3xl:h-60" />
         </div>
       </section>
 
