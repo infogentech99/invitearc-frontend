@@ -151,7 +151,7 @@ export default function CoupleMessage({ data }) {
                 <img
                   src={extractImageSrc(item)}
                   alt={`Carousel ${index + 1}`}
-                  className="w-full h-120 md:h-90 lg:h-135 3xl:h-175 object-cover rounded-[60px]"
+                  className="w-full h-90 md:h-90 lg:h-135 3xl:h-175 object-cover rounded-[60px]"
                 />
               </SwiperSlide>
             ))}
