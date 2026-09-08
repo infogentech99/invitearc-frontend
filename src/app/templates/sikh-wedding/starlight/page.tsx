@@ -280,12 +280,12 @@ export default function Home({
         <RoseHeroTemp />
 
         <div className="pt-15 md:pt-53 lg:pt-50 3xl:pt-80 relative z-10">
-          <h2 className="text-[#69301B] text-center leading-tight text-xl md:text-5xl lg:text-5xl 3xl:text-6xl pb-150
+          <h2 className="text-[#69301B] text-center leading-tight text-[15px] md:text-5xl lg:text-5xl 3xl:text-6xl pb-150
                           md:pb-350 lg:pb-470 3xl:pb-550 flex flex-col items-center gap-y-0 lg:gap-y-5" id="details-section">
 
             <span className="parisienne-regular">{data.groomName}</span>
 
-            <span className="jacques-francois text-xs md:text-2xl lg:text-3xl tracking-widest">WEDS</span>
+            <span className="jacques-francois text-[10px] md:text-2xl lg:text-3xl tracking-widest">WEDS</span>
 
             <span className="parisienne-regular">{data.brideName}</span>
 
