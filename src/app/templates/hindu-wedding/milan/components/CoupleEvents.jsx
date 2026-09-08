@@ -34,8 +34,8 @@ export default function CoupleEvents({ data }) {
         md:bg-cover bg-top bg-no-repeat
         w-full relative overflow-hidden lg:min-h-screen
       "
-      style={{ backgroundImage: `url(${coupleImage})` }} id="events-section"
-
+      style={{ backgroundImage: `url(${coupleImage})` }}
+      id="events-section"
     >
       <div className="flex flex-col items-center  bg-cover bg-top bg-no-repeat min-h-screen w-full relative overflow-hidden md:pb-30  ">
         <img
@@ -87,49 +87,6 @@ export default function CoupleEvents({ data }) {
                     : `url(${assets.events_frame})`,
                 }}
               >
-                {/* {!isCustomFrame && (
-                  <div className="flex flex-col leading-none px-3 text-center">
-                    <h3
-                      className="
-                        font-parisienne-regular font-normal
-                        text-3xl md:text-4xl lg:text-[52px]
-                        text-center text-[#E1B340]
-                      "
-                    >
-                      {eventTitle}
-                    </h3>
-
-                    <p
-                      className="
-                        font-eb-garamond font-normal
-                        text-base md:text-xl lg:text-[24px]
-                        text-center text-[#5D5D5D]
-                      "
-                    >
-                      {event.date}
-                    </p>
-
-                    <p
-                      className="
-                        font-eb-garamond font-normal
-                        text-xs md:text-sm lg:text-lg
-                        text-center text-[#5D5D5D]
-                      "
-                    >
-                      {event.time}
-                    </p>
-
-                    <p
-                      className="
-                        font-eb-garamond font-normal
-                        text-xs md:text-sm lg:text-lg
-                        text-center text-[#5D5D5D]
-                      "
-                    >
-                      {event.venue}
-                    </p>
-                  </div>
-                )} */}
                 <div className="flex flex-col leading-none px-3 text-center relative z-10">
                   <h3
                     className="

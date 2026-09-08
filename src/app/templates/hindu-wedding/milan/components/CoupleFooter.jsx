@@ -6,7 +6,7 @@ export default function CoupleFooter({data}) {
     return (
 
         <div className="bg-[url('/assets/respo_five.webp')] md:bg-[url('/assets/bg_five.webp')] bg-cover bg-no-repeat" style={{ backgroundImage: `url(${assets.bg_five})`, }}>
-        <div className="relative flex flex-col items-center h-100 md:h-185 lg:h-345 3xl:h-440">
+        <div className="relative flex flex-col items-center h-100 md:h-190 lg:h-345 3xl:h-440">
           <img src={assets.hearts} alt="frame-design" className="w-10 h-10 md:w-14 md:h-14 lg:w-27 lg:h-27 mt-6 md:mt-15 lg::mt-30 3xl:mt-40"/>
           <h2 className="font-parisienne-regular font-normal text-3xl md:text-5xl lg:text-[82px] text-center mt-2 md:mt-6 text-[#FFFFFF]">
             {data.weatherTitle}

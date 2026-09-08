@@ -50,12 +50,12 @@ export default function CoupleMessage({ data }) {
         <img
           src={data?.coupleMessageImages?.image2 || assets.two}
           alt="frame-design"
-          className="absolute top-40 left-11 w-42 h-27 md:w-84 md:h-54 md:top-75 md:left-17 lg:w-126 lg:h-81 lg:top-108 lg:left-62 3xl:left-112"
+          className="absolute top-40 left-11 w-42 h-27 md:w-84 md:h-54 md:top-75 md:left-24 lg:w-126 lg:h-81 lg:top-108 lg:left-62 3xl:left-112"
         />
         <img
           src={data?.coupleMessageImages?.image3 || assets.three}
           alt="frame-design"
-          className="absolute top-40 right-11 w-42 h-27 md:w-84 md:h-54 md:top-75 md:right-17 lg:w-126 lg:h-81 lg:top-108 lg:right-62 3xl:right-112"
+          className="absolute top-40 right-11 w-42 h-27 md:w-84 md:h-54 md:top-75 md:right-24 lg:w-126 lg:h-81 lg:top-108 lg:right-62 3xl:right-112"
         />
         <img
           src={data?.coupleMessageImages?.image4 || assets.four}

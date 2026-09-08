@@ -169,7 +169,7 @@ export default function Home({
 
         <div className="relative flex flex-col items-center pt-15 md:pt-22 lg:pt-55 3xl:pt-90 pb-5 z-10 h-145 md:h-280 lg:h-510 3xl:h-650">
           <h2 className="flex flex-col text-[#69301B] text-center justify-center items-center" id="details-section">
-            <span className="font-eb-garamond font-semibold text-sm md:text-xl lg:text-[36px] text-[#1051A5] lg:w-130 w-70">
+            <span className="font-eb-garamond font-semibold text-sm md:text-3xl lg:text-[36px] text-[#1051A5] md:w-130 w-70">
               {data.mainHeading}
                {/* JOIN US AS WE CELEBRATE A BEAUTIFUL JOURNEY OF LOVE THAT LASTS FOREVER */}
               {/* <br /> {data.title} <br /> {data.subTitle} */}
