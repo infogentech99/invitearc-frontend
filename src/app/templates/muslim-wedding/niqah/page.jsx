@@ -183,7 +183,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
         setBgImage(assets.background);
       } else if (window.innerWidth >= 768) {
         // Tablet/Desktop
-        setBgImage(assets.responsive);
+        setBgImage(assets.background);
       } else {
         // Mobile
         setBgImage(assets.responsive);
@@ -211,7 +211,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
 
   return (
     <>
-        <IntroVideo />
+        {/* <IntroVideo /> */}
       <button
         onClick={() => {
           started ? toggleMusic() : startMusic();
@@ -360,7 +360,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
         >
           <h2
             className="text-[#FFF097] text-center leading-tight text-3xl md:text-5xl lg:text-[64px] lg:pb-400  3xl:pb-540
-                           md:pb-450 pb-120 flex flex-col items-center gap-y-2 lg:gap-y-5"
+                           md:pb-250 pb-120 flex flex-col items-center gap-y-2 lg:gap-y-5"
           >
             <span className="font-eb-garamond font-medium">
               {data.groomName}

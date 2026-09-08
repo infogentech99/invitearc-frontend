@@ -76,10 +76,10 @@ const extractImageSrc = (image) => {
 
   return (
     <div
-      className="bg-[url('/assets/bg_second.webp')] bg-cover bg-no-repeat"
+      className="bg-[url('/assets/bg_second.webp')] relative bg-cover bg-no-repeat"
       style={{ backgroundImage: `url(${assets.bg_second})` }}
     >
-      <div className="3xl:h-1017 lg:h-902 md:h-607 h-644">
+      <div className="3xl:h-1017 lg:h-900 md:h-564 h-650 xl:h-910 2xl:h-900">
         <h1 className="font-eb-garamond font-medium text-xl md:text-2xl lg:text-[38px] text-center text-[#FFF4B9] lg:pt-40 pt-20">
           {coupleTitle}
         </h1>
@@ -180,7 +180,7 @@ const extractImageSrc = (image) => {
           {coupleMessageThingsToKnowDescription}
         </h2>
 
-        <div className="md:flex items-center md:mt-49 lg:mt-70 gap-0" id="rsvp-section">
+        {/* <div className="md:flex items-center md:mt-49 lg:mt-70 gap-0" id="rsvp-section">
           <img
             src={assets.couple_img2}
             alt="couple"
@@ -189,7 +189,7 @@ const extractImageSrc = (image) => {
        
           {rsvpMode === "form" ? (
             <div className="flex flex-col items-center text-center">
-              <h2 className="font-eb-garamond font-medium text-center text-xl md:text-3xl lg:text-5xl text-[#FFF4B9] pt-26 md:pt-20 lg:pt-40 3xl:pt-150 leading-6 md:leading-10 lg:leading-14">
+              <h2 className="font-eb-garamond font-medium text-center text-xl md:text-3xl lg:text-5xl text-[#FFF4B9] pt-26 md:pt-20 lg:pt-40 3xl:pt-130 leading-6 md:leading-10 lg:leading-14 px-8 md:px-12">
                 {rsvpSectionHeading}
               </h2>
 
@@ -209,7 +209,7 @@ const extractImageSrc = (image) => {
             </div>
           ) : (
             <div className="flex flex-col items-center text-center">
-              <h2 className="font-eb-garamond font-medium text-center text-xl md:text-3xl lg:text-5xl text-[#FFF4B9] pt-26 md:pt-20 lg:pt-40 3xl:pt-150 leading-6 md:leading-10 lg:leading-14">
+              <h2 className="font-eb-garamond font-medium text-center text-xl md:text-3xl lg:text-5xl text-[#FFF4B9] pt-26 md:pt-20 lg:pt-40 3xl:pt-130 leading-6 md:leading-10 lg:leading-14 px-8 md:px-12">
                 {rsvpSectionHeading}
               </h2>
 
@@ -237,7 +237,107 @@ const extractImageSrc = (image) => {
             alt="couple"
             className="w-full h-full object-cover md:hidden mt-20"
           />
-        </div>
+        </div> */}
+
+<div
+  className="flex flex-col md:flex-row md:items-center md:mt-49 lg:mt-70"
+  id="rsvp-section"
+>
+  {/* DESKTOP/TABLET IMAGE */}
+  <img
+    src={assets.couple_img2}
+    alt="couple"
+    className="
+      hidden md:block
+      w-120 h-140
+      lg:w-180 lg:h-307
+      3xl:w-260 3xl:h-378
+      object-cover
+    "
+  />
+
+  {/* RSVP CONTENT */}
+  {rsvpMode === "form" ? (
+    <div className="flex flex-1 flex-col items-center text-center">
+      <h2
+        className="
+          font-eb-garamond font-medium text-center
+          text-xl md:text-3xl lg:text-5xl
+          text-[#FFF4B9]
+          pt-26 md:pt-20 lg:pt-40 3xl:pt-130
+          leading-6 md:leading-10 lg:leading-14
+          px-8 md:px-12
+        "
+      >
+        {rsvpSectionHeading}
+      </h2>
+
+      <a
+        href={rsvpGoogleFormLink || "#"}
+        target="_blank"
+        rel="noreferrer"
+        className="mt-6"
+      >
+        <button
+          type="button"
+          className="
+            rounded-xl bg-[#FFF097] text-black
+            px-6 py-2
+            text-sm md:text-lg
+            font-semibold cursor-pointer
+          "
+        >
+          {rsvpButtonText}
+        </button>
+      </a>
+    </div>
+  ) : (
+    <div className="flex flex-1 flex-col items-center text-center">
+      <h2
+        className="
+          font-eb-garamond font-medium text-center
+          text-xl md:text-3xl lg:text-5xl
+          text-[#FFF4B9]
+          pt-26 md:pt-20 lg:pt-40 3xl:pt-130
+          leading-6 md:leading-10 lg:leading-14
+          px-8 md:px-12
+        "
+      >
+        {rsvpSectionHeading}
+      </h2>
+
+      <a
+        href={whatsappHref}
+        target="_blank"
+        rel="noreferrer"
+        className="flex items-center gap-1 mt-4"
+      >
+        <img
+          src={assets.whatsapp}
+          alt="WhatsApp"
+          className="h-8 w-8 md:h-8 md:w-8 lg:h-16 lg:w-16"
+        />
+
+        <span className="font-eb-garamond font-medium text-center text-[16px] md:text-sm lg:text-[22px] 3xl:text-2xl text-[#FFF4B9]">
+          {rsvpButtonText}
+        </span>
+      </a>
+    </div>
+  )}
+
+  {/* MOBILE IMAGE — RSVP KE BAAD */}
+  <img
+    src={assets.couple_img2}
+    alt="couple"
+    className="
+      block md:hidden
+      w-full h-full
+      object-cover
+      mt-20
+    "
+  />
+</div>
+
        
         {/* <div className="block md:hidden gap-0">
           <div className="text-center">  

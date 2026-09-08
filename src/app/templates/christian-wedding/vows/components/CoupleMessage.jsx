@@ -1,25 +1,27 @@
 import { assets } from "../assets";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 export default function CoupleMessage({ data }) {
-  const [coupleImage, setCoupleImage] = useState(assets.couple_bg);
+  // const [coupleImage, setCoupleImage] = useState(assets.countdown_bg);
 
-  useEffect(() => {
-    const coupleBg = () => {
-      if (window.innerWidth >= 1536) {
-        setCoupleImage(assets.couple_bg);
-      } else if (window.innerWidth >= 768) {
-        setCoupleImage(assets.bg_md);
-      } else {
-        setCoupleImage(assets.mobile_bg);
-      }
-    };
+  // useEffect(() => {
+  //   const coupleBg = () => {
+  //     if (window.innerWidth >= 1536) {
+  //       setCoupleImage(assets.vows_lg);
+  //     } 
+  //       else if (window.innerWidth >= 768) {
+  //       // setCoupleImage(assets.bg_md);  
+  //               setCoupleImage(assets.vows_lg);
+  //     } else {
+  //       setCoupleImage(assets.mobile_bg);
+  //     }
+  //   };
 
-    coupleBg();
-    window.addEventListener("resize", coupleBg);
+  //   coupleBg();
+  //   window.addEventListener("resize", coupleBg);
 
-    return () => window.removeEventListener("resize", coupleBg);
-  }, []);
+  //   return () => window.removeEventListener("resize", coupleBg);
+  // }, []);
 
   const coupleTitle = data?.coupleMessageTitle || "Introducing";
   const coupleDescription = data?.coupleMessageDescription || "The Couple";
@@ -68,11 +70,10 @@ export default function CoupleMessage({ data }) {
 
   return (
     <div
-      className="bg-[url('/assets/bg_two.webp')] md:bg-[url('/assets/bg_md.webp')] 
-                    3xl:bg-[url('/assets/couple_bg.webp')] bg-cover bg-no-repeat"
-      style={{ backgroundImage: `url(${coupleImage})` }}
+      className="bg-cover bg-no-repeat"
+      style={{ backgroundImage: `url(${assets.vows_lg})` }}
     >
-      <div className="h-670 md:h-610 lg:h-1100 3xl:h-1280">
+      <div className="h-540 md:h-400 lg:h-660 3xl:h-680">
         <h1 className="font-eb-garamond font-medium text-base md:text-2xl lg:text-[38px] text-center pt-12 lg:pt-32 leading-12 text-[#FFF097]">
           {coupleTitle}
         </h1>
@@ -83,7 +84,7 @@ export default function CoupleMessage({ data }) {
           <img
             src={data?.coupleMessageImages?.image1 || assets.one}
             alt="couple_two"
-            className="absolute top-5 left-10 w-52 h-66 md:top-5 md:left-37 md:w-78 
+            className="absolute top-5 left-10 w-52 h-66 md:top-5 md:left-48 md:w-78 xl:left-43 2xl:left-60
                     md:h-99 lg:top-10 lg:left-60 lg:w-157 lg:h-198 3xl:top-60 3xl:left-120 3xl:w-130 3xl:h-170 z-0"
           />
 
@@ -97,7 +98,7 @@ export default function CoupleMessage({ data }) {
           <img
             src={data?.coupleMessageImages?.image2 || assets.three}
             alt="couple_three"
-            className="absolute top-27 right-17 w-37 h-47 md:top-39 md:right-50 
+            className="absolute top-27 right-17 w-37 h-47 md:top-39 md:right-40 xl:right-20 2xl:right-80
                     md:w-55 md:h-71 lg:top-75 lg:right-70 lg:w-110 lg:h-140 3xl:top-120 3xl:right-150 3xl:w-110 3xl:h-140 z-10"
           />
 
@@ -123,7 +124,10 @@ export default function CoupleMessage({ data }) {
           />
         </div>
 
-        <h1 className="font-parisienne-regular text-5xl md:text-6xl lg:text-[100px] text-center pt-0 md:pt-30 lg:pt-120 3xl:pt-112 text-[#FFF097]">
+
+        
+
+        <h1 className="font-parisienne-regular text-5xl md:text-6xl lg:text-[100px] text-center pt-0 md:pt-30 lg:pt-120 3xl:pt-112 text-[#FFF097] px-8 md:px-0">
           {thingsToKnowTitle}
         </h1>
 
@@ -187,7 +191,7 @@ export default function CoupleMessage({ data }) {
         >
           {rsvpMode === "form" ? (
             <div className="flex flex-col items-center text-center">
-              <h2 className="font-eb-garamond font-medium text-3xl lg:text-[64px] text-center pt-24 md:pt-15 lg:pt-46 leading-8 md:leading-11 lg:leading-16 text-[#FFF097] lg:px-50 3xl:px-150 md:px-50">
+              <h2 className="font-eb-garamond font-medium text-2xl lg:text-[50px] text-center pt-24 md:pt-15 lg:pt-46 leading-8 md:leading-11 lg:leading-16 text-[#FFF097] lg:px-50 3xl:px-150 md:px-50">
                 {rsvpSectionHeading}
               </h2>
 
@@ -207,7 +211,7 @@ export default function CoupleMessage({ data }) {
             </div>
           ) : (
             <div className="flex flex-col items-center text-center">
-              <h2 className="font-eb-garamond font-medium text-3xl lg:text-[64px] text-center pt-24 md:pt-15 lg:pt-46 leading-8 md:leading-11 lg:leading-16 text-[#FFF097] lg:px-50 3xl:px-150 md:px-50">
+              <h2 className="font-eb-garamond font-medium text-2xl lg:text-[50px] text-center pt-24 md:pt-15 lg:pt-46 leading-8 md:leading-11 lg:leading-16 text-[#FFF097] lg:px-50 3xl:px-150 md:px-50">
                 {rsvpSectionHeading}
               </h2>
 
@@ -231,6 +235,11 @@ export default function CoupleMessage({ data }) {
           )}
         </div>
       </div>
+      <img
+                  src={assets.vows_couple}
+                  alt="couple"
+                  className="w-108 h-88 md:w-full md:h-full lg:w-full lg:h-full 3xl:w-480 3xl:h-full object-cover md:mt-12 lg:mt-60 3xl:mt-80"
+                />
     </div>
   );
 }

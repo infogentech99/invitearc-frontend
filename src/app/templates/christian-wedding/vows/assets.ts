@@ -24,6 +24,8 @@ import logo from "./assets/logo-chrisitian.webp";
 import responsive_couple from "./assets/responsive_couple.webp";
 import mobile_bg from "./assets/bg_two.webp";
 import couple_bg from "./assets/couple_bg.webp";
+import vows_lg from "./assets/vows_lg.webp";
+import vows_couple from "./assets/vows_couple.webp";
 
 export const assets = {
 
@@ -53,5 +55,7 @@ parking:parking.src,
 logo:logo.src,
 responsive_couple:responsive_couple.src,
 couple_bg:couple_bg.src,
+vows_lg:vows_lg.src,
+vows_couple:vows_couple.src,
 background_song: "/template-audio/vows.mp3",
 }
