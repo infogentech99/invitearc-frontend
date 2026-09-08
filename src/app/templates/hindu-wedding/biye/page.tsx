@@ -210,10 +210,10 @@ export default function Home({
         <RoseHeroTemp />
 
         {/* <FallingLamps /> */}
-        <div className="pt-36 md:pt-50 lg:pt-54 relative z-10">
+        <div className="pt-36 md:pt-20 lg:pt-54 relative z-10">
 
           <h2 className="flex flex-col items-center text-center leading-tight text-3xl md:text-5xl lg:text-[64px]  
-                         gap-y-0 lg:gap-y-5 pb-200 md:pb-560 lg:pb-500 text-[#D90305]" id="details-section">
+                         gap-y-0 lg:gap-y-5 pb-200 md:pb-250 lg:pb-350 3xl:pb-500 text-[#D90305]" id="details-section">
             <span className="font-eb-garamond font-medium">{data.groomName}</span>
             <span className="font-eb-garamond font-medium text-xl md:text-3xl lg:text-5xl tracking-widest">WEDS</span>
             <span className="font-eb-garamond font-medium">{data.brideName}</span>
@@ -328,15 +328,15 @@ export default function Home({
         className="hidden md:block bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${coupleImage})` }}
       >
-        <div className="relative flex justify-center md:h-175 lg:h-237.5 xl:h-275 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96">
-
+        {/* <div className="relative flex justify-center md:h-175 lg:h-237.5 xl:h-275 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96"> */}
+ <div className="flex justify-center md:h-198 lg:h-237.5 xl:h-272 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96">
 
           <img
             src={data?.Logo || assets.logo}
             alt="logo"
             width={250}
             height={300}
-            className="absolute w-34 h-30 top-40 md:w-34 md:h-30 md:top-42 lg:w-50 lg:h-44 lg:top-86"
+            className=" w-34 h-30 top-40 md:w-34 md:h-30 md:top-42 lg:w-50 lg:h-44 lg:top-86"
           />
         </div>
       </div>
