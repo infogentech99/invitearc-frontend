@@ -213,7 +213,7 @@ export default function Home({
         <div className="pt-36 md:pt-20 lg:pt-54 relative z-10">
 
           <h2 className="flex flex-col items-center text-center leading-tight text-3xl md:text-5xl lg:text-[64px]  
-                         gap-y-0 lg:gap-y-5 pb-200 md:pb-250 lg:pb-350 3xl:pb-500 text-[#D90305]" id="details-section">
+                         gap-y-0 lg:gap-y-5 pb-200 md:pb-250 lg:pb-450 3xl:pb-500 text-[#D90305]" id="details-section">
             <span className="font-eb-garamond font-medium">{data.groomName}</span>
             <span className="font-eb-garamond font-medium text-xl md:text-3xl lg:text-5xl tracking-widest">WEDS</span>
             <span className="font-eb-garamond font-medium">{data.brideName}</span>

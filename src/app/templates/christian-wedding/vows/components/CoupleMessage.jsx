@@ -73,61 +73,92 @@ export default function CoupleMessage({ data }) {
       className="bg-cover bg-no-repeat"
       style={{ backgroundImage: `url(${assets.vows_lg})` }}
     >
-      <div className="h-540 md:h-400 lg:h-660 3xl:h-680">
+      <div className="h-540 md:h-400 lg:h-540 3xl:h-620">
         <h1 className="font-eb-garamond font-medium text-base md:text-2xl lg:text-[38px] text-center pt-12 lg:pt-32 leading-12 text-[#FFF097]">
           {coupleTitle}
         </h1>
         <h2 className="font-parisienne-regular text-5xl lg:text-[100px] text-center mt-8 md:mt-12 lg:mt-28 leading-7 md:leading-8 lg:leading-8 text-[#FFF097]">
           {coupleDescription}
         </h2>
-        <div className="relative flex flex-col-1 justify-center items-center mt-10 md:mt-5 lg:mt-32 pl-8 md:pl-0 h-130 lg:h-200 3xl:mb-40 3xl:mt-0">
-          <img
-            src={data?.coupleMessageImages?.image1 || assets.one}
-            alt="couple_two"
-            className="absolute top-5 left-10 w-52 h-66 md:top-5 md:left-48 md:w-78 xl:left-43 2xl:left-60
-                    md:h-99 lg:top-10 lg:left-60 lg:w-157 lg:h-198 3xl:top-60 3xl:left-120 3xl:w-130 3xl:h-170 z-0"
-          />
+        
 
-          <img
-            src={assets.two}
-            alt="flowers"
-            className="absolute top-6 right-28 w-24 h-30 md:top-9 md:right-65 md:w-36 
-                    md:h-45 lg:top-13 lg:right-112 lg:w-71 lg:h-82 3xl:w-80 3xl:h-90 3xl:mt-45 3xl:ml-16 z-5 3xl:mr-60"
-          />
+     <div className="relative flex justify-center items-center mx-auto md:mt-20 my-20
+                 w-[300px] h-[340px] 
+                 md:w-[480px] md:h-[480px] 
+                 lg:w-[596px] lg:h-[640px] 
+                 3xl:w-[775px] 3xl:h-[830px]">
 
-          <img
-            src={data?.coupleMessageImages?.image2 || assets.three}
-            alt="couple_three"
-            className="absolute top-27 right-17 w-37 h-47 md:top-39 md:right-40 xl:right-20 2xl:right-80
-                    md:w-55 md:h-71 lg:top-75 lg:right-70 lg:w-110 lg:h-140 3xl:top-120 3xl:right-150 3xl:w-110 3xl:h-140 z-10"
-          />
+  {/* Main photo - couple at wooden arch, top-left */}
+  <img
+    src={data?.coupleMessageImages?.image1 || assets.one}
+    alt="couple_two"
+    className="absolute z-0
+               top-[10px] left-[8px] w-[150px] h-[190px]
+               md:top-[15px] md:left-[11px] md:w-[225px] md:h-[285px]
+               lg:top-[20px] lg:left-[15px] lg:w-[300px] lg:h-[380px]
+               3xl:top-[26px] 3xl:left-[20px] 3xl:w-[390px] 3xl:h-[494px]"
+  />
 
-          <img
-            src={data?.coupleMessageImages?.image3 || assets.four}
-            alt="couple_four"
-            className="absolute top-53 left-27 w-36 h-26 md:top-77 md:left-59 md:w-54
-                    md:h-39 lg:top-152 lg:left-116 lg:w-108 lg:h-81 3xl:mt-50 3xl:w-110 3xl:h-80 3xl:mr-15 z-10 3xl:ml-40"
-          />
+  {/* flower - top right */}
+  <img
+    src={assets.two}
+    alt="flowers"
+    className="absolute z-5
+               top-[25px] left-[135px] w-[115px] h-[75px]
+               md:top-[32px] md:left-[200px] md:w-[173px] md:h-[113px]
+               lg:top-[40px] lg:left-[330px] lg:w-[230px] lg:h-[150px]
+               3xl:top-[50px] 3xl:left-[350px] 3xl:w-[299px] 3xl:h-[195px]"
+  />
 
-          <img
-            src={data?.coupleMessageImages?.image4 || assets.five}
-            alt="five"
-            className="absolute top-68 right-10 w-46 h-37 md:top-99 md:right-41 md:w-69 
-                    md:h-55 lg:top-196 lg:right-54 lg:w-137 lg:h-112 3xl:mt-40 3xl:w-110 3xl:h-98 3xl:mr-70 z-20"
-          />
+  {/* Medium photo - couple walking, right side */}
+  <img
+    src={data?.coupleMessageImages?.image2 || assets.three}
+    alt="couple_three"
+    className="absolute z-10
+               top-[78px] left-[143px] w-[115px] h-[125px]
+               md:top-[116px] md:left-[214px] md:w-[173px] md:h-[188px]
+               lg:top-[155px] lg:left-[285px] lg:w-[230px] lg:h-[250px]
+               3xl:top-[202px] 3xl:left-[371px] 3xl:w-[299px] 3xl:h-[325px]"
+  />
 
-          <img
-            src={assets.six}
-            alt="six"
-            className="absolute top-75 left-40 w-18 h-15 md:top-110 md:left-77 md:w-27 md:h-23
-                    lg:top-220 lg:left-154 lg:w-55 lg:h-45 3xl:mt-20 3xl:w-60 3xl:h-70 3xl:mr-15 z-25 3xl:ml-40"
-          />
-        </div>
+  {/* Small square photo - bride closeup, left-center */}
+  <img
+    src={data?.coupleMessageImages?.image3 || assets.four}
+    alt="couple_four"
+    className="absolute z-10
+               top-[145px] left-[50px] w-[108px] h-[85px]
+               md:top-[218px] md:left-[75px] md:w-[161px] md:h-[128px]
+               lg:top-[290px] lg:left-[100px] lg:w-[215px] lg:h-[170px]
+               3xl:top-[377px] 3xl:left-[130px] 3xl:w-[280px] 3xl:h-[221px]"
+  />
+
+  {/* flower - daisy, bottom-left overlap */}
+  <img
+    src={assets.six}
+    alt="six"
+    className="absolute z-25
+               top-[223px] left-[93px] w-[70px] h-[55px]
+               md:top-[334px] md:left-[139px] md:w-[105px] md:h-[83px]
+               lg:top-[445px] lg:left-[185px] lg:w-[140px] lg:h-[110px]
+               3xl:top-[579px] 3xl:left-[241px] 3xl:w-[182px] 3xl:h-[143px]"
+  />
+
+  {/* Bottom photo - sunset silhouette, bottom-center */}
+  <img
+    src={data?.coupleMessageImages?.image4 || assets.five}
+    alt="five"
+    className="absolute z-20
+               top-[190px] left-[125px] w-[138px] h-[115px]
+               md:top-[285px] md:left-[188px] md:w-[206px] md:h-[173px]
+               lg:top-[380px] lg:left-[250px] lg:w-[275px] lg:h-[230px]
+               3xl:top-[494px] 3xl:left-[325px] 3xl:w-[358px] 3xl:h-[299px]"
+  />
+</div>
 
 
         
 
-        <h1 className="font-parisienne-regular text-5xl md:text-6xl lg:text-[100px] text-center pt-0 md:pt-30 lg:pt-120 3xl:pt-112 text-[#FFF097] px-8 md:px-0">
+        <h1 className="font-parisienne-regular text-5xl md:text-6xl lg:text-[100px] text-center pt-0 md:pt-0 lg:pt-20 3xl:pt-42 text-[#FFF097] px-8 md:px-0">
           {thingsToKnowTitle}
         </h1>
 
