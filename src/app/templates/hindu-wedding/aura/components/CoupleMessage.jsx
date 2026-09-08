@@ -188,7 +188,7 @@ export default function CoupleMessage({ data }) {
           >
             {rsvpMode === "form" ? (
               <div className="flex flex-col items-center text-center W-70">
-                <h2 className="font-eb-garamond font-medium text-3xl md:text-4xl lg:text-[46px] leading-8 lg:leading-12 text-center pt-22 md:pt-28 lg:pt-40 text-[#8B4302]  w-50 md:w-80">
+                <h2 className="font-eb-garamond font-medium text-3xl md:text-4xl lg:text-[46px] leading-8 lg:leading-12 text-center pt-22 md:pt-28 lg:pt-40 text-[#8B4302] w-50 md:w-60 lg:w-80">
                   {rsvpSectionHeading}
                 </h2>
 
@@ -208,7 +208,7 @@ export default function CoupleMessage({ data }) {
               </div>
             ) : (
               <div className="flex flex-col items-center text-center ">
-                <h2 className="font-eb-garamond font-medium text-3xl md:text-4xl lg:text-[46px] leading-8 lg:leading-12 text-center pt-22 md:pt-28 lg:pt-40 text-[#8B4302]  w-50 md:w-80">
+                <h2 className="font-eb-garamond font-medium text-3xl md:text-3xl lg:text-[46px] leading-8 lg:leading-12 text-center pt-22 md:pt-28 lg:pt-40 text-[#8B4302]  w-50 md:w-60 lg:w-80">
                   {rsvpSectionHeading}
                 </h2>
 

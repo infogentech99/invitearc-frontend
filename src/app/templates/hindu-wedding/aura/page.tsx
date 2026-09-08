@@ -259,7 +259,7 @@ export default function Home({
 
         {/* <FallingLamps /> */}
         <div className="pt-12 md:pt-24 3xl:pt-30 pb-24 md:pb-20 relative z-10">
-          <h2 className="text-center leading-tight text-2xl md:text-6xl lg:text-[80px] pb-80 md:pb-280 lg:pb-300 3xl:pb-420 flex flex-col 
+          <h2 className="text-center leading-tight text-2xl md:text-5xl lg:text-[80px] pb-0 md:pb-100 lg:pb-300 3xl:pb-420 flex flex-col 
                          items-center md:gap-y-2 text-[#FFB700]" id="details-section">
             <span className="font-parisienne-regular font-normal">{data.groomName}</span>
             <span className="font-jacques-francois font-normal text-xl md:text-2xl lg:text-[38px] tracking-widest">WEDS</span>
@@ -311,7 +311,7 @@ export default function Home({
 
           <div className="flex justify-center mt-20 lg:mt-40 mb-30" id="events-section">
             <div
-              className={`grid gap-16 lg:gap-26 lg:px-18 3xl:px-0 ${data?.events?.length === 1
+              className={`grid gap-16 lg:gap-26 lg:px-18 ${data?.events?.length === 1
                 ? "grid-cols-1 justify-items-center"
                 : data?.events?.length === 2
                   ? "grid-cols-2 justify-items-center"
@@ -341,8 +341,8 @@ export default function Home({
       </div>
 
       <div className=" bg-[url('/assets/bg_two.webp')] bg-cover bg-no-repeat flex flex-col items-center md:pt-30 pt-10" style={{ backgroundImage: `url(${assets.bg_two})` }} id="couple-section">
-        <div className="h-84 md:h-160 lg:h-285 3xl:h-360  md:w-200 w-80">
-          <h2 className="font-parisienne-regular font-normal text-[26px] md:text-4xl lg:text-7xl text-center pt-4 md:pt-12 lg:pt-30 text-[#FFB700]">
+        <div className="h-84 md:h-160 lg:h-285 3xl:h-360 md:w-150 lg:w-200 w-80">
+          <h2 className="font-parisienne-regular font-normal text-[26px] md:text-5xl lg:text-7xl text-center pt-4 md:pt-12 lg:pt-30 text-[#FFB700]">
             {data.thankyoutitle}
           </h2>
           <h2 className="font-eb-garamond font-medium text-xs md:text-base lg:text-3xl text-center pt-0 md:pt-2 lg:pt-4 leading-4 md:leading-6 lg:leading-10 text-[#FFB700]">
@@ -353,21 +353,23 @@ export default function Home({
       <CoupleMessage data={data} />
 
 
+
+
+
       <div
         className="hidden md:block bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${assets.bg_four})` }}
       >
-        <div className="relative flex justify-center md:h-175 lg:h-237.5 xl:h-275 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96">
-          
-      
-       <img
-                  src={data?.Logo || assets.couple_logo}
-                  alt="logo"
-                  width={250}
-                  height={300}
-                  className="absolute w-34 h-30 top-40 md:w-34 md:h-30 md:top-42 lg:w-50 lg:h-44 lg:top-86"
-                />
-                 </div>
+        <div className="flex justify-center md:h-198 lg:h-237.5 xl:h-272 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96">
+
+          <img
+            src={data?.Logo || assets.couple_logo}
+            alt="logo"
+            width={250}
+            height={300}
+            className=" w-34 h-30 top-40 md:w-34 md:h-30 md:top-42 lg:w-50 lg:h-44 lg:top-86"
+          />
+        </div>
       </div>
 
 
