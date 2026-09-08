@@ -24,7 +24,8 @@ export default function CoupleMessage({ data }) {
           assets.three,
           assets.four,
           assets.five,
-          // assets.image6,
+          assets.six,
+          assets.seven,
         ];
 
   const coupleTitle = data?.coupleMessageTitle || "Introducing";
@@ -98,7 +99,7 @@ export default function CoupleMessage({ data }) {
       className="bg-[url('/assets/respo_two.webp')] md:bg-[url('/assets/bg_two.webp')] bg-cover bg-no-repeat"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
-      <div className="h-612 md:h-585 lg:h-893 3xl:h-1054">
+      <div className="h-612 md:h-554 lg:h-849 3xl:h-1054">
         <h1 className="eb-garamond font-medium text-[20px] md:text-2xl lg:text-[38px] text-center text-[#FFF097] lg:pt-40 pt-20">
           {coupleTitle}
         </h1>
@@ -142,7 +143,7 @@ export default function CoupleMessage({ data }) {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div> 
+        </div>
 
         <h1 className="parisienne-regular text-5xl md:text-6xl lg:text-[100px] text-center text-[#FFF097] pt-16 md:pt-20 lg:pt-32 leading-tight">
           {thingsToKnowTitle}
@@ -151,12 +152,6 @@ export default function CoupleMessage({ data }) {
         <div className="flex justify-center mt-20 pb-24 md:pb-0 lg:px-40 px-12">
           <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-10 md:gap-14 lg:gap-30 3xl:gap-30">
             <div className="flex flex-col items-center justify-center text-center">
-              {/* <img
-                src={assets.weather}
-                alt="weather"
-                className="lg:h-26 lg:w-28 h-26 w-32 "
-              />  */}
-
               <img
                 src={data?.coupleMessageWeatherImage || assets.weather}
                 alt="weather"
@@ -170,11 +165,6 @@ export default function CoupleMessage({ data }) {
               </p>
             </div>
             <div className="flex flex-col items-center justify-center text-center">
-              {/* <img
-                src={assets.staff}
-                alt="drive"
-                className="md:h-26 lg:h-27 lg:w-21 h-36 w-29"
-              /> */}
               <img
                 src={data?.coupleMessageStaffImage || assets.staff}
                 alt="drive"
@@ -188,11 +178,6 @@ export default function CoupleMessage({ data }) {
               </p>
             </div>
             <div className="flex flex-col items-center justify-center text-center">
-              {/* <img
-                src={assets.parking}
-                alt="car"
-                className="lg:h-27 lg:w-30 h-26 w-32 "
-              /> */}
               <img
                 src={data?.coupleMessageParkingImage || assets.parking}
                 alt="car"
@@ -237,7 +222,7 @@ export default function CoupleMessage({ data }) {
                 </div>
               ) : (
                 <div className="flex flex-col items-center text-center">
-                  <h2 className="eb-garamond font-normal text-center text-2xl md:text-3xl lg:text-[54px] text-[#FFF097] pt-15 md:pt-80 lg:pt-50 3xl:pt-150 leading-normal md:leading-8 lg:leading-12 lg:w-140 w-70">
+                  <h2 className="eb-garamond font-normal text-center text-2xl md:text-3xl lg:text-[54px] text-[#FFF097] pt-15 md:pt-50 lg:pt-50 3xl:pt-150 leading-normal md:leading-8 lg:leading-12 lg:w-140 w-70">
                     {rsvpSectionHeading}
                   </h2>
 
@@ -264,7 +249,7 @@ export default function CoupleMessage({ data }) {
           <img
             src={assets.couple_second}
             alt="couple"
-            className="w-108 h-88 md:w-205 md:h-103 lg:w-full lg:h-full 3xl:w-480 3xl:h-243 object-cover lg:mt-105 3xl:mt-80"
+            className="w-108 h-88 md:w-full md:h-full lg:w-full lg:h-full 3xl:w-480 3xl:h-243 object-cover md:mt-12 lg:mt-60 3xl:mt-80"
           />
         </div>
       </div>

@@ -446,32 +446,21 @@ export default function Home({
       <CoupleMessage data={data} />
 
 
-
-      {/* <div
+ <div
         className="hidden md:block bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${coupleImage})` }}
       >
-        <div className="flex justify-center md:h-175 lg:h-237.5 xl:h-275 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96 relative" >
-          <img src={data?.Logo || assets.logo} alt="logo" width={250} height={300} className="absolute top-28 w-42 h-48 md:top-41 md:w-28 md:h-35 lg:top-78 lg:w-40 lg:h-40 3xl:top-101" />
+        <div className="flex justify-center md:h-195 lg:h-237.5 xl:h-272 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96">
+
+          <img
+            src={data?.Logo || assets.logo}
+            alt="logo"
+            width={250}
+            height={300}
+            className=" top-50 w-20 h-24 md:top-41 md:w-31 md:h-35 lg:top-84 lg:w-46 lg:h-52 3xl:top-118"
+          />
         </div>
-      </div> */}
-
-
-
-      <div
-              className="hidden md:block bg-cover bg-no-repeat"
-              style={{ backgroundImage: `url(${coupleImage})` }}
-            >
-            
-               <div className="flex justify-center md:h-175 lg:h-237.5 xl:h-275 2xl:h-340 3xl:h-[1650px] md:pt-48 lg:pt-72 3xl:pt-96 lg:mt-20 3xl:mt-0">
-                <img
-                  src={data?.Logo || assets.logo}
-                  alt="logo"
-                  className="top-28 w-42 h-48 md:top-41 md:w-28 md:h-35 lg:top-78 lg:w-40 lg:h-40 3xl:top-101"
-                />
-              </div> 
-            </div>
-
+      </div>
 
       <div className="md:hidden relative flex items-start justify-center">
 

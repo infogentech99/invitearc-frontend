@@ -22,6 +22,8 @@ import two from "./assets/two.webp";
 import three from "./assets/three.webp";
 import four from "./assets/four.webp";
 import five from "./assets/five.webp";
+import six from "./assets/six.webp";
+import seven from "./assets/seven.webp";
 import whatsapp from "./assets/whatsapp.webp";
 
 export const assets = {
@@ -49,6 +51,8 @@ export const assets = {
   three: three.src,
   four: four.src,
   five: five.src,
+  six: six.src,
+  seven: seven.src,
   whatsapp: whatsapp.src,
   background_song: "/template-audio/mayra.mp3",
   carouselImages: [
@@ -57,6 +61,8 @@ export const assets = {
     three.src,
     four.src,
     five.src,
+    six.src,
+    seven.src,
   ],
 
 };
