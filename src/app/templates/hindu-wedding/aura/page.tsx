@@ -327,7 +327,7 @@ export default function Home({
                   <p className="font-jacques-francois font-normal mt-2 text-[#FFB700]">
                     <span className="text-base md:text-base lg:text-[15px]">{event.date}</span>  <br />
                     <span className="text-base md:text-base lg:text-[15px]">  {event.time} </span> <br />
-                    <span className="text-base md:text-base lg:text-[15px] uppercase"> {event.venue}</span>
+                    <span className="text-base md:text-base lg:text-[15px] uppercase"> {event.venue}</span><br />
                     <span className="text-sm md:text-base lg:text-[20px]">{event.venue_address}</span> <br />
                   </p>
                   <a href={event.link} className="font-jacques-francois font-normal underline text-lg md:text-sm mt-2 text-[#FFB700]" target="_blank">

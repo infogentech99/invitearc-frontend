@@ -234,7 +234,7 @@ export default function CoupleMessage({ data }) {
         </div>
 
         <div className="flex flex-col justify-center items-center lg:mt-15 mt-18">
-          <h2 className="font-parisienne-regular font-normal text-5xl md:text-6xl lg:text-[100px] text-center lg:pt-6 text-[#FFB700]">
+          <h2 className="font-parisienne-regular font-normal text-5xl md:text-6xl lg:text-[100px] text-center lg:pt-6 text-[#FFB700] md:px-0 px-8">
             {thingsToKnowTitle}
           </h2> 
         </div>
