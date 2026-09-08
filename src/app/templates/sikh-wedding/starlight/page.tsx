@@ -420,25 +420,25 @@ export default function Home({
       <CoupleMessage data={data} />
 
       <div
-              className="hidden md:block bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${coupleImage})` }}
-            >
-              <div className="flex justify-center md:h-175 lg:h-237.5 xl:h-275 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96">
-              <img src={data?.Logo || assets.logo} alt="logo" width={250} height={300} className=" top-50 w-37 h-30 md:top-41 md:w-41 md:h-40 lg:top-84 lg:w-72 lg:h-58 3xl:top-118" />
-            </div>
-            </div>
-      
-            <div className="md:hidden relative flex items-start justify-center">
-      
-              <img
-                src={coupleImage}
-                alt="background"
-                className="w-full h-full object-contain"
-              />
-              <div className="absolute top-[25svh] left-0 right-0 flex justify-center">
-              <img src={data?.Logo || assets.logo} alt="logo" width={250} height={300} className=" top-50 w-37 h-30 md:top-41 md:w-41 md:h-40 lg:top-84 lg:w-72 lg:h-58 3xl:top-118" />
-            </div>
-            </div>
+        className="hidden md:block bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${coupleImage})` }}
+      >
+        <div className="flex justify-center md:h-200 lg:h-260 xl:h-275 2xl:h-335 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96">
+          <img src={data?.Logo || assets.logo} alt="logo" width={250} height={300} className=" top-50 w-37 h-30 md:top-41 md:w-38 md:h-30 lg:top-84 lg:w-50 lg:h-40 3xl:top-118" />
+        </div>
+      </div>
+
+      <div className="md:hidden relative flex items-start justify-center">
+
+        <img
+          src={coupleImage}
+          alt="background"
+          className="w-full h-full object-contain"
+        />
+        <div className="absolute top-[25svh] left-0 right-0 flex justify-center">
+          <img src={data?.Logo || assets.logo} alt="logo" width={250} height={300} className=" top-50 w-37 h-30 md:top-41 md:w-41 md:h-40 lg:top-84 lg:w-72 lg:h-58 3xl:top-118" />
+        </div>
+      </div>
 
 
     </>
