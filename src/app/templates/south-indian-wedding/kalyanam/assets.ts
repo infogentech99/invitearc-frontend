@@ -22,7 +22,6 @@ import couple2 from "./assets/couple2.png";
 import couple3 from "./assets/couple3.png";
 import couple4 from "./assets/couple4.png";
 
-
 export const assets = {
     bg_one: bg_one.src,
     petals: petals.src,
@@ -42,7 +41,7 @@ export const assets = {
     staff:staff.src,
     logo:logo.src,
     whatsapp:whatsapp.src,
-    background_song: "/template-audio/kalyanam.mp3",
+    background_song: "/template-audio/Kalyanam.mp3",
     bg_respo:bg_respo.src,
     couple1:couple1.src,
     couple2:couple2.src,
