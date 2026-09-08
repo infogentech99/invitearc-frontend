@@ -73,7 +73,7 @@ export default function CoupleMessage({ data }) {
         backgroundImage: `url(${bgImage})`,
       }}
     >
-      <div className="h-689 md:h-650 lg:h-1083 3xl:h-1367">
+      <div className="h-689 md:h-650 lg:h-1100 3xl:h-1367">
         <h1 className="eb-garamond font-medium text-base md:text-2xl lg:text-[38px] text-center text-[#15528A] lg:pt-40 pt-20">
           {coupleTitle}
         </h1>
@@ -122,7 +122,7 @@ export default function CoupleMessage({ data }) {
           />
         </div>
 
-        <h1 className="parisienne-regular text-5xl md:text-6xl lg:text-[100px] text-center text-[#15528A] pt-86 md:pt-130 lg:pt-250 3xl:pt-320 leading-tight">
+        <h1 className="parisienne-regular text-5xl md:text-6xl lg:text-[100px] text-center text-[#15528A] pt-86 md:pt-160 lg:pt-280 3xl:pt-350 leading-tight md:px-0 px-6">
           {thingsToKnowTitle}
         </h1>
 

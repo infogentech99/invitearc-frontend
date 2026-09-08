@@ -390,25 +390,7 @@ export default function Home({
       </div>
 
       <CoupleMessage data={data} isOwner={isOwner} updateField={updateField} />
-      {/* <div
-        className="bg-[url('/assets/respo_three.webp')] md:bg-[url('/assets/bg_three.webp')] bg-cover bg-no-repeat"
-        style={{
-          backgroundImage: `url(${coupleImage})`,
-        }}
-      >
-        <div className="h-220 md:h-200 lg:h-330 2xl:h-340 xl:h-280 3xl:h-421 flex flex-col items-center relative">
-          <img
-            src={data?.Logo || assets.logo}
-            alt="logo"
-            width={250}
-            height={300}
-            className="absolute top-50 w-20 h-24 md:top-41 md:w-31 md:h-35 lg:top-84 lg:w-46 lg:h-52 3xl:top-118"
-          />
-        </div>
-      </div> */}
-
-
-
+      
 
  <div
         className="hidden md:block bg-cover bg-center bg-no-repeat"
