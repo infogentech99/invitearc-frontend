@@ -12,6 +12,12 @@ const config = {
         verifyOtp: "/api/auth/verify-otp",
         resetPassword: "/api/auth/reset-password",
       },
+      admin: {
+        login: "/api/admin/login",
+        refresh: "/api/admin/refresh-token",
+        logout: "/api/admin/logout",
+        me: "/api/admin/me",
+      },
       templates: {
         all: "/api/template/all",
         create: "/api/template/create",

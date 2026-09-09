@@ -63,15 +63,15 @@ export default function PurchaseOptionsModal({
                 <h3 className="mt-3 font-georgia text-xl md:text-2xl leading-none tracking-[-0.03em] text-[#171b19] font-medium">Self edit</h3>
                  <div className="mt-4 h-px w-7 bg-[#a8b499]" />
               </div>
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#faf3eb] text-[#A8753C]">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full bFg-[#faf3eb] text-[#A8753C]">
                 <LaptopMinimal size={30} strokeWidth={1.35} />
               </div>
             </div>
            
-            <p className="mt-5 min-h-12 max-w-md text-sm leading-6 text-[#5f6971]">
-              Edit the wording, events, music, and images yourself using the InviteArc editor.
+            <p className="mt-5 min-h-10 max-w-md text-sm leading-6 text-[#5f6971]">
+              Best for those who want the template as is.
             </p>
-            <ul className="mt-5 space-y-3 text-sm text-[#4e5960]">
+            <ul className="mt-1 space-y-3 text-sm text-[#4e5960]">
               <li className="flex items-center gap-2"><span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#faf3eb] text-[#A8753C]"><Check size={13} strokeWidth={2.5} /></span> Full template editor access</li>
               <li className="flex items-center gap-2"><span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#faf3eb] text-[#A8753C]"><Check size={13} strokeWidth={2.5} /></span> Publish and share instantly</li>
             </ul>
@@ -94,10 +94,10 @@ export default function PurchaseOptionsModal({
                 <UsersRound size={30} strokeWidth={1.35} />
               </div>
             </div>
-            <p className="mt-5 min-h-12 max-w-md text-sm leading-6 text-[#5f6971]">
-              Share your details with our team and receive a professionally customized invitation.
+            <p className="mt-5 min-h-10 max-w-md text-sm leading-6 text-[#5f6971]">
+              Best for those who want minor design updates.
             </p>
-            <ul className="mt-5 space-y-3 text-sm text-[#4e5960]">
+            <ul className="mt-1 space-y-3 text-sm text-[#4e5960]">
               <li className="flex items-center gap-2"><span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#f5d9d3] text-[#a54840]"><Check size={13} strokeWidth={2.5} /></span> Personalization by our experts</li>
               <li className="flex items-center gap-2"><span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#f5d9d3] text-[#a54840]"><Check size={13} strokeWidth={2.5} /></span> Review-ready invitation delivery</li>
             </ul>

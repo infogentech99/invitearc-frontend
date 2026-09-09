@@ -9,7 +9,7 @@ export default function LayoutWrapper({ children }) {
   const pathname = usePathname();
 
   const hideLayout =
-    pathname.startsWith("/preview");
+    pathname.startsWith("/preview") || pathname.startsWith("/admin");
   const hideFooter = pathname.startsWith("/dashboard/edit/");
 
   return (
