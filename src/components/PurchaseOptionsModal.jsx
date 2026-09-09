@@ -25,7 +25,7 @@ export default function PurchaseOptionsModal({
   if (!open || !template) return null;
 
   const selfPrice = country === "IN" ? template.indprice : template.usaprice;
-  const expertPrice = country === "IN" ? selfPrice + 1000 : selfPrice + 20;
+  const expertPrice = country === "IN" ? selfPrice + 1000 : selfPrice + 50;
 
   return (
     <div className="fixed inset-x-0 bottom-0 top-24 z-60 grid place-items-center overflow-y-auto bg-[#171b1a]/75 px-3 py-4 backdrop-blur-sm sm:px-6 sm:py-8">
