@@ -136,7 +136,7 @@ export default function PublishShareEditor({
                   className="hidden"
                 />
               </label>
-              <span className="text-xs text-slate-500">
+              <span className="text-xs text-red-600">
                 1200x600px and below 200KB
               </span>
               {previewUploading && (

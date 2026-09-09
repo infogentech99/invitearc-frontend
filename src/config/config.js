@@ -17,6 +17,7 @@ const config = {
         refresh: "/api/admin/refresh-token",
         logout: "/api/admin/logout",
         me: "/api/admin/me",
+        stats: "/api/admin/dashboard/stats",
       },
       templates: {
         all: "/api/template/all",

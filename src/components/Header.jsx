@@ -78,12 +78,12 @@ const menuRef = useRef(null);
             >
               Faqs
             </Link>
-            <Link
+            {/* <Link
               href="#about"
               className="hover:text-slate-900 transition-colors text-[16px] font-semibold text-black font-poppins "
             >
               Blogs
-            </Link>
+            </Link> */}
           </nav>
 
           <div className="relative flex items-center gap-3">

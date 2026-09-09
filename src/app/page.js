@@ -86,7 +86,9 @@ export default function Home() {
         
           <HowItWorks />
           <Testimonial/>
-          <Faq id="faqs"/>
+          <div id="faqs">
+            <Faq/>
+          </div>
         </section>
 
         <section id="about" className="mx-auto">
