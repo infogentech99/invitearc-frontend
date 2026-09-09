@@ -17,7 +17,7 @@ const previewImages = {
   invitation: "/templates/invitation-preview.jpg",
 };
 
-const popularTemplateOrder = ["hitched", "jodi", "sohala", "mayra", "starlight"];
+const popularTemplateOrder = ["vows","hitched", "jodi", "sohala", "mayra", "starlight"];
 
 export default function TemplateGrid() {
   const router = useRouter();
@@ -220,10 +220,10 @@ export default function TemplateGrid() {
       <div className="mb-8 flex flex-wrap gap-5 mt-12 justify-center ">
         {[
           "All",
+          "Christian Weddings",
           "Hindu Weddings",
           "Sikh Weddings",
-          "Muslim Weddings",
-          "Christian Weddings",
+          "Muslim Weddings", 
           "South-Indian Weddings",
           "For him/her",
         ].map((category) => (
