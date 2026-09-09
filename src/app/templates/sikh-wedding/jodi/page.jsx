@@ -368,11 +368,11 @@ export default function Home({
           <div className="relative flex flex-col items-center pt-30 lg:pt-80 3xl:pt-90 3xl:gap-60">
             {/* Center Text */}
             <div className="absolute flex flex-col justify-center items-center text-center md:mb-0 top-28 md:top-31 lg:top-84 3xl:top-152" id="couple-section">
-              <p className="parisienne-regular text-3xl md:text-5xl lg:text-7xl lg:leading-22 text-[#0064BF]">
+              <p className="parisienne-regular text-3xl md:text-5xl lg:text-7xl lg:leading-22 text-[#0064BF] px-20 md:px-0">
                 {data.thankyoutitle}
               </p>
 
-              <h2 className="eb-garamond font-normal text-xs md:text-xl lg:text-3xl text-center text-[#6CB9FF] pt-2 md:pt-6 lg:leading-10 md:leading-7 leading-4 lg:w-155 md:w-100 w-55">
+              <h2 className="eb-garamond font-normal text-xs md:text-xl lg:text-3xl text-center text-[#6CB9FF] pt-2 md:pt-6 lg:leading-10 md:leading-7 leading-4 lg:w-155 md:w-100 w-45">
                 <span className="eb-garamond font-normal text-[#15528A]">
                   {data.thankyoumessage}
                 </span>
@@ -383,7 +383,8 @@ export default function Home({
               alt="couple"
               width={900}
               height={1200}
-              className="w-108 h-104 md:w-245 md:h-198 lg:w-393 lg:h-374 3xl:w-480 3xl:h-463 object-cover"
+              // className="w-108 h-104 md:w-245 md:h-198 lg:w-393 lg:h-374 3xl:w-480 3xl:h-463 object-cover"
+              className=" w-screen min-w-full max-w-none bg-[length:100%_100%]"
             />
           </div>
         </div>
@@ -393,7 +394,8 @@ export default function Home({
       
 
  <div
-        className="hidden md:block bg-cover bg-center bg-no-repeat"
+        // className="hidden md:block bg-cover bg-center bg-no-repeat"
+          className="hidden md:block w-screen min-w-full max-w-none bg-[length:100%_100%] bg-no-repeat bg-top"
         style={{ backgroundImage: `url(${coupleImage})` }}
       >
         <div className="flex justify-center md:h-195 lg:h-237.5 xl:h-272 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96">

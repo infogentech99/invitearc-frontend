@@ -312,9 +312,13 @@ export default function Home({
       <CoupleMessage data={data} />
 
       {/* Fourth section */}
-      <section className="bg-[url('/assets/background_fourth.webp')] bg-cover bg-no-repeat" style={{ backgroundImage: `url(${assets.background_fourth})` }}>
+      <section 
+  
+      className="bg-[url('/assets/background_fourth.webp')] w-screen min-w-full max-w-none bg-[length:100%_100%] bg-no-repeat bg-top" 
+      style={{ backgroundImage: `url(${assets.background_fourth})` }}>
         <div className="h-88 md:h-190 lg:h-265 2xl:h-340 3xl:h-426 flex justify-center">
-          <img src={assets.couple_name} alt="couple_name" className="mt-8 w-24 h-12 md:mt-15 md:w-50 md:h-25 lg:mt-30 lg:w-60 lg:h-30 3xl:mt-40 3xl:w-105 3xl:h-60" />
+          <img src={assets.couple_name} alt="couple_name" 
+          className="mt-8 w-24 h-12 md:mt-15 md:w-50 md:h-25 lg:mt-30 lg:w-60 lg:h-30 3xl:mt-40 3xl:w-105 3xl:h-60" />
         </div>
       </section>
 

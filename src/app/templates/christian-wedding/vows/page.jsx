@@ -541,33 +541,6 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
       <CoupleMessage data={data} isOwner={isOwner} updateField={updateField} />
       <ThingsToKnow />
 
-      {/* <div
-        className="hidden md:block bg-cover bg-no-repeat"
-        style={{ backgroundImage: `url(${assets.background_couple})` }}
-      > */}
-        {/* <div className="flex md:h-180 lg:h-335 3xl:h-408 lg:pt-90 md:pt-50 3xl:pt-110 justify-center"> */}
-         {/* <div className="flex justify-center md:h-175 lg:h-260     xl:h-275   2xl:h-335 3xl:h-[1650px] md:pt-48 lg:pt-72 3xl:pt-96">
-          <img
-            src={assets.logo}
-            alt="logo"
-            className="w-32 h-48 md:w-44 md:h-34 lg:w-65 lg:h-52"
-          />
-        </div> 
-      </div> */}
-
-      {/* <div
-  className="hidden md:block w-full bg-cover bg-no-repeat bg-center"
-  style={{ backgroundImage: `url(${assets.background_couple})` }}
->
-  <div className="flex w-full justify-center md:h-175 lg:h-260 xl:h-275 2xl:h-335 3xl:h-[1650px] md:pt-48 lg:pt-72 3xl:pt-96">
-    <img
-      src={assets.logo}
-      alt="logo"
-      className="w-32 h-48 md:w-44 md:h-34 lg:w-65 lg:h-52"
-    />
-  </div>
-</div> */}
-
 
 <div
   className="hidden md:block w-screen min-w-full max-w-none bg-[length:100%_100%] bg-no-repeat bg-top"
