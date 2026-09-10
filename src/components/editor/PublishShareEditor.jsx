@@ -44,9 +44,6 @@ export default function PublishShareEditor({
           </button>
         </div>
 
-
-        
-
         <div className="mt-4 rounded-3xl border border-slate-200 bg-white p-4">
           <p className="text-xs uppercase tracking-[0.2em] text-slate-500 font-georgia">
             Share URL preview
@@ -118,7 +115,6 @@ export default function PublishShareEditor({
                   <p className="mt-1 text-xs  text-slate-400">{shareUrl}</p>
                 </div>
               </div>
-
               <p className="text-xs uppercase tracking-widest text-slate-500 font-georgia">
                 Preview image
               </p>
@@ -136,9 +132,23 @@ export default function PublishShareEditor({
                   className="hidden"
                 />
               </label>
-              <span className="text-xs text-red-600">
+              <span className="text-xs text-slate-500">
                 1200x600px and below 200KB
               </span>
+              <br />
+              <div className="mt-2 flex items-start gap-2 rounded-lg border border-[#F1D9B8] bg-[#FFF9F0] px-3 py-2.5">
+                <div className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#8C1E1E] text-[10px] font-bold text-white">
+                  i
+                </div>
+
+                <div className="border-l border-[#E8CFA9] pl-3 text-[11px] leading-[1.35] text-[#8C1E1E]">
+                  <p className="font-medium">
+                    Note: Once this share link is shared, its preview image is
+                    locked to this link. To use a different preview image,
+                    create a new share link.
+                  </p>
+                </div>
+              </div>
               {previewUploading && (
                 <p className="text-sm text-slate-500">
                   Uploading preview image...

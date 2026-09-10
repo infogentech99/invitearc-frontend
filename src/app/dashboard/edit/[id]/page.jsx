@@ -36,49 +36,48 @@ export default function EditTemplatePage() {
   const router = useRouter();
   const iframeRef = useRef(null);
   const scrollToDetails = () => {
-  iframeRef.current?.contentWindow?.postMessage(
-    {
-      type: "SCROLL_TO_DETAILS",
-    },
-    window.location.origin
-  );
-};
-const scrollToEvents = () => {
-  iframeRef.current?.contentWindow?.postMessage(
-    {
-      type: "SCROLL_TO_EVENTS",
-    },
-    window.location.origin
-  );
-};
+    iframeRef.current?.contentWindow?.postMessage(
+      {
+        type: "SCROLL_TO_DETAILS",
+      },
+      window.location.origin,
+    );
+  };
+  const scrollToEvents = () => {
+    iframeRef.current?.contentWindow?.postMessage(
+      {
+        type: "SCROLL_TO_EVENTS",
+      },
+      window.location.origin,
+    );
+  };
 
-const scrollToCouple = () => {
-  iframeRef.current?.contentWindow?.postMessage(
-    {
-      type: "SCROLL_TO_COUPLE",
-    },
-    window.location.origin
-  );
-};
+  const scrollToCouple = () => {
+    iframeRef.current?.contentWindow?.postMessage(
+      {
+        type: "SCROLL_TO_COUPLE",
+      },
+      window.location.origin,
+    );
+  };
 
-const scrollToRsvp = () => {
-  iframeRef.current?.contentWindow?.postMessage(
-    {
-      type: "SCROLL_TO_RSVP",
-    },
-    window.location.origin
-  );
-};
+  const scrollToRsvp = () => {
+    iframeRef.current?.contentWindow?.postMessage(
+      {
+        type: "SCROLL_TO_RSVP",
+      },
+      window.location.origin,
+    );
+  };
 
-
-const scrollToCountdown = () => {
-  iframeRef.current?.contentWindow?.postMessage(
-    {
-      type: "SCROLL_TO_COUNTDOWN",
-    },
-    window.location.origin
-  );
-};
+  const scrollToCountdown = () => {
+    iframeRef.current?.contentWindow?.postMessage(
+      {
+        type: "SCROLL_TO_COUNTDOWN",
+      },
+      window.location.origin,
+    );
+  };
 
   const templateId = params.id;
   const [clientTemplate, setClientTemplate] = useState(null);
@@ -206,9 +205,7 @@ const scrollToCountdown = () => {
   const detailFields = useMemo(() => {
     if (!editorData) return [];
     if (fieldConfig?.detailFields?.length) {
-      const uploadFieldNames = new Set(
-        uploadFields.map((field) => field.name),
-      );
+      const uploadFieldNames = new Set(uploadFields.map((field) => field.name));
       return fieldConfig.detailFields.filter(
         (field) => !uploadFieldNames.has(field.name),
       );
@@ -242,9 +239,7 @@ const scrollToCountdown = () => {
       return [{ type: "editor", fields: detailFields }];
     }
 
-    const uploadFieldNames = new Set(
-      uploadFields.map((field) => field.name),
-    );
+    const uploadFieldNames = new Set(uploadFields.map((field) => field.name));
     const sections = [];
     let editorSection = [];
 
@@ -898,7 +893,7 @@ const scrollToCountdown = () => {
       <section className="mx-auto w-full  px-4 py-10 sm:px-8 lg:px-12">
         <div className="flex min-h-screen flex-col gap-6 rounded-3xl lg:bg-white  lg:shadow-sm lg:p-8">
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-            <div>
+            <div className="flex justify-between md:gap-0 ">
               <button
                 type="button"
                 onClick={() => router.push("/dashboard")}
@@ -907,16 +902,29 @@ const scrollToCountdown = () => {
                 <IoMdArrowRoundBack />
                 Back to dashboard
               </button>
+
+              <div className="flex flex-wrap items-center gap-3 md:hidden">
+                <button
+                  type="button"
+                  onClick={saveEditorChanges}
+                  disabled={saving}
+                  className="inline-flex items-center justify-center rounded-full border-2 border-[#861E1D] cursor-pointer bg-[#861E1D] px-5 py-3 text-sm font-semibold 
+                text-white transition hover:bg-slate-100 disabled:opacity-50 hover:border-2 hover:border-[#861E1D] hover:text-[#861E1D] "
+                >
+                  {saving ? "Saving..." : "Save changes"}
+                </button>
+              </div>
             </div>
             <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-[#861E1D] font-georgia text-center">
+              <p className="text-sm font-semibold uppercase tracking-widest text-[#861E1D] font-georgia text-center md:mt-0 mt-6">
                 Template editor
               </p>
-              <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[#861E1D] sm:text-4xl font-georgia">
+              <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[#861E1D] sm:text-4xl font-georgia text-center">
                 Edit your purchased template
               </h1>
             </div>
-            <div className="flex flex-wrap items-center gap-3">
+
+            <div className="flex flex-wrap items-center gap-3 md:block hidden">
               <button
                 type="button"
                 onClick={saveEditorChanges}
@@ -926,6 +934,76 @@ const scrollToCountdown = () => {
               >
                 {saving ? "Saving..." : "Save changes"}
               </button>
+            </div>
+
+            <div className="mt-4 mb-4 block md:hidden">
+              <div className="relative overflow-hidden rounded-2xl border border-[#E8CACA] bg-[#FFF8F8] px-4 py-4">
+                {/* Decorative circle */}
+                <div className="absolute -right-8 -top-8 h-20 w-20 rounded-full bg-[#F7E3E3]" />
+
+                <div className="relative flex items-start gap-3">
+                  {/* Mobile Icon */}
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F7E3E3] text-[#8C1E1E]">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      className="h-5 w-5"
+                    >
+                      <rect x="6" y="2.5" width="12" height="19" rx="2" />
+                      <path d="M10 18.5h4" />
+                    </svg>
+                  </div>
+
+                  {/* Content */}
+                  <div className="min-w-0">
+                    <p className="text-[15px] font-semibold text-[#8C1E1E]">
+                      Editing on mobile?
+                    </p>
+
+                    <p className="mt-1 text-[13px] leading-5 text-[#4B5563]">
+                      Scroll down{" "}
+                      <span className="font-bold text-[#8C1E1E]">↓</span> to see
+                      your live preview.
+                    </p>
+
+                    <div className="mt-2 flex items-center gap-1.5">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        className="h-4 w-4 text-[#8C1E1E]"
+                      >
+                        <rect x="3" y="5" width="18" height="13" rx="1.5" />
+                        <path d="M8 21h8M12 18v3" />
+                      </svg>
+
+                      <p className="text-[11px] leading-4 text-gray-500">
+                        Best editing experience on desktop.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Scroll Arrow */}
+                  <div className="ml-auto mt-1 shrink-0 text-[#8C1E1E]">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      className="h-5 w-5 animate-bounce"
+                    >
+                      <path d="M12 5v14" />
+                      <path d="m6 13 6 6 6-6" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -938,9 +1016,9 @@ const scrollToCountdown = () => {
                   setActiveTab={setActiveTab}
                   onDetailsClick={scrollToDetails}
                   onEventsClick={scrollToEvents}
-                  onCoupleClick = {scrollToCouple}
-                  onRsvpClick = {scrollToRsvp} 
-                  onCountdownClick = {scrollToCountdown}
+                  onCoupleClick={scrollToCouple}
+                  onRsvpClick={scrollToRsvp}
+                  onCountdownClick={scrollToCountdown}
                 />
                 <div className="flex-1 overflow-y-auto p-6 min-h-0">
                   <div className="mb-6 text-center">
@@ -1155,7 +1233,7 @@ const scrollToCountdown = () => {
                     <HiDevicePhoneMobile className="text-lg" />
                     <span>Mobile</span>
                   </button>
-                  
+
                   <button
                     type="button"
                     onClick={() => setView("tablet")}
@@ -1197,10 +1275,7 @@ const scrollToCountdown = () => {
                             window.innerWidth >= 1600
                           ? "1300px"
                           : "950px",
-                  height:
-                    view === "mobile"
-                      ? "calc(100vh - 180px)"
-                      : undefined,
+                  height: view === "mobile" ? "calc(100vh - 180px)" : undefined,
                 }}
               >
                 <div className="h-full overflow-y-auto overflow-x-hidden bg-slate-100">

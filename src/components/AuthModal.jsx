@@ -152,7 +152,15 @@ export default function AuthModal({
                     <PhoneInput
                       country={"in"}
                       value={mobileNumber}
-                      onChange={(phone) => setMobileNumber(phone)}
+                      onChange={(phone) => {
+                        const normalizedPhone = phone ? `+${phone.replace(/^\+/, "")}` : "";
+                        setMobileNumber(normalizedPhone);
+                      }}
+                      inputProps={{
+                        name: "mobileNumber",
+                        required: true,
+                        autoComplete: "tel",
+                      }}
                       inputClass="!w-full !h-12 !rounded-3xl"
                       containerClass="!w-full"
                       buttonClass="!border-slate-200"

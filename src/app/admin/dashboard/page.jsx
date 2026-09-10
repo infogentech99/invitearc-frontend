@@ -60,6 +60,12 @@ export default function AdminDashboardPage() {
         }
       } catch (fetchError) {
         console.error(fetchError);
+        if (fetchError.response?.status === 401) {
+          localStorage.removeItem("adminAccessToken");
+          localStorage.removeItem("adminUser");
+          router.replace("/admin/login");
+          return;
+        }
         setError("Unable to load dashboard data");
       } finally {
         setLoading(false);
@@ -396,7 +402,7 @@ export default function AdminDashboardPage() {
                       key={user.id}
                       type="button"
                       onClick={() => setSelectedUser(user)}
-                      className={`flex w-full items-center gap-3 rounded-2xl border px-3 py-3 text-left transition ${
+                      className={`flex w-full items-center gap-3 rounded-2xl border px-3 py-3 text-left transition cursor-pointer ${
                         selectedUser?.id === user.id
                           ? "border-[#861E1D] bg-[#861E1D] text-white"
                           : "border-slate-100 bg-slate-50 text-[#861E1D] hover:bg-slate-100"

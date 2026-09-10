@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import axios from "axios";
 import config from "../config/config";
 
@@ -10,10 +11,22 @@ export default function AdminLoginForm({
   mode = "page",
   redirectTo = "/admin/dashboard",
 }) {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    if (mode !== "page") return;
+
+    const savedAdmin = localStorage.getItem("adminUser");
+    const token = localStorage.getItem("adminAccessToken");
+
+    if (savedAdmin && token) {
+      router.replace("/admin/dashboard");
+    }
+  }, [mode, router]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
