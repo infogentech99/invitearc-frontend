@@ -31,6 +31,7 @@ export default function AdminLoginForm({
         const admin = {
           id: res.data.admin.id,
           name: res.data.admin.name,
+          email: res.data.admin.email || email,
           role: res.data.admin.role,
         };
 
