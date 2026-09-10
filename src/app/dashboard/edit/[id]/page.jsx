@@ -989,7 +989,13 @@ export default function EditTemplatePage() {
                   </div>
 
                   {/* Scroll Arrow */}
-                  <div className="ml-auto mt-1 shrink-0 text-[#8C1E1E]">
+                  <div className="ml-auto mt-1 shrink-0 text-[#8C1E1E] cursor-pointer"
+                  onClick={() => {
+    document.getElementById("preview-mode")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -1002,6 +1008,7 @@ export default function EditTemplatePage() {
                       <path d="m6 13 6 6 6-6" />
                     </svg>
                   </div>
+             
                 </div>
               </div>
             </div>
@@ -1214,7 +1221,7 @@ export default function EditTemplatePage() {
 
             <section className="space-y-4 lg:h-[calc(100vh-9rem)] lg:flex lg:flex-col">
               <div className="rounded-3xl bg-white lg:p-6 p-4 shadow-sm flex flex-col gap-4 lg:flex-row items-center lg:justify-between lg:flex-shrink-0">
-                <div>
+                <div id="preview-mode">
                   <p className="text-sm uppercase tracking-[0.08em] text-[#861E1D] font-semibold font-georgia">
                     Preview mode
                   </p>
