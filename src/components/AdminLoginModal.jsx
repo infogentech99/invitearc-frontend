@@ -1,5 +1,4 @@
 "use client";
-
 import AdminLoginForm from "./AdminLoginForm";
 
 export default function AdminLoginModal({ open, onClose, onAdminLogin }) {

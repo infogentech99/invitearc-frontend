@@ -989,13 +989,15 @@ export default function EditTemplatePage() {
                   </div>
 
                   {/* Scroll Arrow */}
-                  <div className="ml-auto mt-1 shrink-0 text-[#8C1E1E] cursor-pointer"
-                  onClick={() => {
-    document.getElementById("preview-mode")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }}>
+                  <div
+                    className="ml-auto mt-1 shrink-0 text-[#8C1E1E] cursor-pointer"
+                    onClick={() => {
+                      document.getElementById("preview-mode")?.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                    }}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -1008,7 +1010,6 @@ export default function EditTemplatePage() {
                       <path d="m6 13 6 6 6-6" />
                     </svg>
                   </div>
-             
                 </div>
               </div>
             </div>
