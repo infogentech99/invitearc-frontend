@@ -81,8 +81,8 @@ export default function Home() {
               events.
             </p>
           </div>
-
-          <TemplateGrid />
+<div id="templates2">  <TemplateGrid /></div>
+        
         
           <HowItWorks />
           <Testimonial/>
