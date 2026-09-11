@@ -445,9 +445,8 @@ export default function Home({
 
       <CoupleMessage data={data} />
 
-
- <div
-           className="hidden md:block w-screen min-w-full max-w-none bg-[length:100%_100%] bg-no-repeat bg-top"
+      <div
+        className="hidden md:block w-screen min-w-full max-w-none bg-[length:100%_100%] bg-no-repeat bg-top"
         style={{ backgroundImage: `url(${coupleImage})` }}
       >
         <div className="flex justify-center md:h-195 lg:h-237.5 xl:h-272 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96">
