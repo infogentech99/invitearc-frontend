@@ -1,4 +1,4 @@
-// import DisableInspect from "@/app/components/DisableInspect";
+// import DisableInspect from "./components/DisableInspect";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./mayra-globals.css";
@@ -61,7 +61,6 @@ export default function RootLayout({
       >
       {/* <DisableInspect />  */}
         {children}
-        
       </body>
     </html>
   );

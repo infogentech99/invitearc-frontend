@@ -3,6 +3,7 @@ import "./globals.css";
 import { AuthProvider } from "../context/AuthContext";
 import { Toaster } from "react-hot-toast";
 import LayoutWrapper from "../components/LayoutWrapper";
+import DisableInspect from "../components/DisableInspect";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,7 @@ export default function RootLayout({ children }) {
           <LayoutWrapper>
             {children}
           </LayoutWrapper>
-
+<DisableInspect />
           <Toaster position="bottom-right" />
         </AuthProvider>
       </body>

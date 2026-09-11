@@ -47,7 +47,7 @@ const title = data?.marriageCountdownTitle || "The Journey Begins";
                     <p className="eb-garamond font-medium text-[#FFFFFF] text-center text-xs md:text-xl lg:text-[28px] px-3 md:px-25 lg:px-70 3xl:px-110">
                         {description}
                     </p>
-                    <hr className="w-42 md:w-66 lg:w-94 border lg:border-2 border-[#FFFFFF] my-1 md:my-1 lg:my-2" />
+                    <hr className="w-42 md:w-66 lg:w-94 border lg:border-2 border-[#FFFFFF]" />
                     <h2 className="eb-garamond font-normal text-2xl md:text-4xl lg:text-[62px] text-center text-[#FFFFFF]"> {timeLeft.days}D - {timeLeft.hours}H - {timeLeft.minutes}M</h2>
                     <div className="flex flex-col-1 gap-0 justify-center items-center mt-2 md:mt-4">
                         <a href="https://www.instagram.com/theinvitearc/" target="_blank"><img src={assets.instagram} alt="instagram" className="w-7.5 h-7.5 lg:w-12 lg:h-12"/></a>                      

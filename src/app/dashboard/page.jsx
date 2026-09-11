@@ -20,7 +20,6 @@ import vowsPreview from "../../../public/assets/preview-images/vows.webp";
 import beyondPreview from "../../../public/assets/preview-images/beyond.webp";
 import sohalaPreview from "../../../public/assets/preview-images/sohala.webp";
 
-
 export default function DashboardPage() {
   const { user, token, loading } = useContext(AuthContext);
   const [templates, setTemplates] = useState([]);
@@ -73,10 +72,10 @@ export default function DashboardPage() {
     starlight: starlightPreview.src,
     mayra: mayraPreview.src,
     kalyanam: kalyanamPreview.src,
-    niqah:niqahPreview.src,
-    vows:vowsPreview.src,
-    beyond:beyondPreview.src,
-    sohala:sohalaPreview.src,
+    niqah: niqahPreview.src,
+    vows: vowsPreview.src,
+    beyond: beyondPreview.src,
+    sohala: sohalaPreview.src,
   };
 
   return (
@@ -85,18 +84,18 @@ export default function DashboardPage() {
         <div className="flex flex-col gap-4 rounded-3xl bg-white p-8 shadow-sm">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500 font-georgia  text-center md:text-left">
                 Client dashboard
               </p>
-              <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+              <h1 className="mt-3 md:text-3xl text-2xl font-semibold tracking-tight text-slate-900 sm:text-4xl font-georgia text-center md:text-left">
                 Your purchased templates
               </h1>
             </div>
-            <div className="rounded-3xl bg-[#861E1D] px-4 py-3 text-sm font-semibold text-white">
+            <div className="rounded-3xl bg-[#861E1D] px-4 py-3 text-sm font-semibold text-white  text-center">
               {user ? `Welcome, ${user.name}` : "Loading user..."}
             </div>
           </div>
-          <p className="text-sm leading-6 text-slate-600">
+          <p className="text-sm leading-6 text-slate-600  text-center md:text-left">
             Manage templates you've purchased, open the editor, and publish
             shareable links.
           </p>
@@ -106,6 +105,109 @@ export default function DashboardPage() {
             </div>
           )}
         </div>
+
+        <section className="w-full rounded-[22px] border border-[#e3e3e3] bg-white px-7 py-5 shadow-sm mt-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            {/* Left Content */}
+            <div className="flex items-center gap-5">
+              <div className="flex md:h-18 md:w-18 h-10.5 w-10.5 shrink-0 items-center justify-center rounded-full bg-[#f8e5e4]">
+                <svg
+                  width="42"
+                  height="42"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-[#a52a27] md:h-8 md:w-8"
+                >
+                  <path
+                    d="M16 21V19C16 16.7909 14.2091 15 12 15H6C3.79086 15 2 16.7909 2 19V21"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <circle
+                    cx="9"
+                    cy="7"
+                    r="4"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                  />
+                  <path
+                    d="M22 21V19C21.9986 17.1771 20.765 15.5866 19 15.13"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M16 3.13C17.7699 3.58596 19.0071 5.17987 19.0071 7C19.0071 8.82013 17.7699 10.414 16 10.87"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+
+              {/* Text */}
+              <div>
+                <p className="mb-1 text-[12px] font-bold uppercase tracking-[4px] text-[#bd807d] font-georgia">
+                  Need Help Editing?
+                </p>
+
+                <h3 className="text-[20px] md:text-[26px] font-bold leading-tight text-[#101d3a] font-georgia">
+                  Let Our Expert Team Edit For You
+                </h3>
+
+                <p className="mt-1 text-[15px] text-[#687995]">
+                  Prefer to have it done for you? Our expert team can customize
+                  your invitation for a nominal service fee.
+                </p>
+              </div>
+            </div>
+
+            {/* Contact Support Button */}
+            <a
+              href="tel:+919910130963"
+              className="group flex min-w-[290px] items-center justify-center gap-3 cursor-pointer rounded-full bg-[#a52a27] px-7 py-4 text-[15px] font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#8f211f] hover:shadow-md"
+            >
+              {/* Chat Icon */}
+              <svg
+                width="23"
+                height="23"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20 11.5C20 15.6421 16.4183 19 12 19C10.6507 19 9.3858 18.6818 8.2821 18.1231L4 20L5.16498 16.5025C4.43158 15.3356 4 13.9706 4 12.5C4 8.35786 7.58172 5 12 5C16.4183 5 20 7.35786 20 11.5Z"
+                  stroke="white"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+
+              <span>Contact Support Team</span>
+
+              {/* Arrow */}
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                className="transition-transform duration-200 group-hover:translate-x-1"
+              >
+                <path
+                  d="M9 18L15 12L9 6"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
+        </section>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {fetching ? (
@@ -117,13 +219,11 @@ export default function DashboardPage() {
             ))
           ) : templates.length > 0 ? (
             templates.map((clientTemplate) => (
-              
               <article
                 key={clientTemplate._id}
                 className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
               >
                 <div className="overflow-hidden rounded-3xl bg-slate-100">
-                 
                   <img
                     src={
                       previewImages[clientTemplate.templateId?.componentKey] ||

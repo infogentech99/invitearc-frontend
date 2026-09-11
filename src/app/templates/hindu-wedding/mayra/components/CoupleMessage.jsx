@@ -103,7 +103,7 @@ export default function CoupleMessage({ data }) {
         <h1 className="eb-garamond font-medium text-[20px] md:text-2xl lg:text-[38px] text-center text-[#FFF097] lg:pt-40 pt-20">
           {coupleTitle}
         </h1>
-        <h2 className="parisienne-regular text-5xl md:text-6xl lg:text-[100px] text-center text-[#FFF097] px-3 md:px-17 lg:px-53 3xl:px-103 mt-12 lg:mt-36 leading-5 md:leading-tight">
+        <h2 className="parisienne-regular text-5xl md:text-6xl lg:text-[100px] text-center text-[#FFF097] px-3 md:px-17 lg:px-53 3xl:px-103 mt-12 lg:mt-26 leading-5 md:leading-tight">
           {coupleDescription}
         </h2>
         <div className="md:mt-32 mt-26 lg:mt-44 flex justify-center items-center overflow-visible">
@@ -160,7 +160,7 @@ export default function CoupleMessage({ data }) {
               <h2 className="eb-garamond font-normal text-[40px] md:text-3xl lg:text-[42px] text-[#FFF097] mt-2">
                 {weatherTitle}
               </h2>
-              <p className="eb-garamond font-medium text-[14px] lg:text-[15px] text-[#FFF097] mt-1 md:leading-5">
+              <p className="eb-garamond font-medium text-[14px] lg:text-[16px] text-[#FFF097] mt-1 md:leading-5">
                 {weatherDetails}
               </p>
             </div>
@@ -173,7 +173,7 @@ export default function CoupleMessage({ data }) {
               <h2 className="eb-garamond font-normal text-[40px] md:text-3xl lg:text-[42px] text-[#FFF097] mt-2">
                 {StaffTitle}
               </h2>
-              <p className="eb-garamond font-medium text-[14px] lg:text-[15px] md:leading-5 text-[#FFF097] mt-1">
+              <p className="eb-garamond font-medium text-[14px] lg:text-[16px] md:leading-5 text-[#FFF097] mt-1">
                 {StaffDetails}
               </p>
             </div>
@@ -186,7 +186,7 @@ export default function CoupleMessage({ data }) {
               <h2 className="eb-garamond font-normal text-[40px] md:text-3xl lg:text-[42px] text-[#FFF097] mt-2">
                 {parkingTitle}
               </h2>
-              <p className="eb-garamond font-medium text-[14px] lg:text-[15px] md:leading-5 text-[#FFF097] mt-1">
+              <p className="eb-garamond font-medium text-[14px] lg:text-[16px] md:leading-5 text-[#FFF097] mt-1">
                 {parkingDetails}
               </p>
             </div>

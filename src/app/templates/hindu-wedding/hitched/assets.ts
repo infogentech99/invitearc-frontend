@@ -25,7 +25,7 @@ import countdown_mobile_bg from "./assets/countdown_mobile_bg.jpg";
 import hitched_pre from "./assets/hitched_pre.png";
 import couple_logo from "./assets/couple_logo.png";
 export const assets = {
-  lamp: lamp.src, 
+  lamp: lamp.src,
   Rohit_mobilebgn: Rohit_mobilebgn.src,
   Rohit_bdmd: Rohit_bdmd.src,
   Rohit_desktop: Rohit_desktop.src,
@@ -37,7 +37,6 @@ export const assets = {
   image3: Image3.src,
   image4: Image4.src,
   image5: Image5.src,
-  // couple6: couple6.src,
   moon_mobile2: moon_mobile2.src,
   moon: moon.src,
   instagram: instagram.src,
@@ -45,12 +44,12 @@ export const assets = {
   weather: weather.src,
   car: car.src,
   whatsapp: whatsapp.src,
-  ganesh:ganesh.src,
-  back_bottom:back_bottom.src,
+  ganesh: ganesh.src,
+  back_bottom: back_bottom.src,
   background_song: "/template-audio/hitched.mp3",
   couple_bg: couple_bg.src,
-countdown_desktop_bg: countdown_desktop_bg.src,
-countdown_mobile_bg: countdown_mobile_bg.src,
-hitched_pre:hitched_pre.src, 
-couple_logo:couple_logo.src,
+  countdown_desktop_bg: countdown_desktop_bg.src,
+  countdown_mobile_bg: countdown_mobile_bg.src,
+  hitched_pre: hitched_pre.src,
+  couple_logo: couple_logo.src,
 };

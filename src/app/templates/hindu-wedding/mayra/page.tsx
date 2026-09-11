@@ -447,7 +447,6 @@ export default function Home({
 
 
  <div
-        // className="hidden md:block bg-cover bg-center bg-no-repeat"
            className="hidden md:block w-screen min-w-full max-w-none bg-[length:100%_100%] bg-no-repeat bg-top"
         style={{ backgroundImage: `url(${coupleImage})` }}
       >
