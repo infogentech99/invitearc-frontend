@@ -102,13 +102,22 @@ export default function Home() {
                   Have your own design? We’ll build it for you.
                 </p>
               </div>
-              <button
+              {/* <button
                 type="button"
                 onClick={() => openAuthModal("register")}
                 className="inline-flex shrink-0 items-center justify-center rounded-full cursor-pointer bg-white px-6 py-3 text-sm font-semibold text-[#861E1D] transition font-georgia hover:bg-slate-100"
               >
                 Order a Custom Invite
-              </button>
+              </button> */}
+              <a
+                  href="https://calendar.app.google/npDiJTLU9kriV6us8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex shrink-0 items-center justify-center rounded-full cursor-pointer bg-white px-6 py-3 text-sm font-semibold text-[#861E1D] transition hover:text-white font-georgia border-2 hover:border-2 hover:border-white hover:bg-[#861E1D]"
+                >
+                  Explore Custom Website/Videos 
+                  <span> →</span>
+                </a>
             </div>
           </div>
         </section>

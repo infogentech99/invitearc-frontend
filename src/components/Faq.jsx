@@ -8,11 +8,7 @@ const faqs = [
     answer:
       "No, once the invite link preview is generated, it cannot be modified. Please ensure all details are final before approval.",
   },
-  {
-    question: "Why is the invite preview not visible on WhatsApp?",
-    answer:
-      "WhatsApp caches metadata. It may take some time for the preview to appear after the link is generated.",
-  },
+  
   {
     question: "Why is music not autoplaying on Android?",
     answer:
@@ -28,13 +24,14 @@ const faqs = [
     answer:
       "Yes, separate invite links can be created for different guest groups.",
   },
-  {
-    question: "How many URLs are included?",
-    answer: "The number of URLs included depends on the selected package.",
-  },
+
   {
     question: "How many revisions are included?",
     answer: "Revision limits vary according to the plan you have chosen.",
+  },
+   {
+    question: "Will my preview image update after I edit my invitation?",
+    answer: "Your invitation can be edited anytime, but the preview image shown when sharing the link may not update immediately because social media platforms cache preview images. If you change the invitation, share the updated link again to refresh the preview.",
   },
 ];
 

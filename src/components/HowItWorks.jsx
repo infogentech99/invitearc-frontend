@@ -17,12 +17,18 @@ export default function HowItWorks () {
         >
           <div className="mx-auto max-w-full">
               <img
+                src="/assets/hown_mobile.webp"
+                alt="InviteArc"
+                className="rounded-xl md:hidden"
+              />
+              <img
                 src="/assets/hown.webp"
                 alt="InviteArc"
-                className="rounded-xl"
+                className="rounded-xl md:block hidden"
               />
 
-              </div></section>
+              </div>
+              </section>
         </div>
         </>
     )
