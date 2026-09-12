@@ -155,11 +155,11 @@ export default function DashboardPage() {
                 </p>
 
                 <h3 className="text-[20px] md:text-[26px] font-bold leading-tight text-[#101d3a] font-georgia">
-                  Let Our Expert Team Edit For You
+                  Let Our Team Edit For You
                 </h3>
 
                 <p className="mt-1 text-[15px] text-[#687995]">
-                  Prefer to have it done for you? Our expert team can customize
+                  Prefer to have it done for you? Our team can customize
                   your invitation for a nominal service fee.
                 </p>
               </div>

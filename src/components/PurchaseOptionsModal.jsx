@@ -25,7 +25,7 @@ export default function PurchaseOptionsModal({
   if (!open || !template) return null;
 
   const selfPrice = country === "IN" ? template.indprice : template.usaprice;
-  const expertPrice = country === "IN" ? selfPrice + 1000 : selfPrice + 50;
+  const teamEditPrice = country === "IN" ? selfPrice + 1000 : selfPrice + 50;
 
   return (
     <div className="fixed inset-x-0 bottom-0 top-24 z-60 grid place-items-center overflow-y-auto bg-[#171b1a]/75 px-3 py-4 backdrop-blur-sm sm:px-6 sm:py-8">
@@ -88,7 +88,7 @@ export default function PurchaseOptionsModal({
             <div className="flex items-start justify-between">
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#a54840]">Option 02</p>
-                <h3 className="mt-3 max-w-60 font-georgia text-xl md:text-2xl leading-[1.05] tracking-[-0.03em] text-[#171b19]">Let Our Expert Team Edit For You</h3>
+                <h3 className="mt-3 max-w-60 font-georgia text-xl md:text-2xl leading-[1.05] tracking-[-0.03em] text-[#171b19]">Let Our Team Edit For You</h3>
               </div>
               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#fbe8e3] text-[#ad5a4f]">
                 <UsersRound size={30} strokeWidth={1.35} />
@@ -98,12 +98,12 @@ export default function PurchaseOptionsModal({
               Best for those who want minor design updates.
             </p>
             <ul className="mt-1 space-y-3 text-sm text-[#4e5960]">
-              <li className="flex items-center gap-2"><span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#f5d9d3] text-[#a54840]"><Check size={13} strokeWidth={2.5} /></span> Personalization by our experts</li>
+              <li className="flex items-center gap-2"><span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#f5d9d3] text-[#a54840]"><Check size={13} strokeWidth={2.5} /></span> Personalization by our team</li>
               <li className="flex items-center gap-2"><span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#f5d9d3] text-[#a54840]"><Check size={13} strokeWidth={2.5} /></span> Review-ready invitation delivery</li>
             </ul>
             <div className="mt-8 flex flex-wrap items-center justify-between gap-3">
-              <span className="font-georgia md:text-2xl text-xl font-bold tracking-[-0.02em] text-[#151918]">{formatPrice(expertPrice, country)}</span>
-              <button type="button" onClick={() => onPay("expert")} disabled={processing} className="inline-flex items-center gap-2 rounded-full bg-[#A8753C] border-2 border-[#A8753C] px-6 py-3 text-sm font-semibold cursor-pointer text-white shadow-[0_8px_18px_rgba(153,31,27,0.22)] transition hover:bg-[#A8753C] disabled:opacity-50">
+              <span className="font-georgia md:text-2xl text-xl font-bold tracking-[-0.02em] text-[#151918]">{formatPrice(teamEditPrice, country)}</span>
+              <button type="button" onClick={() => onPay("team-edit")} disabled={processing} className="inline-flex items-center gap-2 rounded-full bg-[#A8753C] border-2 border-[#A8753C] px-6 py-3 text-sm font-semibold cursor-pointer text-white shadow-[0_8px_18px_rgba(153,31,27,0.22)] transition hover:bg-[#A8753C] disabled:opacity-50">
                 {processing ? "Processing..." : "Pay now"} <ArrowRight size={17} />
               </button>
             </div>
