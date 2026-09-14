@@ -17,7 +17,7 @@ const previewImages = {
   invitation: "/templates/invitation-preview.jpg",
 };
 
-const popularTemplateOrder = ["vows","hitched", "jodi", "sohala", "mayra", "starlight"];
+const popularTemplateOrder = ["hitched", "jodi", "sohala", "saanjh", "mayra", "starlight"];
 
 export default function TemplateGrid() {
   const router = useRouter();
@@ -219,11 +219,11 @@ export default function TemplateGrid() {
       />
       <div className="mb-8 flex flex-wrap gap-5 mt-12 justify-center ">
         {[
-          "All",
-          "Christian Weddings",
+          "All", 
           "Hindu Weddings",
           "Sikh Weddings",
           "Muslim Weddings", 
+          "Christian Weddings",
           "South-Indian Weddings",
           "For him/her",
         ].map((category) => (
@@ -313,10 +313,14 @@ export default function TemplateGrid() {
                     </p>
                   </div>
                 </div>
-                <div className="mt-8 flex flex-wrap items-center justify-between gap-3">
-                  <span className="text-xl font-semibold text-slate-900">
-                    {priceText(template)}
-                  </span>
+                <div className="mt-8 flex flex-wrap items-center justify-between md:gap-0 gap-3">
+                  {/* <span className="text-xl font-semibold text-slate-900">
+                    {priceText(template)}+GST
+                  </span> */}
+                  <span className="text-[16px] font-semibold text-slate-900">
+  {priceText(template)}
+  <span className="text-[11px] font-semibold">+GST</span>
+</span>
                   <div className="flex flex-wrap gap-3">
                     {template.isBuiltIn ? (
                       <>
