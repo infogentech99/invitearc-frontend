@@ -76,7 +76,7 @@ export default function PurchaseOptionsModal({
               <li className="flex items-center gap-2"><span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#faf3eb] text-[#A8753C]"><Check size={13} strokeWidth={2.5} /></span> Publish and share instantly</li>
             </ul>
             <div className="mt-8 flex flex-wrap items-center justify-between gap-3">
-              <span className="font-georgia md:text-2xl text-xl font-bold tracking-[-0.02em] text-[#151918]">{formatPrice(selfPrice, country)}</span>
+              <span className="font-georgia md:text-2xl text-xl font-bold tracking-[-0.02em] text-[#151918]">{formatPrice(selfPrice, country)}<span className="text-[11px] font-semibold">+GST</span></span>
               <button type="button" onClick={() => onPay("self-edit")} disabled={processing} className="inline-flex items-center gap-2 rounded-full bg-white border-2 border-[#A8753C] px-6 py-3 text-sm font-semibold text-[#A8753C] shadow-[0_8px_18px_rgba(90,117,55,0.2)] transition hover:text-white hover:bg-[#A8753C] disabled:opacity-50 cursor-pointer">
                 {processing ? "Processing..." : "Pay now"} <ArrowRight size={17} />
               </button>
@@ -102,7 +102,7 @@ export default function PurchaseOptionsModal({
               <li className="flex items-center gap-2"><span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#f5d9d3] text-[#a54840]"><Check size={13} strokeWidth={2.5} /></span> Review-ready invitation delivery</li>
             </ul>
             <div className="mt-8 flex flex-wrap items-center justify-between gap-3">
-              <span className="font-georgia md:text-2xl text-xl font-bold tracking-[-0.02em] text-[#151918]">{formatPrice(teamEditPrice, country)}</span>
+              <span className="font-georgia md:text-2xl text-xl font-bold tracking-[-0.02em] text-[#151918]">{formatPrice(teamEditPrice, country)}<span className="text-[11px] font-semibold">+GST</span></span>
               <button type="button" onClick={() => onPay("team-edit")} disabled={processing} className="inline-flex items-center gap-2 rounded-full bg-[#A8753C] border-2 border-[#A8753C] px-6 py-3 text-sm font-semibold cursor-pointer text-white shadow-[0_8px_18px_rgba(153,31,27,0.22)] transition hover:bg-[#A8753C] disabled:opacity-50">
                 {processing ? "Processing..." : "Pay now"} <ArrowRight size={17} />
               </button>
