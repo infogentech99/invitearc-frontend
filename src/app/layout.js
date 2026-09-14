@@ -25,7 +25,7 @@ export const metadata = {
 
   openGraph: {
     title: "InviteArc | Luxury Website and Video Invitation",
-    description: "Come celebrate love, laughter & happily ever after with us!",
+    description: "Create premium online wedding invitations, event pages, galleries & countdowns. Modern website invites for all occasions",
     url: "https://invitearc.com/",
     siteName: "InviteArc",
     images: [
@@ -43,7 +43,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "InviteArc | Luxury Website and Video Invitation",
-    description: "Come celebrate love, laughter & happily ever after with us!",
+    description: "Create premium online wedding invitations, event pages, galleries & countdowns. Modern website invites for all occasions",
     images: ["/og.jpg"],
   },
 
