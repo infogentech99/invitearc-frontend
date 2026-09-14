@@ -15,10 +15,53 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// export const metadata = {
+//   title: "InviteArc | Luxury Website & Video Invitation",
+//   description: "Invite template purchase and editing platform",
+// };
+
 export const metadata = {
-  title: "InviteArc | Luxury Website & Video Invitation",
-  description: "Invite template purchase and editing platform",
+  metadataBase: new URL("https://invitearc.com/"),
+
+  openGraph: {
+    title: "InviteArc | Luxury Website and Video Invitation",
+    description: "Come celebrate love, laughter & happily ever after with us!",
+    url: "https://invitearc.com/",
+    siteName: "InviteArc",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "InviteArc | Luxury Website and Video Invitation",
+      },
+    ],
+    type: "website",
+  },
+
+
+  twitter: {
+    card: "summary_large_image",
+    title: "InviteArc | Luxury Website and Video Invitation",
+    description: "Come celebrate love, laughter & happily ever after with us!",
+    images: ["/og.jpg"],
+  },
+
+ other: {
+    "og:image:secure_url": "https://invitearc.com/og.jpg",
+    "og:image:type": "image/jpeg",
+  },
+
+
 };
+
+
+
+
+
+
+
+
 
 export default function RootLayout({ children }) {
   return (
