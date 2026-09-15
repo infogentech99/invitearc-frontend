@@ -3,7 +3,7 @@ import "./globals.css";
 import { AuthProvider } from "../context/AuthContext";
 import { Toaster } from "react-hot-toast";
 import LayoutWrapper from "../components/LayoutWrapper";
-// import DisableInspect from "../components/DisableInspect";
+import DisableInspect from "../components/DisableInspect";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,10 +15,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// export const metadata = {
-//   title: "InviteArc | Luxury Website & Video Invitation",
-//   description: "Invite template purchase and editing platform",
-// };
 
 export const metadata = {
   metadataBase: new URL("https://invitearc.com/"),
@@ -74,7 +70,7 @@ export default function RootLayout({ children }) {
           <LayoutWrapper>
             {children}
           </LayoutWrapper>
-{/* <DisableInspect /> */}
+<DisableInspect />
           <Toaster position="bottom-right" />
         </AuthProvider>
       </body>

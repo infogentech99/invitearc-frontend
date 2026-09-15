@@ -211,7 +211,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
 
   return (
     <>
-        {/* <IntroVideo /> */}
+        <IntroVideo />
       <button
         onClick={() => {
           started ? toggleMusic() : startMusic();
