@@ -16,6 +16,8 @@ import two from "./assets/two.webp";
 import three from "./assets/three.webp";
 import four from "./assets/four.webp";
 import five from "./assets/five.webp";
+import six from "./assets/six.webp";
+import seven from "./assets/seven.webp";
 import rsvp from "./assets/rsvp.webp";
 import whatsapp from "./assets/whatsapp.webp";
 import couple_logo from "./assets/couple_logo.webp";
@@ -41,6 +43,8 @@ two:two.src,
 three:three.src,
 four:four.src,
 five:five.src,
+six:six.src,
+seven:seven.src,
 rsvp:rsvp.src,
 whatsapp:whatsapp.src,
 couple_logo:couple_logo.src,

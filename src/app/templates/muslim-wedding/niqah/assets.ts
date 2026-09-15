@@ -20,6 +20,7 @@ import coupleimage2 from "./assets/coupleimage2.webp";
 import coupleimage3 from "./assets/coupleimage3.webp";
 import coupleimage4 from "./assets/coupleimage4.webp";
 import coupleimage5 from "./assets/coupleimage5.webp";
+import coupleimage6 from "./assets/coupleimage6.webp";
 import responsive from "./assets/responsive.webp";
 import sunset from "./assets/sunset.png";
 import hero_videoimg from "./assets/hero_videoimg.png";
@@ -49,6 +50,7 @@ export const assets = {
     coupleimage3:coupleimage3.src,
     coupleimage4:coupleimage4.src,
     coupleimage5:coupleimage5.src,
+    coupleimage6:coupleimage6.src,
     sunset:sunset.src,
     background_song: "/template-audio/niqah.mp3",
     hero_videoimg:hero_videoimg.src,

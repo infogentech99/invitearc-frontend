@@ -211,7 +211,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
 
   return (
     <>
-        <IntroVideo />
+        {/* <IntroVideo /> */}
       <button
         onClick={() => {
           started ? toggleMusic() : startMusic();
@@ -487,7 +487,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
               />
 
               {/* Center Text */}
-              <div className="flex flex-col justify-center items-center text-center md:mb-54 lg:mb-130">
+              <div className="flex flex-col justify-center items-center text-center md:mb-54 lg:mb-100">
                 <p className="font-parisienne-regular text-center text-2xl md:text-[40px] lg:text-7xl lg:leading-22 text-[#E1EF1E]">
                   {data.thankyoutitle}
                 </p>
@@ -501,7 +501,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
                 <img
                   src={assets.lights}
                   alt="lights"
-                  className="w-20 h-58 md:w-30 md:h-100 lg:w-42 lg:h-162 3xl:h-190 object-cover"
+                  className="w-20 h-58 md:w-30 md:h-100 lg:w-180 lg:h-162 3xl:h-190 object-cover"
                 />
               </div>
             </div>

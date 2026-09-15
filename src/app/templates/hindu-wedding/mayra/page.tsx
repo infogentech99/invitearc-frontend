@@ -445,7 +445,7 @@ export default function Home({
 
       <CoupleMessage data={data} />
 
-      <div
+      {/* <div
         className="hidden md:block w-screen min-w-full max-w-none bg-[length:100%_100%] bg-no-repeat bg-top"
         style={{ backgroundImage: `url(${coupleImage})` }}
       >
@@ -459,7 +459,23 @@ export default function Home({
             className=" top-50 w-20 h-24 md:top-41 md:w-31 md:h-35 lg:top-84 lg:w-46 lg:h-52 3xl:top-118"
           />
         </div>
-      </div>
+      </div> */}
+
+
+      <div
+  className="hidden md:block relative left-1/2 right-1/2 -mx-[50vw] w-screen min-w-full max-w-none bg-[length:100%_100%] bg-no-repeat bg-top"
+  style={{ backgroundImage: `url(${coupleImage})` }}
+>
+  <div className="flex justify-center md:h-195 lg:h-237.5 xl:h-272 2xl:h-325 3xl:h-[1600px] md:pt-48 lg:pt-72 3xl:pt-96">
+    <img
+      src={data?.Logo || assets.logo}
+      alt="logo"
+      width={250}
+      height={300}
+      className="top-50 w-20 h-24 md:top-41 md:w-31 md:h-35 lg:top-84 lg:w-46 lg:h-52 3xl:top-118"
+    />
+  </div>
+</div>
 
       <div className="md:hidden relative flex items-start justify-center">
 

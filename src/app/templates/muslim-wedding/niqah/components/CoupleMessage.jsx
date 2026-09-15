@@ -23,7 +23,7 @@ const extractImageSrc = (image) => {
           assets.coupleimage3,
           assets.coupleimage4,
           assets.coupleimage5,
-          
+           assets.coupleimage6,
         ];
 
 
@@ -79,7 +79,7 @@ const extractImageSrc = (image) => {
       className="bg-[url('/assets/bg_second.webp')] relative bg-cover bg-no-repeat"
       style={{ backgroundImage: `url(${assets.bg_second})` }}
     >
-      <div className="3xl:h-1017 lg:h-900 md:h-564 h-650 xl:h-910 2xl:h-900">
+      <div className="3xl:h-985 lg:h-878 md:h-557 h-650 xl:h-878 2xl:h-868">
         <h1 className="font-eb-garamond font-medium text-xl md:text-2xl lg:text-[38px] text-center text-[#FFF4B9] lg:pt-40 pt-20">
           {coupleTitle}
         </h1>
@@ -244,6 +244,18 @@ const extractImageSrc = (image) => {
   id="rsvp-section"
 >
   {/* DESKTOP/TABLET IMAGE */}
+  {/* <img
+    src={assets.couple_img2}
+    alt="couple"
+    className="
+      hidden md:block
+      w-120 h-140
+      lg:w-180 lg:h-307
+      3xl:w-260 3xl:h-378
+      object-cover
+    "
+  /> */}
+
   <img
     src={assets.couple_img2}
     alt="couple"
@@ -253,6 +265,8 @@ const extractImageSrc = (image) => {
       lg:w-180 lg:h-307
       3xl:w-260 3xl:h-378
       object-cover
+      relative z-10
+      -mt-20 lg:-mt-32
     "
   />
 

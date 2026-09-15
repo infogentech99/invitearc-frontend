@@ -22,7 +22,8 @@ export default function CoupleMessage({ data }) {
           assets.three,
           assets.four,
           assets.five,
-          // assets.image6,
+          assets.six,
+          assets.seven,
         ];
 
   const coupleTitle = data?.coupleMessageTitle || "INTRODUCTION";
@@ -107,27 +108,6 @@ export default function CoupleMessage({ data }) {
     return () => clearInterval(interval);
   }, [targetDate]);
 
-  // const testimonial = [
-  //   {
-  //     img: assets.one,
-  //   },
-
-  //   {
-  //     img: assets.two,
-  //   },
-
-  //   {
-  //     img: assets.three,
-  //   },
-
-  //   {
-  //     img: assets.four,
-  //   },
-
-  //   {
-  //     img: assets.five,
-  //   },
-  // ];
 
   return (
     <div
