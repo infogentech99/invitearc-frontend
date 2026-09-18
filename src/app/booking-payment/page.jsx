@@ -56,7 +56,7 @@ export default function CustomPaymentPage() {
     try {
       await loadRazorpayScript();
       const response = await axios.post(
-        `${config.api.baseUrl}/api/client-templates/custom-payment/create-order`,
+        `${config.api.baseUrl}/api/client-templates/booking-payment/create-order`,
         { amount: numericAmount, country },
       );
       const order = response.data?.data;
@@ -76,7 +76,7 @@ export default function CustomPaymentPage() {
         handler: async (paymentResponse) => {
           try {
             await axios.post(
-              `${config.api.baseUrl}/api/client-templates/custom-payment/verify`,
+              `${config.api.baseUrl}/api/client-templates/booking-payment/verify`,
               {
                 razorpayOrderId: paymentResponse.razorpay_order_id,
                 razorpayPaymentId: paymentResponse.razorpay_payment_id,
@@ -127,7 +127,7 @@ export default function CustomPaymentPage() {
             className="h-20 w-auto object-contain"
           />
          </div>
-        <h1 className="mt-4 text-center font-georgia text-3xl font-bold">Custom Payment</h1>
+        <h1 className="mt-4 text-center font-georgia text-3xl font-bold">Booking Payment</h1>
         <p className="mt-3 text-center text-sm leading-6 text-slate-500">
             Enter the amount you want to pay securely through Razorpay.
         </p>
