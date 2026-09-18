@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import config from "../../config/config";
+import { GoShieldCheck } from "react-icons/go";
+import { MdLockOutline } from "react-icons/md";
 
 const razorpayScriptUrl = "https://checkout.razorpay.com/v1/checkout.js";
 
@@ -108,7 +110,11 @@ export default function CustomPaymentPage() {
     } catch (error) {
       console.error(error);
       setMessageType("error");
-      setMessage(error.response?.data?.message || error.message || "Unable to open payment.");
+      setMessage(
+        error.response?.data?.message ||
+          error.message ||
+          "Unable to open payment.",
+      );
     } finally {
       setProcessing(false);
     }
@@ -120,24 +126,32 @@ export default function CustomPaymentPage() {
         {/* <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-[#a8753c]">
           InviteArc
         </p> */}
-         <div className="flex justify-center">
-            <img
+        <div className="flex justify-center">
+          <img
             src="/assets/INLOGO.png"
             alt="InviteArc"
             className="h-20 w-auto object-contain"
           />
-         </div>
-        <h1 className="mt-4 text-center font-georgia text-3xl font-bold">Booking Payment</h1>
+        </div>
+        <h1 className="mt-4 text-center font-georgia md:text-3xl text-2xl font-bold">
+          Complete Your Booking
+        </h1>
         <p className="mt-3 text-center text-sm leading-6 text-slate-500">
-            Enter the amount you want to pay securely through Razorpay.
+          Enter the amount you want to pay securely through Razorpay.
         </p>
 
         <form onSubmit={handlePayNow} className="mt-8">
-          <label htmlFor="custom-payment-amount" className="text-sm font-semibold text-slate-700 font-georgia">
+          <label
+            htmlFor="custom-payment-amount"
+            className="text-sm font-semibold text-slate-700 font-georgia"
+          >
             Payment amount ({isIndia ? "INR" : "USD"})
           </label>
           <div className="mt-2 flex items-center overflow-hidden rounded-2xl border border-[#e2cdb1] bg-[#fffaf2] focus-within:border-[#861E1D]">
-            <span className="px-4 text-lg text-[#861E1D]">{currencySymbol}</span>
+            <MdLockOutline className="w-6 h-6 text-[#8C1E1E] shrink-0 pl-2" />
+            <span className="pr-4 pl-3 text-lg text-[#861E1D]">
+              {currencySymbol}
+            </span>
             <input
               id="custom-payment-amount"
               type="number"
@@ -146,9 +160,20 @@ export default function CustomPaymentPage() {
               value={amount}
               onChange={(event) => setAmount(event.target.value)}
               placeholder="Enter amount"
-              className="w-full bg-transparent px-2 py-4 text-lg text-slate-900 outline-none"
+              className="w-full bg-transparent px-2 py-4 text-[16px] text-slate-900 outline-none"
               required
             />
+            <img
+              src="/assets/razorpay.png"
+              alt="razorpay"
+              className="h-7 object-contain mr-3"
+            />
+          </div>
+          <div className="flex gap-2 items-center mt-4">
+            <GoShieldCheck className="w-4 h-4 text-[#8C1E1E] shrink-0" />
+            <span className="md:text-sm text-[13px] text-slate-500 leading-none">
+              All payments are processed securely via Razorpay
+            </span>
           </div>
           <button
             type="submit"
