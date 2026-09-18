@@ -17,7 +17,14 @@ const previewImages = {
   invitation: "/templates/invitation-preview.jpg",
 };
 
-const popularTemplateOrder = ["hitched", "jodi", "sohala", "saanjh", "mayra", "starlight"];
+const popularTemplateOrder = [
+  "hitched",
+  "jodi",
+  "sohala",
+  "saanjh",
+  "mayra",
+  "starlight",
+];
 
 export default function TemplateGrid() {
   const router = useRouter();
@@ -194,14 +201,18 @@ export default function TemplateGrid() {
           (template) =>
             template.category?.toLowerCase() === selectedCategory.toLowerCase(),
         );
-  const templates = [...filteredTemplates].sort((firstTemplate, secondTemplate) => {
-    const firstIndex = popularTemplateOrder.indexOf(firstTemplate.slug);
-    const secondIndex = popularTemplateOrder.indexOf(secondTemplate.slug);
-    const firstPriority = firstIndex === -1 ? popularTemplateOrder.length : firstIndex;
-    const secondPriority = secondIndex === -1 ? popularTemplateOrder.length : secondIndex;
+  const templates = [...filteredTemplates].sort(
+    (firstTemplate, secondTemplate) => {
+      const firstIndex = popularTemplateOrder.indexOf(firstTemplate.slug);
+      const secondIndex = popularTemplateOrder.indexOf(secondTemplate.slug);
+      const firstPriority =
+        firstIndex === -1 ? popularTemplateOrder.length : firstIndex;
+      const secondPriority =
+        secondIndex === -1 ? popularTemplateOrder.length : secondIndex;
 
-    return firstPriority - secondPriority;
-  });
+      return firstPriority - secondPriority;
+    },
+  );
   return (
     <>
       <PurchaseOptionsModal
@@ -219,10 +230,10 @@ export default function TemplateGrid() {
       />
       <div className="mb-8 flex flex-wrap gap-5 mt-12 justify-center ">
         {[
-          "All", 
+          "All",
           "Hindu Weddings",
           "Sikh Weddings",
-          "Muslim Weddings", 
+          "Muslim Weddings",
           "Christian Weddings",
           "South-Indian Weddings",
           "For him/her",
@@ -270,7 +281,7 @@ export default function TemplateGrid() {
                         ? `/templates/${template.slug}`
                         : `/demo/${template.slug}`
                     }
-                     prefetch={false}
+                    prefetch={false}
                     className="block overflow-hidden border-2 border-black rounded-4xl"
                   >
                     {template.isBuiltIn ? (
@@ -318,9 +329,9 @@ export default function TemplateGrid() {
                     {priceText(template)}+GST
                   </span> */}
                   <span className="text-[16px] font-semibold text-slate-900">
-  {priceText(template)}
-  <span className="text-[11px] font-semibold">+GST</span>
-</span>
+                    {priceText(template)}
+                    <span className="text-[11px] font-semibold">+GST</span>
+                  </span>
                   <div className="flex flex-wrap gap-3">
                     {template.isBuiltIn ? (
                       <>

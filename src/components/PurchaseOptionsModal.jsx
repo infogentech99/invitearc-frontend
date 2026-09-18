@@ -11,8 +11,16 @@ import {
   X,
 } from "lucide-react";
 
-const formatPrice = (amount, country) =>
-  country === "IN" ? `₹ ${amount}` : `$ ${amount}`;
+// const formatPrice = (amount, country) =>
+//   country === "IN" ? `₹ ${amount}` : `$ ${amount}`;
+
+
+const formatPrice = (amount, country) => {
+  const price = Number(amount);
+  return country === "IN"
+    ? `₹ ${price.toFixed(2)}`
+    : `$ ${price.toFixed(2)}`;
+};
 
 export default function PurchaseOptionsModal({
   open,
@@ -24,8 +32,19 @@ export default function PurchaseOptionsModal({
 }) {
   if (!open || !template) return null;
 
-  const selfPrice = country === "IN" ? template.indprice : template.usaprice;
-  const teamEditPrice = country === "IN" ? selfPrice + 1000 : selfPrice + 50;
+  // const selfPrice = country === "IN" ? template.indprice : template.usaprice;
+
+const selfPrice = Number(
+  country === "IN" ? template.indprice : template.usaprice
+);
+
+  // const teamEditPrice = country === "IN" ? selfPrice + 1000 : selfPrice + 50;
+
+
+  const teamEditPrice =
+  country === "IN"
+    ? Math.round((selfPrice + 1000) * 100) / 100
+    : Math.round((selfPrice + 45) * 100) / 100;
 
   return (
     <div className="fixed inset-x-0 bottom-0 top-24 z-60 grid place-items-center overflow-y-auto bg-[#171b1a]/75 px-3 py-4 backdrop-blur-sm sm:px-6 sm:py-8">
