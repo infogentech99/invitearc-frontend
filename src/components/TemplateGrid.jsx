@@ -290,7 +290,7 @@ export default function TemplateGrid() {
                   >
                     {template.isBuiltIn ? (
                       <div className="h-48 w-full flex items-center justify-center bg-linear-to-br from-purple-200 via-pink-200 to-blue-200">
-                        <img
+                        {/* <img
                           src={
                             template.previewImage ||
                             template.defaultData?.sharePreviewImage ||
@@ -298,9 +298,34 @@ export default function TemplateGrid() {
                           }
                           alt={template.title}
                           className="h-full w-full object-cover"
+                        /> */}
+                        <img
+                          src={
+                            template.previewImage ||
+                            template.defaultData?.sharePreviewImage ||
+                            previewImages[template.slug]
+                          }
+                          alt={template.title}
+                          loading={
+                            templates.indexOf(template) < 2 ? "eager" : "lazy"
+                          }
+                          decoding="async"
+                          fetchPriority={
+                            templates.indexOf(template) < 2 ? "high" : "low"
+                          }
+                          className="h-full w-full object-cover"
                         />
                       </div>
                     ) : (
+                      // <img
+                      //   src={
+                      //     template.previewImage ||
+                      //     template.defaultData?.sharePreviewImage ||
+                      //     "/placeholder-template.webp"
+                      //   }
+                      //   alt={template.title || "Template preview"}
+                      //   className="h-full w-full object-cover "
+                      // />
                       <img
                         src={
                           template.previewImage ||
@@ -308,7 +333,9 @@ export default function TemplateGrid() {
                           "/placeholder-template.webp"
                         }
                         alt={template.title || "Template preview"}
-                        className="h-full w-full object-cover "
+                        loading="lazy"
+                        decoding="async"
+                        className="h-full w-full object-cover"
                       />
                     )}
                   </Link>
