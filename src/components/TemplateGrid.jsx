@@ -34,6 +34,7 @@ export default function TemplateGrid() {
   const [country, setCountry] = useState("IN");
   const [selectedPurchase, setSelectedPurchase] = useState(null);
   const [purchaseOptionsOpen, setPurchaseOptionsOpen] = useState(false);
+  const [visibleTemplateCount, setVisibleTemplateCount] = useState(8);
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -240,7 +241,10 @@ export default function TemplateGrid() {
         ].map((category) => (
           <button
             key={category}
-            onClick={() => setSelectedCategory(category)}
+            onClick={() => {
+              setSelectedCategory(category);
+              setVisibleTemplateCount(8);
+            }}
             className={`px-5 py-2 rounded-full border transition cursor-pointer ${
               selectedCategory === category
                 ? "bg-[#861E1D] text-white border-[#861E1D]"
@@ -268,7 +272,7 @@ export default function TemplateGrid() {
             </div>
           ))
         ) : templates.length > 0 ? (
-          templates.map((template) => {
+          templates.slice(0, visibleTemplateCount).map((template) => {
             return (
               <article
                 key={template.slug || template._id}
@@ -391,6 +395,17 @@ export default function TemplateGrid() {
           </div>
         )}
       </div>
+      {templates.length > visibleTemplateCount && (
+        <div className="mt-10 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setVisibleTemplateCount((count) => count + 8)}
+            className="rounded-full border-2 border-[#861E1D] cursor-pointer bg-white px-7 py-3 text-sm font-semibold text-[#861E1D] transition hover:bg-[#861E1D] hover:text-white"
+          >
+            Load More Templates
+          </button>
+        </div>
+      )}
     </>
   );
 }
