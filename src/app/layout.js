@@ -15,13 +15,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
 export const metadata = {
   metadataBase: new URL("https://invitearc.com/"),
 
   openGraph: {
     title: "InviteArc | Luxury Website and Video Invitation",
-    description: "Create premium online wedding invitations, event pages, galleries & countdowns. Modern website invites for all occasions",
+    description:
+      "Create premium online wedding invitations, event pages, galleries & countdowns. Modern website invites for all occasions",
     url: "https://invitearc.com/",
     siteName: "InviteArc",
     images: [
@@ -35,29 +35,19 @@ export const metadata = {
     type: "website",
   },
 
-
   twitter: {
     card: "summary_large_image",
     title: "InviteArc | Luxury Website and Video Invitation",
-    description: "Create premium online wedding invitations, event pages, galleries & countdowns. Modern website invites for all occasions",
+    description:
+      "Create premium online wedding invitations, event pages, galleries & countdowns. Modern website invites for all occasions",
     images: ["/og.jpg"],
   },
 
- other: {
+  other: {
     "og:image:secure_url": "https://invitearc.com/og.jpg",
     "og:image:type": "image/jpeg",
   },
-
-
 };
-
-
-
-
-
-
-
-
 
 export default function RootLayout({ children }) {
   return (
@@ -67,10 +57,8 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col">
         <AuthProvider>
-          <LayoutWrapper>
-            {children}
-          </LayoutWrapper>
-<DisableInspect />
+          <LayoutWrapper>{children}</LayoutWrapper>
+          {/* <DisableInspect /> */}
           <Toaster position="bottom-right" />
         </AuthProvider>
       </body>

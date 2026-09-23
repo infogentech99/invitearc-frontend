@@ -28,6 +28,7 @@ const loadRazorpayScript = () =>
 
 export default function CustomPaymentPage() {
   const [amount, setAmount] = useState("");
+  const [email, setEmail] = useState("");
   const [country, setCountry] = useState("IN");
   const [processing, setProcessing] = useState(false);
   const [message, setMessage] = useState("");
@@ -44,7 +45,14 @@ export default function CustomPaymentPage() {
 
   const handlePayNow = async (event) => {
     event.preventDefault();
+    const normalizedEmail = email.trim();
     const numericAmount = Number(amount);
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
+      setMessageType("error");
+      setMessage("Please enter a valid email address.");
+      return;
+    }
 
     if (!Number.isFinite(numericAmount) || numericAmount <= 0) {
       setMessageType("error");
@@ -59,7 +67,7 @@ export default function CustomPaymentPage() {
       await loadRazorpayScript();
       const response = await axios.post(
         `${config.api.baseUrl}/api/client-templates/booking-payment/create-order`,
-        { amount: numericAmount, country },
+        { amount: numericAmount, country, email: normalizedEmail },
       );
       const order = response.data?.data;
 
@@ -141,33 +149,57 @@ export default function CustomPaymentPage() {
         </p>
 
         <form onSubmit={handlePayNow} className="mt-8">
-          <label
-            htmlFor="custom-payment-amount"
-            className="text-sm font-semibold text-slate-700 font-georgia"
-          >
-            Payment amount ({isIndia ? "INR" : "USD"})
-          </label>
-          <div className="mt-2 flex items-center overflow-hidden rounded-2xl border border-[#e2cdb1] bg-[#fffaf2] focus-within:border-[#861E1D]">
-            <MdLockOutline className="w-6 h-6 text-[#8C1E1E] shrink-0 pl-2" />
-            <span className="pr-4 pl-3 text-lg text-[#861E1D]">
-              {currencySymbol}
-            </span>
-            <input
-              id="custom-payment-amount"
-              type="number"
-              min="1"
-              step="0.01"
-              value={amount}
-              onChange={(event) => setAmount(event.target.value)}
-              placeholder="Enter amount"
-              className="w-full bg-transparent px-2 py-4 text-[16px] text-slate-900 outline-none"
-              required
-            />
-            <img
-              src="/assets/razorpay.png"
-              alt="razorpay"
-              className="h-7 object-contain mr-3"
-            />
+          <div className="space-y-5">
+            <div>
+              <label
+                htmlFor="custom-payment-email"
+                className="text-sm font-semibold text-slate-700 font-georgia"
+              >
+                Email address
+              </label>
+              <div className="mt-2 overflow-hidden rounded-2xl border border-[#e2cdb1] bg-[#fffaf2] focus-within:border-[#861E1D]">
+                <input
+                  id="custom-payment-email"
+                  type="email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  placeholder="Enter your email"
+                  className="w-full bg-transparent px-4 py-4 text-[16px] text-slate-900 outline-none"
+                  required
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                htmlFor="custom-payment-amount"
+                className="text-sm font-semibold text-slate-700 font-georgia"
+              >
+                Payment amount ({isIndia ? "INR" : "USD"})
+              </label>
+              <div className="mt-2 flex items-center overflow-hidden rounded-2xl border border-[#e2cdb1] bg-[#fffaf2] focus-within:border-[#861E1D]">
+                <MdLockOutline className="w-6 h-6 text-[#8C1E1E] shrink-0 pl-2" />
+                <span className="pr-4 pl-3 text-lg text-[#861E1D]">
+                  {currencySymbol}
+                </span>
+                <input
+                  id="custom-payment-amount"
+                  type="number"
+                  min="1"
+                  step="0.01"
+                  value={amount}
+                  onChange={(event) => setAmount(event.target.value)}
+                  placeholder="Enter amount"
+                  className="w-full bg-transparent px-2 py-4 text-[16px] text-slate-900 outline-none"
+                  required
+                />
+                <img
+                  src="/assets/razorpay.png"
+                  alt="razorpay"
+                  className="h-7 object-contain mr-3"
+                />
+              </div>
+            </div>
           </div>
           <div className="flex gap-2 items-center mt-4">
             <GoShieldCheck className="w-4 h-4 text-[#8C1E1E] shrink-0" />
