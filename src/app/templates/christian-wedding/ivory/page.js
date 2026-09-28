@@ -6,6 +6,7 @@ import Reception from "./components/Reception";
 import Celebration from "./components/Celebration";
 import { assets } from "./assets";
 import "./ivory-globals.css";
+import IntroVideo from "./components/IntroVideo";
 
 const initialData = {
   togetherName: "TOGETHER WITH THEIR FAMILIES",
@@ -33,16 +34,25 @@ const initialData = {
   receptionInfo: "Reception Info",
   receptionMessage:
     "Please join us for an evening of dinner and dancing as we celebrate our new life together.",
-    receptionTime:"18:30",
-    receptionDay:"SATURDAY",
-    receptionDate:"10",
-    receptionMonth:"OCTOBER",
-    receptionYear:"2026",
-    guestTitle:"Guests Arrive",
-    guestTime:"18:00 PM",
-    receptionTitle:"Reception Begins",
-    
-
+  receptionTime: "18:30",
+  receptionDay: "SATURDAY",
+  receptionDate: "10",
+  receptionMonth: "OCTOBER",
+  receptionYear: "2026",
+  guestTitle: "Guests Arrive",
+  guestTime: "18:00 PM",
+  receptionTitle: "Reception Begins",
+  venueName: "Schloss Elaria ",
+  venueLocation: "Retreat Kamin-Terrasse, Bavaria ",
+  locationTitle:"Location",
+  location:"France",
+  ceremonyTitle:"Ceremony",
+  ceremony:"18:00 PM",
+  dressTitle:"Dress Code",
+  dress:"Formal",
+  parkingTitle:"Parking",
+  parking:"Available",
+  eventDayJourney:"Wedding Day Journey",
 };
 
 export default function Home({ data: initialTemplateData, isOwner = false }) {
@@ -82,8 +92,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
     }));
   };
 
-
- const backgroundMusicUrl = data?.backgroundMusicUrl || assets.background_song;
+  const backgroundMusicUrl = data?.backgroundMusicUrl || assets.background_song;
   const audioRef = useRef(null);
   const [started, setStarted] = useState(false);
   const [playing, setPlaying] = useState(false);
@@ -128,11 +137,6 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
     };
   }, [started]);
 
-
-
-
-
-
   return (
     <>
       <button
@@ -142,9 +146,9 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
         className="fixed bottom-4 right-4 z-50 bg-[#FF35A1] text-white p-3 rounded-xl text-xl"
       >
         {playing ? "⏸" : "▶"}
-      </button> 
+      </button>
 
-    <audio
+      <audio
         key={backgroundMusicUrl}
         ref={audioRef}
         src={backgroundMusicUrl}
@@ -152,7 +156,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
         preload="auto"
         playsInline
       />
-
+<IntroVideo onFinish={() => setIntroDone(true)} />
       {/* hero section */}
 
       <div className="relative w-full overflow-hidden">
@@ -184,7 +188,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
       </div>
       <OurStory data={data} isOwner={isOwner} updateField={updateField} />
       <Reception data={data} isOwner={isOwner} updateField={updateField} />
-      <Celebration />
+      <Celebration data={data} isOwner={isOwner} updateField={updateField} />
     </>
   );
 }

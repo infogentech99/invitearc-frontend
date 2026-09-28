@@ -1,6 +1,6 @@
 "use client";
 import {assets} from "../assets";
-export default function Celebration() {
+export default function Celebration({data}) {
   return (
     <section className="relative w-full overflow-hidden bg-[#fffdf9] px-5 py-12 text-[#685D4A]">
       {/* ================= VENUE ================= */}
@@ -9,14 +9,14 @@ export default function Celebration() {
           THE CELEBRATION
         </h2>
         <p className="font-bona-nova text-[20px] 3xl:text-[30px] tracking-[0.2em] uppercase text-[#685D4A]">
-          Reception Venue{" "}
+          Reception Venue
         </p>
 
         <p className="font-cormorant text-[24px] font-bona-nova italic">
-          Schloss Elaria
+         {data.venueName}
         </p>
 
-        <p className="mt-1 text-[12px]">Retreat Kamin-Terrasse, Bavaria</p>
+        <p className="mt-1 text-[12px]">{data.venueLocation}</p>
 
         {/* Venue Image */}
         <div className="mx-auto mt-8 max-w-[800px] overflow-hidden">
@@ -36,9 +36,9 @@ export default function Celebration() {
               className="md:w-5 md:h-5 w-5 object-contain mb-1 mt-4"
             />
             <p className="mt-1 text-[10px] uppercase tracking-wider">
-              Location
+              {data.locationTitle}
             </p>
-            <p className="text-[16px]">France</p>
+            <p className="text-[16px]">{data.location}</p>
           </div>
 
           <div className="flex flex-col justify-center items-center">
@@ -48,9 +48,9 @@ export default function Celebration() {
               className="md:w-5 md:h-5 w-5 object-contain mb-1 mt-4"
             />
             <p className="mt-1 text-[10px] uppercase tracking-wider">
-              Ceremony
+              {data.ceremonyTitle}
             </p>
-            <p className="text-[16px]">18:00 PM</p>
+            <p className="text-[16px]">{data.ceremony}</p>
           </div>
 
           <div className="flex flex-col justify-center items-center">
@@ -60,9 +60,9 @@ export default function Celebration() {
               className="md:w-5 md:h-5 w-5 object-contain mb-1 mt-4"
             />
             <p className="mt-1 text-[10px] uppercase tracking-wider">
-              Dress Code
+              {data.dressTitle}
             </p>
-            <p className="text-[16px]">Formal</p>
+            <p className="text-[16px]">{data.dress}</p>
           </div>
 
           <div className="flex flex-col justify-center items-center">
@@ -71,8 +71,8 @@ export default function Celebration() {
               alt="icon"
               className="md:w-5 md:h-5 w-4 object-contain mb-1 mt-4"
             />
-            <p className="mt-1 text-[10px] uppercase tracking-wider">Parking</p>
-            <p className="text-[16px]">Available</p>
+            <p className="mt-1 text-[10px] uppercase tracking-wider">{data.parkingTitle}</p>
+            <p className="text-[16px]">{data.parking}</p>
           </div>
         </div>
 
@@ -101,7 +101,7 @@ export default function Celebration() {
            </div>
 
             <h2 className="mt-2 font-bona-nova text-[20px] 3xl:text-[30px] tracking-[0.2em] uppercase text-[#685D4A]">
-              Wedding Day Journey
+              {data.eventDayJourney}
             </h2>
           </div>
 

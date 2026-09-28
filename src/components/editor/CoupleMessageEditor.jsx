@@ -145,7 +145,7 @@ export default function CoupleMessageEditor({
           />
         ) : (
           <input
-            type="text"
+            type={type === "date" ? "date" : "text"}
             value={value}
             onChange={(event) =>
               updateCoupleMessageField(name, event.target.value)

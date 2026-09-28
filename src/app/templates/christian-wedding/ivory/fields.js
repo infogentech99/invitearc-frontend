@@ -1,4 +1,4 @@
-import { SlNote, SlCalender } from "react-icons/sl";
+import { SlNote } from "react-icons/sl";
 import {
   FaRegEnvelopeOpen,
   FaRegCommentDots,
@@ -15,11 +15,6 @@ export const ivoryEditorFields = {
       icon: SlNote,
     },
     {
-      id: "events",
-      label: "Events",
-      icon: SlCalender,
-    },
-    {
       id: "coupleMessage",
       label: "Couple",
       icon: FaRegCommentDots,
@@ -29,11 +24,7 @@ export const ivoryEditorFields = {
       label: "RSVP",
       icon: FaRegEnvelopeOpen,
     },
-    {
-      id: "countdown",
-      label: "Countdown",
-      icon: FaStopwatch,
-    },
+
     {
       id: "music",
       label: "Music",
@@ -97,20 +88,30 @@ export const ivoryEditorFields = {
       label: "Couple Image 5",
       type: "image",
     },
-      { name: "loveQuote", label: "Love Quote", type: "text" },
-      { name: "receptionInfo", label: "Reception Info", type: "text" },
-      { name: "receptionMessage", label: "Reception Message", type: "text" },
-      { name: "receptionTime", label: "Reception Time", type: "text" },
-      { name: "receptionDay", label: "Reception Day", type: "text" },
-      { name: "receptionDate", label: "Reception Date", type: "text" },
-      { name: "receptionMonth", label: "Reception Month", type: "text" },
-      { name: "receptionYear", label: "Reception Year", type: "text" },
-       { name: "guestTitle", label: "Guest Title", type: "text" },
-       { name: "guestTime", label: "Guest Time", type: "text" },
-        { name: "receptionTitle", label: "Reception Title", type: "text" },
-      
+    { name: "loveQuote", label: "Love Quote", type: "text" },
+    { name: "receptionInfo", label: "Reception Info", type: "text" },
+    { name: "receptionMessage", label: "Reception Message", type: "text" },
+    { name: "receptionTime", label: "Reception Time", type: "text" },
+    { name: "receptionDay", label: "Reception Day", type: "text" },
+    { name: "receptionDate", label: "Reception Date", type: "text" },
+    { name: "receptionMonth", label: "Reception Month", type: "text" },
+    { name: "receptionYear", label: "Reception Year", type: "text" },
+    { name: "guestTitle", label: "Guest Title", type: "text" },
+    { name: "guestTime", label: "Guest Time", type: "text" },
+    { name: "receptionTitle", label: "Reception Title", type: "text" },
+    { name: "eventCountdown", label: "Event Countdown Date", type: "date" },
+    { name: "venueName", label: "Venue Name", type: "text" },
+    { name: "venueLocation", label: "Venue Location", type: "textarea" },
+    { name: "locationTitle", label: "Location Title", type: "text" },
+    { name: "location", label: "Location", type: "text" },
+    { name: "ceremonyTitle", label: "Ceremony Title", type: "text" },
+    { name: "ceremony", label: "Ceremony", type: "text" },
+    { name: "dressTitle", label: "Dress Title", type: "text" },
+    { name: "dress", label: "Dress", type: "text" },
+    { name: "parkingTitle", label: "Parking Title", type: "text" },
+    { name: "parking", label: "Parking", type: "text" },
+     { name: "eventDayJourney", label: "Event Day Journey", type: "text" },
   ],
-
 
   publishFields: [
     {
@@ -129,5 +130,4 @@ export const ivoryEditorFields = {
       type: "textarea",
     },
   ],
- 
 };
