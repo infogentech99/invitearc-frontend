@@ -11,6 +11,8 @@ import {mayraEditorFields} from "./hindu-wedding/mayra/fields";
 import {kalyanamEditorFields} from "./south-indian-wedding/kalyanam/fields";
 import {niqahEditorFields} from "./muslim-wedding/niqah/fields";
 import {vowsEditorFields} from "./christian-wedding/vows/fields";
+import {blissEditorFields} from "./christian-wedding/bliss/fields";
+import {ivoryEditorFields} from "./christian-wedding/ivory/fields";
 import {beyondEditorFields} from "./christian-wedding/beyond/fields";
 import { assets as mayraAssets } from "./hindu-wedding/mayra/assets";
 import { assets as jodiAssets } from "./sikh-wedding/jodi/assets";
@@ -29,6 +31,8 @@ const templateMap = {
   kalyanam: dynamic(() => import("./south-indian-wedding/kalyanam/page"), { loading: () => <div>Loading...</div>  }),
   niqah: dynamic(() => import("./muslim-wedding/niqah/page"), { loading: () => <div>Loading...</div>  }),
   vows: dynamic(() => import("./christian-wedding/vows/page"), { loading: () => <div>Loading...</div>  }),
+  bliss: dynamic(() => import("./christian-wedding/bliss/page"), { loading: () => <div>Loading...</div>  }),
+  ivory: dynamic(() => import("./christian-wedding/ivory/page"), { loading: () => <div>Loading...</div>  }),
   beyond: dynamic(() => import("./christian-wedding/beyond/page"), { loading: () => <div>Loading...</div>  }),
   sohala: dynamic(() => import("./hindu-wedding/sohala/page"), { loading: () => <div>Loading...</div> }),
 };
@@ -45,6 +49,8 @@ const templateFieldConfigs = {
   kalyanam: kalyanamEditorFields,
   niqah: niqahEditorFields,
   vows: vowsEditorFields,
+  bliss: blissEditorFields,
+  ivory: ivoryEditorFields,
   beyond: beyondEditorFields,
   sohala: sohalaEditorFields,
 };

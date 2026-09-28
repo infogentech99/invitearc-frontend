@@ -17,6 +17,8 @@ import mayraPreview from "../../../public/assets/preview-images/mayra.webp";
 import kalyanamPreview from "../../../public/assets/preview-images/kalyanam.webp";
 import niqahPreview from "../../../public/assets/preview-images/niqah.webp";
 import vowsPreview from "../../../public/assets/preview-images/vows.webp";
+import ivoryPreview from "../../../public/assets/preview-images/ivory.webp";
+import blissPreview from "../../../public/assets/preview-images/bliss.webp";
 import beyondPreview from "../../../public/assets/preview-images/beyond.webp";
 import sohalaPreview from "../../../public/assets/preview-images/sohala.webp";
 
@@ -74,6 +76,8 @@ export default function DashboardPage() {
     kalyanam: kalyanamPreview.src,
     niqah: niqahPreview.src,
     vows: vowsPreview.src,
+    bliss: blissPreview.src,
+    ivory: ivoryPreview.src,
     beyond: beyondPreview.src,
     sohala: sohalaPreview.src,
   };

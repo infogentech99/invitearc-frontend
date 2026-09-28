@@ -15,7 +15,7 @@ export const vowsEditorFields ={
       label: "Details",
       icon: SlNote,
     },
-    {
+    { 
       id: "events",
       label: "Events",
       icon: SlCalender,

@@ -399,7 +399,8 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
         <div className="pt-12 md:pt-24 3xl:pt-50 md:pb-20 relative z-10 pb-24">
           <h2
             className="flex flex-col justify-center items-center text-[#15528A] text-center leading-tight text-2xl md:text-5xl 
-                         lg:text-[64px] lg:pb-500 md:pb-370 pb-0 md:gap-y-2 gap-y-1 md:pt-10" id="details-section"
+                         lg:text-[64px] lg:pb-500 md:pb-370 pb-0 md:gap-y-2 gap-y-1 md:pt-10"
+            id="details-section"
           >
             <span className="font-eb-garamond font-medium">
               {data.groomName}
@@ -464,7 +465,10 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
             </p>
           </div>
 
-          <div className="flex justify-center mt-20 lg:mt-40 pb-40" id="events-section">
+          <div
+            className="flex justify-center mt-20 lg:mt-40 pb-40"
+            id="events-section"
+          >
             <div
               className={`grid gap-16 lg:gap-26 lg:px-18 3xl:px-0 ${
                 data?.events?.length === 1
@@ -523,7 +527,8 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
       <div
         className="bg-cover bg-no-repeat"
         style={{ backgroundImage: `url(${assets.meet_christian})` }}
-      id="couple-section" >
+        id="couple-section"
+      >
         <div className="h-100 md:h-180 lg:h-325 3xl:h-360 flex md:flex-col items-start pl-2 md:pl-4 lg:pl-20 pt-10 md:pt-57 lg:pt-48 md:w-[100%] w-50">
           <div>
             <h1 className="font-parisienne-regular text-3xl md:text-5xl lg:text-7xl pt-12 md:pt-0 lg:pt-54 text-center text-[#FFFFFF]">
@@ -541,19 +546,18 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
       <CoupleMessage data={data} isOwner={isOwner} updateField={updateField} />
       <ThingsToKnow />
 
-
-<div
-  className="hidden md:block w-screen min-w-full max-w-none bg-[length:100%_100%] bg-no-repeat bg-top"
-  style={{ backgroundImage: `url(${assets.background_couple})` }}
->
-  <div className="flex w-full justify-center md:h-175 lg:h-260 xl:h-275 2xl:h-335 3xl:h-[1650px] md:pt-48 lg:pt-72 3xl:pt-96">
-    <img
-      src={assets.logo}
-      alt="logo"
-      className="w-32 h-48 md:w-44 md:h-34 lg:w-65 lg:h-52"
-    />
-  </div>
-</div>
+      <div
+        className="hidden md:block w-screen min-w-full max-w-none bg-[length:100%_100%] bg-no-repeat bg-top"
+        style={{ backgroundImage: `url(${assets.background_couple})` }}
+      >
+        <div className="flex w-full justify-center md:h-175 lg:h-260 xl:h-275 2xl:h-335 3xl:h-[1650px] md:pt-48 lg:pt-72 3xl:pt-96">
+          <img
+            src={assets.logo}
+            alt="logo"
+            className="w-32 h-48 md:w-44 md:h-34 lg:w-65 lg:h-52"
+          />
+        </div>
+      </div>
 
       <div className="md:hidden relative flex items-start justify-center">
         <img
