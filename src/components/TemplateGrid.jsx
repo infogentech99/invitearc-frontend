@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import PurchaseOptionsModal from "./PurchaseOptionsModal";
-
 import config from "../config/config";
 
 const previewImages = {
