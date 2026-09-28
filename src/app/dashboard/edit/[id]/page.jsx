@@ -169,6 +169,12 @@ export default function EditTemplatePage() {
         setEditorData({
           ...defaultData,
           ...customData,
+          events:
+            customData.events?.length > 0
+              ? customData.events
+              : defaultData.events?.length > 0
+                ? defaultData.events
+                : getTemplateFieldConfig(slug)?.defaultEvents || [],
           coupleMessageCarouselImages: customData?.coupleMessageCarouselImages
             ?.length
             ? customData.coupleMessageCarouselImages
@@ -355,7 +361,17 @@ export default function EditTemplatePage() {
       ...prev,
       events: [
         ...(Array.isArray(prev.events) ? prev.events : []),
-        {
+        templateSlug === "bliss"
+          ? {
+              title_ceremony: "New Event",
+              date: "",
+              time: "",
+              venue: "",
+              description: "",
+              link: "",
+              image: "",
+            }
+          : {
           title_ceremony: "New Event",
           date: "Date",
           venue: "Royal Palace",
@@ -366,7 +382,7 @@ export default function EditTemplatePage() {
           link: "https://maps.app.goo.gl/4GdkKFJfvdJCszja9",
           image:
             "https://res.cloudinary.com/drl4fmhrq/image/upload/v1783490546/Group_2147225087_hyxljf.png",
-        },
+            },
       ],
     }));
   };
@@ -1130,10 +1146,11 @@ export default function EditTemplatePage() {
                         const field = section.field;
                         const value = editorData?.[field.name];
                         const defaultImage =
-                          templateSlug === "starlight" &&
+                          field.defaultValue ||
+                          (templateSlug === "starlight" &&
                           field.name === "religiousSign"
                             ? starlightAssets.symbol
-                            : "";
+                            : "");
                         const previewImage = value || defaultImage;
 
                         return (
@@ -1164,8 +1181,10 @@ export default function EditTemplatePage() {
                                 </div>
                                 <label className="mt-3 inline-flex cursor-pointer items-center justify-center rounded-xl bg-[#861E1D] px-4 py-2 text-sm font-medium text-white hover:bg-[#6f191c]">
                                   {value
-                                    ? `Change ${field.label || field.name}`
-                                    : `Choose ${field.label || field.name}`}
+                                    ? field.changeLabel ||
+                                      `Change ${field.label || field.name}`
+                                    : field.chooseLabel ||
+                                      `Choose ${field.label || field.name}`}
                                   <input
                                     type="file"
                                     accept="image/*"

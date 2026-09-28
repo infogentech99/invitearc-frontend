@@ -23,8 +23,7 @@ export default function HeroSection() {
                 </p>
 
                 <h2 className="text-[#F8E8C8] text-4xl md:text-5xl font-georgia font-bold leading-tight">
-                  Modern Website Invites
-                  <br />
+                  Modern Website & Video Invites                 
                   for Weddings
                 </h2>
               </div>

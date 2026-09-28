@@ -48,5 +48,5 @@ icon_n8:icon_n8.src,
 icon_n5:icon_n5.src,
 bird_left:bird_left.src,
 bird_right:bird_right.src,
-
+background_song: "/template-audio/ivory.mp3",
 }

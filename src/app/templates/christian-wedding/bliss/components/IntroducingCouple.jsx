@@ -25,8 +25,8 @@ export default function IntroducingCouple({data}) {
               left-[8%]
               top-[10%]
               w-[130px]
-              md:w-[115px]
-              lg:w-[200px]
+              md:w-[205px]
+              lg:w-[220px]
               rotate-[3deg]
               bg-white
               p-[7px]
@@ -52,9 +52,11 @@ export default function IntroducingCouple({data}) {
               absolute
               right-[20%]
               top-[18%]
+              lg:top-[14%]
+              md:top-[8%]
               w-[105px]
-              md:w-[95px]
-              lg:w-[155px]
+              lg:w-[195px]
+              md:w-[155px]
               rotate-[6deg]
               bg-white
               p-[6px]
@@ -81,8 +83,8 @@ export default function IntroducingCouple({data}) {
               left-[2%]
               top-[60%]
               w-[115px]
-              md:w-[105px]
-              lg:w-[165px]
+              md:w-[165px]
+               lg:w-[195px]
               rotate-[12deg]
               bg-white
               p-[6px]
@@ -110,8 +112,8 @@ export default function IntroducingCouple({data}) {
               md:top-[75%]
               top-[85%]
               w-[125px]
-              md:w-[115px]
-              lg:w-[180px]
+              md:w-[180px]
+             lg:w-[220px]
               rotate-[-5deg]
               bg-white
               p-[7px]
@@ -137,10 +139,11 @@ export default function IntroducingCouple({data}) {
               absolute
               left-1/2
               top-[47%]
+              md:top-[37%]
+              lg:top-[47%]
               z-20
               w-[205px]
-              md:w-[185px]
-              lg:w-[320px]
+              md:w-[320px]
               -translate-x-1/2
               rotate-[-1deg]
               bg-white
@@ -174,8 +177,8 @@ export default function IntroducingCouple({data}) {
               md:top-[70%]
               top-[80%]
               w-[115px]
-              md:w-[105px]
-              lg:w-[165px]
+              md:w-[165px]
+              lg:w-[195px]
               rotate-[-4deg]
               bg-white
               p-[7px]
@@ -201,9 +204,10 @@ export default function IntroducingCouple({data}) {
               absolute
               right-[1%]
               top-[58%]
+              lg:top-[40%]
               w-[75px]
-              md:w-[70px]
-              lg:w-[110px]
+              md:w-[110px]
+              lg:w-[170px]
               rotate-[2deg]
               bg-white
               p-[5px]

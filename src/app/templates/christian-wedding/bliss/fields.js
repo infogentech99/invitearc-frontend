@@ -6,8 +6,49 @@ import {
 } from "react-icons/fa";
 import { GiLoveSong } from "react-icons/gi";
 import { AiOutlineShareAlt } from "react-icons/ai";
+import { assets } from "./assets";
+
+export const blissDefaultEvents = [
+  {
+    title_ceremony: "Engagement",
+    date: "June 15, 2025",
+    time: "",
+    venue: "The Conservatory Garden",
+    description: "",
+    link: "",
+    image: assets.engagement,
+  },
+  {
+    title_ceremony: "Bachelor Party",
+    date: "April 20, 2024",
+    time: "",
+    venue: "The Oak Room",
+    description: "",
+    link: "",
+    image: assets.bachelor,
+  },
+  {
+    title_ceremony: "Bridal Shower",
+    date: "April 12, 2024",
+    time: "",
+    venue: "The Rosewood Tearoom",
+    description: "",
+    link: "",
+    image: assets.bridal,
+  },
+  {
+    title_ceremony: "Rehearsal Dinner",
+    date: "September 27, 2024",
+    time: "",
+    venue: "Estate Winery",
+    description: "",
+    link: "",
+    image: assets.rehearsal,
+  },
+];
 
 export const blissEditorFields = {
+  defaultEvents: blissDefaultEvents,
   tabs: [
     {
       id: "details",
@@ -64,6 +105,21 @@ export const blissEditorFields = {
     { name: "eventIntro", label: "Event intro", type: "text" },
     { name: "celebrationintro", label: "Celebration intro", type: "text" },
     { name: "celebrationDesc", label: "Celebration desc", type: "textarea" },
+    {
+      name: "weddingImage",
+      label: "Wedding Ceremony Image",
+      type: "image",
+      chooseLabel: "Choose image",
+      changeLabel: "Change image",
+      defaultValue: assets.wedding,
+    },
+    { name: "weddingTitle", label: "Wedding Title", type: "text" },
+    { name: "weddingSubtitle", label: "Wedding Subtitle", type: "text" },
+    { name: "weddingDate", label: "Wedding Date", type: "text" },
+    { name: "weddingVenue", label: "Wedding Venue", type: "text" },
+    { name: "weddingLocation", label: "Wedding Location", type: "text" },
+    { name: "weddingLocationLink", label: "Wedding Location Link", type: "text" },
+
   ],
 
   coupleMessageFields: [
@@ -202,11 +258,14 @@ export const blissEditorFields = {
     },
   ],
 
-   eventFields:[
-//  { name: "eventTitle", label: "Event Title", type: "text" },
+  eventFields: [
+    { name: "title_ceremony", label: "Title", type: "text" },
+    { name: "date", label: "Date", type: "text" },
+    { name: "venue", label: "Venue", type: "text" },
+    { name: "link", label: "Location link", type: "text" },
   ],
 
-    publishFields: [
+  publishFields: [
     {
       name: "sharePreviewImage",
       label: "Preview Image",

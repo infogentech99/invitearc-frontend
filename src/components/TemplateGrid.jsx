@@ -18,6 +18,9 @@ const previewImages = {
 };
 
 const popularTemplateOrder = [
+  "vows",
+  "bliss",
+  "ivory",
   "hitched",
   "jodi",
   "sohala",
@@ -232,10 +235,11 @@ export default function TemplateGrid() {
       <div className="mb-8 flex flex-wrap gap-5 mt-12 justify-center ">
         {[
           "All",
+           "Christian Weddings",
           "Hindu Weddings",
           "Sikh Weddings",
           "Muslim Weddings",
-          "Christian Weddings",
+         
           "South-Indian Weddings",
           "For him/her",
         ].map((category) => (

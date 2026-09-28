@@ -6,41 +6,9 @@ import IntroducingCouple from "./components/IntroducingCouple";
 import GuideForGuests from "./components/GuideForGuests";
 import Countdown from "./components/Countdown";
 import { assets } from "./assets";
+import { blissDefaultEvents } from "./fields";
 import "./bliss-globals.css";
-// const FloatingLamp = ({ classNam/e, style, reverse = false }: { className: string; style?: React.CSSProperties; reverse?: boolean }) => {
-//   // Memoize random values to prevent recalculation on re-renders
-//   const lampValues = useMemo(() => {
-//     // const duration = 60 + Math.random() * 40; // 60–100s (very slow flow)
-//     // const duration = 40 + Math.random() * 10; // 40–50s
-//     const duration = 60 + Math.random() * 10; // 60–70s
-//     const delay = Math.random() * 15;
-
-//     // depth feel - dramatic size variety
-//     const scale = Math.random() < 0.5
-//       ? 0.3 + Math.random() * 0.4  // 0.3–0.7 (small lamps)
-//       : 1.2 + Math.random() * 0.8; // 1.2–2.0 (large lamps)
-//     const blur = scale < 0.7 ? "blur(1.5px)" : "blur(0px)";
-
-//     return { duration, delay, scale, blur };
-//   }, []); // Empty dependency array means these values are calculated only once
-
-//   return (
-//     <img
-//       src="/flower_petals.webp"
-//       alt="petal"
-//       className={`floating-lamp ${className}`}
-//       style={{
-//         animationName: reverse ? 'lampFlowReverse' : 'lampFlow',
-//         animationDuration: `${lampValues.duration}s`,
-//         animationDelay: `${lampValues.delay}s`,
-//         transform: `scale(${lampValues.scale})`,
-//         filter: `drop-shadow(0 0 18px rgba(255,180,90,0.9)) ${lampValues.blur}`,
-//         '--scale': lampValues.scale,
-//         ...style,
-//       } as React.CSSProperties}
-//     />
-//   );
-// };
+import IntroVideo from "./components/IntroVideo";
 
 const initialData = {
   groomName: "Elias",
@@ -82,6 +50,7 @@ const initialData = {
   marriageCountdownTitle: "THE COUNTDOWN BEGINS",
   marriageCountdownDescription:
     "Our families are excited that you are able to join us in celebrating what we hope will be one of the happiest days of our lives.",
+  events: blissDefaultEvents,
 };
 
 export default function Home({ data: initialTemplateData, isOwner = false }) {
@@ -122,7 +91,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
       [field]: value,
     }));
   };
-
+  const backgroundMusicUrl = data?.backgroundMusicUrl || assets.background_song;
   const audioRef = useRef(null);
   const [started, setStarted] = useState(false);
   const [playing, setPlaying] = useState(false);
@@ -199,13 +168,14 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
       </button>
 
       <audio
+        key={backgroundMusicUrl}
         ref={audioRef}
-        src="/assets/song.mp3"
+        src={backgroundMusicUrl}
         loop
         preload="auto"
         playsInline
       />
-
+ <IntroVideo onFinish={() => setIntroDone(true)} />
       {/* hero section */}
       <div
         className=" 
@@ -314,9 +284,9 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
             {data.celebrationDesc}
           </p>
 
-          <WeddingEvents />
-          <div className="relative flex flex-col items-center pt-0 lg:pt-50 3xl:pt-40 3xl:gap-60 ">
-            <div className="absolute left-0 right-0 w-full flex flex-col items-center justify-center text-center md:mb-0 lg:mb-0 md:top-0 lg:top-84 3xl:top-60 mt-25">
+          <WeddingEvents data={data} />
+          <div className="relative flex flex-col items-center pt-0 md:pt-30 lg:pt-50 3xl:pt-40 3xl:gap-60">
+            <div className="absolute left-0 right-0 w-full flex flex-col items-center justify-center text-center md:mb-0 lg:mb-0 md:top-30 lg:top-84 3xl:top-60 mt-25">
               <p className="font-playfair-display font-medium text-2xl md:text-4xl lg:text-[50px] text-[#906220] italic">
                 {data.thankyoutitle}
               </p>

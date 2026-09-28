@@ -82,24 +82,76 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
     }));
   };
 
+
+ const backgroundMusicUrl = data?.backgroundMusicUrl || assets.background_song;
+  const audioRef = useRef(null);
+  const [started, setStarted] = useState(false);
+  const [playing, setPlaying] = useState(false);
+
+  const startMusic = async () => {
+    const audio = audioRef.current;
+    if (!audio || started) return;
+
+    try {
+      audio.volume = 0.3;
+      await audio.play();
+      setStarted(true);
+      setPlaying(true);
+    } catch {}
+  };
+
+  const toggleMusic = async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (playing) {
+      audio.pause();
+      setPlaying(false);
+    } else {
+      try {
+        await audio.play();
+        setPlaying(true);
+      } catch {}
+    }
+  };
+
+  // First user interaction (mobile + desktop)
+  useEffect(() => {
+    const handler = () => startMusic();
+
+    window.addEventListener("click", handler);
+    window.addEventListener("touchstart", handler);
+
+    return () => {
+      window.removeEventListener("click", handler);
+      window.removeEventListener("touchstart", handler);
+    };
+  }, [started]);
+
+
+
+
+
+
   return (
     <>
-      {/* <button
+      <button
         onClick={() => {
           started ? toggleMusic() : startMusic();
         }}
         className="fixed bottom-4 right-4 z-50 bg-[#FF35A1] text-white p-3 rounded-xl text-xl"
       >
         {playing ? "⏸" : "▶"}
-      </button> */}
+      </button> 
 
-      {/* <audio
+    <audio
+        key={backgroundMusicUrl}
         ref={audioRef}
-        src="/assets/song.mp3"
+        src={backgroundMusicUrl}
         loop
         preload="auto"
         playsInline
-      /> */}
+      />
 
       {/* hero section */}
 

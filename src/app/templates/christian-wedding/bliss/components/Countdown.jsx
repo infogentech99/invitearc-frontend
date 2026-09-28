@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { assets } from "../assets";
 export default function Countdown({ data }) {
-   const targetDate = data?.marriageCountdownDate || "2026-12-21";
- const TARGET_DATE = new Date(targetDate).getTime();
+  const targetDate = data?.marriageCountdownDate || "2026-12-21";
+  const TARGET_DATE = new Date(targetDate).getTime();
   const [timeLeft, setTimeLeft] = useState({
     days: 14,
     hours: 12,
@@ -163,9 +163,7 @@ export default function Countdown({ data }) {
           </div>
 
           <h2 className="text-center font-playfair-display italic text-[22px] font-medium text-[#80601e] md:text-[21px] lg:text-[50px]">
-
-          {data.marriageCountdownTitle}
-      
+            {data.marriageCountdownTitle}
           </h2>
 
           <div className="mt-5 flex items-start justify-center gap-8 md:gap-10 lg:gap-12">
@@ -210,14 +208,20 @@ export default function Countdown({ data }) {
             {data.marriageCountdownDescription}
           </p>
 
-          <div className="mt-3 flex items-center gap-3 font-serif text-[12px] text-[#8e7b4f]">
+          <a
+            href="https://www.instagram.com/theinvitearc/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 flex items-center gap-3 font-serif text-[12px] text-[#8e7b4f]"
+          >
             <img
               src={assets.icon3}
-              alt="couple5"
+              alt="Instagram"
               className="object-contain h-4 w-5"
             />
+
             <span>Follow us on Instagram</span>
-          </div>
+          </a>
         </div>
       </div>
     </section>
