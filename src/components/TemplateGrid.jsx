@@ -18,11 +18,10 @@ const previewImages = {
 };
 
 const popularTemplateOrder = [
-  "vows",
-  "bliss",
   "ivory",
-  "hitched",
+  "bliss",
   "jodi",
+  "hitched",
   "sohala",
   "saanjh",
   "mayra",
