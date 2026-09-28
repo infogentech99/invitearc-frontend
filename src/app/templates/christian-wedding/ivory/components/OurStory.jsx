@@ -1,7 +1,7 @@
 'use client'
 import {assets} from "../assets";
 import "../ivory-globals.css";
-export default function OurStory() {
+export default function OurStory({data}) {
   return (
  <div className=" top-10 md:top-20 lg:top-50 flex flex-col items-center text-center md:mt-20 mt-10">
     
@@ -12,7 +12,7 @@ export default function OurStory() {
     />
 
     <p className="text-[#685D4A] font-semibold tracking-widest text-[12px] md:text-[14px]">
-      CEREMONY INFO
+      {data.ceremonyInfo}
     </p>
 
  <div className="w-full  px-6 py-6 text-[#685D4A] mt-16">
@@ -24,30 +24,30 @@ export default function OurStory() {
     {/* Groom */}
     <div className="flex flex-col items-center">
       <p className="text-[#685D4A] font-semibold tracking-widest text-[10px] md:text-[14px] uppercase">
-        Parents of the Groom
+        {data.groomParentTitle}
       </p>
 
       <p className="font-bona-nova text-[18px] md:text-[30px] 3xl:text-[34px] leading-tight mt-2">
-        Mr. & Mrs.
+        {data.groomParentSurname}
       </p>
 
       <p className="font-bona-nova text-[18px] md:text-[30px] 3xl:text-[34px] leading-tight">
-        Edward Julian
+        {data.groomDetails}
       </p>
     </div>
 
     {/* Bride */}
     <div className="flex flex-col items-center">
       <p className="text-[#685D4A] font-semibold tracking-widest text-[10px] md:text-[14px] uppercase">
-        Parents of the Bride
+        {data.brideParentTitle}
       </p>
 
       <p className="font-bona-nova text-[18px] md:text-[30px] 3xl:text-[34px] leading-tight mt-2">
-        Mr. & Mrs.
+       {data.birdeParentSurname}
       </p>
 
       <p className="font-bona-nova text-[18px] md:text-[30px] 3xl:text-[34px] leading-tight">
-        Arthur Aurelia
+       {data.brideDetails}
       </p>
     </div>
 
@@ -58,11 +58,11 @@ export default function OurStory() {
   <div className="mt-8 text-center">
 
     <p className="font-cormorant text-[16px] tracking-wide">
-      together with their families, request the honor of your presence at the marriage of
+      {data.inviteLine}
     </p>
 
     <h1 className="mt-10 font-bona-nova text-[40px] 3xl:text-[60px] text-[#685D4A]">
-      Aurelia <span className="font-bona-nova text-[28px] md:text-[50px]">&</span> Julian
+      {data.groomName} <span className="font-bona-nova text-[28px] md:text-[50px]">&</span> {data.brideName}
     </h1>
 
     <div className="mx-auto mt-2 h-px w-16 bg-[#b9a98d]" />
@@ -77,11 +77,11 @@ export default function OurStory() {
     </p>
 
     <h2 className="mt-3 font-bona-nova text-[20px] 3xl:text-[40px] text-[#685D4A]">
-      Villa Ephrussi de Rothschild
+      {data.venue}
     </h2>
 
     <p className="mt-1 font-bona-nova text-[20px] 3xl:text-[16px] text-[#685D4A]">
-      Saint-Jean-Cap-Ferrat, France
+      {data.venueLocation}
     </p>
 
   </div>
@@ -98,18 +98,18 @@ export default function OurStory() {
 
       <div>
         <p className="font-bona-nova text-[18px] md:text-[32px]">
-          Saturday
+          {data.eventDay}
         </p>
-        <p className="text-[12px]">at five o'clock</p>
+        <p className="text-[12px]">{data.eventTime}</p>
       </div>
 
       <div className="h-8 w-px bg-[#c5b9a5]" />
 
       <div>
         <p className="font-bona-nova text-[18px] md:text-[32px]">
-          July 12th
+          {data.eventMonth}
         </p>
-        <p className="text-[12px]">Twenty Twenty-Five</p>
+        <p className="text-[12px]">{data.eventYear}</p>
       </div>
 
     </div>
@@ -128,15 +128,11 @@ export default function OurStory() {
     </div>
 
     <h2 className="font-bona-nova text-[20px] 3xl:text-[30px] tracking-[0.2em]">
-      OUR STORY
+      {data.storyTitle}
     </h2>
 
     <p className="mx-auto mt-3 max-w-[800px] md:text-[16px] text-[12px] leading-[1.5] text-[#817666]">
-      From the sun-drenched cobblestones of Florence to the quiet countryside
-      surrounding the Côte d'Azur, our journey has been defined by shared
-      discovery and timeless romance. What began as a chance meeting at a
-      small independent bookstore in Paris blossomed into a lifetime of
-      wandering together.
+      {data.storyDescription}
     </p>
 
   </section>
@@ -148,7 +144,7 @@ export default function OurStory() {
   {/* Large Left Image */}
   <div className="row-span-2 overflow-hidden rounded-lg">
     <img
-      src={assets.couple5}
+      src={data?.coupleMessageImages?.image1 || assets.couple5}
       alt="Couple"
       className="h-full w-full object-cover"
     />
@@ -157,7 +153,7 @@ export default function OurStory() {
   {/* Top Right */}
   <div className="overflow-hidden rounded-lg">
     <img
-      src={assets.couple3}
+      src={data?.coupleMessageImages?.image2 || assets.couple3}
       alt="Couple"
       className="h-full w-full object-cover"
     />
@@ -166,7 +162,7 @@ export default function OurStory() {
   {/* Middle Right */}
   <div className="overflow-hidden rounded-lg">
     <img
-      src={assets.couple2}
+      src={data?.coupleMessageImages?.image3 || assets.couple2}
       alt="Couple"
       className="h-full w-full object-cover"
     />
@@ -175,7 +171,7 @@ export default function OurStory() {
   {/* Bottom Left */}
   <div className="overflow-hidden rounded-lg">
     <img
-      src={assets.couple1}
+      src={data?.coupleMessageImages?.image4 || assets.couple1}
       alt="Couple"
       className="h-full w-full object-cover"
     />
@@ -184,7 +180,7 @@ export default function OurStory() {
   {/* Bottom Right */}
   <div className="overflow-hidden rounded-lg">
     <img
-      src={assets.couple4}
+      src={data?.coupleMessageImages?.image5 || assets.couple4}
       alt="Couple"
       className="h-full w-full object-cover"
     />
@@ -194,8 +190,8 @@ export default function OurStory() {
 
 
   {/* Bottom Quote */}
-  <p className="mt-4 text-center font-cormorant text-[16px] italic">
-    In all the world, there is no heart for me like yours.
+  <p className="mt-4 md:mt-6 text-center font-cormorant text-[16px] md:text-[20px] italic">
+    {data.loveQuote}
   </p>
 
 </div>   
