@@ -8,6 +8,7 @@ import { assets } from "./assets";
 import "./ivory-globals.css";
 import IntroVideo from "./components/IntroVideo";
 
+
 const initialData = {
   togetherName: "TOGETHER WITH THEIR FAMILIES",
   groomName: "Aurelia",
