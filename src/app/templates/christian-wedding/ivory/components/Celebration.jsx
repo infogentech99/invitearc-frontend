@@ -123,7 +123,7 @@ export default function Celebration({data}) {
               {/* Left */}
               <div className="flex items-center justify-end pr-12">
                 <h3 className="font-bona-nova text-[26px] italic md:text-[30px]">
-                  Welcome
+                 {data.eventName1}
                 </h3>
               </div>
 
@@ -131,13 +131,11 @@ export default function Celebration({data}) {
               <div className="flex items-center pl-12">
                 <div>
                   <p className="font-cormorant text-[13px] tracking-[0.15em]">
-                    17:30
+                    {data.eventTime1}
                   </p>
 
                   <p className="mt-1 max-w-[300px] font-cormorant text-[15px] leading-relaxed">
-                    Arrival and welcome drinks on the Kamin-
-                    <br className="hidden md:block" />
-                    Terrasse overlooking the Bavarian Alps.
+                    {data.eventDetails1}
                   </p>
                 </div>
               </div>
@@ -176,13 +174,11 @@ export default function Celebration({data}) {
               <div className="flex items-center justify-end pr-12 text-right">
                 <div>
                   <p className="font-cormorant text-[13px] tracking-[0.15em]">
-                    18:30
+                    {data.eventTime2}
                   </p>
 
                   <p className="mt-1 max-w-[300px] font-cormorant text-[15px] leading-relaxed">
-                    Gathering in the main hall as we prepare for
-                    <br className="hidden md:block" />
-                    the evening's festivities.
+                    {data.eventDetails2}
                   </p>
                 </div>
               </div>
@@ -190,7 +186,7 @@ export default function Celebration({data}) {
               {/* Right */}
               <div className="flex items-center pl-12">
                 <h3 className="font-bona-nova text-[26px] italic md:text-[30px]">
-                  Reception
+                  {data.eventName2}
                 </h3>
               </div>
 
@@ -227,7 +223,7 @@ export default function Celebration({data}) {
               {/* Left */}
               <div className="flex items-center justify-end pr-12">
                 <h3 className="font-bona-nova text-[26px] italic md:text-[30px]">
-                  Toasts & Cake
+                  {data.eventName3}
                 </h3>
               </div>
 
@@ -235,11 +231,11 @@ export default function Celebration({data}) {
               <div className="flex items-center pl-12">
                 <div>
                   <p className="font-cormorant text-[13px] tracking-[0.15em]">
-                    18:45
+                    {data.eventTime3}
                   </p>
 
                   <p className="mt-1 max-w-[300px] font-cormorant text-[15px] leading-relaxed">
-                    Heartfelt words and the cutting of the cake.
+                    {data.eventDetails3}
                   </p>
                 </div>
               </div>
@@ -278,13 +274,11 @@ export default function Celebration({data}) {
               <div className="flex items-center justify-end pr-12 text-right">
                 <div>
                   <p className="font-cormorant text-[13px] tracking-[0.15em]">
-                    19:00
+                    {data.eventTime4}
                   </p>
 
                   <p className="mt-1 max-w-[300px] font-cormorant text-[15px] leading-relaxed">
-                    A multi-course culinary experience
-                    <br className="hidden md:block" />
-                    prepared by the chefs at Schloss Elmau.
+                    {data.eventDetails4}
                   </p>
                 </div>
               </div>
@@ -292,7 +286,7 @@ export default function Celebration({data}) {
               {/* Right */}
               <div className="flex items-center pl-12">
                 <h3 className="font-bona-nova text-[26px] italic md:text-[30px]">
-                  Main Course
+                  {data.eventName4}
                 </h3>
               </div>
 
@@ -329,7 +323,7 @@ export default function Celebration({data}) {
               {/* Left */}
               <div className="flex items-center justify-end pr-12">
                 <h3 className="font-bona-nova text-[26px] italic md:text-[30px]">
-                  Farewell
+                  {data.eventName5}
                 </h3>
               </div>
 
@@ -337,13 +331,11 @@ export default function Celebration({data}) {
               <div className="flex items-center pl-12">
                 <div>
                   <p className="font-cormorant text-[13px] tracking-[0.15em]">
-                    21:00
+                   {data.eventTime5}
                   </p>
 
                   <p className="mt-1 max-w-[300px] font-cormorant text-[15px] leading-relaxed">
-                    The conclusion of the formal reception and
-                    <br className="hidden md:block" />
-                    transition to evening celebrations.
+                    {data.eventDetails5}
                   </p>
                 </div>
               </div>
@@ -383,10 +375,10 @@ export default function Celebration({data}) {
       <div className="mx-auto mt-20 max-w-[500px] text-center">
           
 <h2 className="mt-2 font-bona-nova text-[20px] 3xl:text-[30px] tracking-[0.2em] uppercase text-[#685D4A]">
-              Guest Wishes
+              {data.guestwishestitle}
             </h2>
         <p className="mx-auto mt-2 text-[14px] leading-relaxed">
-          Leave your warmest wishes and blessings for the couple.
+          {data.guestwishesdesc}
         </p>
 
     
@@ -410,7 +402,7 @@ export default function Celebration({data}) {
 
       {/* Footer */}
       <p className="mt-8 text-center text-[16px] italic text-[#8c8274]">
-        The greatest gift is having you celebrate with us.
+        {data.giftmessage}
       </p>
     </section>
   );

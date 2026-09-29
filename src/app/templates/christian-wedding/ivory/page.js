@@ -8,7 +8,6 @@ import { assets } from "./assets";
 import "./ivory-globals.css";
 import IntroVideo from "./components/IntroVideo";
 
-
 const initialData = {
   togetherName: "TOGETHER WITH THEIR FAMILIES",
   groomName: "Aurelia",
@@ -45,15 +44,40 @@ const initialData = {
   receptionTitle: "Reception Begins",
   venueName: "Schloss Elaria ",
   venueLocation: "Retreat Kamin-Terrasse, Bavaria ",
-  locationTitle:"Location",
-  location:"France",
-  ceremonyTitle:"Ceremony",
-  ceremony:"18:00 PM",
-  dressTitle:"Dress Code",
-  dress:"Formal",
-  parkingTitle:"Parking",
-  parking:"Available",
-  eventDayJourney:"Wedding Day Journey",
+  locationTitle: "Location",
+  location: "France",
+  ceremonyTitle: "Ceremony",
+  ceremony: "18:00 PM",
+  dressTitle: "Dress Code",
+  dress: "Formal",
+  parkingTitle: "Parking",
+  parking: "Available",
+  eventDayJourney: "Wedding Day Journey",
+
+  eventName1: "Welcome",
+  eventTime1: "17:30",
+  eventDetails1: "Arrival and welcome drinks on the Kamin-Terrasse overlooking the Bavarian Alps.",
+
+  eventName2: "Reception",
+  eventTime2: "18:30",
+  eventDetails2: "Gathering in the main hall as we prepare for the evening's festivities.",
+
+  eventName3: "Toasts & Cake", 
+  eventTime3: "18:45",
+  eventDetails3: "Heartfelt words and the cutting of the cake.",
+
+  eventName4: "Main Course",
+  eventTime4: "19:00",
+  eventDetails4: "A multi-course culinary experience prepared by the chefs at Schloss Elmau.",
+
+  eventName5: "Farewell",
+  eventTime5: "21:00",
+  eventDetails5: "The conclusion of the formal reception and transition to evening celebrations.",
+
+  guestwishestitle:"Guest Wishes",
+  guestwishesdesc:"Leave your warmest wishes and blessings for the couple.",
+
+  giftmessage:"The greatest gift is having you celebrate with us.",
 };
 
 export default function Home({ data: initialTemplateData, isOwner = false }) {
@@ -157,7 +181,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
         preload="auto"
         playsInline
       />
-<IntroVideo onFinish={() => setIntroDone(true)} />
+      {/* <IntroVideo onFinish={() => setIntroDone(true)} /> */}
       {/* hero section */}
 
       <div className="relative w-full overflow-hidden">

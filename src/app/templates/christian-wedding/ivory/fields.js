@@ -1,4 +1,4 @@
-import { SlNote } from "react-icons/sl";
+import { SlNote, SlCalender  } from "react-icons/sl";
 import {
   FaRegEnvelopeOpen,
   FaRegCommentDots,
@@ -19,11 +19,17 @@ export const ivoryEditorFields = {
       label: "Couple",
       icon: FaRegCommentDots,
     },
+     {
+      id: "IvoryTab",
+      label: "Events",
+      icon: SlCalender,
+    },
     {
       id: "rsvp",
       label: "RSVP",
       icon: FaRegEnvelopeOpen,
     },
+    
 
     {
       id: "music",
@@ -56,6 +62,35 @@ export const ivoryEditorFields = {
     { name: "eventTime", label: "Event Time", type: "text" },
     { name: "eventMonth", label: "Event Month", type: "text" },
     { name: "eventYear", label: "Event Year", type: "text" },
+  ],
+
+
+  IvoryTabFields: [
+    { name: "eventDayJourney", label: "Event Day Journey", type: "text" },
+
+    { name: "eventTime1", label: "Event Time 1", type: "text" },
+    { name: "eventName1", label: "Event Name 1", type: "text" },
+    { name: "eventDetails1", label: "Event Details 1", type: "text" },
+
+    { name: "eventTime2", label: "Event Time 2", type: "text" },
+    { name: "eventName2", label: "Event Name 2", type: "text" },
+    { name: "eventDetails2", label: "Event Details 2", type: "text" },
+
+     { name: "eventTime3", label: "Event Time 3", type: "text" },
+    { name: "eventName3", label: "Event Name 3", type: "text" },
+    { name: "eventDetails3", label: "Event Details 3", type: "text" },
+
+     { name: "eventTime4", label: "Event Time 4", type: "text" },
+    { name: "eventName4", label: "Event Name 4", type: "text" },
+    { name: "eventDetails4", label: "Event Details 4", type: "text" },
+
+     { name: "eventTime5", label: "Event Time 5", type: "text" },
+    { name: "eventName5", label: "Event Name 5", type: "text" },
+    { name: "eventDetails5", label: "Event Details 5", type: "text" },
+
+      { name: "guestwishestitle", label: "Guest Wishes Title", type: "text" },
+    { name: "guestwishesdesc", label: "Guest Wishes Desc", type: "text" },
+    { name: "giftmessage", label: "Gift Message", type: "text" },
   ],
 
   coupleMessageFields: [
@@ -110,7 +145,7 @@ export const ivoryEditorFields = {
     { name: "dress", label: "Dress", type: "text" },
     { name: "parkingTitle", label: "Parking Title", type: "text" },
     { name: "parking", label: "Parking", type: "text" },
-     { name: "eventDayJourney", label: "Event Day Journey", type: "text" },
+    
   ],
 
   publishFields: [

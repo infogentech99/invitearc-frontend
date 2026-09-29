@@ -288,6 +288,8 @@ export default function EditTemplatePage() {
     return [];
   }, [fieldConfig]);
 
+  const ivoryTabFields = fieldConfig?.IvoryTabFields || [];
+
   const rsvpFields = useMemo(() => {
     if (!Array.isArray(editorData?.rsvpFields)) return [];
     return editorData.rsvpFields;
@@ -1059,6 +1061,8 @@ export default function EditTemplatePage() {
                                 ? "Countdown Details"
                                 : activeTab === "music"
                                   ? "Music Details"
+                                          : activeTab === "IvoryTab"
+                                            ? "IvoryTab Details"
                                   : "Publish & Share"}
                     </p>
 
@@ -1075,6 +1079,8 @@ export default function EditTemplatePage() {
                                 ? "Set the countdown title, target date, and description for the marriage countdown section."
                                 : activeTab === "music"
                                   ? "Upload background music for your invitation."
+                                  : activeTab === "IvoryTab"
+                                    ? "Edit Ivory template fields."
                                   : "Publish your template and update the share link, preview image, title, and description."}
                     </p>
                   </div>
@@ -1205,6 +1211,18 @@ export default function EditTemplatePage() {
                         );
                       })}
                     </div>
+                  )}
+
+                  {activeTab === "IvoryTab" && (
+                    <DetailsEditor
+                      detailFields={ivoryTabFields}
+                      editorData={editorData}
+                      updateField={updateField}
+                      formatFieldLabel={formatFieldLabel}
+                      getFieldIcon={getFieldIcon}
+                      handleLogoUpload={handleLogoUpload}
+                      defaultLogo={defaultLogo}
+                    />
                   )}
 
                   {activeTab === "events" && (
