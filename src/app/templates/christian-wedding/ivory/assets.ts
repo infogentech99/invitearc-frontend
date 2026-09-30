@@ -22,7 +22,7 @@ import icon_n8 from "./assets/icon_n8.png";
 import icon_n5 from "./assets/icon_n5.png";
 import bird_left from "./assets/bird-left.webp";
 import bird_right from "./assets/bird-right.webp";
-import hero_video_img from "./assets/hero_video_img.png";
+import hero_video_img from "./assets/hero_video_img.webp";
 
 export const assets = {
     hero_image: hero_image.src,
@@ -50,6 +50,6 @@ export const assets = {
     bird_left: bird_left.src,
     bird_right: bird_right.src,
     background_song: "/template-audio/ivory.mp3",
-    hero_video: "/template-audio/hero_video_bliss.mp4",
+    hero_video: "/template-audio/hero_video_ivory.mp4",
     hero_video_img: hero_video_img.src,
 }

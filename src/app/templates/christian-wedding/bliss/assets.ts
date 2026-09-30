@@ -29,7 +29,7 @@ import icon3 from "./assets/Icon3.png";
 import countdown from "./assets/countdown.webp";
 import guest_bg from "./assets/guest_bg.webp";
 import whatsapp from "./assets/whatsapp.png";
-import hero_video_img from "./assets/hero_video_img.png";
+import hero_video_img from "./assets/hero_video_img.webp";
 
 
 export const assets = {
