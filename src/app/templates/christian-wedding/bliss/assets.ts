@@ -30,6 +30,7 @@ import countdown from "./assets/countdown.webp";
 import guest_bg from "./assets/guest_bg.webp";
 import whatsapp from "./assets/whatsapp.png";
 import hero_video_img from "./assets/hero_video_img.webp";
+import hero_video_img_desktop from "./assets/hero_video_img_desktop.webp";
 
 
 export const assets = {
@@ -67,4 +68,5 @@ export const assets = {
     hero_video_img: hero_video_img.src,
     background_song: "/template-audio/bliss.mp3",
     hero_video: "/template-audio/hero_video_bliss.mp4",
+    hero_video_img_desktop:hero_video_img_desktop.src,
 }
