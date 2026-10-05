@@ -373,9 +373,16 @@ export default function TemplateGrid() {
                         ₹3,999
                       </span>
                     )}
+
+                      {country !== "IN" && (
+                        <span className="text-[16px] font-semibold text-slate-500 line-through">
+                          87.99
+                        </span>
+                      )}
                     <span className="text-[16px] font-semibold text-slate-900">
                       {priceText(template)}
-                      <span className="text-[11px] font-semibold">+GST</span>
+                       {country === "IN" && (
+                      <span className="text-[11px] font-semibold">+GST</span>      )}
                     </span>
                   </div>
                   <div className="flex flex-wrap gap-3">

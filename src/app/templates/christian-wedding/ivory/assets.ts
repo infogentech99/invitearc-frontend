@@ -23,6 +23,7 @@ import icon_n5 from "./assets/icon_n5.png";
 import bird_left from "./assets/bird-left.webp";
 import bird_right from "./assets/bird-right.webp";
 import hero_video_img from "./assets/hero_video_img.webp";
+import story_bg from "./assets/story_bg.webp";
 import hero_video_img_desktop from "./assets/hero_video_img_desktop.webp";
 
 export const assets = {
@@ -54,4 +55,5 @@ export const assets = {
     hero_video: "/template-audio/hero_video_ivory.mp4",
     hero_video_img: hero_video_img.src,
     hero_video_img_desktop:hero_video_img_desktop.src,
+    story_bg:story_bg.src,
 }
