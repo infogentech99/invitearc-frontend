@@ -71,10 +71,10 @@ export default function Header() {
       <header className="sticky top-0 z-200 border-b border-slate-200 bg-white/95 backdrop-blur-xl">
         {country === "IN" && (
           <div className="bg-[#8C1E1E] flex flex-col justify-center py-4 items-center">
-            <p className="text-[#F8E8C8] font-semibold md:text-3xl text-2xl font-georgia">
+            <p className="text-[#F8E8C8] font-semibold md:text-3xl text-2xl font-georgia  text-center">
               🪔 Festive Sale Is Live!
             </p>
-            <p className="text-[#F8E8C8] font-semibold md:text-2xl text-[16px] font-georgia text-center">
+            <p className="text-[#F8E8C8] font-semibold md:text-[20px] text-[16px] font-georgia text-center">
               Beautiful invitations, special festive prices. <br />
               Limited-time offer — Ends Soon
             </p>
@@ -82,11 +82,11 @@ export default function Header() {
         )}
 
         {country !== "IN" && (
-          <div className="bg-[#8C1E1E] flex flex-col justify-center py-4 items-center">
-            <p className="text-[#F8E8C8] font-semibold md:text-3xl text-2xl font-georgia">
+          <div className="bg-[#8C1E1E] flex flex-col justify-center py-4 items-center ">
+            <p className="text-[#F8E8C8] font-semibold md:text-3xl text-[20px] font-georgia text-center">
               ✨ Celebration Season Sale Is Live!
             </p>
-            <p className="text-[#F8E8C8] font-semibold md:text-2xl text-[16px] font-georgia text-center">
+            <p className="text-[#F8E8C8] font-semibold md:text-[20px] text-[16px] font-georgia text-center">
               Beautiful invitations, special seasonal prices.
               <br />
               Limited-time offer — Ends Soon

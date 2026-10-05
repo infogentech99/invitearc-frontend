@@ -376,7 +376,7 @@ export default function TemplateGrid() {
 
                       {country !== "IN" && (
                         <span className="text-[16px] font-semibold text-slate-500 line-through">
-                          87.99
+                          $87.99
                         </span>
                       )}
                     <span className="text-[16px] font-semibold text-slate-900">
