@@ -10,13 +10,9 @@ import AuthModal from "../components/AuthModal";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-const menuRef = useRef(null);
+  const [country, setCountry] = useState("");
+  const menuRef = useRef(null);
   const pathname = usePathname();
-
-  if (pathname.startsWith("/share")) {
-    return null;
-  }
-
   const {
     user,
     logout,
@@ -28,20 +24,42 @@ const menuRef = useRef(null);
   const router = useRouter();
 
   useEffect(() => {
-  const handleClickOutside = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
-      setMenuOpen(false);
+    const fetchCountry = async () => {
+      try {
+        const response = await fetch("/api/country");
+        if (!response.ok) {
+          throw new Error(`Country lookup failed: ${response.status}`);
+        }
+
+        const data = await response.json();
+        setCountry(data.country || "");
+      } catch (error) {
+        console.error("Country lookup failed:", error);
+      }
+    };
+
+    fetchCountry();
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+
+    if (menuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
     }
-  };
 
-  if (menuOpen) {
-    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpen]);
+
+  if (pathname.startsWith("/share")) {
+    return null;
   }
-
-  return () => {
-    document.removeEventListener("mousedown", handleClickOutside);
-  };
-}, [menuOpen]);
 
   const handleLogout = () => {
     logout();
@@ -51,11 +69,14 @@ const menuRef = useRef(null);
   return (
     <>
       <header className="sticky top-0 z-200 border-b border-slate-200 bg-white/95 backdrop-blur-xl">
-      <div className="bg-[#8C1E1E] flex justify-center items-center"><p className="text-[#F8E8C8] font-semibold md:text-3xl text-2xl py-4 font-georgia">
-                🪔 Diwali Sale Is Live! ✨
-                </p>
-                
-                </div>
+        {country === "IN" && (
+          <div className="bg-[#8C1E1E] flex justify-center items-center">
+            <p className="text-[#F8E8C8] font-semibold md:text-3xl text-2xl py-4 font-georgia">
+              🪔 Diwali Sale Is Live! ✨
+            </p>
+          </div>
+        )}
+
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <Link
             href="/"
@@ -126,16 +147,15 @@ const menuRef = useRef(null);
                     >
                       Dashboard
                     </Link>
-                    
+
                     <button
-                    href="/"
+                      href="/"
                       type="button"
                       onClick={handleLogout}
                       className="mt-2 w-full rounded-3xl bg-[#861E1D] px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-700 cursor-pointer"
                     >
                       Logout
                     </button>
-                   
                   </div>
                 ) : null}
               </div>
