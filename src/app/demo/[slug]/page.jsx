@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, useContext } from "react";
+import { useCallback, useEffect, useMemo, useState, useContext } from "react";
 import { useParams } from "next/navigation";
 import axios from "axios";
 import config from "../../../config/config";
@@ -20,6 +20,7 @@ export default function TemplateDemoPage() {
   const [loadingTemplate, setLoadingTemplate] = useState(false);
   const [fetchError, setFetchError] = useState("");
   const [country, setCountry] = useState("IN");
+  const [countryLoaded, setCountryLoaded] = useState(false);
   const [selectedPurchase, setSelectedPurchase] = useState(null);
   const [purchaseOptionsOpen, setPurchaseOptionsOpen] = useState(false);
 
@@ -43,6 +44,8 @@ export default function TemplateDemoPage() {
         setCountry(data.country || "IN");
       } catch {
         setCountry("IN");
+      } finally {
+        setCountryLoaded(true);
       }
     };
 
@@ -124,7 +127,7 @@ export default function TemplateDemoPage() {
       ? `₹ ${template?.indprice || 0}`
       : `$${template?.usaprice || 0}`;
 
-  const handlePayment = async (template, serviceType = "self-edit") => {
+  const handlePayment = useCallback(async (template, serviceType = "self-edit") => {
     if (!user) {
       setSelectedPurchase(template);
       openAuthModal("login");
@@ -212,7 +215,19 @@ export default function TemplateDemoPage() {
 
       alert(error.response?.data?.message || "Unable to initiate payment");
     }
-  };
+  }, [country, openAuthModal, token, user]);
+
+  useEffect(() => {
+    if (!countryLoaded || !user || !selectedPurchase) return;
+
+    if (country === "IN") {
+      // Continue the selected purchase after authentication completes.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      handlePayment(selectedPurchase, "self-edit");
+    } else {
+      setPurchaseOptionsOpen(true);
+    }
+  }, [country, countryLoaded, handlePayment, selectedPurchase, user]);
 
   const previewWidth =
     view === "mobile" ? 375 : view === "tablet" ? 900 : "100%";
@@ -237,9 +252,7 @@ export default function TemplateDemoPage() {
         <button
           onClick={() => {
             setSelectedPurchase(remoteTemplate);
-            if (user) {
-              setPurchaseOptionsOpen(true);
-            } else {
+            if (!user) {
               openAuthModal("login");
             }
           }}

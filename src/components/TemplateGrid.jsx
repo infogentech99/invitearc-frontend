@@ -33,6 +33,7 @@ export default function TemplateGrid() {
   const [apiTemplates, setApiTemplates] = useState([]);
   const [loading, setLoading] = useState(true);
   const [country, setCountry] = useState("IN");
+  const [countryLoaded, setCountryLoaded] = useState(false);
   const [selectedPurchase, setSelectedPurchase] = useState(null);
   const [purchaseOptionsOpen, setPurchaseOptionsOpen] = useState(false);
   const [visibleTemplateCount, setVisibleTemplateCount] = useState(8);
@@ -77,6 +78,8 @@ export default function TemplateGrid() {
         setCountry(data.country || "IN");
       } catch (error) {
         setCountry("IN");
+      } finally {
+        setCountryLoaded(true);
       }
     };
 
@@ -177,10 +180,16 @@ export default function TemplateGrid() {
   );
 
   useEffect(() => {
-    if (user && selectedPurchase) {
-      setPurchaseOptionsOpen(true);
+    if (countryLoaded && user && selectedPurchase) {
+      if (country === "IN") {
+        // Continue the selected purchase after authentication completes.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        handlePayment(selectedPurchase, "self-edit");
+      } else {
+        setPurchaseOptionsOpen(true);
+      }
     }
-  }, [user, selectedPurchase]);
+  }, [country, countryLoaded, handlePayment, user, selectedPurchase]);
 
   const descriptionText = (template) => {
     return template.description;
@@ -398,9 +407,7 @@ export default function TemplateGrid() {
                         <button
                           onClick={() => {
                             setSelectedPurchase(template);
-                            if (user) {
-                              setPurchaseOptionsOpen(true);
-                            } else {
+                            if (!user) {
                               openAuthModal("login");
                             }
                           }}

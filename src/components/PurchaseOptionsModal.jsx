@@ -30,7 +30,7 @@ export default function PurchaseOptionsModal({
   onClose,
   onPay,
 }) {
-  if (!open || !template) return null;
+  if (!open || !template || country === "IN") return null;
 
   // const selfPrice = country === "IN" ? template.indprice : template.usaprice;
 

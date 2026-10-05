@@ -1,12 +1,18 @@
 "use client";
 export const dynamic = "force-dynamic";
-import { Suspense, useContext, useEffect, useState } from "react";
+import {
+  Suspense,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import axios from "axios";
 import config from "../../config/config";
 import { AuthContext } from "../../context/AuthContext";
-import PurchaseOptionsModal from "../../components/PurchaseOptionsModal";
 
 const loadRazorpayScript = () => {
   return new Promise((resolve, reject) => {
@@ -36,15 +42,7 @@ function PaymentContent() {
   const [error, setError] = useState("");
   const [processing, setProcessing] = useState(false);
   const [success, setSuccess] = useState("");
-  const [purchaseOptionsOpen, setPurchaseOptionsOpen] = useState(false);
-
-  useEffect(() => {
-    if (!loading && !user) {
-      openAuthModal("login");
-    } else if (!loading && user && template) {
-      setPurchaseOptionsOpen(true);
-    }
-  }, [loading, user, template, openAuthModal]);
+  const checkoutStarted = useRef(false);
 
   useEffect(() => {
     const fetchTemplate = async () => {
@@ -77,7 +75,7 @@ function PaymentContent() {
     fetchTemplate();
   }, [templateId]);
 
-  const openRazorpayCheckout = async (serviceType = "self-edit") => {
+  const openRazorpayCheckout = useCallback(async (serviceType = "self-edit") => {
     if (!templateId || !user) {
       setError("Please login to continue.");
       return;
@@ -193,21 +191,20 @@ function PaymentContent() {
     } finally {
       setProcessing(false);
     }
-  };
+  }, [router, template, templateId, user]);
+
+  useEffect(() => {
+    if (loading) return;
+    if (!user) {
+      openAuthModal("login");
+    } else if (template && !checkoutStarted.current) {
+      checkoutStarted.current = true;
+      openRazorpayCheckout("self-edit");
+    }
+  }, [loading, openAuthModal, openRazorpayCheckout, template, user]);
 
   return (
     <main className="bg-slate-50 min-h-screen text-slate-900">
-      <PurchaseOptionsModal
-        open={purchaseOptionsOpen}
-        template={template}
-        country="IN"
-        processing={processing}
-        onClose={() => setPurchaseOptionsOpen(false)}
-        onPay={(serviceType) => {
-          setPurchaseOptionsOpen(false);
-          openRazorpayCheckout(serviceType);
-        }}
-      />
       <section className="mx-auto max-w-5xl px-6 py-20 sm:px-10 lg:px-12">
         <div className="rounded-4xl bg-white p-8 shadow-xl">
           <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
