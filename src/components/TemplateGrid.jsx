@@ -358,13 +358,17 @@ export default function TemplateGrid() {
                   </div>
                 </div>
                 <div className="mt-8 flex flex-wrap items-center justify-between md:gap-0 gap-3">
-                  {/* <span className="text-xl font-semibold text-slate-900">
-                    {priceText(template)}+GST
-                  </span> */}
-                  <span className="text-[16px] font-semibold text-slate-900">
-                    {priceText(template)}
-                    <span className="text-[11px] font-semibold">+GST</span>
-                  </span>
+                  <div className="flex flex-col">
+                    {country === "IN" && (
+                      <span className="text-[16px] font-semibold text-slate-500 line-through">
+                        ₹3,999
+                      </span>
+                    )}
+                    <span className="text-[16px] font-semibold text-slate-900">
+                      {priceText(template)}
+                      <span className="text-[11px] font-semibold">+GST</span>
+                    </span>
+                  </div>
                   <div className="flex flex-wrap gap-3">
                     {template.isBuiltIn ? (
                       <>

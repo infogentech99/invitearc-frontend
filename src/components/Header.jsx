@@ -51,6 +51,11 @@ const menuRef = useRef(null);
   return (
     <>
       <header className="sticky top-0 z-200 border-b border-slate-200 bg-white/95 backdrop-blur-xl">
+      <div className="bg-[#8C1E1E] flex justify-center items-center"><p className="text-[#F8E8C8] font-semibold md:text-3xl text-2xl py-4 font-georgia">
+                🪔 Diwali Sale Is Live! ✨
+                </p>
+                
+                </div>
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <Link
             href="/"

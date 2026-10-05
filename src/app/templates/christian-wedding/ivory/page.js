@@ -181,7 +181,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
         preload="auto"
         playsInline
       />
-      <IntroVideo onFinish={() => setIntroDone(true)} />
+      {/* <IntroVideo onFinish={() => setIntroDone(true)} /> */}
       {/* hero section */}
 
       <div className="relative w-full overflow-hidden">
