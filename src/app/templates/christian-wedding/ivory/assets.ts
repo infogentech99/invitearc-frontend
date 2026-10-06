@@ -53,6 +53,7 @@ export const assets = {
     bird_right: bird_right.src,
     background_song: "/template-audio/ivory.mp3",
     hero_video: "/template-audio/hero_video_ivory.mp4",
+    hero_video_desktop: "/template-audio/hero_video_desktop_ivory.mp4",
     hero_video_img: hero_video_img.src,
     hero_video_img_desktop:hero_video_img_desktop.src,
     story_bg:story_bg.src,

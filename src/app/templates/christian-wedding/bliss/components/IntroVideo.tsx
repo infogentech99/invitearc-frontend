@@ -8,7 +8,8 @@ export default function IntroVideo({
 }: {
   onFinish?: () => void;
 }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const desktopVideoRef = useRef<HTMLVideoElement>(null);
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
 
   const [started, setStarted] = useState(false);
   const [hide, setHide] = useState(false);
@@ -39,17 +40,24 @@ export default function IntroVideo({
   }, [show]);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.load();
-    }
+    desktopVideoRef.current?.load();
+    mobileVideoRef.current?.load();
   }, []);
 
   const playVideo = async () => {
-    if (!videoRef.current || started) return;
+    if (started) return;
+
+    const isMobile = window.innerWidth < 768;
+
+    const video = isMobile
+      ? mobileVideoRef.current
+      : desktopVideoRef.current;
+
+    if (!video) return;
 
     try {
       setStarted(true);
-      await videoRef.current.play();
+      await video.play();
     } catch (e) {
       setStarted(false);
       console.log(e);
@@ -71,13 +79,11 @@ export default function IntroVideo({
     <div
       onClick={playVideo}
       className={`fixed inset-0 z-[999999] cursor-pointer transition-opacity duration-700 ${
-        hide
-          ? "opacity-0 pointer-events-none"
-          : "opacity-100"
+        hide ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
       style={{
         width: "100vw",
-        height: "100%",
+        height: "100dvh",
       }}
     >
       {/* DESKTOP IMAGE */}
@@ -98,22 +104,44 @@ export default function IntroVideo({
         />
       )}
 
-      {/* VIDEO */}
+      {/* DESKTOP VIDEO */}
       <video
-        ref={videoRef}
+        ref={desktopVideoRef}
         playsInline
-        webkit-playsinline="true"
         muted
         preload="auto"
         onEnded={handleEnd}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
+        className={`absolute inset-0 hidden md:block w-full h-full object-cover transition-opacity duration-300 ${
           started ? "opacity-100" : "opacity-0"
         }`}
         style={{
           pointerEvents: "none",
         }}
       >
-        <source src={assets.hero_video} type="video/mp4" />
+        <source
+          src={assets.hero_video_desktop}
+          type="video/mp4"
+        />
+      </video>
+
+      {/* MOBILE VIDEO */}
+      <video
+        ref={mobileVideoRef}
+        playsInline
+        muted
+        preload="auto"
+        onEnded={handleEnd}
+        className={`absolute inset-0 block md:hidden w-full h-full object-cover transition-opacity duration-300 ${
+          started ? "opacity-100" : "opacity-0"
+        }`}
+        style={{
+          pointerEvents: "none",
+        }}
+      >
+        <source
+          src={assets.hero_video}
+          type="video/mp4"
+        />
       </video>
     </div>
   );
