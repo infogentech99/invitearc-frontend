@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import { useEffect, useState, useRef, useMemo } from "react";
 import OurStory from "./components/OurStory";
 import Reception from "./components/Reception";

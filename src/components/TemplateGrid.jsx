@@ -17,6 +17,7 @@ const previewImages = {
 };
 
 const popularTemplateOrder = [
+  "faith",
   "ivory",
   "bliss",
   "jodi",
@@ -245,8 +246,7 @@ export default function TemplateGrid() {
            "Christian Weddings",
           "Hindu Weddings",
           "Sikh Weddings",
-          "Muslim Weddings",
-         
+          "Muslim Weddings", 
           "South-Indian Weddings",
           "For him/her",
         ].map((category) => (

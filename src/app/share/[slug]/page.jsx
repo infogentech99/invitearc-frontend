@@ -12,6 +12,7 @@ import kalyanamTemplate from "../../templates/south-indian-wedding/kalyanam/page
 import niqahTemplate from "../../templates/muslim-wedding/niqah/page";
 import vowsTemplate from "../../templates/christian-wedding/vows/page";
 import blissTemplate from "../../templates/christian-wedding/bliss/page";
+import faithTemplate from "../../templates/christian-wedding/faith/page";
 import beyondTemplate from "../../templates/christian-wedding/beyond/page";
 
 
@@ -30,6 +31,7 @@ const templateComponents = {
   niqah:niqahTemplate,
   vows:vowsTemplate,
    bliss:blissTemplate,
+  faith:faithTemplate,
   beyond:beyondTemplate,
   sohala:sohalaTemplate,
 };

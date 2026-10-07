@@ -260,7 +260,7 @@ export default function Home({
   return (
 
     <div>
-      {/* <DisableInspect /> */}
+     
       <button
         onClick={() => {
           started ? toggleMusic() : startMusic();
@@ -439,7 +439,7 @@ export default function Home({
                 ? "grid-cols-1 justify-items-center"
                 : data?.events?.length === 2
                   ? "grid-cols-2 justify-items-center"
-                  : "grid-cols-1 sm:grid-cols-3"
+                  : "grid-cols-1 sm:grid-cols-3" 
                 }`}
             >
               {(data?.events || []).map((event, i) => (
