@@ -41,7 +41,7 @@ export default function Memories({ data }) {
 
       <div className="relative mx-auto h-[420px] w-full md:max-w-[650px] max-w-[300px] mt-20 px-10">
         {/* Left Top */}
-        <div className="absolute top-[10%] -left-[14%] md:left-[3%] lg:-left-[14%] z-10 lg:h-[360px] lg:w-[240px] md:h-[280px] md:w-[150px] h-[180px] w-[120px] overflow-hidden rounded-2xl shadow-md">
+        <div className="absolute top-[10%] -left-[14%] md:left-[9%] lg:-left-[14%] z-10 lg:h-[360px] lg:w-[240px] md:h-[280px] md:w-[150px] h-[180px] w-[120px] overflow-hidden rounded-2xl shadow-md">
           <img
             src={data?.coupleMessageImages?.image1 || assets.couple_2}
             alt=""
@@ -51,7 +51,7 @@ export default function Memories({ data }) {
 
         {/* Left Bottom */}
        
-        <div className="absolute left-[-12%] md:left-[8%] lg:left-[-16%] 3xl:left-[19%] top-[60%] md:top-[80%] lg:top-[90%]  z-20 lg:h-[320px] lg:w-[240px] h-[180px] w-[120px] md:h-[200px] md:w-[160px] overflow-hidden rounded-2xl shadow-md rotate-3">
+        <div className="absolute left-[-12%] md:left-[8%] lg:left-[-16%] 3xl:left-[-15%] top-[60%] md:top-[80%] lg:top-[90%]  z-20 lg:h-[320px] lg:w-[240px] h-[180px] w-[120px] md:h-[200px] md:w-[160px] overflow-hidden rounded-2xl shadow-md rotate-3">
   <img
     src={data?.coupleMessageImages?.image2 || assets.couple_3}
     alt=""
