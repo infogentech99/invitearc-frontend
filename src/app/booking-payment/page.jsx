@@ -212,7 +212,7 @@ export default function CustomPaymentPage() {
             disabled={processing}
             className="mt-6 w-full rounded-full bg-[#861E1D] px-6 py-3.5 cursor-pointer text-sm font-semibold text-white transition hover:bg-[#6d1717] disabled:cursor-not-allowed disabled:opacity-60"
           >
-            {processing ? "Opening payment..." : "Pay now"}
+            {processing ? "Opening payment..." : "Buy now"}
           </button>
         </form>
 
