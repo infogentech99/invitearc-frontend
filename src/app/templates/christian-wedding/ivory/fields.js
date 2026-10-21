@@ -44,7 +44,7 @@ export const ivoryEditorFields = {
   ],
 
   detailFields: [
-    { name: "togetherName", label: "Together Title", type: "text" },
+    { name: "togetherName", label: "Together Title", type: "text" }, 
     { name: "groomName", label: "Groom name", type: "text" },
     { name: "brideName", label: "Bride name", type: "text" },
     { name: "ceremonyInfo", label: "Ceremony Info", type: "text" },

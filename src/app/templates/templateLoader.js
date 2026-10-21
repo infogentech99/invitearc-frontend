@@ -14,6 +14,7 @@ import {vowsEditorFields} from "./christian-wedding/vows/fields";
 import {blissEditorFields} from "./christian-wedding/bliss/fields";
 import {ivoryEditorFields} from "./christian-wedding/ivory/fields";
 import {faithEditorFields} from "./christian-wedding/faith/fields";
+import {celesteEditorFields} from "./christian-wedding/celeste/fields";
 import {beyondEditorFields} from "./christian-wedding/beyond/fields";
 import { assets as mayraAssets } from "./hindu-wedding/mayra/assets";
 import { assets as jodiAssets } from "./sikh-wedding/jodi/assets";
@@ -35,6 +36,7 @@ const templateMap = {
   bliss: dynamic(() => import("./christian-wedding/bliss/page"), { loading: () => <div>Loading...</div>  }),
   ivory: dynamic(() => import("./christian-wedding/ivory/page"), { loading: () => <div>Loading...</div>  }),
   faith: dynamic(() => import("./christian-wedding/faith/page"), { loading: () => <div>Loading...</div>  }),
+  celeste: dynamic(() => import("./christian-wedding/celeste/page"), { loading: () => <div>Loading...</div>  }),
   beyond: dynamic(() => import("./christian-wedding/beyond/page"), { loading: () => <div>Loading...</div>  }),
   sohala: dynamic(() => import("./hindu-wedding/sohala/page"), { loading: () => <div>Loading...</div> }),
 };
@@ -54,6 +56,7 @@ const templateFieldConfigs = {
   bliss: blissEditorFields,
   ivory: ivoryEditorFields,
   faith: faithEditorFields,
+  celeste: celesteEditorFields,
   beyond: beyondEditorFields,
   sohala: sohalaEditorFields,
 };

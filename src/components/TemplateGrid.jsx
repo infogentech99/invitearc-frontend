@@ -20,6 +20,7 @@ const popularTemplateOrder = [
   "faith",
   "ivory",
   "bliss",
+  "celeste",
   "jodi",
   "hitched",
   "sohala",

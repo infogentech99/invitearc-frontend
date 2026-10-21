@@ -8,7 +8,7 @@ import "./faith-globals.css";
 
 
 const initialData = {
-   groomName: "Daniel",
+groomName: "Daniel",
   brideName: "Grace",
   noteText: " A NOTE FOR YOU",
   noteTitle:" Your love, prayers, and presence mean more to us than words can express. Join us as we stand before God, exchange our vows, and begin our lifelong journey together in faith and love.",

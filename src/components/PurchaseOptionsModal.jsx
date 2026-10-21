@@ -32,19 +32,13 @@ export default function PurchaseOptionsModal({
 }) {
   if (!open || !template || country === "IN") return null;
 
-  // const selfPrice = country === "IN" ? template.indprice : template.usaprice;
-
-const selfPrice = Number(
-  country === "IN" ? template.indprice : template.usaprice
-);
-
-  // const teamEditPrice = country === "IN" ? selfPrice + 1000 : selfPrice + 50;
-
-
+  const selfPrice = Number(
+    country === "IN" ? template.indprice : template.usaprice
+  );
   const teamEditPrice =
-  country === "IN"
-    ? Math.round((selfPrice + 1000) * 100) / 100
-    : Math.round((selfPrice + 45) * 100) / 100;
+    country === "IN"
+      ? Math.round((selfPrice + 1000) * 100) / 100
+      : Math.round((selfPrice + 45) * 100) / 100;
 
   return (
     <div className="fixed inset-x-0 bottom-0 top-24 z-60 grid place-items-center overflow-y-auto bg-[#171b1a]/75 px-3 py-4 backdrop-blur-sm sm:px-6 sm:py-8">
