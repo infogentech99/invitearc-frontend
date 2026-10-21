@@ -140,7 +140,7 @@ export default function Memories({ data }) {
                   <div className="relative h-[170px] overflow-hidden">
                     <img
                       // src={assets.guest_1}
-                       src={data?.coupleMessageWeatherImage || assets.guest_1}
+                      src={data?.coupleMessageWeatherImage || assets.guest_1}
                       alt="Dress Code"
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105  rounded-t-full"
                     />
@@ -176,7 +176,7 @@ export default function Memories({ data }) {
                   <div className="relative h-[170px] overflow-hidden">
                     <img
                       // src={assets.guest_2}
-                       src={data?.coupleMessageLocationImage || assets.guest_2}
+                      src={data?.coupleMessageLocationImage || assets.guest_2}
                       alt="Stay With Us"
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105  rounded-t-full"
                     />
@@ -248,7 +248,7 @@ export default function Memories({ data }) {
                   <div className="relative h-[170px] overflow-hidden">
                     <img
                       // src={assets.guest_4}
-                       src={data?.coupleMessageRequestImage || assets.guest_4}
+                      src={data?.coupleMessageRequestImage || assets.guest_4}
                       alt="A Few Requests"
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 rounded-t-full"
                     />
@@ -299,7 +299,6 @@ export default function Memories({ data }) {
               ♡
             </div>
           </section>
-
 
           <div className="mx-auto max-w-2xl md:px-6 px-2 py-10 text-center rounded-xl">
             <h2 className="font-cormorant-garamond md:text-4xl text-3xl text-black">
@@ -357,13 +356,12 @@ export default function Memories({ data }) {
           <div className="mx-auto grid max-w-4xl grid-cols-1 gap-14 px-6 md:grid-cols-3 md:gap-4">
             {/* Prayer */}
             <div className="text-center">
-             
- <img
-                      // src={assets.guest_4}
-                       src={data?.coupleMessagePrayerImage || assets.prayer}
-                      alt="Prayer"
-                      className="mx-auto object-cover transition-transform duration-700 group-hover:scale-105 rounded-t-full"
-                    />
+              <img
+                // src={assets.guest_4}
+                src={data?.coupleMessagePrayerImage || assets.prayer}
+                alt="Prayer"
+                className="mx-auto object-cover transition-transform duration-700 group-hover:scale-105 rounded-t-full"
+              />
               <h2 className="mt-5 text-[18px] md:text-2xl font-light tracking-[5px] text-[#26352b]">
                 {data.prayerTitle}
               </h2>
@@ -375,12 +373,12 @@ export default function Memories({ data }) {
 
             {/* Presence */}
             <div className="text-center">
-               <img
-                      // src={assets.guest_4}
-                       src={data?.coupleMessagePresenceImage || assets.presence}
-                      alt="Prayer"
-                      className="mx-auto object-cover transition-transform duration-700 group-hover:scale-105 rounded-t-full"
-                    />
+              <img
+                // src={assets.guest_4}
+                src={data?.coupleMessagePresenceImage || assets.presence}
+                alt="Prayer"
+                className="mx-auto object-cover transition-transform duration-700 group-hover:scale-105 rounded-t-full"
+              />
 
               <h2 className="mx-auto mt-5 text-[18px] md:text-2xl font-light leading-[1.15] tracking-[5px] text-[#26352b]">
                 {data.presenceTitle}
@@ -393,12 +391,12 @@ export default function Memories({ data }) {
 
             {/* Love */}
             <div className="text-center">
-               <img
-                      // src={assets.guest_4}
-                       src={data?.coupleMessageLoveImage || assets.love}
-                      alt="Prayer"
-                      className="mx-auto object-cover transition-transform duration-700 group-hover:scale-105 rounded-t-full"
-                    />
+              <img
+                // src={assets.guest_4}
+                src={data?.coupleMessageLoveImage || assets.love}
+                alt="Prayer"
+                className="mx-auto object-cover transition-transform duration-700 group-hover:scale-105 rounded-t-full"
+              />
 
               <h2 className="mt-5 text-[18px] md:text-2xl font-light tracking-[5px] text-[#26352b]">
                 {data.loveTitle}
