@@ -357,9 +357,7 @@ export default function Memories({ data }) {
           <div className="mx-auto grid max-w-4xl grid-cols-1 gap-14 px-6 md:grid-cols-3 md:gap-4">
             {/* Prayer */}
             <div className="text-center">
-              {/* <div className="mx-auto flex h-[45px] w-[45px] md:h-[74px] md:w-[74px] items-center justify-center rounded-full border-2 border-[#ead9b8]">
-                <span className="text-4xl font-light text-[#c5a15a]">♡</span>
-              </div> */}
+             
  <img
                       // src={assets.guest_4}
                        src={data?.coupleMessagePrayerImage || assets.prayer}
