@@ -7,38 +7,77 @@ import { auraEditorFields } from "./hindu-wedding/aura/fields";
 import { sohalaEditorFields } from "./hindu-wedding/sohala/fields";
 import { jodiEditorFields } from "./sikh-wedding/jodi/fields";
 import { starlightEditorFields } from "./sikh-wedding/starlight/fields";
-import {mayraEditorFields} from "./hindu-wedding/mayra/fields";
-import {kalyanamEditorFields} from "./south-indian-wedding/kalyanam/fields";
-import {niqahEditorFields} from "./muslim-wedding/niqah/fields";
-import {vowsEditorFields} from "./christian-wedding/vows/fields";
-import {blissEditorFields} from "./christian-wedding/bliss/fields";
-import {ivoryEditorFields} from "./christian-wedding/ivory/fields";
-import {faithEditorFields} from "./christian-wedding/faith/fields";
-import {celesteEditorFields} from "./christian-wedding/celeste/fields";
-import {beyondEditorFields} from "./christian-wedding/beyond/fields";
+import { mayraEditorFields } from "./hindu-wedding/mayra/fields";
+import { kalyanamEditorFields } from "./south-indian-wedding/kalyanam/fields";
+import { niqahEditorFields } from "./muslim-wedding/niqah/fields";
+import { vowsEditorFields } from "./christian-wedding/vows/fields";
+import { blissEditorFields } from "./christian-wedding/bliss/fields";
+import { ivoryEditorFields } from "./christian-wedding/ivory/fields";
+import { faithEditorFields } from "./christian-wedding/faith/fields";
+import { celesteEditorFields } from "./christian-wedding/celeste/fields";
+
+import { lovelleEditorFields } from "./christian-wedding/lovelle/fields";
+import { beyondEditorFields } from "./christian-wedding/beyond/fields";
 import { assets as mayraAssets } from "./hindu-wedding/mayra/assets";
 import { assets as jodiAssets } from "./sikh-wedding/jodi/assets";
 import { assets as hitchedAssets } from "./hindu-wedding/hitched/assets";
 
 // Dynamic template loader - maps slug to template component
 const templateMap = {
-  hitched: dynamic(() => import("./hindu-wedding/hitched/page"), { loading: () => <div>Loading...</div> }),
-  saanjh: dynamic(() => import("./hindu-wedding/saanjh/page"), { loading: () => <div>Loading...</div> }),
-  milan: dynamic(() => import("./hindu-wedding/milan/page"), { loading: () => <div>Loading...</div> }),
-  biye: dynamic(() => import("./hindu-wedding/biye/page"), { loading: () => <div>Loading...</div> }),
-  aura: dynamic(() => import("./hindu-wedding/aura/page"), { loading: () => <div>Loading...</div> }),
-  jodi: dynamic(() => import("./sikh-wedding/jodi/page"), { loading: () => <div>Loading...</div>  }),
-  starlight: dynamic(() => import("./sikh-wedding/starlight/page"), { loading: () => <div>Loading...</div>  }),
-  mayra: dynamic(() => import("./hindu-wedding/mayra/page"), { loading: () => <div>Loading...</div>  }),
-  kalyanam: dynamic(() => import("./south-indian-wedding/kalyanam/page"), { loading: () => <div>Loading...</div>  }),
-  niqah: dynamic(() => import("./muslim-wedding/niqah/page"), { loading: () => <div>Loading...</div>  }),
-  vows: dynamic(() => import("./christian-wedding/vows/page"), { loading: () => <div>Loading...</div>  }),
-  bliss: dynamic(() => import("./christian-wedding/bliss/page"), { loading: () => <div>Loading...</div>  }),
-  ivory: dynamic(() => import("./christian-wedding/ivory/page"), { loading: () => <div>Loading...</div>  }),
-  faith: dynamic(() => import("./christian-wedding/faith/page"), { loading: () => <div>Loading...</div>  }),
-  celeste: dynamic(() => import("./christian-wedding/celeste/page"), { loading: () => <div>Loading...</div>  }),
-  beyond: dynamic(() => import("./christian-wedding/beyond/page"), { loading: () => <div>Loading...</div>  }),
-  sohala: dynamic(() => import("./hindu-wedding/sohala/page"), { loading: () => <div>Loading...</div> }),
+  hitched: dynamic(() => import("./hindu-wedding/hitched/page"), {
+    loading: () => <div>Loading...</div>,
+  }),
+  saanjh: dynamic(() => import("./hindu-wedding/saanjh/page"), {
+    loading: () => <div>Loading...</div>,
+  }),
+  milan: dynamic(() => import("./hindu-wedding/milan/page"), {
+    loading: () => <div>Loading...</div>,
+  }),
+  biye: dynamic(() => import("./hindu-wedding/biye/page"), {
+    loading: () => <div>Loading...</div>,
+  }),
+  aura: dynamic(() => import("./hindu-wedding/aura/page"), {
+    loading: () => <div>Loading...</div>,
+  }),
+  jodi: dynamic(() => import("./sikh-wedding/jodi/page"), {
+    loading: () => <div>Loading...</div>,
+  }),
+  starlight: dynamic(() => import("./sikh-wedding/starlight/page"), {
+    loading: () => <div>Loading...</div>,
+  }),
+  mayra: dynamic(() => import("./hindu-wedding/mayra/page"), {
+    loading: () => <div>Loading...</div>,
+  }),
+  kalyanam: dynamic(() => import("./south-indian-wedding/kalyanam/page"), {
+    loading: () => <div>Loading...</div>,
+  }),
+  niqah: dynamic(() => import("./muslim-wedding/niqah/page"), {
+    loading: () => <div>Loading...</div>,
+  }),
+  vows: dynamic(() => import("./christian-wedding/vows/page"), {
+    loading: () => <div>Loading...</div>,
+  }),
+  bliss: dynamic(() => import("./christian-wedding/bliss/page"), {
+    loading: () => <div>Loading...</div>,
+  }),
+  ivory: dynamic(() => import("./christian-wedding/ivory/page"), {
+    loading: () => <div>Loading...</div>,
+  }),
+  faith: dynamic(() => import("./christian-wedding/faith/page"), {
+    loading: () => <div>Loading...</div>,
+  }),
+  celeste: dynamic(() => import("./christian-wedding/celeste/page"), {
+    loading: () => <div>Loading...</div>,
+  }),
+  lovelle: dynamic(() => import("./christian-wedding/lovelle/page"), {
+    loading: () => <div>Loading...</div>,
+  }),
+  beyond: dynamic(() => import("./christian-wedding/beyond/page"), {
+    loading: () => <div>Loading...</div>,
+  }),
+  sohala: dynamic(() => import("./hindu-wedding/sohala/page"), {
+    loading: () => <div>Loading...</div>,
+  }),
 };
 
 const templateFieldConfigs = {
@@ -57,6 +96,7 @@ const templateFieldConfigs = {
   ivory: ivoryEditorFields,
   faith: faithEditorFields,
   celeste: celesteEditorFields,
+  lovelle: lovelleEditorFields,
   beyond: beyondEditorFields,
   sohala: sohalaEditorFields,
 };
@@ -86,7 +126,6 @@ export const templateMetadata = {
   //   paid: true,
   // },
 };
-
 
 export const templateAssets = {
   mayra: mayraAssets,

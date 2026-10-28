@@ -14,7 +14,7 @@ import vowsTemplate from "../../templates/christian-wedding/vows/page";
 import blissTemplate from "../../templates/christian-wedding/bliss/page";
 import faithTemplate from "../../templates/christian-wedding/faith/page";
 import beyondTemplate from "../../templates/christian-wedding/beyond/page";
-
+import lovelleTemplate from "../../templates/christian-wedding/lovelle/page";
 
 export const dynamic = "force-dynamic";
 
@@ -28,12 +28,13 @@ const templateComponents = {
   starlight: StarlightTemplate,
   mayra: MayraTemplate,
   kalyanam: kalyanamTemplate,
-  niqah:niqahTemplate,
-  vows:vowsTemplate,
-   bliss:blissTemplate,
-  faith:faithTemplate,
-  beyond:beyondTemplate,
-  sohala:sohalaTemplate,
+  niqah: niqahTemplate,
+  vows: vowsTemplate,
+  bliss: blissTemplate,
+  faith: faithTemplate,
+  lovelle: lovelleTemplate,
+  beyond: beyondTemplate,
+  sohala: sohalaTemplate,
 };
 
 const getSiteUrl = () =>

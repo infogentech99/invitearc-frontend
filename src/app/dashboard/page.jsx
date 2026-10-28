@@ -20,6 +20,8 @@ import vowsPreview from "../../../public/assets/preview-images/vows.webp";
 import ivoryPreview from "../../../public/assets/preview-images/ivory.webp";
 import blissPreview from "../../../public/assets/preview-images/bliss.webp";
 import faithPreview from "../../../public/assets/preview-images/faith.webp";
+
+import lovellePreview from "../../../public/assets/preview-images/lovelle.webp";
 import beyondPreview from "../../../public/assets/preview-images/beyond.webp";
 import sohalaPreview from "../../../public/assets/preview-images/sohala.webp";
 
@@ -80,6 +82,7 @@ export default function DashboardPage() {
     bliss: blissPreview.src,
     ivory: ivoryPreview.src,
     faith: faithPreview.src,
+    lovelle:lovellePreview.src,
     beyond: beyondPreview.src,
     sohala: sohalaPreview.src,
   };

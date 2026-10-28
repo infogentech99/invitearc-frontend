@@ -85,7 +85,7 @@ export const celesteEditorFields = {
 
     {
       name: "coupleMessageImages.image1",
-      label: "Couple Image 1",
+      label: "Couple Image 1", 
       type: "image",
     },
     {
