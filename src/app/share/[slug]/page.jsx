@@ -15,6 +15,7 @@ import blissTemplate from "../../templates/christian-wedding/bliss/page";
 import faithTemplate from "../../templates/christian-wedding/faith/page";
 import beyondTemplate from "../../templates/christian-wedding/beyond/page";
 import lovelleTemplate from "../../templates/christian-wedding/lovelle/page";
+import agapeTemplate from "../../templates/christian-wedding/agape/page";
 
 export const dynamic = "force-dynamic";
 
@@ -33,6 +34,7 @@ const templateComponents = {
   bliss: blissTemplate,
   faith: faithTemplate,
   lovelle: lovelleTemplate,
+  agape: agapeTemplate,
   beyond: beyondTemplate,
   sohala: sohalaTemplate,
 };

@@ -15,8 +15,8 @@ import { blissEditorFields } from "./christian-wedding/bliss/fields";
 import { ivoryEditorFields } from "./christian-wedding/ivory/fields";
 import { faithEditorFields } from "./christian-wedding/faith/fields";
 import { celesteEditorFields } from "./christian-wedding/celeste/fields";
-
 import { lovelleEditorFields } from "./christian-wedding/lovelle/fields";
+import { agapeEditorFields } from "./christian-wedding/agape/fields";
 import { beyondEditorFields } from "./christian-wedding/beyond/fields";
 import { assets as mayraAssets } from "./hindu-wedding/mayra/assets";
 import { assets as jodiAssets } from "./sikh-wedding/jodi/assets";
@@ -72,6 +72,9 @@ const templateMap = {
   lovelle: dynamic(() => import("./christian-wedding/lovelle/page"), {
     loading: () => <div>Loading...</div>,
   }),
+    agape: dynamic(() => import("./christian-wedding/agape/page"), {
+    loading: () => <div>Loading...</div>,
+  }),
   beyond: dynamic(() => import("./christian-wedding/beyond/page"), {
     loading: () => <div>Loading...</div>,
   }),
@@ -97,6 +100,7 @@ const templateFieldConfigs = {
   faith: faithEditorFields,
   celeste: celesteEditorFields,
   lovelle: lovelleEditorFields,
+ agape: agapeEditorFields,
   beyond: beyondEditorFields,
   sohala: sohalaEditorFields,
 };

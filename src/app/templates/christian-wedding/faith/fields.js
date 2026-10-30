@@ -72,7 +72,7 @@ export const faithEditorFields = {
   ],
 
   eventFields: [
-    { name: "title_ceremony", label: "Title", type: "text" },
+    { name: "title_ceremony", label: "Title", type: "text" }, 
     { name: "date", label: "Date", type: "text" },
     { name: "time", label: "Time", type: "text" },
     { name: "venue", label: "Venue", type: "text" },

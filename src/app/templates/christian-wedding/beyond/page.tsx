@@ -43,7 +43,7 @@ type BeyondTemplateData = {
   temperature?: string;
   staffDetails?: string;
   parkingDetails?: string;
-  marriageCountdownTitle?: string;
+  marriageCountdownTitle?: string; 
   marriageCountdownDescription?: string;
   marriageCountdownDate?: string;
   locationLink?: string;
