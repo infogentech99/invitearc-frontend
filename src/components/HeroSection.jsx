@@ -14,8 +14,8 @@ export default function HeroSection() {
   return (
     <>
       <div className="bg-[#F8FAFC] pb-4">
-        <section className="bg-[#8C1E1E] py-24 pb-28 md:pb-32">
-          <div className="max-w-7xl mx-auto px-5 lg:px-0">
+        <section className="bg-[#8C1E1E] py-12 md:py-24 pb-28 md:pb-32">
+          <div className="max-w-7xl mx-auto px-5 lg:px-0 md:block hidden">
             <div className="grid lg:grid-cols-2 gap-12">
               <div>
                 <p className="text-[#F8E8C8] font-semibold text-2xl mb-5 font-georgia">
@@ -42,7 +42,7 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="max-w-[1600px] mx-auto px-5 lg:px-8">
-            <div className="mt-20 pt-20 overflow-x-auto scrollbar-hide">
+            <div className="md:mt-20 md:pt-20 pt-10 overflow-x-auto scrollbar-hide">
               <div className="flex gap-4 md:gap-6 lg:gap-8 min-w-max lg:min-w-0 justify-center">
                 {cards.map((images, index) => (
                   <div
@@ -70,6 +70,34 @@ export default function HeroSection() {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+
+
+            <div className="max-w-7xl mx-auto px-5 lg:px-0 md:hidden">
+            <div className="grid lg:grid-cols-2 md:gap-12 gap-6">
+              <div>
+                <p className="text-[#F8E8C8] font-semibold text-xl md:text-2xl mb-5 md:mt-0 mt-10 font-georgia">
+                  Introducing
+                </p>
+
+                <h2 className="text-[#F8E8C8] text-3xl md:text-5xl font-georgia font-bold leading-tight">
+                  Modern Website & Video Invites                 
+                  for Weddings
+                </h2>
+              </div>
+
+              <div className="flex flex-col justify-center text-white">
+                <p className="text-lg leading-relaxed max-w-xl">
+                  Stop sending invites. Start creating experiences. Turn your
+                  Wedding invite into a website with InviteArc – design, share &
+                  manage every detail from one powerful platform.
+                </p>
+
+                <h3 className="text-[#F8E8C8] md:text-2xl text-xl font-georgia font-semibold md:mt-8 mt-4">
+                  Effortless to customise. Magical to experience.
+                </h3>
               </div>
             </div>
           </div>
