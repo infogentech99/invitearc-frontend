@@ -552,7 +552,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
       >
         <div className="flex w-full justify-center md:h-175 lg:h-260 xl:h-275 2xl:h-335 3xl:h-[1650px] md:pt-48 lg:pt-72 3xl:pt-96">
           <img
-            src=src={data?.Logo || assets.logo}
+            src={data?.Logo || assets.logo}
             alt="logo"
             className="w-32 h-48 md:w-44 md:h-34 lg:w-65 lg:h-52"
           />
@@ -566,7 +566,7 @@ export default function Home({ data: initialTemplateData, isOwner = false }) {
           className="w-108 h-260 object-cover"
         />
         <div className="flex absolute top-[25svh] left-0 right-0 justify-center">
-          <img src=src={data?.Logo || assets.logo} alt="logo" className="w-32 h-26" />
+          <img src={data?.Logo || assets.logo} alt="logo" className="w-32 h-26" />
         </div>
       </div>
 
