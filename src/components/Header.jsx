@@ -72,10 +72,10 @@ export default function Header() {
         {country === "IN" && (
           <div className="bg-[#8C1E1E] flex flex-col justify-center py-4 items-center">
             <p className="text-[#F8E8C8] font-semibold md:text-3xl text-2xl font-georgia  text-center">
-              🪔 Festive Sale Is Live!
+              🎉 Year-End Sale Is Live!
             </p>
             <p className="text-[#F8E8C8] font-semibold md:text-[20px] text-[16px] font-georgia text-center">
-              Beautiful invitations, special festive prices. <br />
+             Celebrate Love, Create Memories & Save More. <br />
               Limited-time offer — Ends Soon
             </p>
           </div>

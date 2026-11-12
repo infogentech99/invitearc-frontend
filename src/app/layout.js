@@ -58,7 +58,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         <AuthProvider>
           <LayoutWrapper>{children}</LayoutWrapper>
-          <DisableInspect />
+          {/* <DisableInspect /> */}
           <Toaster position="bottom-right" />
         </AuthProvider>
       </body>

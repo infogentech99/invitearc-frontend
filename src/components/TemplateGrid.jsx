@@ -372,7 +372,7 @@ export default function TemplateGrid() {
                   <div className="flex flex-col">
                     {country === "IN" && (
                       <span className="text-[16px] font-semibold text-slate-500 line-through">
-                        ₹3,999
+                        ₹4,999
                       </span>
                     )}
 
