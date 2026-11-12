@@ -1033,8 +1033,8 @@ export default function EditTemplatePage() {
             </div>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-[minmax(350px,400px)_1fr] 3xl:grid-cols-[minmax(450px,500px)_1fr] md:mt-6 lg:items-stretch lg:h-[calc(100vh-1rem)] 3xl:h-[calc(100vh-5rem)]">
-            <aside className="rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden lg:sticky lg:top-8 lg:h-[calc(100vh-1rem)] 3xl:h-[calc(100vh-5rem)] ">
+          <div className="grid gap-6 lg:grid-cols-[minmax(350px,400px)_1fr] 3xl:grid-cols-[minmax(450px,500px)_1fr] md:mt-6 lg:items-stretch lg:h-[calc(100vh)] 3xl:h-[calc(100vh-5rem)]">
+            <aside className="rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden lg:sticky lg:top-8 lg:h-[calc(100vh)] 3xl:h-[calc(100vh-5rem)] ">
               <div className="flex h-full min-h-0">
                 <Sidebar
                   tabs={fieldConfig?.tabs}
